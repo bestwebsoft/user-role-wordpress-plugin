@@ -1,0 +1,222 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: user-role\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-28 13:23+0300\n"
+"PO-Revision-Date: \n"
+"Last-Translator: bestwebsoft.com <plugins@bestwebsoft.com>\n"
+"Language-Team: bestwebsoft.com <plugin@bestwebsoft.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: user-role.php:71
+msgid "User Role"
+msgstr "User Role"
+
+#: user-role.php:106
+msgid "requires"
+msgstr "требует"
+
+#: user-role.php:106
+msgid "or higher, that is why it has been deactivated! Please upgrade WordPress and try again."
+msgstr "или выше, поэтому плагин был деактивирован! Пожалуйста,  обновите WordPress и повторите попытку"
+
+#: user-role.php:106
+msgid "Back to the WordPress"
+msgstr "Назад к WordPress"
+
+#: user-role.php:106
+msgid "Plugins page"
+msgstr "Страница плагинов"
+
+#: user-role.php:334
+msgid "Notice:"
+msgstr "Внимание:"
+
+#: user-role.php:334
+#: user-role.php:440
+msgid "The plugin's settings have been changed. In order to save them please don't forget to click the 'Save Changes' button."
+msgstr "Настройки плагина изменились. Чтобы сохранить их, не забудьте нажать на кнопку \"Сохранить Изменения\""
+
+#: user-role.php:343
+#: user-role.php:450
+msgid "Select Role: "
+msgstr "Выбрать Роль: "
+
+#: user-role.php:346
+#: user-role.php:453
+msgid "Are you sure you want to recover settings by default?"
+msgstr "Вы уверены, что хотите восстановить настройки по умолчанию?"
+
+#: user-role.php:353
+#: user-role.php:460
+msgid "Show"
+msgstr "Показать"
+
+#: user-role.php:359
+#: user-role.php:466
+msgid "Recover: "
+msgstr "Восстановить: "
+
+#: user-role.php:363
+#: user-role.php:470
+msgid "Chosen role"
+msgstr "Выбранную роль"
+
+#: user-role.php:364
+#: user-role.php:471
+msgid "All roles"
+msgstr "Все роли"
+
+#: user-role.php:370
+#: user-role.php:477
+msgid "Recover"
+msgstr "Восстановить"
+
+#: user-role.php:381
+#: user-role.php:486
+msgid "Display the list of permissions for:"
+msgstr "Отображение привилегий для:"
+
+#: user-role.php:386
+msgid "From site "
+msgstr "Сайта "
+
+#: user-role.php:391
+#: user-role.php:492
+#: user-role.php:852
+msgid "Select all"
+msgstr "Выбрать всё"
+
+#: user-role.php:394
+#: user-role.php:495
+msgid "Select none"
+msgstr "Снять выделение"
+
+#: user-role.php:405
+#: user-role.php:501
+#: user-role.php:514
+msgid "Save Changes"
+msgstr "Сохранить Изменения"
+
+#: user-role.php:414
+#: user-role.php:526
+msgid "If you enjoy our plugin, please give it 5 stars on WordPress"
+msgstr "Если вам нравится наш плагин, пожалуйста, поставьте 5 звёзд на WordPress"
+
+#: user-role.php:415
+#: user-role.php:527
+msgid "Rate the plugin"
+msgstr "Оцените плагин"
+
+#: user-role.php:418
+#: user-role.php:530
+msgid "If there is something wrong about it, please contact us"
+msgstr "Если что-то не так, пожалуйста, свяжитесь с нами"
+
+#: user-role.php:440
+#: user-role.php:543
+msgid "Notice: "
+msgstr "Внимание: "
+
+#: user-role.php:543
+msgid "The changes has been saved"
+msgstr "Изменения сохранены"
+
+#: user-role.php:548
+msgid "The settings have been restored for current role"
+msgstr "Настройки были восстановлены для выбранной роли"
+
+#: user-role.php:552
+msgid "The settings have been restored for all roles"
+msgstr "Настройки были восстановлены для всех ролей"
+
+#: user-role.php:565
+msgid "Capability: "
+msgstr "Привилегия: "
+
+#: user-role.php:566
+msgid "Group capabilities "
+msgstr "Привилегии группы "
+
+#: user-role.php:567
+msgid "For site: "
+msgstr "Для сайта: "
+
+#: user-role.php:604
+msgid "Capabitity\\Site"
+msgstr "Привилегия\\Сайт"
+
+#: user-role.php:704
+msgid "Capabilities category: "
+msgstr "Категория привилегий: "
+
+#: user-role.php:750
+msgid "Capabilities without category"
+msgstr "Привилегии без категории"
+
+#: user-role.php:804
+#: user-role.php:812
+msgid "Action with "
+msgstr "Действия с "
+
+#: user-role.php:845
+msgid "Changes will be applied to the selected blogs:"
+msgstr "Изменения применятся для выбраных блогов:"
+
+#: user-role.php:880
+msgid "If none selected the changes will be applied to the site:"
+msgstr "Если сайты не выбраны, то изменения будут применяться к сайту:"
+
+#: user-role.php:900
+msgid "You do not have sufficient permissions to access this page."
+msgstr "У вас недостаточно прав для доступа к этой странице"
+
+#: user-role.php:904
+msgid "User Role Settings"
+msgstr "Настройки User Role"
+
+#: user-role.php:911
+msgid "Table View"
+msgstr "Табличное представление"
+
+#: user-role.php:913
+msgid "Flat View"
+msgstr "Просмотр списком"
+
+#: user-role.php:962
+#: user-role.php:974
+msgid "Settings"
+msgstr "Настройки"
+
+#: user-role.php:975
+msgid "FAQ"
+msgstr "Часто задаваемые вопросы"
+
+#: user-role.php:976
+msgid "Support"
+msgstr "Поддержка"
+
+#~ msgid "User role"
+#~ msgstr "Роли Пользователей"
+
+#~ msgid "Setting privileges"
+#~ msgstr "Настройки привилегий"
+
+#~ msgid "Interface v1"
+#~ msgstr "Интерфейс v1"
+
+#~ msgid "Interface v2"
+#~ msgstr "Интерфейс v2"
+
+#~ msgid "Recover chosen role for all blogs"
+#~ msgstr "Восстановить выбраную роль для всех блогов"
+
+#~ msgid "Recover all roles for all blogs"
+#~ msgstr "Восстановить все роли для всех блогов"

@@ -1,0 +1,241 @@
+/*
+* Custom styles
+*/
+.srrl_rotate {
+	overflow: hidden;
+	line-height: 30px;
+	position: relative;
+	white-space: nowrap;
+	width: 30px;
+}
+.srrl_loader {
+	width: 16px;
+	float: left;
+	height: 16px;
+	background: url("../images/wpspin.gif") 0 0 no-repeat;
+}
+td.srrl_rotate {
+	-moz-transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	writing-mode: tb-rl;
+	width: 25px;
+}
+.srrl_rotate {
+	overflow:hidden;
+	line-height:30px;
+	position:relative;
+	white-space:nowrap;
+	width:30px;
+}
+.srrl_matrix_head_cell object {
+	width:30px;
+	display:block;
+}
+.srrl_matrix_head_cell span {
+	display:none;
+}
+h5.srrl_category {
+	margin: 4px 0 !important;
+}
+.srrl_role_column label {
+	padding-left: 8px;
+}
+#srrl_action {
+	float: left;
+	width: 100%;
+	padding-bottom: 5px;
+}
+.srrl_checkall2,
+.srrl_checkall {
+	color: rgb(0, 0, 0);
+}
+.srrl_button {
+	width: 130px;
+	height: 24px;
+}
+.srrl_wrap {
+	float: left;
+	min-width: 40%;
+	border: none !important;
+	display: inline-block;
+}
+.srrl_blogs_box {
+	margin: 5px 5px 0 5px;
+	padding: 10px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #DFDFDF;
+	border-radius: 3px 3px 3px 3px;
+	box-shadow: 0 1px 0 #FFFFFF inset;
+}
+.srrl_blog_table {
+	float: left;
+	width: 33%;
+}
+.srrl_blogs_box h3,
+.srrl-box h3 {
+	padding: 0 !important;
+}
+.srrl_blogs_box ul,
+.srrl-box ul {
+	margin: 0;
+}
+#srrl_form .widefat th  input.hide-if-no-js {
+	margin: 0 0 0 -3px !important;
+}
+.srrl_role_column {
+	min-width: 163px;
+}
+.srrl_matrix_head_cell label {
+	bottom: 0;
+	display: block;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width:25px;
+}
+.srrl_rotate {
+	margin: 0 auto;
+}
+.srrl_matrix_head_cell input {
+	bottom: 0;
+	left: 33%;
+	position: absolute;
+}
+.srrl-box {
+	float: left;
+	margin: 5px 5px 0 5px;
+	width: 200px;
+	padding: 10px 10px 2px 10px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #DFDFDF;
+	border-radius: 3px 3px 3px 3px;
+	box-shadow: 0 1px 0 #FFFFFF inset;
+}
+.srrl-label-cap {
+	line-height: 20px;
+}
+#srrl_corner_th {
+	padding-left: 20px;
+}
+.srrl_v1_content {
+	max-width: 800px;
+}
+.srrl_blog_table label input.srrl-check-cap {
+	margin-right: 4px !important;
+}
+.srrl_accordeon_icon {
+	display: block;
+	height: 10px;
+	width: 15px;
+	float: right;
+	margin-top: 4px;
+	background: url("../images/srrl_sprite.png") no-repeat 0 -32px transparent;
+}
+.srrl_accordeon_icon:hover {
+	background-position:  0 -15px;
+}
+.srrl_closed {
+	background-position:  0 0;
+}
+.srrl_closed:hover {
+	background-position:  0 -47px;
+}
+.srrl_category_check,
+.srrl_accordeon_row label {
+	float: left;
+}
+.srrl-role-box li {
+	padding: 5px;
+	margin-bottom:0;
+}
+.srrl-role-box ul {
+	margin: 0;
+}
+.clear {
+	clear: both;
+}
+.srrl_matrix {
+	margin: 5px 0;
+	padding: 0 8px 10px 0;
+}
+.srrl_table {
+	border-collapse: collapse;
+}
+.srrl_matrix td,
+.srrl_matrix th {
+	border: 1px solid #DFDFDF;
+}
+.srrl_matrix_head_cell {
+	width: 30px;
+	text-align: left;
+}
+#srrl_matrix_cell {
+	text-align: center;
+}
+div.srrl_rotate > input {
+	margin-top: 1px !important;
+}
+.srrl_descr_table {
+	line-height: 34px;
+	margin: 8px 10px 3px 0;
+	padding: 4px 0;
+}
+.srrl_select_role {
+	width: 380px;
+}
+.button_recover,
+#srrl_roles {
+	width: 160px !important;
+}
+.srrl-check-cap {
+	padding: 5px 0 5px 10px;
+	margin: 5px 0 !important;
+}
+.srrl_buttons {
+	margin-top: 16px;
+	height: 38px;
+	padding: 5px 0;
+}
+.srrl_but {
+	margin: 6px 0;
+	float: left;
+}
+.srrl_radio {
+	display:inline-block;
+	margin-right: 3px;
+	float: left;
+}
+.srrl_v2_content {
+	min-width: 30%;
+}
+.hidden {
+	display: none !important;
+}
+.srrl_hover {
+	background: #f1f1f1;
+}
+/*
+* Css hacks for IE
+*/
+html[data-useragent*='MSIE 10.0'] .srrl_matrix_head_cell span {
+	display:inline;
+	transform:rotate(-90deg);
+	position:absolute;
+	padding-right: 4px;
+}
+.srrl_matrix_head_cell_container {
+	#transform: rotate(-90deg);
+	font-size: 13px;
+	float: left;
+	vertical-align:top;
+	position:relative;
+	width:25px;
+}
+/* It will be owerriden in IE earler v9  */
+.srrl_ie9 {
+	display: none;
+}
