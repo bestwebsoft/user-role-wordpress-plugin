@@ -9,14 +9,10 @@
 		srrl_category_check();
 		srrl_section_column_check();
 
-		var container = document.querySelector( '#srrl_action' );
-		if ( $( container ).length > 0 ) {
-			var msnry = new Masonry( container, {
-				// options
-				columnWidth: 240,
-				itemSelector: '.srrl-box'
-			});
-		}
+		$( '#srrl_action' ).masonry({
+			itemSelector : '.srrl-box',
+			columnWidth  : 240
+		});
 
 		/* For matrix column & rows highlighting */
 		$(function() {

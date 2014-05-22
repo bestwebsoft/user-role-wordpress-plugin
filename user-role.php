@@ -4,7 +4,7 @@ Plugin Name: User Role
 Plugin URI: http://bestwebsoft.com/plugin/
 Description: The plugin allows to change wordpress user role capabilities.
 Author: BestWebSoft
-Version: 1.4
+Version: 1.4.1
 Author URI: http://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -32,8 +32,9 @@ if ( ! function_exists( 'srrl_add_pages' ) ) {
 			return;
 
 		global $bstwbsftwppdtplgns_options, $wpmu, $bstwbsftwppdtplgns_added_menu;
-		$bws_menu_version = get_plugin_data( plugin_dir_path( __FILE__ ) . "bws_menu/bws_menu.php" )["Version"];		
-		$base = plugin_basename(__FILE__);
+		$bws_menu_info = get_plugin_data( plugin_dir_path( __FILE__ ) . "bws_menu/bws_menu.php" );
+		$bws_menu_version = $bws_menu_info["Version"];		
+		$base = plugin_basename( __FILE__ );
 
 		if ( ! isset( $bstwbsftwppdtplgns_options ) ) {
 			if ( 1 == $wpmu ) {

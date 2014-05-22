@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=1&
 Tags: access, button, capability, change capabilities, confirmation dialogue, editor, groups, permission, recover, recover button, recover capabilites button, recover role capabilities, reset, reset settings, reset role capabilites, restore role capabilties, restore settings, role, role capabilitites, role capabilities groups, security, settings, user, uzer, user role, user rol, uzer rol, user role plugin
 Requires at least: 3.6
 Tested up to: 3.9.1
-Stable tag: 1.4
+Stable tag: 1.4.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -13,6 +13,8 @@ User Role plugin allows to change wordpress user role capabilities.
 == Description ==
 
 The User Role plugin allows you to change wordpress role capabilities. It has intuitive and convenient interface.
+
+http://www.youtube.com/watch?v=O7OBFHn0_wU
 
 <a href="http://wordpress.org/plugins/user-role/faq/" target="_blank">FAQ</a>
 
@@ -88,6 +90,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 
 == Changelog ==
 
+= V1.4.1 - 22.05.2014 =
+* Bugfix : Problem with Masonry in WordPress versions below 3.9 on the plugin settings page is fixed.
+
 = V1.4 - 01.04.2014 =
 * Bugfix : Repair roles and save roles functions were refactored.
 * Bugfix : Small css and js bugs were fixed.
@@ -112,6 +117,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * NEW : Css-style was added for Internet Explorer 10.
 
 == Upgrade Notice ==
+
+= V1.4.1 =
+Problem with Masonry in WordPress versions below 3.9 on the plugin settings page is fixed.
 
 = V1.4 =
 Repair roles and save roles functions were refactored. Small css and js bugs were fixed. Screenshots were remade.
