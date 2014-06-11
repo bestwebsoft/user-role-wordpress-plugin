@@ -3,8 +3,8 @@
 
 The User Role plugin allows you to change wordpress role capabilities. It has intuitive and convenient interface. 
 
-
 <img src="http://bestwebsoft.com/wp-content/uploads/2014/04/user-role-banner-website.jpg" />
+
 <a href="http://bestwebsoft.com/plugin/user-role/#description" target=_blank>Description</a> | 
 <a href="http://bestwebsoft.com/plugin/user-role/#installation" target=_blank>Installation</a> | 
 <a href="http://bestwebsoft.com/plugin/user-role/#faq" target=_blank>FAQ</a> | 
