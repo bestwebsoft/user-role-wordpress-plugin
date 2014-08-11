@@ -117,6 +117,7 @@ h5.srrl_category {
 }
 .srrl-label-cap {
 	line-height: 20px;
+	word-wrap: break-word;
 }
 #srrl_corner_th {
 	padding-left: 20px;

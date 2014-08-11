@@ -4,7 +4,7 @@ Plugin Name: User Role
 Plugin URI: http://bestwebsoft.com/plugin/
 Description: The plugin allows to change wordpress user role capabilities.
 Author: BestWebSoft
-Version: 1.4.1
+Version: 1.4.2
 Author URI: http://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -301,7 +301,7 @@ if ( ! function_exists( 'srrl_render_interface1' ) ) {
 				update_option( 'srrl_interface_version', 'v1' );
 			}
 		} ?>
-		<form name="srrl_form" id="srrl_form" method="post" action="<?php get_admin_url()."?page=user-role.php"; ?>" >
+		<form name="srrl_form" id="srrl_form" method="post" action="<?php get_admin_url(); ?>?page=user-role.php">
 			<div id="srrl_action_change_log" class="hidden updated fade below-h2">
 				<p><strong><?php _e( 'Notice:', 'user_role' ); ?></strong> <?php _e( "The plugin's settings have been changed. In order to save them please don't forget to click the 'Save Changes' button.", 'user_role' ); ?></p>
 			</div>
@@ -312,7 +312,7 @@ if ( ! function_exists( 'srrl_render_interface1' ) ) {
 						<tbody>
 							<tr valign="top">
 								<th scope="row">
-									<strong><?php echo __( 'Select Role: ', 'user_role' ); ?></strong>
+									<strong><?php _e( 'Select Role:', 'user_role' ); ?></strong>
 								</th>
 								<td>
 									<div id="srrl_string_confirm_recover" class="hidden"><?php _e( 'Are you sure you want to recover settings by default?', 'user_role' ); ?></div>
@@ -328,7 +328,7 @@ if ( ! function_exists( 'srrl_render_interface1' ) ) {
 							</tr>
 							<tr valign="top">
 								<th scope="row">
-									<strong><?php echo __( 'Recover: ', 'user_role' ) ?></strong>
+									<strong><?php _e( 'Recover:', 'user_role' ) ?></strong>
 								</th>
 								<td>
 									<select name="srrl_recover_radio" class="button_recover">
@@ -368,13 +368,12 @@ if ( ! function_exists( 'srrl_render_interface1' ) ) {
 					<div class="clear"></div>
 					<div class="srrl_buttons">
 						<div class="srrl_but">
-							<button type="submit" id="srrl_save" class="button-primary" name="srrl_save"  value="srrl_save">
-								<?php _e( 'Save Changes', 'user_role' ); ?>
-							</button>
+							<button type="submit" id="srrl_save" class="button-primary" name="srrl_save"  value="srrl_save"><?php _e( 'Save Changes', 'user_role' ); ?></button>							
 						</div><!-- .but -->
 					</div><!-- .buttons -->
 				</div><!--.inside -->
 			</div><!-- .srrl_v1_content-->
+			<?php wp_nonce_field( plugin_basename( __FILE__ ), 'srrl_nonce_name' ); ?>
 		</form><!-- #srrl_form-->
 		<div class="bws-plugin-reviews">
 			<div class="bws-plugin-reviews-rate">
@@ -402,7 +401,7 @@ if ( ! function_exists( 'srrl_render_interface2' ) ) {
 				update_option( 'srrl_interface_version', 'v2' );
 			}
 		} ?>
-		<form id="srrl_form" method="post" action="<?php get_admin_url() . "?page=user-role.php"; ?>" >
+		<form id="srrl_form" method="post" action="<?php get_admin_url(); ?>?page=user-role.php" >
 			<div id="srrl_action_change_log" class="hidden updated fade below-h2">
 				<p><strong><?php _e( 'Notice: ', 'user_role' ); ?></strong> <?php _e( "The plugin's settings have been changed. In order to save them please don't forget to click the 'Save Changes' button.", 'user_role' ); ?></p>
 			</div>
@@ -414,7 +413,7 @@ if ( ! function_exists( 'srrl_render_interface2' ) ) {
 							<tbody>
 								<tr valign="top">
 									<th scope="row">
-										<strong><?php echo __( 'Select Role:', 'user_role' ); ?></strong>
+										<strong><?php _e( 'Select Role:', 'user_role' ); ?></strong>
 									</th>
 									<td>
 										<div id="srrl_string_confirm_recover" class="hidden"><?php _e( 'Are you sure you want to recover settings by default?', 'user_role' ); ?></div>
@@ -430,7 +429,7 @@ if ( ! function_exists( 'srrl_render_interface2' ) ) {
 								</tr>
 								<tr valign="top">
 									<th scope="row">
-										<strong><?php echo __( 'Recover:', 'user_role' ) ?></strong>
+										<strong><?php _e( 'Recover:', 'user_role' ) ?></strong>
 									</th>
 									<td>
 										<select name="srrl_recover_radio" class="button_recover">
@@ -477,15 +476,14 @@ if ( ! function_exists( 'srrl_render_interface2' ) ) {
 						<div class="clear"></div>
 						<div class="srrl_buttons">
 							<div class="srrl_but">
-								<button type="submit" id="srrl_save" class="button-primary" name="srrl_save"  value="srrl_save" >
-									<?php _e( 'Save Changes', 'user_role' ); ?>
-								</button>
+								<button type="submit" id="srrl_save" class="button-primary" name="srrl_save"  value="srrl_save" ><?php _e( 'Save Changes', 'user_role' ); ?></button>								
 							</div><!-- .but -->
 						</div><!-- .buttons -->
 						<div class="clear"></div><br>
 					</div><!--.inside -->
 				</div><!-- .srrl_wrap-->
 			</div><!-- .srrl_v1_content-->
+			<?php wp_nonce_field( plugin_basename( __FILE__ ), 'srrl_nonce_name' ); ?>
 		</form><!-- #srrl_form-->
 		<div class="clear"></div>
 		<div class="bws-plugin-reviews">
@@ -868,10 +866,12 @@ if ( ! function_exists( 'srrl_main_page' ) ) {
 	function srrl_main_page() {
 		global $srrl_plugin_info, $wp_version;
 		$error = $message = '';
-		if ( isset( $_POST['srrl_recover'] ) ) {
-			srrl_repair();
-		} else if ( isset( $_POST['srrl_save'] ) ) {
-			srrl_save();
+		if ( ( isset( $_POST['srrl_recover'] ) || isset( $_POST['srrl_save'] ) ) && check_admin_referer( plugin_basename(__FILE__), 'srrl_nonce_name' ) ) {
+			if ( isset( $_POST['srrl_recover'] ) ) {
+				srrl_repair();
+			} else if ( isset( $_POST['srrl_save'] ) ) {
+				srrl_save();
+			}
 		}
 		$srrl_http_referer 	= $_SERVER['HTTP_REFERER'];
 		$srrl_true 			= stripos( $srrl_http_referer, 'wp-admin/network/' );
@@ -882,14 +882,14 @@ if ( ! function_exists( 'srrl_main_page' ) ) {
 		/* GO PRO */
 		if ( isset( $_GET['tab-action'] ) && 'go_pro' == $_GET['tab-action'] ) {
 			global $wpmu, $bstwbsftwppdtplgns_options;
-			$bws_license_key = ( isset( $_POST['bws_license_key'] ) ) ? trim( $_POST['bws_license_key'] ) : "";
+			$bws_license_key = ( isset( $_POST['bws_license_key'] ) ) ? trim( esc_html( $_POST['bws_license_key'] ) ) : "";
 
 			if ( isset( $_POST['bws_license_submit'] ) && check_admin_referer( plugin_basename( __FILE__ ), 'bws_license_nonce_name' ) ) {
 				if ( '' != $bws_license_key ) { 
 					if ( strlen( $bws_license_key ) != 18 ) {
 						$error = __( "Wrong license key", 'user_role' );
 					} else {
-						$bws_license_plugin = trim( $_POST['bws_license_plugin'] );	
+						$bws_license_plugin = stripslashes( esc_html( $_POST['bws_license_plugin'] ) );
 						if ( isset( $bstwbsftwppdtplgns_options['go_pro'][ $bws_license_plugin ]['count'] ) && $bstwbsftwppdtplgns_options['go_pro'][ $bws_license_plugin ]['time'] < ( time() + (24 * 60 * 60) ) ) {
 							$bstwbsftwppdtplgns_options['go_pro'][ $bws_license_plugin ]['count'] = $bstwbsftwppdtplgns_options['go_pro'][ $bws_license_plugin ]['count'] + 1;
 						} else {
@@ -1051,7 +1051,7 @@ if ( ! function_exists( 'srrl_main_page' ) ) {
 							$bstwbsftwppdtplgns_options['go_pro']['user-role-pro/user-role-pro.php']['time'] < ( time() + ( 24 * 60 * 60 ) ) ) { ?>
 							<p>
 								<input disabled="disabled" type="text" name="bws_license_key" value="<?php echo $bws_license_key; ?>" />
-								<input disabled="disabled" type="submit" class="button-primary" value="<?php _e( 'Go!', 'user_role' ); ?>" />
+								<input disabled="disabled" type="submit" class="button-primary" value="<?php _e( 'Activate', 'user_role' ); ?>" />
 							</p>
 							<p>
 								<?php _e( "Unfortunately, you have exceeded the number of available tries per day. Please, upload the plugin manually.", 'user_role' ); ?>
@@ -1061,7 +1061,7 @@ if ( ! function_exists( 'srrl_main_page' ) ) {
 								<input type="text" name="bws_license_key" value="<?php echo $bws_license_key; ?>" />
 								<input type="hidden" name="bws_license_plugin" value="user-role-pro/user-role-pro.php" />
 								<input type="hidden" name="bws_license_submit" value="submit" />
-								<input type="submit" class="button-primary" value="<?php _e( 'Go!', 'user_role' ); ?>" />
+								<input type="submit" class="button-primary" value="<?php _e( 'Activate', 'user_role' ); ?>" />
 								<?php wp_nonce_field( plugin_basename(__FILE__), 'bws_license_nonce_name' ); ?>
 							</p>
 						<?php } ?>
@@ -1129,6 +1129,7 @@ if ( ! function_exists ( 'srrl_plugin_banner' ) ) {
 		if ( 'plugins.php' == $hook_suffix ) { 
 			global $bstwbsftwppdtplgns_cookie_add, $srrl_plugin_info;	  
 			$banner_array = array(
+				array( 'lmtttmpts_hide_banner_on_plugin_page', 'limit-attempts/limit-attempts.php', '1.0.2' ),
 				array( 'sndr_hide_banner_on_plugin_page', 'sender/sender.php', '0.5' ),
 				array( 'srrl_hide_banner_on_plugin_page', 'user-role/user-role.php', '1.4' ),
 				array( 'pdtr_hide_banner_on_plugin_page', 'updater/updater.php', '1.12' ),
@@ -1144,7 +1145,7 @@ if ( ! function_exists ( 'srrl_plugin_banner' ) ) {
 				array( 'cntctfrm_for_ctfrmtdb_hide_banner_on_plugin_page', 'contact-form-plugin/contact_form.php', '3.62' ),
 				array( 'cntctfrm_hide_banner_on_plugin_page', 'contact-form-plugin/contact_form.php', '3.47' ),	
 				array( 'cptch_hide_banner_on_plugin_page', 'captcha/captcha.php', '3.8.4' ),
-				array( 'gllr_hide_banner_on_plugin_page', 'gallery-plugin/gallery-plugin.php', '3.9.1' )				
+				array( 'gllr_hide_banner_on_plugin_page', 'gallery-plugin/gallery-plugin.php', '3.9.1' )			
 			);
 			if ( ! $srrl_plugin_info )
 				$srrl_plugin_info = get_plugin_data( __FILE__ );	
