@@ -4,7 +4,7 @@ Plugin Name: User Role
 Plugin URI: http://bestwebsoft.com/plugin/
 Description: The plugin allows to change wordpress user role capabilities.
 Author: BestWebSoft
-Version: 1.4.2
+Version: 1.4.3
 Author URI: http://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -72,8 +72,8 @@ if ( ! function_exists( 'srrl_add_pages' ) ) {
 			$bstwbsftwppdtplgns_added_menu = true;
 		}
 
-		add_menu_page( 'BWS Plugins', 'BWS Plugins', 'manage_options', 'bws_plugins', 'bws_add_menu_render', plugins_url( "images/px.png", __FILE__ ), 1001 );
-		add_submenu_page( 'bws_plugins', __( 'User Role', 'user_role' ), __( 'User Role', 'user_role' ), 'manage_options', "user-role.php", 'srrl_main_page' );
+		add_menu_page( 'BWS Plugins', 'BWS Plugins', 'administrator', 'bws_plugins', 'bws_add_menu_render', plugins_url( "images/px.png", __FILE__ ), 1001 );
+		add_submenu_page( 'bws_plugins', __( 'User Role', 'user_role' ), __( 'User Role', 'user_role' ), 'administrator', "user-role.php", 'srrl_main_page' );
 	}
 }
 
@@ -158,7 +158,7 @@ if ( ! function_exists( 'srrl_save') ) {
 		$check = array();
 		$srrl_groups = srrl_array_on_groups();
 		$role_name = $_POST['srrl_select_role'];
-		if ( isset( $_GET['action'] ) && $_GET['action'] == 'interface2' || 'v2' == get_option( 'srrl_interface_version' ) )  {
+		if ( ( isset( $_GET['action'] ) && $_GET['action'] == 'interface2' ) || ( false != stripos( $_SERVER['HTTP_REFERER'], 'wp-admin/network/' ) && 'v2' == get_option( 'srrl_interface_version' ) ) ) {
 			switch_to_blog( '1' );
 			$check = array();
 			foreach ( $srrl_groups as $key => $value ) {
@@ -223,9 +223,9 @@ if ( ! function_exists( 'srrl_repair' ) ) {
 /* Groups capabilities into the groups */
 if ( ! function_exists( 'srrl_array_on_groups' ) ) {
 	function srrl_array_on_groups() {
-		global $srrl_var, $srrl_dict_action, $srrl_roles ;
+		global $srrl_var, $srrl_dict_action, $srrl_roles_for_template;
 		srrl_receive_roles();
-		$roles 				= $srrl_roles;
+		$roles 				= $srrl_roles_for_template;
 		$srrl_var			= array_keys( $roles['administrator']['capabilities'] );
 		$srrl_dict_action 	= srrl_action();
 		$srrl_roles_action	= array( 'other function' => array() );
@@ -247,11 +247,26 @@ if ( ! function_exists( 'srrl_array_on_groups' ) ) {
 /* Forms the role capabilities */
 if ( ! function_exists( 'srrl_receive_roles' ) ) {
 	function srrl_receive_roles() {
-		global $wp_roles, $srrl_roles;
+		global $wp_roles, $srrl_roles, $srrl_roles_for_template;
 		if ( ! isset( $wp_roles ) ) {
 			$wp_roles = new WP_Roles();
 		}
-		$srrl_roles = $wp_roles->roles;
+		if ( is_multisite() ) {
+			$srrl_roles_backup = get_site_option( 'srrl_backup_option_capabilities' );
+		} else {
+			$srrl_roles_backup = get_option( 'srrl_backup_option_capabilities' );
+		}		
+		$srrl_roles_for_template = $srrl_roles = $wp_roles->roles;
+		if ( ! empty( $srrl_roles_backup ) ) {
+			/* add capabilities from backup*/
+			foreach ( $srrl_roles_backup['administrator']['capabilities'] as $cap_name => $cap_value ) {
+				if ( ! array_key_exists( $cap_name, $srrl_roles_for_template['administrator']['capabilities'] ) ) {
+					$srrl_roles_for_template['administrator']['capabilities'][ $cap_name ] = $cap_value;
+				}
+			}
+		}
+		/* sort capabilities alphabeticly */
+		ksort( $srrl_roles_for_template['administrator']['capabilities'] );
 	}
 }
 
@@ -524,7 +539,7 @@ if ( ! function_exists( 'srrl_print_messages' ) ) {
 /* Prints cap/site matrix on interface v2 */
 if ( ! function_exists( 'srrl_print_matrix' ) ) {
 	function srrl_print_matrix() {
-		global $srrl_defaultrole, $wpdb, $srrl_roles;
+		global $srrl_defaultrole, $wpdb, $srrl_roles, $srrl_roles_for_template;
 
 		/* Strings for jQuery Ui Title in checkboxes and main variables */
 		$cap_title 				= __( 'Capability:', 'user_role' ) . ' ';
@@ -539,11 +554,13 @@ if ( ! function_exists( 'srrl_print_matrix' ) ) {
 		echo '<input class="hidden" type="text" name="srrl_blog" value="1"/>';
 		$role 					= $srrl_roles;
 		$global_array['1'] 		= $role;
-		$global_roles_array['1'] = array_keys( $role );
+		
+		krsort( $srrl_roles_for_template['administrator']['capabilities'] );
+		$global_roles_array['1'] = $srrl_roles_for_template;
 
 		/* Create array of all privilegies from all sites of the network. srrl_get_roles was not good in this case */
 		$all_privilegies = array();
-		foreach ( $global_array as $site_id ) {
+		foreach ( $global_roles_array as $site_id ) {
 			$roles = array_keys( $site_id );
 			foreach ( $roles as $id ) {
 				$role_and_caps = $site_id[ $id ];
@@ -724,7 +741,7 @@ if ( ! function_exists( 'srrl_print_matrix' ) ) {
 					</td>
 					<td id="srrl_matrix_cell" class="bws_pro_version" style="border-color: #E1E1E1;" title="<?php _e( 'This setting is available in Pro version', 'user_role' ); ?>">
 						<input disabled="disabled" type="checkbox" name="pro_setting[]" value=""/>
-					</td>					
+					</td>
 				</tr>
 				<tr class="srrl_other_actions" id="srrl_other_actions">
 					<td class="srrl_role_column">
@@ -875,7 +892,7 @@ if ( ! function_exists( 'srrl_main_page' ) ) {
 		}
 		$srrl_http_referer 	= $_SERVER['HTTP_REFERER'];
 		$srrl_true 			= stripos( $srrl_http_referer, 'wp-admin/network/' );
-		if ( ! current_user_can( 'manage_options' ) )  {
+		if ( ! current_user_can( 'administrator' ) )  {
 			wp_die( __( 'You do not have sufficient permissions to access this page.', 'user_role' ) );
 		}
 
@@ -1207,8 +1224,30 @@ if ( ! function_exists ( 'srrl_plugin_banner' ) ) {
 /* Plugin delete options */
 if ( ! function_exists ( 'srrl_delete_options' ) ) {
 	function srrl_delete_options() {
+		global $wpdb;
+		if ( ! function_exists( 'is_plugin_active_for_network' ) )
+			require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
+		$active_plugins	= get_option( 'active_plugins' );
+		/* recover all caps to the ones in the backup if no PRO version*/
+		if ( ! ( in_array( 'user-role-pro/user-role-pro.php', $active_plugins ) || is_plugin_active_for_network( 'user-role-pro/user-role-pro.php' ) ) ) {			
+			if ( is_multisite() ) {
+				$srrl_repair_roles = get_site_option( 'srrl_backup_option_capabilities' );
+				if ( is_array( $srrl_repair_roles ) && ! empty( $srrl_repair_roles ) ) {
+					switch_to_blog( '1' );
+					update_option( $wpdb->prefix . 'user_roles', $srrl_repair_roles );
+				}
+			} else {
+				$srrl_repair_roles = get_option( 'srrl_backup_option_capabilities' );
+				if ( is_array( $srrl_repair_roles ) && ! empty( $srrl_repair_roles ) ) {
+					update_option( $wpdb->prefix . 'user_roles', $srrl_repair_roles );
+				}
+			}
+		} 
+		/* delete backup options after recover */
 		delete_option( 'srrl_backup_option_capabilities' );
 		delete_site_option( 'srrl_backup_option_capabilities' );
+		/* delete option of interface version */
+		delete_option( 'srrl_interface_version' );
 	}
 }
 

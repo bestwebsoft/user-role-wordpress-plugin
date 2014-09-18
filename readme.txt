@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=1&product_id=94
 Tags: access, button, capability, change capabilities, confirmation dialogue, editor, groups, permission, recover, recover button, recover capabilites button, recover role capabilities, reset, reset settings, reset role capabilites, restore role capabilties, restore settings, role, role capabilitites, role capabilities groups, security, settings, user, uzer, user role, user rol, uzer rol, user role plugin
 Requires at least: 3.6
-Tested up to: 4.0-beta3
-Stable tag: 1.4.2
+Tested up to: 4.0
+Stable tag: 1.4.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -90,6 +90,11 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 
 == Changelog ==
 
+= V1.4.3 - 17.09.2014 =
+* Bugfix : Bug with disappearing of capabilities from the list was fixed.
+* Bugfix : When plugin is deleted the roles are restored to the capabilities that were before the plugin was installed.
+* Update : We updated all functionality for wordpress 4.0.
+
 = V1.4.2 - 08.08.2014 =
 * Update : We updated all functionality for wordpress 4.0-beta3.
 * Budfix : The bug with breaking words is fixed.
@@ -122,6 +127,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * NEW : Css-style was added for Internet Explorer 10.
 
 == Upgrade Notice ==
+
+= V1.4.3 =
+Bug with disappearing of capabilities from the list was fixed. When plugin is deleted the roles are restored to the capabilities that were before the plugin was installed. We updated all functionality for wordpress 4.0.
 
 = V1.4.2 =
 We updated all functionality for wordpress 4.0-beta3. The bug with breaking words is fixed. Security Exploit was fixed.

@@ -2,21 +2,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: user-role\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-08 09:50+0300\n"
+"POT-Creation-Date: 2014-09-17 17:31+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: bestwebsoft.com <plugins@bestwebsoft.com>\n"
 "Language-Team: bestwebsoft.com <plugin@bestwebsoft.com>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: ..\n"
+"X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: user-role.php:76
-#: user-role.php:994
+#: user-role.php:76 user-role.php:1011
 msgid "User Role"
 msgstr "User Role"
 
@@ -25,8 +24,12 @@ msgid "requires"
 msgstr "требует"
 
 #: user-role.php:111
-msgid "or higher, that is why it has been deactivated! Please upgrade WordPress and try again."
-msgstr "или выше, поэтому плагин был деактивирован! Пожалуйста,  обновите WordPress и повторите попытку"
+msgid ""
+"or higher, that is why it has been deactivated! Please upgrade WordPress and "
+"try again."
+msgstr ""
+"или выше, поэтому плагин был деактивирован! Пожалуйста,  обновите WordPress "
+"и повторите попытку"
 
 #: user-role.php:111
 msgid "Back to the WordPress"
@@ -36,280 +39,286 @@ msgstr "Назад к WordPress"
 msgid "Plugins page"
 msgstr "Страница плагинов"
 
-#: user-role.php:306
+#: user-role.php:321
 msgid "Notice:"
 msgstr "Внимание:"
 
-#: user-role.php:306
-#: user-role.php:406
-msgid "The plugin's settings have been changed. In order to save them please don't forget to click the 'Save Changes' button."
-msgstr "Настройки плагина изменились. Чтобы сохранить их, не забудьте нажать на кнопку \"Сохранить Изменения\""
+#: user-role.php:321 user-role.php:421
+msgid ""
+"The plugin's settings have been changed. In order to save them please don't "
+"forget to click the 'Save Changes' button."
+msgstr ""
+"Настройки плагина изменились. Чтобы сохранить их, не забудьте нажать на "
+"кнопку \"Сохранить Изменения\""
 
-#: user-role.php:315
-#: user-role.php:416
+#: user-role.php:330 user-role.php:431
 msgid "Select Role:"
 msgstr "Выбрать Роль:"
 
-#: user-role.php:318
-#: user-role.php:419
+#: user-role.php:333 user-role.php:434
 msgid "Are you sure you want to recover settings by default?"
 msgstr "Вы уверены, что хотите восстановить настройки по умолчанию?"
 
-#: user-role.php:325
-#: user-role.php:426
+#: user-role.php:340 user-role.php:441
 msgid "Show"
 msgstr "Показать"
 
-#: user-role.php:331
-#: user-role.php:432
+#: user-role.php:346 user-role.php:447
 msgid "Recover:"
 msgstr "Восстановить:"
 
-#: user-role.php:335
-#: user-role.php:436
+#: user-role.php:350 user-role.php:451
 msgid "Chosen role"
 msgstr "Выбранную роль"
 
-#: user-role.php:336
-#: user-role.php:437
+#: user-role.php:351 user-role.php:452
 msgid "All roles"
 msgstr "Все роли"
 
-#: user-role.php:342
-#: user-role.php:443
+#: user-role.php:357 user-role.php:458
 msgid "Recover"
 msgstr "Восстановить"
 
-#: user-role.php:352
-#: user-role.php:452
+#: user-role.php:367 user-role.php:467
 msgid "Display the list of permissions for:"
 msgstr "Отображение привилегий для:"
 
-#: user-role.php:358
-#: user-role.php:458
-#: user-role.php:823
+#: user-role.php:373 user-role.php:473 user-role.php:840
 msgid "Select all"
 msgstr "Выбрать всё"
 
-#: user-role.php:361
-#: user-role.php:461
+#: user-role.php:376 user-role.php:476
 msgid "Select none"
 msgstr "Снять выделение"
 
-#: user-role.php:371
-#: user-role.php:467
-#: user-role.php:479
+#: user-role.php:386 user-role.php:482 user-role.php:494
 msgid "Save Changes"
 msgstr "Сохранить Изменения"
 
-#: user-role.php:380
-#: user-role.php:491
+#: user-role.php:395 user-role.php:506
 msgid "If you enjoy our plugin, please give it 5 stars on WordPress"
-msgstr "Если вам нравится наш плагин, пожалуйста, поставьте 5 звёзд на WordPress"
+msgstr ""
+"Если вам нравится наш плагин, пожалуйста, поставьте 5 звёзд на WordPress"
 
-#: user-role.php:381
-#: user-role.php:492
+#: user-role.php:396 user-role.php:507
 msgid "Rate the plugin"
 msgstr "Оцените плагин"
 
-#: user-role.php:384
-#: user-role.php:495
+#: user-role.php:399 user-role.php:510
 msgid "If there is something wrong about it, please contact us"
 msgstr "Если что-то не так, пожалуйста, свяжитесь с нами"
 
-#: user-role.php:406
+#: user-role.php:421
 msgid "Notice: "
 msgstr "Внимание: "
 
-#: user-role.php:508
+#: user-role.php:523
 msgid "The changes has been saved"
 msgstr "Изменения сохранены"
 
-#: user-role.php:513
+#: user-role.php:528
 msgid "The settings have been restored for current role"
 msgstr "Настройки были восстановлены для выбранной роли"
 
-#: user-role.php:517
+#: user-role.php:532
 msgid "The settings have been restored for all roles"
 msgstr "Настройки были восстановлены для всех ролей"
 
-#: user-role.php:530
+#: user-role.php:545
 msgid "Capability:"
 msgstr "Привилегия:"
 
-#: user-role.php:531
+#: user-role.php:546
 msgid "Group capabilities"
 msgstr "Привилегии группы"
 
-#: user-role.php:532
+#: user-role.php:547
 msgid "For site:"
 msgstr "Для сайта:"
 
-#: user-role.php:559
+#: user-role.php:576
 msgid "Capabitity\\Site"
 msgstr "Привилегия\\Сайт"
 
-#: user-role.php:588
-#: user-role.php:604
-#: user-role.php:678
-#: user-role.php:681
-#: user-role.php:699
-#: user-role.php:702
-#: user-role.php:722
-#: user-role.php:725
-#: user-role.php:747
-#: user-role.php:750
+#: user-role.php:605 user-role.php:621 user-role.php:695 user-role.php:698
+#: user-role.php:716 user-role.php:719 user-role.php:739 user-role.php:742
+#: user-role.php:764 user-role.php:767
 msgid "This setting is available in Pro version"
 msgstr "Эти настройки доступны в Pro версии"
 
-#: user-role.php:671
+#: user-role.php:688
 msgid "Capabilities category: "
 msgstr "Категория привилегий: "
 
-#: user-role.php:716
+#: user-role.php:733
 msgid "Capabilities without category"
 msgstr "Привилегии без категории"
 
-#: user-role.php:775
-#: user-role.php:783
+#: user-role.php:792 user-role.php:800
 msgid "Action with "
 msgstr "Действия с "
 
-#: user-role.php:812
+#: user-role.php:829
 msgid "Changes will be applied to the site:"
 msgstr "Изменения применятся для выбраных блогов:"
 
-#: user-role.php:817
+#: user-role.php:834
 msgid "Changes will be applied to the selected blogs:"
 msgstr "Изменения применятся для выбраных блогов:"
 
-#: user-role.php:849
+#: user-role.php:866
 msgid "Unlock premium options by upgrading to a PRO version."
 msgstr "Активируйте премиум опции обновившись до PRO версии"
 
-#: user-role.php:850
-#: user-role.php:1186
+#: user-role.php:867 user-role.php:1203
 msgid "Learn More"
 msgstr "Подробнее"
 
-#: user-role.php:853
+#: user-role.php:870
 msgid "Go"
 msgstr "Перейти"
 
-#: user-role.php:879
+#: user-role.php:896
 msgid "You do not have sufficient permissions to access this page."
 msgstr "У вас недостаточно прав для доступа к этой странице"
 
-#: user-role.php:890
-#: user-role.php:929
+#: user-role.php:907 user-role.php:946
 msgid "Wrong license key"
 msgstr "Неправильный лицензионный ключ"
 
-#: user-role.php:922
-msgid "Something went wrong. Try again later. If the error will appear again, please, contact us <a href=http://support.bestwebsoft.com>BestWebSoft</a>. We are sorry for inconvenience."
-msgstr "Что-то пошло не так. Повторите попытку позже. Если ошибка появится снова, пожалуйста, свяжитесь с нами <a href=http://support.bestwebsoft.com>BestWebSoft</a>. Приносим извинения за неудобства."
+#: user-role.php:939
+msgid ""
+"Something went wrong. Try again later. If the error will appear again, "
+"please, contact us <a href=http://support.bestwebsoft.com>BestWebSoft</a>. "
+"We are sorry for inconvenience."
+msgstr ""
+"Что-то пошло не так. Повторите попытку позже. Если ошибка появится снова, "
+"пожалуйста, свяжитесь с нами <a href=http://support.bestwebsoft."
+"com>BestWebSoft</a>. Приносим извинения за неудобства."
 
-#: user-role.php:931
+#: user-role.php:948
 msgid "This license key is bind to another site"
 msgstr "Этот лицензионный ключ привязан к другому сайту"
 
-#: user-role.php:933
-#: user-role.php:1057
-msgid "Unfortunately, you have exceeded the number of available tries per day. Please, upload the plugin manually."
-msgstr "К сожалению, вы превысили количество доступных попыток в день. Пожалуйста, загрузите плагин вручную."
+#: user-role.php:950 user-role.php:1074
+msgid ""
+"Unfortunately, you have exceeded the number of available tries per day. "
+"Please, upload the plugin manually."
+msgstr ""
+"К сожалению, вы превысили количество доступных попыток в день. Пожалуйста, "
+"загрузите плагин вручную."
 
-#: user-role.php:950
+#: user-role.php:967
 msgid "Failed to open the zip archive. Please, upload the plugin manually"
 msgstr "Не удалось открыть архив ZIP. Пожалуйста, загрузите плагин вручную"
 
-#: user-role.php:956
-msgid "Your server does not support either ZipArchive or Phar. Please, upload the plugin manually"
-msgstr "Ваш сервер не поддерживает ни библиотеку ZipArchive, ни библиотеку Phar. Пожалуйста, загрузите плагин вручную"
-
-#: user-role.php:960
-#: user-role.php:969
-msgid "Failed to download the zip archive. Please, upload the plugin manually"
-msgstr "Не удалось загрузить архив плагина. Пожалуйста, загрузите плагин вручную"
-
 #: user-role.php:973
-msgid "Something went wrong. Try again later or upload the plugin manually. We are sorry for inconvienience."
-msgstr "Что-то пошло не так. Повторите попытку позже или загрузите плагин вручную. Приносим извинения за неудобства."
+msgid ""
+"Your server does not support either ZipArchive or Phar. Please, upload the "
+"plugin manually"
+msgstr ""
+"Ваш сервер не поддерживает ни библиотеку ZipArchive, ни библиотеку Phar. "
+"Пожалуйста, загрузите плагин вручную"
 
-#: user-role.php:988
+#: user-role.php:977 user-role.php:986
+msgid "Failed to download the zip archive. Please, upload the plugin manually"
+msgstr ""
+"Не удалось загрузить архив плагина. Пожалуйста, загрузите плагин вручную"
+
+#: user-role.php:990
+msgid ""
+"Something went wrong. Try again later or upload the plugin manually. We are "
+"sorry for inconvienience."
+msgstr ""
+"Что-то пошло не так. Повторите попытку позже или загрузите плагин вручную. "
+"Приносим извинения за неудобства."
+
+#: user-role.php:1005
 msgid "Please, enter Your license key"
 msgstr "Пожалуйста, введите Ваш лицензионный ключ"
 
-#: user-role.php:996
-#: user-role.php:1106
-#: user-role.php:1118
+#: user-role.php:1013 user-role.php:1123 user-role.php:1135
 msgid "Settings"
 msgstr "Настройки"
 
-#: user-role.php:997
-#: user-role.php:1119
+#: user-role.php:1014 user-role.php:1136
 msgid "FAQ"
 msgstr "Часто задаваемые вопросы"
 
-#: user-role.php:998
+#: user-role.php:1015
 msgid "Go PRO"
 msgstr "Перейти на PRO версию"
 
-#: user-role.php:1007
+#: user-role.php:1024
 msgid "Table View"
 msgstr "Табличное представление"
 
-#: user-role.php:1009
+#: user-role.php:1026
 msgid "Flat View"
 msgstr "Просмотр списком"
 
-#: user-role.php:1032
-msgid "Congratulations! The PRO version of the plugin is successfully download and activated."
+#: user-role.php:1049
+msgid ""
+"Congratulations! The PRO version of the plugin is successfully download and "
+"activated."
 msgstr "Поздравляем! PRO версия плагина была успешно загружена и активирована."
 
-#: user-role.php:1034
+#: user-role.php:1051
 msgid "Please, go to"
 msgstr "Пожалуйста, перейдите на"
 
-#: user-role.php:1034
+#: user-role.php:1051
 msgid "the setting page"
 msgstr "страницу настроек"
 
-#: user-role.php:1035
+#: user-role.php:1052
 msgid "You will be redirected automatically in 5 seconds."
 msgstr "Вы будете перенаправлены автоматически через 5 секунд."
 
-#: user-role.php:1040
+#: user-role.php:1057
 msgid "You can download and activate"
 msgstr "Вы можете скачать и активировать"
 
-#: user-role.php:1042
+#: user-role.php:1059
 msgid "version of this plugin by entering Your license key."
 msgstr "версию этого плагина, введя ваш лицензионный ключ."
 
-#: user-role.php:1044
-msgid "You can find your license key on your personal page Client area, by clicking on the link"
-msgstr "Вы можете найти ваш лицензионный ключ на вашей личной странице Client area, нажав на ссылку"
+#: user-role.php:1061
+msgid ""
+"You can find your license key on your personal page Client area, by clicking "
+"on the link"
+msgstr ""
+"Вы можете найти ваш лицензионный ключ на вашей личной странице Client area, "
+"нажав на ссылку"
 
-#: user-role.php:1046
+#: user-role.php:1063
 msgid "(your username is the email you specify when purchasing the product)."
-msgstr "(ваше имя пользователя - это электронный адрес, указанный при покупке продукта)."
+msgstr ""
+"(ваше имя пользователя - это электронный адрес, указанный при покупке "
+"продукта)."
 
-#: user-role.php:1054
-#: user-role.php:1064
-msgid "Go!"
-msgstr "Перейти!"
+#: user-role.php:1071 user-role.php:1081
+msgid "Activate"
+msgstr "Активировать"
 
-#: user-role.php:1120
+#: user-role.php:1137
 msgid "Support"
 msgstr "Поддержка"
 
-#: user-role.php:1189
-msgid "It’s time to upgrade your <strong>User Role plugin</strong> to <strong>PRO</strong> version!"
-msgstr "Настало время обновить ваш <strong>плагин User Role</strong> до <strong>PRO</strong> версии!"
+#: user-role.php:1206
+msgid ""
+"It’s time to upgrade your <strong>User Role plugin</strong> to <strong>PRO</"
+"strong> version!"
+msgstr ""
+"Настало время обновить ваш <strong>плагин User Role</strong> до <strong>PRO</"
+"strong> версии!"
 
-#: user-role.php:1190
+#: user-role.php:1207
 msgid "Extend standard plugin functionality with new great options"
 msgstr "Расширение стандартного функционала плагина новыми опциями"
+
+#~ msgid "Go!"
+#~ msgstr "Перейти!"
 
 #~ msgid "From site "
 #~ msgstr "Сайта "
