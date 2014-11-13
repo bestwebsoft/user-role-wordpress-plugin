@@ -1,10 +1,10 @@
 <?php
 /*
 Plugin Name: User Role
-Plugin URI: http://bestwebsoft.com/plugin/
+Plugin URI: http://bestwebsoft.com/products/
 Description: The plugin allows to change wordpress user role capabilities.
 Author: BestWebSoft
-Version: 1.4.3
+Version: 1.4.4
 Author URI: http://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -31,21 +31,15 @@ if ( ! function_exists( 'srrl_add_pages' ) ) {
 		if ( ! is_main_site( $blog_id ) )
 			return;
 
-		global $bstwbsftwppdtplgns_options, $wpmu, $bstwbsftwppdtplgns_added_menu;
+		global $bstwbsftwppdtplgns_options, $bstwbsftwppdtplgns_added_menu;
 		$bws_menu_info = get_plugin_data( plugin_dir_path( __FILE__ ) . "bws_menu/bws_menu.php" );
 		$bws_menu_version = $bws_menu_info["Version"];		
 		$base = plugin_basename( __FILE__ );
 
 		if ( ! isset( $bstwbsftwppdtplgns_options ) ) {
-			if ( 1 == $wpmu ) {
-				if ( ! get_site_option( 'bstwbsftwppdtplgns_options' ) )
-					add_site_option( 'bstwbsftwppdtplgns_options', array(), '', 'yes' );
-				$bstwbsftwppdtplgns_options = get_site_option( 'bstwbsftwppdtplgns_options' );
-			} else {
-				if ( ! get_option( 'bstwbsftwppdtplgns_options' ) )
-					add_option( 'bstwbsftwppdtplgns_options', array(), '', 'yes' );
-				$bstwbsftwppdtplgns_options = get_option( 'bstwbsftwppdtplgns_options' );
-			}
+			if ( ! get_option( 'bstwbsftwppdtplgns_options' ) )
+				add_option( 'bstwbsftwppdtplgns_options', array(), '', 'yes' );
+			$bstwbsftwppdtplgns_options = get_option( 'bstwbsftwppdtplgns_options' );
 		}
 		if ( isset( $bstwbsftwppdtplgns_options['bws_menu_version'] ) ) {
 			$bstwbsftwppdtplgns_options['bws_menu']['version'][ $base ] = $bws_menu_version;
@@ -78,19 +72,26 @@ if ( ! function_exists( 'srrl_add_pages' ) ) {
 }
 
 /* Plugin init function */
+if ( ! function_exists( 'srrl_init' ) ) {
+	function srrl_init() {
+		/* localization */
+		load_plugin_textdomain( 'user_role', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+		/* WP version check function */
+		srrl_version_check();
+	}
+}
+
+/* Plugin init function */
 if ( ! function_exists( 'srrl_admin_init' ) ) {
 	function srrl_admin_init() {
 		global $bws_plugin_info, $srrl_plugin_info;
-		/* localization */
-		load_plugin_textdomain( 'user_role', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 
-		$srrl_plugin_info = get_plugin_data( __FILE__ );
+		if ( ! $srrl_plugin_info )
+			$srrl_plugin_info = get_plugin_data( __FILE__ );
 		
 		if ( ! isset( $bws_plugin_info ) || empty( $bws_plugin_info ) ) {
 			$bws_plugin_info 	= array( 'id' => '132', 'version' => $srrl_plugin_info["Version"] );
 		}		
-
-		srrl_version_check();
 
 		if ( isset( $_REQUEST['page'] ) && 'user-role.php' == $_REQUEST['page'] ) {			
 			srrl_lib();
@@ -106,9 +107,13 @@ if ( ! function_exists ( 'srrl_version_check' ) ) {
 		$require_wp  =	"3.6";
 		$plugin 	 = plugin_basename( __FILE__ );
 		if ( version_compare( $wp_version, $require_wp, "<" ) ) {
+			include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 			if ( is_plugin_active( $plugin ) ) {
 				deactivate_plugins( $plugin );
-				wp_die( "<strong>" . $srrl_plugin_info['Name'] . " </strong> " . __( 'requires', 'user_role' ) . " <strong>WordPress " . $require_wp . "</strong> " . __( 'or higher, that is why it has been deactivated! Please upgrade WordPress and try again.', 'user_role' ) . "<br /><br />" . __( 'Back to the WordPress', 'user_role' ) . " <a href='" . get_admin_url( null, 'plugins.php' ) . "'>" . __( 'Plugins page', 'user_role' ) . "</a>." );
+				$admin_url = ( function_exists( 'get_admin_url' ) ) ? get_admin_url( null, 'plugins.php' ) : esc_url( '/wp-admin/plugins.php' );
+				if ( ! $srrl_plugin_info )
+					$srrl_plugin_info = get_plugin_data( __FILE__, false );
+				wp_die( "<strong>" . $srrl_plugin_info['Name'] . " </strong> " . __( 'requires', 'user_role' ) . " <strong>WordPress " . $require_wp . "</strong> " . __( 'or higher, that is why it has been deactivated! Please upgrade WordPress and try again.', 'user_role' ) . "<br /><br />" . __( 'Back to the WordPress', 'user_role' ) . " <a href='" . $admin_url . "'>" . __( 'Plugins page', 'user_role' ) . "</a>." );
 			}
 		}
 	}
@@ -353,7 +358,7 @@ if ( ! function_exists( 'srrl_render_interface1' ) ) {
 									<input type="hidden" name="srrl_select_role" value="<?php echo $select_role ; ?>" />
 								</td>
 								<td>
-									<button id="srrl_recover" class="button-secondary" name="srrl_recover" type="submit" value="srrl_recover" onclick="return submitter();">
+									<button id="srrl_recover" class="button-secondary" name="srrl_recover" type="submit" value="srrl_recover">
 										<?php _e( 'Recover', 'user_role' ); ?>
 									</button>
 								</td>
@@ -454,7 +459,7 @@ if ( ! function_exists( 'srrl_render_interface2' ) ) {
 										<input type="hidden" name="srrl_select_role" value="<?php echo $select_role ; ?>" />
 									</td>
 									<td>
-										<button id="srrl_recover" class="button-secondary" name="srrl_recover" type="submit" value="srrl_recover" onclick="return submitter();">
+										<button id="srrl_recover" class="button-secondary" name="srrl_recover" type="submit" value="srrl_recover">
 											<?php _e( 'Recover', 'user_role' ); ?>
 										</button>
 									</td>
@@ -864,9 +869,9 @@ if ( ! function_exists( 'srrl_print_blogs' ) ) {
 				<div class="bws_pro_version_tooltip">
 					<div class="bws_info">
 						<?php _e( 'Unlock premium options by upgrading to a PRO version.', 'user_role' ); ?> 
-						<a href="http://bestwebsoft.com/plugin/user-role-pro/?k=0e8fa1e4abf7647412878a5570d4977a&pn=132&v=<?php echo $srrl_plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>" target="_blank" title="User Role Pro Plugin"><?php _e( 'Learn More', 'user_role' ); ?></a>				
+						<a href="http://bestwebsoft.com/products/user-role/?k=0e8fa1e4abf7647412878a5570d4977a&pn=132&v=<?php echo $srrl_plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>" target="_blank" title="User Role Pro Plugin"><?php _e( 'Learn More', 'user_role' ); ?></a>				
 					</div>
-					<a class="bws_button" href="http://bestwebsoft.com/plugin/user-role-pro/?k=0e8fa1e4abf7647412878a5570d4977a&pn=132&v=<?php echo $srrl_plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>#purchase" target="_blank" title="User Role Pro Plugin">
+					<a class="bws_button" href="http://bestwebsoft.com/products/user-role/buy/?k=0e8fa1e4abf7647412878a5570d4977a&pn=132&v=<?php echo $srrl_plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>" target="_blank" title="User Role Pro Plugin">
 						<?php _e( 'Go', 'user_role' ); ?> <strong>PRO</strong>
 					</a>	
 					<div class="clear"></div>					
@@ -898,7 +903,7 @@ if ( ! function_exists( 'srrl_main_page' ) ) {
 
 		/* GO PRO */
 		if ( isset( $_GET['tab-action'] ) && 'go_pro' == $_GET['tab-action'] ) {
-			global $wpmu, $bstwbsftwppdtplgns_options;
+			global $bstwbsftwppdtplgns_options;
 			$bws_license_key = ( isset( $_POST['bws_license_key'] ) ) ? trim( esc_html( $_POST['bws_license_key'] ) ) : "";
 
 			if ( isset( $_POST['bws_license_submit'] ) && check_admin_referer( plugin_basename( __FILE__ ), 'bws_license_nonce_name' ) ) {
@@ -1011,7 +1016,7 @@ if ( ! function_exists( 'srrl_main_page' ) ) {
 			<h2><?php _e( 'User Role', 'user_role' ); ?></h2>
 			<h2 class="nav-tab-wrapper">
 				<a class="nav-tab<?php if ( ! isset( $_GET['tab-action'] ) ) echo ' nav-tab-active'; ?>" href="admin.php?page=user-role.php"><?php _e( 'Settings', 'user_role' ); ?></a>
-				<a class="nav-tab" href="http://bestwebsoft.com/plugin/user-role/#faq" target="_blank"><?php _e( 'FAQ', 'user_role' ); ?></a>
+				<a class="nav-tab" href="http://bestwebsoft.com/products/user-role/faq/" target="_blank"><?php _e( 'FAQ', 'user_role' ); ?></a>
 				<a class="nav-tab bws_go_pro_tab<?php if ( isset( $_GET['tab-action'] ) && 'go_pro' == $_GET['tab-action'] ) echo ' nav-tab-active'; ?>" href="admin.php?page=user-role.php&amp;tab-action=go_pro"><?php _e( 'Go PRO', 'user_role' ); ?></a>
 			</h2>
 			<?php if ( ! isset( $_GET['tab-action'] ) ) {
@@ -1055,7 +1060,7 @@ if ( ! function_exists( 'srrl_main_page' ) ) {
 					<form method="post" action="admin.php?page=user-role.php&amp;tab-action=go_pro">
 						<p>
 							<?php _e( 'You can download and activate', 'user_role' ); ?> 
-							<a href="http://bestwebsoft.com/plugin/user-role-pro/?k=0e8fa1e4abf7647412878a5570d4977a&pn=132&v=<?php echo $srrl_plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>" target="_blank" title="User Role Pro">PRO</a> 
+							<a href="http://bestwebsoft.com/products/user-role/?k=0e8fa1e4abf7647412878a5570d4977a&pn=132&v=<?php echo $srrl_plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>" target="_blank" title="User Role Pro">PRO</a> 
 							<?php _e( 'version of this plugin by entering Your license key.', 'user_role' ); ?><br />
 							<span style="color: #888888;font-size: 10px;">
 								<?php _e( 'You can find your license key on your personal page Client area, by clicking on the link', 'user_role' ); ?> 
@@ -1200,7 +1205,7 @@ if ( ! function_exists ( 'srrl_plugin_banner' ) ) {
 						<div class="srrl_message bws_banner_on_plugin_page" style="display: none;">
 							<img class="close_icon srrl_close_icon" title="" src="<?php echo plugins_url( 'images/close_banner.png', __FILE__ ); ?>" alt=""/>
 							<div class="button_div">
-								<a class="button" target="_blank" href="http://bestwebsoft.com/plugin/user-role-pro/?k=a2f27e2893147873133fe67d81fa274d&pn=132&v=<?php echo $srrl_plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>"><?php _e( 'Learn More', 'user_role' ); ?></a>				
+								<a class="button" target="_blank" href="http://bestwebsoft.com/products/user-role/?k=a2f27e2893147873133fe67d81fa274d&pn=132&v=<?php echo $srrl_plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>"><?php _e( 'Learn More', 'user_role' ); ?></a>				
 							</div>
 							<div class="text"><?php
 								_e( 'It’s time to upgrade your <strong>User Role plugin</strong> to <strong>PRO</strong> version!', 'user_role' ); ?><br />
@@ -1259,6 +1264,7 @@ add_filter( 'plugin_row_meta', 'srrl_register_plugin_links', 10, 2 );
 
 add_action( 'admin_menu', 'srrl_add_pages' );
 add_action( 'network_admin_menu', 'srrl_add_pages' );
+add_action( 'init', 'srrl_init' );
 add_action( 'admin_init', 'srrl_admin_init' );
 
 /* Calling a function add administrative menu. */

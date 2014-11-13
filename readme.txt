@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=1&
 Tags: access, button, capability, change capabilities, confirmation dialogue, editor, groups, permission, recover, recover button, recover capabilites button, recover role capabilities, reset, reset settings, reset role capabilites, restore role capabilties, restore settings, role, role capabilitites, role capabilities groups, security, settings, user, uzer, user role, user rol, uzer rol, user role plugin
 Requires at least: 3.6
 Tested up to: 4.0
-Stable tag: 1.4.3
+Stable tag: 1.4.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -20,7 +20,7 @@ http://www.youtube.com/watch?v=O7OBFHn0_wU
 
 <a href="http://support.bestwebsoft.com" target="_blank">Support</a>
 
-<a href="http://bestwebsoft.com/plugin/user-role-pro/?k=dabe729fc0e7bef82e30dcb21a6cefc3" target="_blank">Upgrade to Pro Version</a>
+<a href="http://bestwebsoft.com/products/user-role/?k=dabe729fc0e7bef82e30dcb21a6cefc3" target="_blank">Upgrade to Pro Version</a>
 
 = Features =
 
@@ -90,6 +90,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 
 == Changelog ==
 
+= V1.4.4 - 13.11.2014 =
+* Bugfix : Plugin optimization is done.
+* Update : BWS plugins section is updated.
+
 = V1.4.3 - 17.09.2014 =
 * Bugfix : Bug with disappearing of capabilities from the list was fixed.
 * Bugfix : When plugin is deleted the roles are restored to the capabilities that were before the plugin was installed.
@@ -127,6 +131,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * NEW : Css-style was added for Internet Explorer 10.
 
 == Upgrade Notice ==
+
+= V1.4.4 =
+Plugin optimization is done. BWS plugins section is updated.
 
 = V1.4.3 =
 Bug with disappearing of capabilities from the list was fixed. When plugin is deleted the roles are restored to the capabilities that were before the plugin was installed. We updated all functionality for wordpress 4.0.
