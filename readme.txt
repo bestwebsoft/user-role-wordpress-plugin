@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=1&product_id=94
 Tags: access, button, capability, change capabilities, confirmation dialogue, editor, groups, permission, recover, recover button, recover capabilites button, recover role capabilities, reset, reset settings, reset role capabilites, restore role capabilties, restore settings, role, role capabilitites, role capabilities groups, security, settings, user, uzer, user role, user rol, uzer rol, user role plugin
 Requires at least: 3.6
-Tested up to: 4.0
-Stable tag: 1.4.4
+Tested up to: 4.1
+Stable tag: 1.4.5
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -90,6 +90,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 
 == Changelog ==
 
+= V1.4.5 - 09.01.2015 =
+* Update : We updated all functionality for wordpress 4.1.
+
 = V1.4.4 - 13.11.2014 =
 * Bugfix : Plugin optimization is done.
 * Update : BWS plugins section is updated.
@@ -131,6 +134,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * NEW : Css-style was added for Internet Explorer 10.
 
 == Upgrade Notice ==
+
+= V1.4.5 =
+We updated all functionality for wordpress 4.1.
 
 = V1.4.4 =
 Plugin optimization is done. BWS plugins section is updated.

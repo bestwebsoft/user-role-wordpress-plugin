@@ -4,12 +4,12 @@ Plugin Name: User Role
 Plugin URI: http://bestwebsoft.com/products/
 Description: The plugin allows to change wordpress user role capabilities.
 Author: BestWebSoft
-Version: 1.4.4
+Version: 1.4.5
 Author URI: http://bestwebsoft.com/
 License: GPLv3 or later
 */
 
-/*  © Copyright 2014  BestWebSoft  ( http://support.bestwebsoft.com )
+/*  © Copyright 2015  BestWebSoft  ( http://support.bestwebsoft.com )
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License, version 2, as
@@ -37,34 +37,47 @@ if ( ! function_exists( 'srrl_add_pages' ) ) {
 		$base = plugin_basename( __FILE__ );
 
 		if ( ! isset( $bstwbsftwppdtplgns_options ) ) {
-			if ( ! get_option( 'bstwbsftwppdtplgns_options' ) )
-				add_option( 'bstwbsftwppdtplgns_options', array(), '', 'yes' );
-			$bstwbsftwppdtplgns_options = get_option( 'bstwbsftwppdtplgns_options' );
-		}
-		if ( isset( $bstwbsftwppdtplgns_options['bws_menu_version'] ) ) {
-			$bstwbsftwppdtplgns_options['bws_menu']['version'][ $base ] = $bws_menu_version;
-			unset( $bstwbsftwppdtplgns_options['bws_menu_version'] );
-			update_option( 'bstwbsftwppdtplgns_options', $bstwbsftwppdtplgns_options, '', 'yes' );
-			require_once( dirname( __FILE__ ) . '/bws_menu/bws_menu.php' );
-		} else if ( ! isset( $bstwbsftwppdtplgns_options['bws_menu']['version'][ $base ] ) || $bstwbsftwppdtplgns_options['bws_menu']['version'][ $base ] < $bws_menu_version ) {
-			$bstwbsftwppdtplgns_options['bws_menu']['version'][ $base ] = $bws_menu_version;
-			update_option( 'bstwbsftwppdtplgns_options', $bstwbsftwppdtplgns_options, '', 'yes' );
-			require_once( dirname( __FILE__ ) . '/bws_menu/bws_menu.php' );
-		} else if ( ! isset( $bstwbsftwppdtplgns_added_menu ) ) {
-			$plugin_with_newer_menu = $base;
-			foreach ( $bstwbsftwppdtplgns_options['bws_menu']['version'] as $key => $value ) {
-				if ( $bws_menu_version < $value && is_plugin_active( $base ) ) {
-					$plugin_with_newer_menu = $key;
-				}
-			}
-			$plugin_with_newer_menu = explode( '/', $plugin_with_newer_menu );
-			$wp_content_dir = defined( 'WP_CONTENT_DIR' ) ? basename( WP_CONTENT_DIR ) : 'wp-content';
-			if ( file_exists( ABSPATH . $wp_content_dir . '/plugins/' . $plugin_with_newer_menu[0] . '/bws_menu/bws_menu.php' ) )
-				require_once( ABSPATH . $wp_content_dir . '/plugins/' . $plugin_with_newer_menu[0] . '/bws_menu/bws_menu.php' );
-			else
-				require_once( dirname( __FILE__ ) . '/bws_menu/bws_menu.php' );
-			$bstwbsftwppdtplgns_added_menu = true;
-		}
+            if ( is_multisite() ) {
+                if ( ! get_site_option( 'bstwbsftwppdtplgns_options' ) )
+                    add_site_option( 'bstwbsftwppdtplgns_options', array(), '', 'yes' );
+                $bstwbsftwppdtplgns_options = get_site_option( 'bstwbsftwppdtplgns_options' );
+            } else {
+                if ( ! get_option( 'bstwbsftwppdtplgns_options' ) )
+                    add_option( 'bstwbsftwppdtplgns_options', array(), '', 'yes' );
+                $bstwbsftwppdtplgns_options = get_option( 'bstwbsftwppdtplgns_options' );
+            }
+        }
+
+        if ( isset( $bstwbsftwppdtplgns_options['bws_menu_version'] ) ) {
+            $bstwbsftwppdtplgns_options['bws_menu']['version'][ $base ] = $bws_menu_version;
+            unset( $bstwbsftwppdtplgns_options['bws_menu_version'] );
+            if ( is_multisite() )
+                update_site_option( 'bstwbsftwppdtplgns_options', $bstwbsftwppdtplgns_options, '', 'yes' );
+            else
+                update_option( 'bstwbsftwppdtplgns_options', $bstwbsftwppdtplgns_options, '', 'yes' );
+            require_once( dirname( __FILE__ ) . '/bws_menu/bws_menu.php' );
+        } else if ( ! isset( $bstwbsftwppdtplgns_options['bws_menu']['version'][ $base ] ) || $bstwbsftwppdtplgns_options['bws_menu']['version'][ $base ] < $bws_menu_version ) {
+            $bstwbsftwppdtplgns_options['bws_menu']['version'][ $base ] = $bws_menu_version;
+            if ( is_multisite() )
+                update_site_option( 'bstwbsftwppdtplgns_options', $bstwbsftwppdtplgns_options, '', 'yes' );
+            else
+                update_option( 'bstwbsftwppdtplgns_options', $bstwbsftwppdtplgns_options, '', 'yes' );
+            require_once( dirname( __FILE__ ) . '/bws_menu/bws_menu.php' );
+        } else if ( ! isset( $bstwbsftwppdtplgns_added_menu ) ) {
+            $plugin_with_newer_menu = $base;
+            foreach ( $bstwbsftwppdtplgns_options['bws_menu']['version'] as $key => $value ) {
+                if ( $bws_menu_version < $value && is_plugin_active( $base ) ) {
+                    $plugin_with_newer_menu = $key;
+                }
+            }
+            $plugin_with_newer_menu = explode( '/', $plugin_with_newer_menu );
+            $wp_content_dir = defined( 'WP_CONTENT_DIR' ) ? basename( WP_CONTENT_DIR ) : 'wp-content';
+            if ( file_exists( ABSPATH . $wp_content_dir . '/plugins/' . $plugin_with_newer_menu[0] . '/bws_menu/bws_menu.php' ) )
+                require_once( ABSPATH . $wp_content_dir . '/plugins/' . $plugin_with_newer_menu[0] . '/bws_menu/bws_menu.php' );
+            else
+                require_once( dirname( __FILE__ ) . '/bws_menu/bws_menu.php' ); 
+            $bstwbsftwppdtplgns_added_menu = true;          
+        }
 
 		add_menu_page( 'BWS Plugins', 'BWS Plugins', 'administrator', 'bws_plugins', 'bws_add_menu_render', plugins_url( "images/px.png", __FILE__ ), 1001 );
 		add_submenu_page( 'bws_plugins', __( 'User Role', 'user_role' ), __( 'User Role', 'user_role' ), 'administrator', "user-role.php", 'srrl_main_page' );
@@ -1004,7 +1017,10 @@ if ( ! function_exists( 'srrl_main_page' ) ) {
 								$pro_plugin_is_activated = true;
 							}						
 						}
-						update_option( 'bstwbsftwppdtplgns_options', $bstwbsftwppdtplgns_options, '', 'yes' );
+						if ( is_multisite() )
+			                update_site_option( 'bstwbsftwppdtplgns_options', $bstwbsftwppdtplgns_options, '', 'yes' );
+			            else
+			                update_option( 'bstwbsftwppdtplgns_options', $bstwbsftwppdtplgns_options, '', 'yes' );
 			 		}
 			 	} else {
 		 			$error = __( "Please, enter Your license key", 'user_role' );
