@@ -187,10 +187,15 @@ div.srrl_rotate > input {
 	margin: 8px 10px 3px 0;
 	padding: 4px 0;
 }
-.srrl_select_role {
+.srrl_select_role table {
 	width: 380px;
 }
+.srrl_select_role table th{
+	width: 28%;
+	max-width: 200px;
+}
 .button_recover,
+.button_reset,
 #srrl_roles {
 	width: 160px !important;
 }

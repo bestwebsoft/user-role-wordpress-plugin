@@ -1,10 +1,10 @@
-=== User Role ===
+=== User Role by BestWebSoft ===
 Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=1&product_id=94
 Tags: access, button, capability, change capabilities, confirmation dialogue, editor, groups, permission, recover, recover button, recover capabilites button, recover role capabilities, reset, reset settings, reset role capabilites, restore role capabilties, restore settings, role, role capabilitites, role capabilities groups, security, settings, user, uzer, user role, user rol, uzer rol, user role plugin
 Requires at least: 3.6
-Tested up to: 4.1
-Stable tag: 1.4.5
+Tested up to: 4.1.1
+Stable tag: 1.4.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -17,7 +17,6 @@ The User Role plugin allows you to change wordpress role capabilities. It is a v
 http://www.youtube.com/watch?v=O7OBFHn0_wU
 
 <a href="http://wordpress.org/plugins/user-role/faq/" target="_blank">FAQ</a>
-
 <a href="http://support.bestwebsoft.com" target="_blank">Support</a>
 
 <a href="http://bestwebsoft.com/products/user-role/?k=dabe729fc0e7bef82e30dcb21a6cefc3" target="_blank">Upgrade to Pro Version</a>
@@ -48,6 +47,8 @@ We can fix some things for free for the users who provide translation of our plu
 1. Deactivate the plugin if you have the previous version installed.
 2. Extract "user-role.zip" archive content to the "/wp-content/plugins/user-role" directory.
 3. Activate "user-role" plugin via 'Plugins' menu in WordPress admin menu.
+
+<a href="https://docs.google.com/document/d/1uEr5TxEhupny3p6luzUNF1a6rNXes24359HkEGREtV4/edit" target="_blank">View a Step-by-step Instruction on User Role Installation</a>.
 
 == Frequently Asked Questions ==
 
@@ -89,6 +90,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 4. Plugin table view in WordPress Multisite network admin panel with capabilitie tooltip.
 
 == Changelog ==
+
+= V1.4.6 - 27.03.2015 =
+* Update : BWS plugins section is updated.
+* Update : We updated all functionality for wordpress 4.1.1
 
 = V1.4.5 - 09.01.2015 =
 * Update : We updated all functionality for wordpress 4.1.
@@ -134,6 +139,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * NEW : Css-style was added for Internet Explorer 10.
 
 == Upgrade Notice ==
+
+= V1.4.6 =
+We updated all functionality for wordpress 4.1.1. BWS plugins section is updated.
+
 
 = V1.4.5 =
 We updated all functionality for wordpress 4.1.

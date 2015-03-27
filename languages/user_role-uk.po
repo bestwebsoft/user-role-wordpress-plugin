@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: user-role\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-08 09:51+0300\n"
+"POT-Creation-Date: 2015-03-26 18:22+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: bestwebsoft.com <plugins@bestwebsoft.com>\n"
 "Language-Team: bestwebsoft.com <plugin@bestwebsoft.com>\n"
@@ -15,301 +15,244 @@ msgstr ""
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: user-role.php:76
-#: user-role.php:994
-msgid "User Role"
-msgstr "User Role"
-
-#: user-role.php:111
-msgid "requires"
-msgstr "потребує "
-
-#: user-role.php:111
-msgid "or higher, that is why it has been deactivated! Please upgrade WordPress and try again."
-msgstr "або вище, ось чому плагін ьуло деактивовано! Будь ласка, оновіть WordPress та спробуйте ще раз."
-
-#: user-role.php:111
-msgid "Back to the WordPress"
-msgstr "Назад до WordPress"
-
-#: user-role.php:111
-msgid "Plugins page"
-msgstr "Сторінка плагінів"
-
-#: user-role.php:306
+#: user-role.php:280
 msgid "Notice:"
 msgstr "Попередження:"
 
-#: user-role.php:306
-#: user-role.php:406
+#: user-role.php:280
+#: user-role.php:414
 msgid "The plugin's settings have been changed. In order to save them please don't forget to click the 'Save Changes' button."
 msgstr "Налаштування плагіну було змінено. Щоб зберегти їх, не забудьте натиснути кнопку \"Зберегти зміни\""
 
-#: user-role.php:315
-#: user-role.php:416
+#: user-role.php:289
+#: user-role.php:424
 msgid "Select Role:"
 msgstr "Обрати Роль:"
 
-#: user-role.php:318
-#: user-role.php:419
+#: user-role.php:292
+#: user-role.php:427
 msgid "Are you sure you want to recover settings by default?"
 msgstr "Ви упевнені, що хочете відновити стандартні установки?"
 
-#: user-role.php:325
-#: user-role.php:426
+#: user-role.php:299
+#: user-role.php:434
 msgid "Show"
 msgstr "Показати"
 
-#: user-role.php:331
-#: user-role.php:432
+#: user-role.php:305
+#: user-role.php:440
 msgid "Recover:"
 msgstr "Відновити:"
 
-#: user-role.php:335
-#: user-role.php:436
+#: user-role.php:309
+#: user-role.php:331
+#: user-role.php:444
+#: user-role.php:467
 msgid "Chosen role"
 msgstr "Обрану роль"
 
-#: user-role.php:336
-#: user-role.php:437
+#: user-role.php:310
+#: user-role.php:445
 msgid "All roles"
 msgstr "Все роли"
 
-#: user-role.php:342
-#: user-role.php:443
+#: user-role.php:316
+#: user-role.php:451
 msgid "Recover"
 msgstr "Відновити"
 
-#: user-role.php:352
-#: user-role.php:452
+#: user-role.php:328
+#: user-role.php:336
+#: user-role.php:464
+#: user-role.php:472
+msgid "Reset"
+msgstr "Скинути"
+
+#: user-role.php:341
+#: user-role.php:477
+msgid "Add Role:"
+msgstr "Додати роль"
+
+#: user-role.php:346
+#: user-role.php:482
+msgid "Add new role"
+msgstr "Додати нову роль"
+
+#: user-role.php:347
+#: user-role.php:483
+msgid "Add"
+msgstr "Додати"
+
+#: user-role.php:356
+#: user-role.php:492
+#: user-role.php:873
+msgid "Unlock premium options by upgrading to a PRO version."
+msgstr "Активуйте преміум можливості оновившись до PRO версії"
+
+#: user-role.php:357
+#: user-role.php:493
+#: user-role.php:874
+msgid "Learn More"
+msgstr "Дізнатись більше"
+
+#: user-role.php:360
+#: user-role.php:496
+#: user-role.php:877
+msgid "Go"
+msgstr "Перейти на "
+
+#: user-role.php:369
+#: user-role.php:503
 msgid "Display the list of permissions for:"
 msgstr "Відображати список привілей для:"
 
-#: user-role.php:358
-#: user-role.php:458
-#: user-role.php:823
+#: user-role.php:375
+#: user-role.php:507
+#: user-role.php:847
 msgid "Select all"
 msgstr "Обрати усе"
 
-#: user-role.php:361
-#: user-role.php:461
+#: user-role.php:378
+#: user-role.php:510
 msgid "Select none"
 msgstr "Зняти виділення"
 
-#: user-role.php:371
-#: user-role.php:467
-#: user-role.php:479
+#: user-role.php:388
+#: user-role.php:516
+#: user-role.php:528
 msgid "Save Changes"
 msgstr "Зберегти зміни"
 
-#: user-role.php:380
-#: user-role.php:491
-msgid "If you enjoy our plugin, please give it 5 stars on WordPress"
-msgstr "Якщо вам сподобався наш плагін, будь ласка, оцініть його у п’ять зірочок на WordPress"
-
-#: user-role.php:381
-#: user-role.php:492
-msgid "Rate the plugin"
-msgstr "Оцінити плагін"
-
-#: user-role.php:384
-#: user-role.php:495
-msgid "If there is something wrong about it, please contact us"
-msgstr "Якщо у вас виникли певні проблеми, будь ласка, зв’яжіться з нами"
-
-#: user-role.php:406
+#: user-role.php:414
 msgid "Notice: "
 msgstr "Увага: "
 
-#: user-role.php:508
+#: user-role.php:547
 msgid "The changes has been saved"
 msgstr "Налаштування збережені"
 
-#: user-role.php:513
+#: user-role.php:552
 msgid "The settings have been restored for current role"
 msgstr "Налаштування були відновлені для обраної ролі"
 
-#: user-role.php:517
+#: user-role.php:556
 msgid "The settings have been restored for all roles"
 msgstr "Налаштування були відновлені для усіх ролей"
 
-#: user-role.php:530
+#: user-role.php:569
 msgid "Capability:"
 msgstr "Привілея:"
 
-#: user-role.php:531
+#: user-role.php:570
 msgid "Group capabilities"
 msgstr "Привілеї групи"
 
-#: user-role.php:532
+#: user-role.php:571
 msgid "For site:"
 msgstr "Для сайту:"
 
-#: user-role.php:559
+#: user-role.php:600
 msgid "Capabitity\\Site"
 msgstr "Привілея\\Сайт"
 
-#: user-role.php:588
-#: user-role.php:604
-#: user-role.php:678
-#: user-role.php:681
-#: user-role.php:699
-#: user-role.php:702
+#: user-role.php:629
+#: user-role.php:645
+#: user-role.php:719
 #: user-role.php:722
-#: user-role.php:725
-#: user-role.php:747
-#: user-role.php:750
+#: user-role.php:736
+#: user-role.php:739
+#: user-role.php:759
+#: user-role.php:762
+#: user-role.php:775
+#: user-role.php:778
 msgid "This setting is available in Pro version"
-msgstr ""
+msgstr "Ці налаштування доступні в PRO версії"
 
-#: user-role.php:671
+#: user-role.php:712
 msgid "Capabilities category: "
 msgstr "Категорія привілей: "
 
-#: user-role.php:716
+#: user-role.php:753
 msgid "Capabilities without category"
 msgstr "Привілеї без категорії"
 
-#: user-role.php:775
-#: user-role.php:783
-msgid "Action with "
+#: user-role.php:803
+#: user-role.php:811
+msgid "Action with"
 msgstr "Дія з"
 
-#: user-role.php:812
+#: user-role.php:836
 msgid "Changes will be applied to the site:"
 msgstr "Зміни будуть завстосовані для обраних блогів:"
 
-#: user-role.php:817
+#: user-role.php:841
 msgid "Changes will be applied to the selected blogs:"
 msgstr "Зміни будуть завстосовані для обраних блогів:"
 
-#: user-role.php:849
-msgid "Unlock premium options by upgrading to a PRO version."
-msgstr ""
-
-#: user-role.php:850
-#: user-role.php:1186
-msgid "Learn More"
-msgstr ""
-
-#: user-role.php:853
-msgid "Go"
-msgstr ""
-
-#: user-role.php:879
+#: user-role.php:904
 msgid "You do not have sufficient permissions to access this page."
 msgstr "У вас недостатньо прав для доступу до цієї сторінки."
 
-#: user-role.php:890
-#: user-role.php:929
-msgid "Wrong license key"
-msgstr ""
+#: user-role.php:915
+msgid "User Role"
+msgstr "User Role"
 
-#: user-role.php:922
-msgid "Something went wrong. Try again later. If the error will appear again, please, contact us <a href=http://support.bestwebsoft.com>BestWebSoft</a>. We are sorry for inconvenience."
-msgstr ""
-
-#: user-role.php:931
-msgid "This license key is bind to another site"
-msgstr ""
-
-#: user-role.php:933
-#: user-role.php:1057
-msgid "Unfortunately, you have exceeded the number of available tries per day. Please, upload the plugin manually."
-msgstr ""
-
-#: user-role.php:950
-msgid "Failed to open the zip archive. Please, upload the plugin manually"
-msgstr ""
-
-#: user-role.php:956
-msgid "Your server does not support either ZipArchive or Phar. Please, upload the plugin manually"
-msgstr ""
-
-#: user-role.php:960
-#: user-role.php:969
-msgid "Failed to download the zip archive. Please, upload the plugin manually"
-msgstr ""
-
-#: user-role.php:973
-msgid "Something went wrong. Try again later or upload the plugin manually. We are sorry for inconvienience."
-msgstr ""
-
-#: user-role.php:988
-msgid "Please, enter Your license key"
-msgstr ""
-
-#: user-role.php:996
-#: user-role.php:1106
-#: user-role.php:1118
+#: user-role.php:917
+#: user-role.php:986
+#: user-role.php:1000
 msgid "Settings"
 msgstr "Установки"
 
-#: user-role.php:997
-#: user-role.php:1119
+#: user-role.php:918
+#: user-role.php:1001
 msgid "FAQ"
 msgstr "Часті питання"
 
-#: user-role.php:998
+#: user-role.php:919
 msgid "Go PRO"
-msgstr ""
+msgstr "Перейти на PRO"
 
-#: user-role.php:1007
+#: user-role.php:931
 msgid "Table View"
 msgstr "Перегляд у виді таблиці"
 
-#: user-role.php:1009
+#: user-role.php:933
 msgid "Flat View"
 msgstr "Перегляд у виді списку"
 
-#: user-role.php:1032
-msgid "Congratulations! The PRO version of the plugin is successfully download and activated."
-msgstr ""
-
-#: user-role.php:1034
-msgid "Please, go to"
-msgstr ""
-
-#: user-role.php:1034
-msgid "the setting page"
-msgstr ""
-
-#: user-role.php:1035
-msgid "You will be redirected automatically in 5 seconds."
-msgstr ""
-
-#: user-role.php:1040
-msgid "You can download and activate"
-msgstr ""
-
-#: user-role.php:1042
-msgid "version of this plugin by entering Your license key."
-msgstr ""
-
-#: user-role.php:1044
-msgid "You can find your license key on your personal page Client area, by clicking on the link"
-msgstr ""
-
-#: user-role.php:1046
-msgid "(your username is the email you specify when purchasing the product)."
-msgstr ""
-
-#: user-role.php:1054
-#: user-role.php:1064
-msgid "Activate"
-msgstr ""
-
-#: user-role.php:1120
+#: user-role.php:1002
 msgid "Support"
 msgstr "Тех. підтримка"
 
-#: user-role.php:1189
-msgid "It’s time to upgrade your <strong>User Role plugin</strong> to <strong>PRO</strong> version!"
-msgstr ""
+#~ msgid "Reset: "
+#~ msgstr "Скидання:"
 
-#: user-role.php:1190
-msgid "Extend standard plugin functionality with new great options"
-msgstr ""
+#~ msgid "requires"
+#~ msgstr "потребує "
+
+#~ msgid ""
+#~ "or higher, that is why it has been deactivated! Please upgrade WordPress "
+#~ "and try again."
+#~ msgstr ""
+#~ "або вище, ось чому плагін ьуло деактивовано! Будь ласка, оновіть "
+#~ "WordPress та спробуйте ще раз."
+
+#~ msgid "Back to the WordPress"
+#~ msgstr "Назад до WordPress"
+
+#~ msgid "Plugins page"
+#~ msgstr "Сторінка плагінів"
+
+#~ msgid "If you enjoy our plugin, please give it 5 stars on WordPress"
+#~ msgstr ""
+#~ "Якщо вам сподобався наш плагін, будь ласка, оцініть його у п’ять зірочок "
+#~ "на WordPress"
+
+#~ msgid "Rate the plugin"
+#~ msgstr "Оцінити плагін"
+
+#~ msgid "If there is something wrong about it, please contact us"
+#~ msgstr "Якщо у вас виникли певні проблеми, будь ласка, зв’яжіться з нами"
 
 #~ msgid "From site "
 #~ msgstr "Сайту"
