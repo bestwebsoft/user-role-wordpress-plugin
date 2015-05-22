@@ -1,7 +1,7 @@
 <?php
 /*
 * Function for displaying BestWebSoft menu
-* Version: 1.5.3
+* Version: 1.6.1
 */
 
 if ( ! function_exists ( 'bws_admin_enqueue_scripts' ) )
@@ -11,7 +11,7 @@ if ( ! function_exists( 'bws_add_menu_render' ) ) {
 	function bws_add_menu_render() {
 		global $wpdb, $wp_version, $bws_plugin_info;
 		$error = $message = $bwsmn_form_email = '';
-		$bws_donate_link = 'https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=1&product_id=94';
+		$bws_donate_link = 'http://bestwebsoft.com/donate/';
 
 		if ( ! function_exists( 'is_plugin_active_for_network' ) )
 			require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
@@ -247,7 +247,7 @@ if ( ! function_exists( 'bws_add_menu_render' ) ) {
 			),
 			'contact-form-multi/contact-form-multi.php' => array(
 				'name'			=> 'Contact Form Multi',
-				'description'	=> 'This plugin allows you to subscribe users for newsletters from your website.',
+				'description'	=> 'Add-on to the Contact Form plugin that allows to create and implement multiple contact forms.',
 				'link'			=> 'http://bestwebsoft.com/products/contact-form-multi/?k=83cdd9e72a9f4061122ad28a67293c72&pn=' . $bws_plugin_info["id"] . '&v=' . $bws_plugin_info["version"] . '&wp_v=' . $wp_version,
 				'download'		=> 'http://bestwebsoft.com/products/contact-form-multi/download/?k=83cdd9e72a9f4061122ad28a67293c72&pn=' . $bws_plugin_info["id"] . '&v=' . $bws_plugin_info["version"] . '&wp_v=' . $wp_version,
 				'wp_install'	=> $admin_url . 'plugin-install.php?tab=search&s=Contact+Form+Multi+Bestwebsoft&plugin-search-input=Search+Plugins',
@@ -390,6 +390,41 @@ if ( ! function_exists( 'bws_add_menu_render' ) ) {
 				'pro_version'	=> 'promobar-pro/promobar-pro.php',
 				'purchase' 		=> 'http://bestwebsoft.com/products/promobar/buy/?k=a9b09708502f12a1483532ba12fe2103&pn=' . $bws_plugin_info["id"] . '&v=' . $bws_plugin_info["version"] . '&wp_v=' . $wp_version,
 				'pro_settings'	=> 'admin.php?page=promobar-pro.php'
+			),
+			'realty/realty.php' => array(
+				'name'			=> 'Realty',
+				'description'	=> 'A convenient plugin that adds Real Estate functionality.',
+				'link'			=> 'http://bestwebsoft.com/products/realty/?k=d55de979dbbbb7af0b2ff1d7f43884fa&pn=' . $bws_plugin_info["id"] . '&v=' . $bws_plugin_info["version"] . '&wp_v=' . $wp_version,
+				'download'		=> 'http://bestwebsoft.com/products/realty/download/?k=d55de979dbbbb7af0b2ff1d7f43884fa&pn=' . $bws_plugin_info["id"] . '&v=' . $bws_plugin_info["version"] . '&wp_v=' . $wp_version,
+				'wp_install'	=> $admin_url . 'plugin-install.php?tab=search&type=term&s=Realty+BestWebSoft&plugin-search-input=Search+Plugins',
+				'settings'		=> 'admin.php?page=realty_settings',
+				'pro_version'	=> 'realty-pro/realty-pro.php',
+				'purchase' 		=> 'http://bestwebsoft.com/products/realty/buy/?k=c7791f0a72acfb36f564a614dbccb474&pn=' . $bws_plugin_info["id"] . '&v=' . $bws_plugin_info["version"] . '&wp_v=' . $wp_version,
+				'pro_settings'	=> 'admin.php?page=realty_pro_settings'
+			),
+			'zendesk-help-center/zendesk-help-center.php' => array(
+				'name'			=> 'Zendesk Help Center Backup',
+				'description'	=> 'This plugin allows to backup Zendesk Help Center.',
+				'link'			=> 'http://bestwebsoft.com/products/zendesk-help-center/?k=2a5fd2f4b2f4bde46f2ca44b8d15846d&pn=' . $bws_plugin_info["id"] . '&v=' . $bws_plugin_info["version"] . '&wp_v=' . $wp_version,
+				'download'		=> 'http://bestwebsoft.com/products/zendesk-help-center/download/?k=2a5fd2f4b2f4bde46f2ca44b8d15846d&pn=' . $bws_plugin_info["id"] . '&v=' . $bws_plugin_info["version"] . '&wp_v=' . $wp_version,
+				'wp_install'	=> $admin_url . 'plugin-install.php?tab=search&type=term&s=Zendesk+Help+Center+Backup+BestWebSoft&plugin-search-input=Search+Plugins',
+				'settings'		=> 'admin.php?page=zendesk_hc.php&tab=settings'
+			),
+			'social-buttons-pack/social-buttons-pack.php' => array(
+				'name'			=> 'Social Buttons Pack',
+				'description'	=> 'Add Social buttons to your WordPress website.',
+				'link'			=> 'http://bestwebsoft.com/products/social-buttons-pack/?k=b6440fad9f54274429e536b0c61b42da&pn=' . $bws_plugin_info["id"] . '&v=' . $bws_plugin_info["version"] . '&wp_v=' . $wp_version,
+				'download'		=> 'http://bestwebsoft.com/products/social-buttons-pack/download/?k=b6440fad9f54274429e536b0c61b42da&pn=' . $bws_plugin_info["id"] . '&v=' . $bws_plugin_info["version"] . '&wp_v=' . $wp_version,
+				'wp_install'	=> $admin_url . 'plugin-install.php?tab=search&type=term&s=Social+Buttons+Pack+BestWebSoft&plugin-search-input=Search+Plugins',
+				'settings'		=> 'admin.php?page=social-buttons.php'
+			),
+			'pagination/pagination.php' => array(
+				'name'			=> 'Pagination',
+				'description'	=> 'Add pagination block to your WordPress website.',
+				'link'			=> 'http://bestwebsoft.com/products/pagination/?k=22adb940256f149559ba8fedcd728ac8&pn=' . $bws_plugin_info["id"] . '&v=' . $bws_plugin_info["version"] . '&wp_v=' . $wp_version,
+				'download'		=> 'http://bestwebsoft.com/products/pagination/download/?k=22adb940256f149559ba8fedcd728ac8&pn=' . $bws_plugin_info["id"] . '&v=' . $bws_plugin_info["version"] . '&wp_v=' . $wp_version,
+				'wp_install'	=> $admin_url . 'plugin-install.php?tab=search&type=term&s=Pagination+BestWebSoft&plugin-search-input=Search+Plugins',
+				'settings'		=> 'admin.php?page=pagination.php'
 			)
 		);
 
@@ -918,6 +953,7 @@ if ( ! function_exists( 'bws_get_banner_array' ) ) {
 	function bws_get_banner_array() {
 		global $bstwbsftwppdtplgns_banner_array;
 		$bstwbsftwppdtplgns_banner_array = array(
+			array( 'rlt_hide_banner_on_plugin_page', 'realty/realty.php', '1.0.0' ),
 			array( 'prmbr_hide_banner_on_plugin_page', 'promobar/promobar.php', '1.0.0' ),
 			array( 'gglnltcs_hide_banner_on_plugin_page', 'bws-google-analytics/bws-google-analytics.php', '1.6.2' ),
 			array( 'htccss_hide_banner_on_plugin_page', 'htaccess/htaccess.php', '1.6.3' ),
@@ -935,10 +971,10 @@ if ( ! function_exists( 'bws_get_banner_array' ) ) {
 			array( 'gglplsn_hide_banner_on_plugin_page', 'google-one/google-plus-one.php', '1.1.4' ),
 			array( 'gglstmp_hide_banner_on_plugin_page', 'google-sitemap-plugin/google-sitemap-plugin.php', '2.8.4' ),
 			array( 'cntctfrmpr_for_ctfrmtdb_hide_banner_on_plugin_page', 'contact-form-pro/contact_form_pro.php', '1.14' ),
-			array( 'cntctfrm_for_ctfrmtdb_hide_banner_on_plugin_page', 'contact-form-plugin/contact_form.php', '3.62' ),
 			array( 'cntctfrm_hide_banner_on_plugin_page', 'contact-form-plugin/contact_form.php', '3.47' ),
 			array( 'cptch_hide_banner_on_plugin_page', 'captcha/captcha.php', '3.8.4' ),
-			array( 'gllr_hide_banner_on_plugin_page', 'gallery-plugin/gallery-plugin.php', '3.9.1' )
+			array( 'gllr_hide_banner_on_plugin_page', 'gallery-plugin/gallery-plugin.php', '3.9.1' ),
+			array( 'cntctfrm_for_ctfrmtdb_hide_banner_on_plugin_page', 'contact-form-plugin/contact_form.php', '3.62' ),
 		);
 	}
 }

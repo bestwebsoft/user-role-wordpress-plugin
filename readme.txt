@@ -1,10 +1,10 @@
 === User Role by BestWebSoft ===
 Contributors: bestwebsoft
-Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=1&product_id=94
+Donate link: http://bestwebsoft.com/donate/
 Tags: access, button, capability, change capabilities, confirmation dialogue, editor, groups, permission, recover, recover button, recover capabilites button, recover role capabilities, reset, reset settings, reset role capabilites, restore role capabilties, restore settings, role, role capabilitites, role capabilities groups, security, settings, user, uzer, user role, user rol, uzer rol, user role plugin
 Requires at least: 3.6
-Tested up to: 4.1.1
-Stable tag: 1.4.6
+Tested up to: 4.2.2
+Stable tag: 1.4.7
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -16,7 +16,10 @@ The User Role plugin allows you to change wordpress role capabilities. It is a v
 
 http://www.youtube.com/watch?v=O7OBFHn0_wU
 
+<a href="http://www.youtube.com/watch?v=gz9BkouavtU" target="_blank">Video instruction on Installation</a>
+
 <a href="http://wordpress.org/plugins/user-role/faq/" target="_blank">FAQ</a>
+
 <a href="http://support.bestwebsoft.com" target="_blank">Support</a>
 
 <a href="http://bestwebsoft.com/products/user-role/?k=dabe729fc0e7bef82e30dcb21a6cefc3" target="_blank">Upgrade to Pro Version</a>
@@ -50,6 +53,8 @@ We can fix some things for free for the users who provide translation of our plu
 
 <a href="https://docs.google.com/document/d/1uEr5TxEhupny3p6luzUNF1a6rNXes24359HkEGREtV4/edit" target="_blank">View a Step-by-step Instruction on User Role Installation</a>.
 
+http://www.youtube.com/watch?v=gz9BkouavtU
+
 == Frequently Asked Questions ==
 
 = What default settings will be restored if I click on the Recover capabilities button? =
@@ -65,18 +70,15 @@ No. They will stay changed unless you click on the Recover capabilities button.
 Here is an example for Russian language files.
 
 1. In order to use another language for WordPress it is necessary to set a WordPress version to the required language and in the configuration wp file - `wp-config.php` in the line `define('WPLANG', '');` you should enter `define('WPLANG', 'ru_RU');`. If everything is done properly the admin panel will be in Russian.
-
 2. Make sure the files `ru_RU.po` and `ru_RU.mo` are present in the plugin (the folder "Languages" in the plugin root).
-
 3. If there are no such files you should copy the other files from this folder (for example, for German or Italian) and rename them (you should write `ru_RU` instead of `de_DE` in both files).
-
 4. The files can be edited with the help of the program Poedit - http://www.poedit.net/download.php - please download this program, install it, open the file using this program (the required language file) and for each line in English you should write translation in Russian.
-
 5. If everything is done properly all lines will be in Russian in the admin panel and in the front-end.
 
 = I have some problems with the plugin's work. What Information should I provide to receive proper support? =
 
 Please make sure that the problem hasn't been discussed yet on our forum (<a href="http://support.bestwebsoft.com" target="_blank">http://support.bestwebsoft.com</a>). If no, please provide the following data along with your problem's description:
+
 1. the link to the page where the problem occurs
 2. the name of the plugin and its version. If you are using a pro version - your order number.
 3. the version of your WordPress installation
@@ -91,9 +93,14 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 
 == Changelog ==
 
+= V1.4.7 - 22.05.2015 =
+* Bugfix : We fixed plugins work with Table view on the Network. 
+* Bugfix : We fixed the selection of current role when switching between view modes on the Network.
+* Update : We updated all functionality for wordpress 4.2.2.
+
 = V1.4.6 - 27.03.2015 =
 * Update : BWS plugins section is updated.
-* Update : We updated all functionality for wordpress 4.1.1
+* Update : We updated all functionality for wordpress 4.1.1.
 
 = V1.4.5 - 09.01.2015 =
 * Update : We updated all functionality for wordpress 4.1.
@@ -139,6 +146,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * NEW : Css-style was added for Internet Explorer 10.
 
 == Upgrade Notice ==
+
+= V1.4.7 =
+We fixed plugins work with Table view on the Network.  We fixed the selection of current role when switching between view modes on the Network. We updated all functionality for wordpress 4.2.2.
 
 = V1.4.6 =
 We updated all functionality for wordpress 4.1.1. BWS plugins section is updated.

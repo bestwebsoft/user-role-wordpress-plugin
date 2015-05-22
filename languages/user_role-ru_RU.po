@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: user-role\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-26 18:22+0300\n"
+"POT-Creation-Date: 2015-05-22 16:16+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: bestwebsoft.com <plugins@bestwebsoft.com>\n"
 "Language-Team: bestwebsoft.com <plugin@bestwebsoft.com>\n"
@@ -16,214 +16,188 @@ msgstr ""
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: user-role.php:280
-msgid "Notice:"
-msgstr "Внимание:"
-
-#: user-role.php:280
-#: user-role.php:414
-msgid "The plugin's settings have been changed. In order to save them please don't forget to click the 'Save Changes' button."
-msgstr "Настройки плагина изменились. Чтобы сохранить их, не забудьте нажать на кнопку \"Сохранить Изменения\""
-
-#: user-role.php:289
-#: user-role.php:424
-msgid "Select Role:"
-msgstr "Выбрать Роль:"
-
-#: user-role.php:292
-#: user-role.php:427
-msgid "Are you sure you want to recover settings by default?"
-msgstr "Вы уверены, что хотите восстановить настройки по умолчанию?"
-
-#: user-role.php:299
-#: user-role.php:434
-msgid "Show"
-msgstr "Показать"
-
-#: user-role.php:305
-#: user-role.php:440
-msgid "Recover:"
-msgstr "Восстановить:"
-
-#: user-role.php:309
-#: user-role.php:331
-#: user-role.php:444
-#: user-role.php:467
-msgid "Chosen role"
-msgstr "Выбранную роль"
-
-#: user-role.php:310
-#: user-role.php:445
-msgid "All roles"
-msgstr "Все роли"
-
-#: user-role.php:316
-#: user-role.php:451
-msgid "Recover"
-msgstr "Восстановить"
-
-#: user-role.php:328
-#: user-role.php:336
-#: user-role.php:464
-#: user-role.php:472
-msgid "Reset"
-msgstr "Сброс"
-
-#: user-role.php:341
-#: user-role.php:477
-msgid "Add Role:"
-msgstr "Добавить роль:"
-
-#: user-role.php:346
-#: user-role.php:482
-msgid "Add new role"
-msgstr "Добавить новую роль"
-
-#: user-role.php:347
-#: user-role.php:483
-msgid "Add"
-msgstr "Добавить"
-
-#: user-role.php:356
-#: user-role.php:492
-#: user-role.php:873
-msgid "Unlock premium options by upgrading to a PRO version."
-msgstr "Активируйте премиум опции обновившись до PRO версии"
-
-#: user-role.php:357
-#: user-role.php:493
-#: user-role.php:874
-msgid "Learn More"
-msgstr "Подробнее"
-
-#: user-role.php:360
-#: user-role.php:496
-#: user-role.php:877
-msgid "Go"
-msgstr "Перейти"
-
-#: user-role.php:369
-#: user-role.php:503
-msgid "Display the list of permissions for:"
-msgstr "Отображение привилегий для:"
-
-#: user-role.php:375
-#: user-role.php:507
-#: user-role.php:847
-msgid "Select all"
-msgstr "Выбрать всё"
-
-#: user-role.php:378
-#: user-role.php:510
-msgid "Select none"
-msgstr "Снять выделение"
-
-#: user-role.php:388
-#: user-role.php:516
-#: user-role.php:528
-msgid "Save Changes"
-msgstr "Сохранить Изменения"
-
-#: user-role.php:414
-msgid "Notice: "
-msgstr "Внимание: "
-
-#: user-role.php:547
-msgid "The changes has been saved"
-msgstr "Изменения сохранены"
-
-#: user-role.php:552
-msgid "The settings have been restored for current role"
-msgstr "Настройки были восстановлены для выбранной роли"
-
-#: user-role.php:556
-msgid "The settings have been restored for all roles"
-msgstr "Настройки были восстановлены для всех ролей"
-
-#: user-role.php:569
-msgid "Capability:"
-msgstr "Привилегия:"
-
-#: user-role.php:570
-msgid "Group capabilities"
-msgstr "Привилегии группы"
-
-#: user-role.php:571
-msgid "For site:"
-msgstr "Для сайта:"
-
-#: user-role.php:600
-msgid "Capabitity\\Site"
-msgstr "Привилегия\\Сайт"
-
-#: user-role.php:629
-#: user-role.php:645
-#: user-role.php:719
-#: user-role.php:722
-#: user-role.php:736
-#: user-role.php:739
-#: user-role.php:759
-#: user-role.php:762
-#: user-role.php:775
-#: user-role.php:778
-msgid "This setting is available in Pro version"
-msgstr "Эти настройки доступны в Pro версии"
-
-#: user-role.php:712
-msgid "Capabilities category: "
-msgstr "Категория привилегий: "
-
-#: user-role.php:753
-msgid "Capabilities without category"
-msgstr "Привилегии без категории"
-
-#: user-role.php:803
-#: user-role.php:811
-msgid "Action with"
-msgstr "Действия с "
-
-#: user-role.php:836
-msgid "Changes will be applied to the site:"
-msgstr "Изменения применятся для выбраных блогов:"
-
-#: user-role.php:841
-msgid "Changes will be applied to the selected blogs:"
-msgstr "Изменения применятся для выбраных блогов:"
-
-#: user-role.php:904
-msgid "You do not have sufficient permissions to access this page."
-msgstr "У вас недостаточно прав для доступа к этой странице"
-
-#: user-role.php:915
+#: user-role.php:262
 msgid "User Role"
 msgstr "User Role"
 
-#: user-role.php:917
-#: user-role.php:986
-#: user-role.php:1000
+#: user-role.php:264
+#: user-role.php:750
+#: user-role.php:764
 msgid "Settings"
 msgstr "Настройки"
 
-#: user-role.php:918
-#: user-role.php:1001
+#: user-role.php:265
+#: user-role.php:765
 msgid "FAQ"
 msgstr "Часто задаваемые вопросы"
 
-#: user-role.php:919
+#: user-role.php:266
 msgid "Go PRO"
 msgstr "Перейти на PRO версию"
 
-#: user-role.php:931
+#: user-role.php:272
+msgid "Notice"
+msgstr "Внимание"
+
+#: user-role.php:272
+msgid "The plugin's settings have been changed. In order to save them please don't forget to click the 'Save Changes' button."
+msgstr "Настройки плагина изменились. Чтобы сохранить их, не забудьте нажать на кнопку \"Сохранить Изменения\""
+
+#: user-role.php:279
 msgid "Table View"
 msgstr "Табличное представление"
 
-#: user-role.php:933
+#: user-role.php:281
 msgid "Flat View"
 msgstr "Просмотр списком"
 
-#: user-role.php:1002
+#: user-role.php:295
+#: user-role.php:307
+msgid "Save Changes"
+msgstr "Сохранить Изменения"
+
+#: user-role.php:323
+msgid "The changes has been saved"
+msgstr "Изменения сохранены"
+
+#: user-role.php:328
+msgid "The settings have been restored for current role"
+msgstr "Настройки были восстановлены для выбранной роли"
+
+#: user-role.php:332
+msgid "The settings have been restored for all roles"
+msgstr "Настройки были восстановлены для всех ролей"
+
+#: user-role.php:347
+msgid "Select Role"
+msgstr "Выбрать Роль"
+
+#: user-role.php:350
+msgid "Are you sure you want to recover settings by default?"
+msgstr "Вы уверены, что хотите восстановить настройки по умолчанию?"
+
+#: user-role.php:357
+msgid "Show"
+msgstr "Показать"
+
+#: user-role.php:363
+#: user-role.php:373
+msgid "Recover"
+msgstr "Восстановить"
+
+#: user-role.php:367
+#: user-role.php:388
+msgid "Chosen role"
+msgstr "Выбранную роль"
+
+#: user-role.php:368
+msgid "All roles"
+msgstr "Все роли"
+
+#: user-role.php:385
+#: user-role.php:393
+msgid "Reset"
+msgstr "Сброс"
+
+#: user-role.php:398
+msgid "Add Role"
+msgstr "Добавить роль"
+
+#: user-role.php:403
+msgid "Add new role"
+msgstr "Добавить новую роль"
+
+#: user-role.php:404
+msgid "Add"
+msgstr "Добавить"
+
+#: user-role.php:411
+msgid "Changes will be applied to the selected blogs"
+msgstr "Изменения применятся для выбраных блогов"
+
+#: user-role.php:417
+#: user-role.php:464
+msgid "Select all"
+msgstr "Выбрать всё"
+
+#: user-role.php:444
+msgid "Unlock premium options by upgrading to a PRO version."
+msgstr "Активируйте премиум опции обновившись до PRO версии"
+
+#: user-role.php:445
+msgid "Learn More"
+msgstr "Подробнее"
+
+#: user-role.php:448
+msgid "Go"
+msgstr "Перейти"
+
+#: user-role.php:456
+msgid "Changes will be applied to the site"
+msgstr "Изменения применятся для блога"
+
+#: user-role.php:460
+msgid "Display the list of permissions for"
+msgstr "Отображение привилегий для"
+
+#: user-role.php:467
+msgid "Select none"
+msgstr "Снять выделение"
+
+#: user-role.php:480
+msgid "Capability"
+msgstr "Привилегия"
+
+#: user-role.php:481
+msgid "Group capabilities"
+msgstr "Привилегии группы"
+
+#: user-role.php:482
+msgid "For site"
+msgstr "Для сайта"
+
+#: user-role.php:503
+msgid "Capabitity\\Site"
+msgstr "Привилегия\\Сайт"
+
+#: user-role.php:532
+#: user-role.php:548
+#: user-role.php:615
+#: user-role.php:618
+#: user-role.php:631
+#: user-role.php:634
+#: user-role.php:654
+#: user-role.php:657
+#: user-role.php:669
+#: user-role.php:672
+msgid "This setting is available in Pro version"
+msgstr "Эти настройки доступны в Pro версии"
+
+#: user-role.php:608
+msgid "Capabilities category"
+msgstr "Категория привилегий"
+
+#: user-role.php:648
+msgid "Capabilities without category"
+msgstr "Привилегии без категории"
+
+#: user-role.php:695
+#: user-role.php:703
+msgid "Action with"
+msgstr "Действия с "
+
+#: user-role.php:766
 msgid "Support"
 msgstr "Поддержка"
+
+#~ msgid "Recover:"
+#~ msgstr "Восстановить:"
+
+#~ msgid "Notice: "
+#~ msgstr "Внимание: "
+
+#~ msgid "You do not have sufficient permissions to access this page."
+#~ msgstr "У вас недостаточно прав для доступа к этой странице"
 
 #, fuzzy
 #~ msgid "Reset:"

@@ -39,11 +39,6 @@ h5.srrl_category {
 .srrl_role_column label {
 	padding-left: 8px;
 }
-#srrl_action {
-	float: left;
-	width: 100%;
-	padding-bottom: 5px;
-}
 .srrl_checkall2,
 .srrl_checkall {
 	color: rgb(0, 0, 0);
@@ -53,10 +48,6 @@ h5.srrl_category {
 }
 .srrl-check-cap {
 	vertical-align: middle !important;
-}
-.srrl_button {
-	width: 130px;
-	height: 24px;
 }
 .srrl_wrap {
 	min-width: 40%;
@@ -202,15 +193,6 @@ div.srrl_rotate > input {
 .srrl-check-cap {
 	padding: 5px 0 5px 10px;
 	margin: 5px 0 !important;
-}
-.srrl_buttons {
-	margin-top: 16px;
-	height: 38px;
-	padding: 5px 0;
-}
-.srrl_but {
-	margin: 6px 0;
-	float: left;
 }
 .srrl_radio {
 	display:inline-block;
