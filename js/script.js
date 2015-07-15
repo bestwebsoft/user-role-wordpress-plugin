@@ -45,7 +45,7 @@
 		/* Recover button text parsing and form submit */
 		$( 'button#srrl_recover' ).on( 'click', function() {
 			if ( confirm( $( '#srrl_string_confirm_recover' ).text() ) ) {
-				$( 'span.srrl_loader').css( 'display', 'block' );
+				$( 'span.srrl_loader').css( 'display', 'inline-block' );
 				/* It's because the recover button doesn't work as a submit button because of confirmation popup */
 				$( 'input#srrl_recover_if_confirm' ).attr( 'name', 'srrl_recover' );
 				$( 'input#srrl_recover_if_confirm' ).attr( 'value', 'srrl_recover' );
@@ -56,7 +56,7 @@
 
 		$( '#srrl_roles' ).on( 'change', function() {
 			$( '#srrl_form' ).submit();
-			$( 'span.srrl_loader').css( 'display', 'block' );
+			$( 'span.srrl_loader').css( 'display', 'inline-block' );
 		});
 
 		/* Change status messages unhide */

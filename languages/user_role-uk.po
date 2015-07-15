@@ -2,31 +2,28 @@ msgid ""
 msgstr ""
 "Project-Id-Version: user-role\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-22 16:16+0300\n"
+"POT-Creation-Date: 2015-07-14 21:32+0300\n"
 "PO-Revision-Date: \n"
-"Last-Translator: bestwebsoft.com <plugins@bestwebsoft.com>\n"
+"Last-Translator: plugin@bestwebsoft.com <plugin@bestwebsoft.com>\n"
 "Language-Team: bestwebsoft.com <plugin@bestwebsoft.com>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: ..\n"
+"X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: user-role.php:262
 msgid "User Role"
 msgstr "User Role"
 
-#: user-role.php:264
-#: user-role.php:750
-#: user-role.php:764
+#: user-role.php:264 user-role.php:763 user-role.php:777
 msgid "Settings"
 msgstr "Установки"
 
-#: user-role.php:265
-#: user-role.php:765
+#: user-role.php:265 user-role.php:778
 msgid "FAQ"
 msgstr "Часті питання"
 
@@ -39,8 +36,12 @@ msgid "Notice"
 msgstr "Попередження"
 
 #: user-role.php:272
-msgid "The plugin's settings have been changed. In order to save them please don't forget to click the 'Save Changes' button."
-msgstr "Налаштування плагіну було змінено. Щоб зберегти їх, не забудьте натиснути кнопку \"Зберегти зміни\""
+msgid ""
+"The plugin's settings have been changed. In order to save them please don't "
+"forget to click the 'Save Changes' button."
+msgstr ""
+"Налаштування плагіну було змінено. Щоб зберегти їх, не забудьте натиснути "
+"кнопку \"Зберегти зміни\""
 
 #: user-role.php:279
 msgid "Table View"
@@ -50,8 +51,7 @@ msgstr "Перегляд у виді таблиці"
 msgid "Flat View"
 msgstr "Перегляд у виді списку"
 
-#: user-role.php:295
-#: user-role.php:307
+#: user-role.php:295 user-role.php:307
 msgid "Save Changes"
 msgstr "Зберегти зміни"
 
@@ -79,13 +79,11 @@ msgstr "Ви упевнені, що хочете відновити станда
 msgid "Show"
 msgstr "Показати"
 
-#: user-role.php:363
-#: user-role.php:373
+#: user-role.php:363 user-role.php:373
 msgid "Recover"
 msgstr "Відновити"
 
-#: user-role.php:367
-#: user-role.php:388
+#: user-role.php:367 user-role.php:388 user-role.php:412
 msgid "Chosen role"
 msgstr "Обрану роль"
 
@@ -93,8 +91,7 @@ msgstr "Обрану роль"
 msgid "All roles"
 msgstr "Все роли"
 
-#: user-role.php:385
-#: user-role.php:393
+#: user-role.php:385 user-role.php:393
 msgid "Reset"
 msgstr "Скинути"
 
@@ -110,82 +107,81 @@ msgstr "Додати нову роль"
 msgid "Add"
 msgstr "Додати"
 
-#: user-role.php:411
+#: user-role.php:409
+msgid "Delete Custom Role"
+msgstr "Видалити кастомну pоль"
+
+#: user-role.php:417
+msgid "Delete"
+msgstr "Видалити"
+
+#: user-role.php:424
 msgid "Changes will be applied to the selected blogs"
 msgstr "Зміни будуть завстосовані для обраних блогів"
 
-#: user-role.php:417
-#: user-role.php:464
+#: user-role.php:430 user-role.php:477
 msgid "Select all"
 msgstr "Обрати усе"
 
-#: user-role.php:444
+#: user-role.php:457
 msgid "Unlock premium options by upgrading to a PRO version."
 msgstr "Активуйте преміум можливості оновившись до PRO версії"
 
-#: user-role.php:445
+#: user-role.php:458
 msgid "Learn More"
 msgstr "Дізнатись більше"
 
-#: user-role.php:448
+#: user-role.php:461
 msgid "Go"
 msgstr "Перейти на "
 
-#: user-role.php:456
+#: user-role.php:469
 msgid "Changes will be applied to the site"
 msgstr "Зміни будуть завстосовані для блогa"
 
-#: user-role.php:460
+#: user-role.php:473
 msgid "Display the list of permissions for"
 msgstr "Відображати список привілей для"
 
-#: user-role.php:467
+#: user-role.php:480
 msgid "Select none"
 msgstr "Зняти виділення"
 
-#: user-role.php:480
+#: user-role.php:493
 msgid "Capability"
 msgstr "Привілея"
 
-#: user-role.php:481
+#: user-role.php:494
 msgid "Group capabilities"
 msgstr "Привілеї групи"
 
-#: user-role.php:482
+#: user-role.php:495
 msgid "For site"
 msgstr "Для сайту"
 
-#: user-role.php:503
+#: user-role.php:516
 msgid "Capabitity\\Site"
 msgstr "Привілея\\Сайт"
 
-#: user-role.php:532
-#: user-role.php:548
-#: user-role.php:615
-#: user-role.php:618
-#: user-role.php:631
-#: user-role.php:634
-#: user-role.php:654
-#: user-role.php:657
-#: user-role.php:669
-#: user-role.php:672
+#: user-role.php:545 user-role.php:561 user-role.php:628 user-role.php:631
+#: user-role.php:644 user-role.php:647 user-role.php:667 user-role.php:670
+#: user-role.php:682 user-role.php:685
 msgid "This setting is available in Pro version"
 msgstr "Ці налаштування доступні в PRO версії"
 
-#: user-role.php:608
+#: user-role.php:621
 msgid "Capabilities category"
 msgstr "Категорія привілей"
 
-#: user-role.php:648
+#: user-role.php:661
 msgid "Capabilities without category"
 msgstr "Привілеї без категорії"
 
-#: user-role.php:695
-#: user-role.php:703
+#: user-role.php:708 user-role.php:716
 msgid "Action with"
 msgstr "Дія з"
 
-#: user-role.php:766
+#: user-role.php:779
 msgid "Support"
 msgstr "Тех. підтримка"
 

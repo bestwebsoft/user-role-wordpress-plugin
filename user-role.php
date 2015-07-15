@@ -4,7 +4,7 @@ Plugin Name: User Role by BestWebSoft
 Plugin URI: http://bestwebsoft.com/products/
 Description: The plugin allows to change wordpress user role capabilities.
 Author: BestWebSoft
-Version: 1.4.7
+Version: 1.4.8
 Author URI: http://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -53,7 +53,7 @@ if ( ! function_exists( 'srrl_init' ) ) {
 		}
 
 		/* Function check if plugin is compatible with current WP version */
-		bws_wp_version_check( plugin_basename( __FILE__ ), $srrl_plugin_info, "3.6" );
+		bws_wp_version_check( plugin_basename( __FILE__ ), $srrl_plugin_info, '3.6' );
 	}
 }
 
@@ -96,21 +96,21 @@ if ( ! function_exists( 'srrl_save' ) ) {
 		if ( ( isset( $_GET['interface-action'] ) && $_GET['interface-action'] == 'interface2' ) || ( is_network_admin() && 'v2' == get_option( 'srrl_interface_version' ) ) ) {
 			foreach ( $srrl_groups as $key => $value ) {
 				foreach ( $value as $key => $val ) {
-					if ( isset( $_POST['srrl_options'][ '1' ][ $val ] ) ) {
-						$check[ $val ] = true;
+					if ( isset( $_POST['srrl_options']['1'][$val] ) ) {
+						$check[$val] = true;
 					}
 				}
 			}
 		} else {
 			foreach ( $srrl_groups as $key => $value ) {
 				foreach ( $value as $key => $val ) {
-					if ( isset( $_POST[ $val ] ) ) {
-						$check[ $val ] = true;
+					if ( isset( $_POST[$val] ) ) {
+						$check[$val] = true;
 					}
 				}
 			}
 		}
-		$srrl_roles[ $srrl_current_role ]["capabilities"] = $check;
+		$srrl_roles[$srrl_current_role]["capabilities"] = $check;
 		update_option( $wpdb->get_blog_prefix(1) . 'user_roles', $srrl_roles );
 	}
 }
@@ -121,7 +121,7 @@ if ( ! function_exists( 'srrl_repair' ) ) {
 		global $wpdb, $srrl_roles_backup, $srrl_roles, $srrl_current_role;
 
 		if ( 'srrl_recover_one' == $_POST['srrl_recover_radio'] )
-			$srrl_roles[ $srrl_current_role ] = array_replace( $srrl_roles[ $srrl_current_role ], $srrl_roles_backup[ $srrl_current_role ] );
+			$srrl_roles[$srrl_current_role] = array_replace( $srrl_roles[$srrl_current_role], $srrl_roles_backup[$srrl_current_role] );
 		elseif ( 'srrl_recover_all' == $_POST['srrl_recover_radio'] )
 			$srrl_roles = array_merge( $srrl_roles, $srrl_roles_backup );
 
@@ -143,8 +143,8 @@ if ( ! function_exists( 'srrl_array_on_groups' ) ) {
 		foreach ( $srrl_dict_action as $value ) {
 			foreach ( $srrl_var as $key => $val ) {
 				if ( stristr( $val, $value ) ) {
-					$srrl_roles_action[ $value ][] = $val;
-					unset( $srrl_var[ $key ] );
+					$srrl_roles_action[$value][] = $val;
+					unset( $srrl_var[$key] );
 				}
 			}
 		}
@@ -167,7 +167,7 @@ if ( ! function_exists( 'srrl_receive_roles' ) ) {
 			/* add capabilities from backup*/
 			foreach ( $srrl_roles_backup['administrator']['capabilities'] as $cap_name => $cap_value ) {
 				if ( ! array_key_exists( $cap_name, $srrl_roles_for_template['administrator']['capabilities'] ) ) {
-					$srrl_roles_for_template['administrator']['capabilities'][ $cap_name ] = $cap_value;
+					$srrl_roles_for_template['administrator']['capabilities'][$cap_name] = $cap_value;
 				}
 			}
 		}
@@ -349,10 +349,8 @@ if ( ! function_exists( 'srrl_print_settings_block' ) ) {
 						<td>
 							<div id="srrl_string_confirm_recover" class="hidden"><?php _e( 'Are you sure you want to recover settings by default?', 'user_role' ); ?></div>
 							<input id="srrl_recover_if_confirm" class="hidden" name="" type="text" value=""/>
-							<?php echo srrl_select_roles(); ?>
-						</td>
-						<td>
-							<span class="srrl_loader hide-if-no-js" style="display: none;"></span>
+							<?php echo srrl_select_roles(); ?>						
+							<span class="srrl_loader hide-if-no-js"></span>
 							<button id="confirm" class="button-secondary hide-if-js" name="select">
 								<?php _e( 'Show', 'user_role' ); ?>
 							</button>
@@ -367,8 +365,6 @@ if ( ! function_exists( 'srrl_print_settings_block' ) ) {
 								<option id="radio1" value="srrl_recover_one"><?php _e( 'Chosen role', 'user_role' ); ?></option>
 								<option id="radio2" value="srrl_recover_all"><?php _e( 'All roles', 'user_role' ); ?></option>
 							</select>
-						</td>
-						<td>
 							<button id="srrl_recover" class="button-secondary" name="srrl_recover" type="submit" value="srrl_recover">
 								<?php _e( 'Recover', 'user_role' ); ?>
 							</button>
@@ -386,9 +382,7 @@ if ( ! function_exists( 'srrl_print_settings_block' ) ) {
 								<td>
 									<select name="srrl_reset_radio" class="button_reset" disabled="disabled">
 										<option id="radio3" value="srrlpr_reset_one"><?php _e( 'Chosen role', 'user_role' ); ?></option>
-									</select>
-								</td>
-								<td>
+									</select>								
 									<button id="srrl_reset" class="button-secondary" name="srrlpr_reset" type="submit" value="srrlpr_reset" disabled="disabled" >
 										<?php _e( 'Reset', 'user_role' ); ?>
 									</button>
@@ -398,10 +392,19 @@ if ( ! function_exists( 'srrl_print_settings_block' ) ) {
 								<th scope="row"><strong><?php _e( 'Add Role', 'user_role' ); ?>:</strong></th>
 								<td>
 									<input type="text" id="srrlpr_add_role" name="srrlpr_add_role" class="button_recover" disabled="disabled" />
-								</td>
-								<td>
 									<button disabled="disabled" id="srrlpr_add" class="button-secondary" name="srrlpr_add" type="submit" value="srrlpr_add" title="<?php _e( 'Add new role', 'user_role' ); ?>">
 										<?php _e( 'Add', 'user_role' ); ?>
+									</button>
+								</td>
+							</tr>
+							<tr valign="top">
+								<th scope="row"><strong><?php _e( 'Delete Custom Role', 'user_role' ); ?>:</strong></th>
+								<td>
+									<select name="srrl_delete_radio" class="button_delete" disabled="disabled">
+										<option id="radio4" value="srrlpr_delete_one"><?php _e( 'Chosen role', 'user_role' ); ?></option>
+									</select>
+									<button id="srrl_delete" class="button-secondary" name="srrlpr_delete" type="submit" value="srrlpr_delete" disabled="disabled" >
+										<?php _e( 'Delete', 'user_role' ); ?>
 									</button>
 								</td>
 							</tr>
@@ -490,7 +493,7 @@ if ( ! function_exists( 'srrl_print_matrix' ) ) {
 		foreach ( $global_roles_array as $site_id ) {
 			$roles = array_keys( $site_id );
 			foreach ( $roles as $id ) {
-				$role_and_caps = $site_id[ $id ];
+				$role_and_caps = $site_id[$id];
 				unset( $role_and_caps['name'] );
 				foreach ( $role_and_caps as $cap ) {
 					$all_privilegies = array_merge( $all_privilegies, $cap );
@@ -570,8 +573,8 @@ if ( ! function_exists( 'srrl_print_matrix' ) ) {
 			foreach ( $srrl_dict_action as $value ) {
 				foreach ( $srrl_var as $key => $val ) {
 					if ( stristr( $val, $value ) ) {
-						$srrl_roles_action[ $value ][] = $val;
-						unset( $srrl_var[ $key ] );
+						$srrl_roles_action[$value][] = $val;
+						unset( $srrl_var[$key] );
 					}
 				}
 			}
@@ -590,8 +593,8 @@ if ( ! function_exists( 'srrl_print_matrix' ) ) {
 			/* Makes the same array structure as in $all_privilegies */
 			array_flip( $srrl_temp_copabil_array );
 			foreach ( $srrl_temp_copabil_array as $value => $key ) {
-				$srrl_temp_copabil_array[ $key ] = true;
-				unset( $srrl_temp_copabil_array[ $value ] );
+				$srrl_temp_copabil_array[$key] = true;
+				unset( $srrl_temp_copabil_array[$value] );
 			}
 
 			/* Here $all_privilegies becomes array of all capabilities with needed sort */
@@ -624,7 +627,7 @@ if ( ! function_exists( 'srrl_print_matrix' ) ) {
 								<label><?php echo $privilegies; ?></label>
 							</td>
 							<?php /* Outputs main matrix checkboxes. */
-							$checked = ( isset( $srrl_roles[ $srrl_current_role ]['capabilities'][ $privilegies ] ) ) ? ' checked="checked"' : ''; ?>
+							$checked = ( isset( $srrl_roles[$srrl_current_role]['capabilities'][$privilegies] ) ) ? ' checked="checked"' : ''; ?>
 							<td id="srrl_matrix_cell" class="srrl-siteid-1">
 								<input class="srrl_<?php echo $value; ?>" id="srrl-siteid-1" title="<?php echo $cap_title . $privilegies .'|'. $site_title . $current_blog_details->blogname; ?>" type="checkbox"<?php echo $checked; ?> name="srrl_options[1][<?php echo $privilegies; ?>]" value="ON"/>
 							</td>
@@ -636,12 +639,12 @@ if ( ! function_exists( 'srrl_print_matrix' ) ) {
 							</td>
 						</tr>
 						<?php /* Its for print capabilities without twins */
-						unset( $all_privilegies[ $privilegies ] );
+						unset( $all_privilegies[$privilegies] );
 						continue;
 					}
 				}
 			}
-			/* After unset( $all_privilegies[ $privilegies ] ) in $all_privilegies array only not categorized capabilities left, so output them in the loop */
+			/* After unset( $all_privilegies[$privilegies] ) in $all_privilegies array only not categorized capabilities left, so output them in the loop */
 			foreach ( $all_privilegies as $privilegies => $key ) { ?>
 				<tr class="srrl_accordeon_row srrl_other_actions srrl_accordeon hide-if-no-js">
 					<td style="cursor: pointer">
@@ -662,7 +665,7 @@ if ( ! function_exists( 'srrl_print_matrix' ) ) {
 					<td class="srrl_role_column">
 						<label><?php echo $privilegies; ?></label>
 					</td>
-					<?php $checked = ( isset( $srrl_roles[ $srrl_current_role ]['capabilities'][ $privilegies ] ) ) ? ' checked="checked"' : ''; ?>
+					<?php $checked = ( isset( $srrl_roles[$srrl_current_role]['capabilities'][$privilegies] ) ) ? ' checked="checked"' : ''; ?>
 					<td id="srrl_matrix_cell" class="srrl-siteid-1">
 						<input class="srrl_other_actions" id="srrl-siteid-1" title="<?php echo $cap_title . $privilegies . '|' . $site_title . $current_blog_details->blogname; ?>" type="checkbox"<?php echo $checked ?> name="srrl_options[1][<?php echo $privilegies; ?>]" value="ON"/>
 					</td>
@@ -685,7 +688,7 @@ if ( ! function_exists( 'srrl_print_capabilities' ) ) {
 		
 		$srrl_groups 					= srrl_array_on_groups();
 		$srrl_capabil_name 				= array_keys( $srrl_roles['administrator']['capabilities'] );
-		$srrl_current_role_capabilities = array_keys( $srrl_roles[ $srrl_current_role ]['capabilities'] );
+		$srrl_current_role_capabilities = array_keys( $srrl_roles[$srrl_current_role]['capabilities'] );
 
 		foreach ( $srrl_groups as $key => $val ) { ?>
 			<div class="srrl-box">

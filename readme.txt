@@ -4,7 +4,7 @@ Donate link: http://bestwebsoft.com/donate/
 Tags: access, button, capability, change capabilities, confirmation dialogue, editor, groups, permission, recover, recover button, recover capabilites button, recover role capabilities, reset, reset settings, reset role capabilites, restore role capabilties, restore settings, role, role capabilitites, role capabilities groups, security, settings, user, uzer, user role, user rol, uzer rol, user role plugin
 Requires at least: 3.6
 Tested up to: 4.2.2
-Stable tag: 1.4.7
+Stable tag: 1.4.8
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -89,9 +89,12 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 1. Plugin interface on a single blog wordpress setup.
 2. Plugin flat view in WordPress Multisite network admin panel.
 3. Plugin table view in WordPress Multisite network admin panel.
-4. Plugin table view in WordPress Multisite network admin panel with capabilitie tooltip.
 
 == Changelog ==
+
+= V1.4.8 - 15.07.2015 =
+* Update : Input maxlength is added.
+* Update : BWS plugins section is updated.
 
 = V1.4.7 - 22.05.2015 =
 * Bugfix : We fixed plugins work with Table view on the Network. 
@@ -146,6 +149,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * NEW : Css-style was added for Internet Explorer 10.
 
 == Upgrade Notice ==
+
+= V1.4.8 =
+Input maxlength is added. BWS plugins section is updated.
 
 = V1.4.7 =
 We fixed plugins work with Table view on the Network.  We fixed the selection of current role when switching between view modes on the Network. We updated all functionality for wordpress 4.2.2.
