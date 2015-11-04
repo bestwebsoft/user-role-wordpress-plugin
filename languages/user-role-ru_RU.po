@@ -1,0 +1,644 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: User Role\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-30 14:25+0300\n"
+"PO-Revision-Date: \n"
+"Last-Translator: BestWebSoft team <wp@bestwebsoft.com>\n"
+"Language-Team: bestwebsoft.com <plugin@bestwebsoft.com>\n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Generator: Poedit 1.5.4\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: user-role.php:173
+msgid "User Role Settings"
+msgstr "Настройки User Role"
+
+#: user-role.php:175 user-role.php:444 user-role.php:469
+msgid "Settings"
+msgstr "Настройки"
+
+#: user-role.php:176
+msgid "Go PRO"
+msgstr "Перейти на PRO версию"
+
+#: user-role.php:211
+msgid "Are you sure, that you want to recover selected role(s)?"
+msgstr "Вы уверены, что хотите восстановить выбранные роли?"
+
+#: user-role.php:212
+msgid "Yes, recover role(s)"
+msgstr "Да, восстановить роль(и)"
+
+#: user-role.php:215
+msgid "Are you sure, that you want to do selected action?"
+msgstr "Вы уверены, что хотите выполнить действие?"
+
+#: user-role.php:216
+msgid "Yes, do it"
+msgstr "Да, выполнить"
+
+#: user-role.php:231
+msgid "No, go back to the roles list"
+msgstr "Нет, вернуться к списку ролей"
+
+#: user-role.php:265
+msgid "Please enter role name"
+msgstr "Пожалуйста, введите имя роли"
+
+#: user-role.php:267
+msgid "Please enter role slug"
+msgstr "Пожалуйста, введите слаг роли"
+
+#: user-role.php:269
+msgid "Please select some capabilities for role"
+msgstr "Пожалуйста, выберите некоторые возможности для роли"
+
+#: user-role.php:280
+msgid "Wrong slug. See allowed symbols"
+msgstr "Неправильный слаг. Смотри доступные символы"
+
+#: user-role.php:283
+msgid "Some error occured"
+msgstr "Возникли некоторые ошибки"
+
+#: user-role.php:285
+msgid "Role was successfully updated"
+msgstr "Роль успешно обновлена"
+
+#: user-role.php:305
+msgid "Can not get capabilities of the selected role"
+msgstr "Невозможно получить возможности выбранной роли"
+
+#: user-role.php:309
+msgid "Capabilities were successfully loaded"
+msgstr "Возможности успешно загружены"
+
+#: user-role.php:309 includes/edit-role-page.php:30
+msgid "Save Changes"
+msgstr "Сохранить Изменения"
+
+#: user-role.php:311
+msgid "Selected role is not exists. Capabilities not loaded"
+msgstr "Выбранная роль не существует. Возможности не загружены"
+
+#: user-role.php:375
+msgid "Can not recover selected roles"
+msgstr "Невозможно перезаписать выбранные роли"
+
+#: user-role.php:385
+msgid "Selected roles were recovered successfully"
+msgstr "Выбранные роли успешно восстановлены по умолчанию"
+
+#: user-role.php:387
+msgid "Can not recover next roles"
+msgstr "Невозможно перезаписать следующие роли"
+
+#: user-role.php:470
+msgid "FAQ"
+msgstr "FAQ"
+
+#: user-role.php:471
+msgid "Support"
+msgstr "Поддержка"
+
+#: user-role.php:525
+msgid "This option is available in Pro version of plugin"
+msgstr "Эта опция доступна в Pro-версии плагина"
+
+#: user-role.php:528
+msgid "Close"
+msgstr "Закрыть"
+
+#: user-role.php:535
+msgid "Unlock premium options by upgrading to Pro version"
+msgstr "Активируйте премиум опции обновившись до Pro версии"
+
+#: user-role.php:536
+msgid "Learn More"
+msgstr "Подробнее"
+
+#: user-role.php:550
+msgid "Switch to Blog"
+msgstr "Переключиться на блок"
+
+#: user-role.php:558
+msgid "Allow for blogs"
+msgstr "Применить к блогам"
+
+#: user-role.php:568
+msgid "Select blog"
+msgstr "Выберите блог"
+
+#: user-role.php:577
+msgid "Add New Role"
+msgstr "Добавить новую роль"
+
+#: includes/class-user-role.php:74
+msgid "Roles not found"
+msgstr "Роли не найдены"
+
+#: includes/class-user-role.php:83 includes/class-user-role.php:178
+msgid "Recover"
+msgstr "Восстановить"
+
+#: includes/class-user-role.php:103
+#, php-format
+msgid "%s role"
+msgid_plural "%s roles"
+msgstr[0] "%s роль"
+msgstr[1] "%s роли"
+msgstr[2] "%s ролей"
+
+#: includes/class-user-role.php:116 includes/edit-role-page.php:226
+msgid "Role Name"
+msgstr "Имя роли"
+
+#: includes/class-user-role.php:117 includes/edit-role-page.php:230
+msgid "Role Slug"
+msgstr "Слаг роли"
+
+#: includes/class-user-role.php:118
+msgid "Type"
+msgstr "Тип"
+
+#: includes/class-user-role.php:119
+msgid "Users"
+msgstr "Пользователи"
+
+#: includes/class-user-role.php:120 includes/edit-role-page.php:238
+msgid "Capabilities"
+msgstr "Возможности"
+
+#: includes/class-user-role.php:177
+msgid "Edit"
+msgstr "Редактировать"
+
+#: includes/class-user-role.php:179
+msgid "Reset"
+msgstr "Сброс"
+
+#: includes/class-user-role.php:180
+msgid "Delete"
+msgstr "Удалить"
+
+#: includes/class-user-role.php:187
+msgid "Edit capabilities of the role"
+msgstr "Редактировать возможности роли"
+
+#: includes/class-user-role.php:192
+msgid ""
+"The default WordPress role will be restored to the default WordPress "
+"capabilities. This option is available in Pro version of plugin"
+msgstr ""
+"Возможности стандартной роли будут восстановлены до возможностей по "
+"умолчанию. Эта опция доступна в Pro-версии плагина"
+
+#: includes/class-user-role.php:197
+msgid ""
+"Restore a role to capabilities that were set at the time of the plugin "
+"activation or when the role was created"
+msgstr ""
+"Восстановить возможности роли на момент, когда плагин был активирован или на "
+"момент создания роли"
+
+#: includes/class-user-role.php:202
+msgid "Delete role. This option is available in Pro version of plugin"
+msgstr "Удалить роль. Эта опция доступна в Pro-версии плагина"
+
+#: includes/class-user-role.php:231
+msgid "default"
+msgstr "по умолчанию"
+
+#: includes/class-user-role.php:235
+msgid "Built-in"
+msgstr "Встроенная"
+
+#: includes/class-user-role.php:235
+msgid "Custom"
+msgstr "Дополнительная"
+
+#: includes/class-user-role.php:267
+msgid "Unknown action"
+msgstr "Неизвестное действие"
+
+#: includes/edit-role-page.php:22
+msgid "Actions with posts"
+msgstr "Действия с записями"
+
+#: includes/edit-role-page.php:23
+msgid "Actions with pages"
+msgstr "Действия с страницами"
+
+#: includes/edit-role-page.php:24
+msgid "Actions with themes"
+msgstr "Действия с темами"
+
+#: includes/edit-role-page.php:25
+msgid "Actions with users"
+msgstr "Действия с пользователями"
+
+#: includes/edit-role-page.php:26
+msgid "Actions with plugins"
+msgstr "Действия с плагинами"
+
+#: includes/edit-role-page.php:27
+msgid "Others default actions"
+msgstr "Стандартные действия вне категорий"
+
+#: includes/edit-role-page.php:28
+msgid "Others custom actions"
+msgstr "Дополнительные действия"
+
+#: includes/edit-role-page.php:161
+msgid "role not exists"
+msgstr "роль не существует"
+
+#: includes/edit-role-page.php:172 includes/edit-role-page.php:244
+msgid "All"
+msgstr "Выбрать всё"
+
+#: includes/edit-role-page.php:177
+msgid ""
+"For blogs, for which role does not exist, it will be created automatically"
+msgstr ""
+"Для блогов, для которых роль не существует, она будет создана автоматически"
+
+#: includes/edit-role-page.php:203
+msgid "Warning:"
+msgstr "Внимание:"
+
+#: includes/edit-role-page.php:203
+msgid "You are trying to edit your own role. Please read before"
+msgstr "Вы редактируете свою собственную роль. Пожалуйста прежде прочитайте"
+
+#: includes/edit-role-page.php:203
+msgid "Roles and Capabilities"
+msgstr "роли и возможности"
+
+#: includes/edit-role-page.php:204
+msgid ""
+"Changes will be applied immediately after saving. If you are not sure - do "
+"not click \"Update Role\" button."
+msgstr ""
+"Настройки будут применены немедленно после сохранения. Если Вы не уверены - "
+"не нажимайте на кнопку \"Обновить роль\""
+
+#: includes/edit-role-page.php:219
+msgid "Notice"
+msgstr "Внимание"
+
+#: includes/edit-role-page.php:219
+msgid "The role's settings have been changed."
+msgstr "Настройки роли были изменены."
+
+#: includes/edit-role-page.php:233
+msgid ""
+"Slug must contain only latin letters. Also You can add numbers and symbols "
+"\"-\" or \"_\""
+msgstr ""
+"Слаг должен содержать только латинские символы. Также Вы можете добавить  "
+"цифры и символы  \"-\"  или  \"_\""
+
+#: includes/edit-role-page.php:248
+msgid "Copy from"
+msgstr "Копировать из"
+
+#: includes/edit-role-page.php:256
+msgid "Select role"
+msgstr "Выберите роль"
+
+#: includes/edit-role-page.php:259
+msgid "Apply"
+msgstr "Применить"
+
+#~ msgid ""
+#~ "The role slug can include Latin letters, numbers, symbols \"-\" or \"_\" "
+#~ "only"
+#~ msgstr ""
+#~ "Слаг роли может содержать латинские символы, цифры, символы  \"-\" или  "
+#~ "\"_\""
+
+#~ msgid ""
+#~ "Capabilities were successfully loaded. In order to save changes, please "
+#~ "click \"Update Role\" button"
+#~ msgstr ""
+#~ "Возможности успешно загружены. Для того, чтобы сохранить изменения, "
+#~ "нажмите кнопку \"Обновить Роль\""
+
+#~ msgid "Update Role"
+#~ msgstr "Обновить роль"
+
+#~ msgid "Select Roles"
+#~ msgstr "Выберите роль"
+
+#~ msgid "You are editing the blog"
+#~ msgstr "Вы редактируете блог"
+
+#~ msgid "Are you sure, that you want to reset to default selected role(s)?"
+#~ msgstr "Вы уверены, что хотите сбросить выбранные роли?"
+
+#~ msgid "Yes, reset role(s)"
+#~ msgstr "Да, сбросить роль(и)"
+
+#~ msgid "Are you sure, that you want to delete selected role(s)?"
+#~ msgstr "Вы уверены, что хотите удалить выбранные роли?"
+
+#~ msgid "Yes, delete role(s)"
+#~ msgstr "Да, удалить роль(и)"
+
+#~ msgid "Some errors occured. Role not saved"
+#~ msgstr "Возникли ошибки"
+
+#~ msgid "For some selected blog role already exists"
+#~ msgstr "Для некоторых выбранных блогов роль уже существует."
+
+#~ msgid "Role allready exists"
+#~ msgstr "Роль уже существует"
+
+#~ msgid "Can not restore selected roles"
+#~ msgstr "Невозможно восстановить выбранные роли"
+
+#~ msgid "You can not reset custom roles"
+#~ msgstr "Вы не можете сбрасывать до настроек по умолчанию нестандартные роли"
+
+#~ msgid "Selected roles were restored successfully"
+#~ msgstr "Выбранные роли успешно перезаписаны"
+
+#~ msgid "You can not delete default role(s)"
+#~ msgstr "Вы не можете удалять стандартные роли"
+
+#~ msgid "Selected role(s) was(were) removed successfully"
+#~ msgstr "Выбранные роли были успешно удалены"
+
+#~ msgid "Some errors occured during loading of roles from selected blog."
+#~ msgstr "Возникли некоторые роли во время загрузки роли из выбранного блога."
+
+#~ msgid "Some errors occured."
+#~ msgstr "Возникли некоторые ошибки"
+
+#~ msgid "Delete role"
+#~ msgstr "Удалить роль"
+
+#~ msgid "Add Role"
+#~ msgstr "Добавить роль"
+
+#~ msgid "Roles"
+#~ msgstr "Роли"
+
+#~ msgid "%s"
+#~ msgstr "%s"
+
+#~ msgid "The role you selected is not (default) standard for WordPress"
+#~ msgstr "Выбранная вами роль не является стандартной для WordPress"
+
+#~ msgid ""
+#~ "The plugin's settings have been changed. In order to save them please "
+#~ "don't forget to click the 'Save Changes' button."
+#~ msgstr ""
+#~ "Настройки плагина изменились. Чтобы сохранить их, не забудьте нажать на "
+#~ "кнопку \"Сохранить Изменения\""
+
+#~ msgid "Table View"
+#~ msgstr "Табличное представление"
+
+#~ msgid "Flat View"
+#~ msgstr "Просмотр списком"
+
+#~ msgid "The changes has been saved"
+#~ msgstr "Изменения сохранены"
+
+#~ msgid "The settings have been restored for current role"
+#~ msgstr "Настройки были восстановлены для выбранной роли"
+
+#~ msgid "The settings have been restored for all roles"
+#~ msgstr "Настройки были восстановлены для всех ролей"
+
+#~ msgid "The settings have been reset for all roles"
+#~ msgstr "Настройки были сброшены для всех ролей"
+
+#~ msgid "The new role has been created and saved"
+#~ msgstr "Новая роль создана и сохранена"
+
+#~ msgid "The current role was removed successfully"
+#~ msgstr "Текущая роль была успешно удалена"
+
+#~ msgid "Show"
+#~ msgstr "Показать"
+
+#~ msgid "Chosen role"
+#~ msgstr "Выбранную роль"
+
+#~ msgid "All roles"
+#~ msgstr "Все роли"
+
+#~ msgid "Recover the settings you had before User Role plugin installation"
+#~ msgstr "Воставновить настройки до момента установки плагина User Role PRO"
+
+#~ msgid "Add"
+#~ msgstr "Добавить"
+
+#~ msgid "Delete Custom Role"
+#~ msgstr "Удалить кастомную роль"
+
+#~ msgid "All custom roles"
+#~ msgstr "Все кастомные роли"
+
+#~ msgid "Display the list of permissions for"
+#~ msgstr "Отображение привилегий для"
+
+#~ msgid "From site"
+#~ msgstr "Сайта"
+
+#~ msgid "Select none"
+#~ msgstr "Снять выделение"
+
+#~ msgid "For site"
+#~ msgstr "Для сайта"
+
+#~ msgid "Capabitity\\Site"
+#~ msgstr "Привилегия\\Сайт"
+
+#~ msgid "Capabilities category"
+#~ msgstr "Категория привилегий"
+
+#~ msgid "Capabilities without category"
+#~ msgstr "Привилегии без категории"
+
+#~ msgid "If none selected the changes will be applied to the site"
+#~ msgstr "Если сайты не выбраны, то изменения будут применяться к сайту"
+
+#~ msgid ""
+#~ "Are you sure you want to reset the settings for standard WordPress roles "
+#~ "to the default?"
+#~ msgstr ""
+#~ "Вы уверены, что хотите сбросить настройки для стандартных ролей WordPress "
+#~ "на настройки по умолчанию?"
+
+#~ msgid "Are you sure you want to recover settings by default?"
+#~ msgstr "Вы уверены, что хотите восстановить настройки по умолчанию?"
+
+#~ msgid "You do not have sufficient permissions to access this page."
+#~ msgstr "У вас недостаточно прав для доступа к этой странице"
+
+#~ msgid ""
+#~ "Note that all possible features (opportunities) will be restored to "
+#~ "installation defaults, and all advanced features provided by plugins will "
+#~ "be disabled as well."
+#~ msgstr ""
+#~ "Внимание все возможности будут востановлены до возможностей чистой "
+#~ "установки вордпресс, все дополнительные возможности созданные плагинами "
+#~ "буду отключены."
+
+#~ msgid "User Role Pro"
+#~ msgstr "User Role Pro"
+
+#~ msgid "Recover: "
+#~ msgstr "Восстановить: "
+
+#~ msgid "Reset: "
+#~ msgstr "Сбросить:"
+
+#~ msgid "Recover:"
+#~ msgstr "Восстановить:"
+
+#~ msgid "requires"
+#~ msgstr "требует"
+
+#~ msgid ""
+#~ "or higher, that is why it has been deactivated! Please upgrade WordPress "
+#~ "and try again."
+#~ msgstr ""
+#~ "или выше, поэтому плагин был деактивирован! Пожалуйста,  обновите "
+#~ "WordPress и повторите попытку."
+
+#~ msgid "Plugins page"
+#~ msgstr "Страница плагинов"
+
+#~ msgid "If you enjoy our plugin, please give it 5 stars on WordPress"
+#~ msgstr ""
+#~ "Если вам нравится наш плагин, пожалуйста, поставьте 5 звёзд на WordPress"
+
+#~ msgid "Rate the plugin"
+#~ msgstr "Оцените плагин"
+
+#~ msgid "If there is something wrong about it, please contact us"
+#~ msgstr "Если что-то не так, пожалуйста, свяжитесь с нами"
+
+#~ msgid ""
+#~ "Something went wrong. Try again later. If the error will appear again, "
+#~ "please, contact us <a href=http://support.bestwebsoft.com>BestWebSoft</"
+#~ "a>. We are sorry for inconvenience."
+#~ msgstr ""
+#~ "Something went wrong. Try again later. If the error will appear again, "
+#~ "please, contact us <a href=http://"
+
+#~ msgid "Wrong license key!"
+#~ msgstr "Неправильный лицензионный ключ!"
+
+#~ msgid "This license key is bind to another site"
+#~ msgstr "Это лицензионный ключ привязан к другому сайту"
+
+#~ msgid ""
+#~ "This license key is valid, but Your license has expired. If you want to "
+#~ "update our plugin in future, you should extend the license."
+#~ msgstr ""
+#~ "Лицензионный ключ принят, но срок действия лицензии истек. Если вы хотите "
+#~ "обновлять плагин в будущем, вы должны продлить лицензию."
+
+#~ msgid "Unfortunately, you have exceeded the number of available tries."
+#~ msgstr "К сожалению, вы превысили количество допустимых попыток."
+
+#~ msgid "The license key is valid. Your license will expire on"
+#~ msgstr "Лицензионный ключ принят. Ваша лицензия истечет"
+
+#~ msgid "The license key is valid."
+#~ msgstr "Лицензионный ключ принят."
+
+#~ msgid ""
+#~ "Something went wrong. Try again later. If the error will appear again, "
+#~ "please, contact us <a href=http://support.bestwebsoft.com>BestWebSoft</"
+#~ "a>. We are sorry for inconvienience."
+#~ msgstr ""
+#~ "Что-то пошло не так. Повторите попытку позже. Если ошибка появится снова, "
+#~ "пожалуйста, свяжитесь с нами <a href=http://support.bestwebsoft."
+#~ "com>BestWebSoft</a>. Приносим извинения за доставленные неудобства."
+
+#~ msgid ""
+#~ "If needed you can check if the license key is correct or reenter it in "
+#~ "the field below. You can find your license key on your personal page - "
+#~ "Client area - on our website"
+#~ msgstr ""
+#~ "При необходимости вы можете проверить валидность лицензионного ключа или "
+#~ "повторно ввести его в поле ниже. Вы можете найти ваш лицензионный ключ на "
+#~ "своей личной странице -  Client area - на нашем сайте"
+
+#~ msgid ""
+#~ "(your username is the email you specify when purchasing the product). If "
+#~ "necessary, please submit \"Lost your password?\" request."
+#~ msgstr ""
+#~ "(ваш пользователь это емейл, который вы указывали при покупке продукта). "
+#~ "При необходимости нажмите \"Lost your password?\""
+
+#~ msgid "Check license key"
+#~ msgstr "Проверка лицензионного ключа"
+
+#~ msgid ""
+#~ "WARNING: We have noticed illegal use of our plugin by you. We strongly "
+#~ "recommend you to solve the problem within 24 hours, otherwise the plugin "
+#~ "will be deactivated. Please go to your personal"
+#~ msgstr ""
+#~ "ВНИМАНИЕ: Было замечено незаконное использования вами нашего плагина. Мы "
+#~ "настоятельно рекомендуем Вам, решить данную проблему в течение 24 часов, "
+#~ "в противном случае плагин будет деативирован. Пожалуйста, перейдите на "
+#~ "вашу личную"
+
+#~ msgid ""
+#~ "(your username is the email you specify when purchasing the product), "
+#~ "where you can make the necessary changes."
+#~ msgstr ""
+#~ "(ваш пользователь это емейл, который вы указывали при покупке продукта), "
+#~ "где вы можете сделать необходимые изменения."
+
+#~ msgid ""
+#~ "Your license has expired. To continue getting top-priority support and "
+#~ "plugin updates you should extend."
+#~ msgstr ""
+#~ "Время использования вашей лицензии истекло. Если вы хотите обновлять ваш "
+#~ "плагин в дальшем, то вам нужно продлить лицензию."
+
+#~ msgid "You license for"
+#~ msgstr "Ваша лицензия для"
+
+#~ msgid "expires on"
+#~ msgstr "истекает"
+
+#~ msgid "and you won't be granted TOP-PRIORITY SUPPORT or UPDATES."
+#~ msgstr ""
+#~ "и у вас не будет возможности обновлятся или иметь приорететный саппорт."
+
+#~ msgid "Notice: "
+#~ msgstr "Внимание: "
+
+#~ msgid "Setting privileges"
+#~ msgstr "Настройки привилегий"
+
+#~ msgid "Interface v1"
+#~ msgstr "Интерфейс v1"
+
+#~ msgid "Interface v2"
+#~ msgstr "Интерфейс v2"
+
+#~ msgid "Recover chosen role for all blogs"
+#~ msgstr "Восстановить выбраную роль для всех блогов"
+
+#~ msgid "Recover all roles for all blogs"
+#~ msgstr "Восстановить все роли для всех блогов"

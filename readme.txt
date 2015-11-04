@@ -1,10 +1,10 @@
 === User Role by BestWebSoft ===
 Contributors: bestwebsoft
 Donate link: http://bestwebsoft.com/donate/
-Tags: access, button, capability, change capabilities, confirmation dialogue, editor, groups, permission, recover, recover button, recover capabilites button, recover role capabilities, reset, reset settings, reset role capabilites, restore role capabilties, restore settings, role, role capabilitites, role capabilities groups, security, settings, user, uzer, user role, user rol, uzer rol, user role plugin
-Requires at least: 3.6
-Tested up to: 4.2.2
-Stable tag: 1.4.8
+Tags: add tool, add plugin, access, button, capability, capability editor, capability manager, custom post type capabilities, custom post type permissions, custom post types, editor, change capabilities, confirmation dialogue, editor, groups,  manage role, manage roles, menu editor, multisite role editor, multisite roles, multisite user roles, permission, post type capabilities, post type permissions, role, role editor, role manager, role menu, role menu editor, roles, roles editor, roles manager, security, user, user role, user role editor, user roles, user roles editor, permissions, recover, recover button, recover capabilites button, recover role capabilities, reset, reset role capabilites, reset settings, restore role capabilties, restore settings, role, role capabilities groups, role capabilitites, security, settings, user, user rol,  user role plugin, uzer, uzer rol,  wordpress, wp, wp plugin, wp free plugin, wp user role, wp user role plugin, wp simple user role plugin, wp free user role, wp free user role plugin, wordpress plugin, wordpress free plugin, wordpress user role, wordpress user role plugin, wordpress simple user role plugin, wordpress free user role, wordpress free user role plugin
+Requires at least: 3.8
+Tested up to: 4.3.1
+Stable tag: 1.4.9
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -16,19 +16,21 @@ The User Role plugin allows you to change wordpress role capabilities. It is a v
 
 http://www.youtube.com/watch?v=O7OBFHn0_wU
 
-<a href="http://www.youtube.com/watch?v=gz9BkouavtU" target="_blank">Video instruction on Installation</a>
+<a href="http://www.youtube.com/watch?v=gz9BkouavtU" target="_blank">User Role by BestWebSoft Video instruction on Installation</a>
 
-<a href="http://wordpress.org/plugins/user-role/faq/" target="_blank">FAQ</a>
+<a href="http://wordpress.org/plugins/user-role/faq/" target="_blank">User Role by BestWebSoft FAQ</a>
 
-<a href="http://support.bestwebsoft.com" target="_blank">Support</a>
+<a href="http://support.bestwebsoft.com" target="_blank">User Role by BestWebSoft Support</a>
 
-<a href="http://bestwebsoft.com/products/user-role/?k=dabe729fc0e7bef82e30dcb21a6cefc3" target="_blank">Upgrade to Pro Version</a>
+<a href="http://bestwebsoft.com/products/user-role/?k=dabe729fc0e7bef82e30dcb21a6cefc3" target="_blank">Upgrade to User Role Pro by BestWebSoft</a>
 
 = Features =
 
-* Actions: You can recover wordpress role capabilities.
-* Interface: Recover button has confirmation dialogue, so that you won't reset your settings ocasionaly.
-* Display: All role capabilities are separated into groups.
+* View and change role сapabilities.
+* Copy сapabilities from another role.
+* Change the role name.
+* Recover wordpress role capabilities ( Recover button has confirmation dialogue, so that you won't reset your settings occasionally ).
+* All role capabilities are separated into groups.
 
 = Translation =
 
@@ -57,23 +59,13 @@ http://www.youtube.com/watch?v=gz9BkouavtU
 
 == Frequently Asked Questions ==
 
-= What default settings will be restored if I click on the Recover capabilities button? =
+= What settings will be restored if I click on the Recover link? =
 
-When the User Role plugin is activated it creates a backup of current roles and capabilities for your main blog and it will be restored if you click on the Recover capabilities button.
+Roles will be restored to capabilities that were set at the time of the plugin activation. If the role was created after plugin activation, then it will be restored to cabalities that were set at the time of the the role creation.
 
 = When I delete the User Role plugin will the settings of privileges be changed back? =
 
-No. They will stay changed unless you click on the Recover capabilities button.
-
-= How can I use the other language files with User Role? =
-
-Here is an example for Russian language files.
-
-1. In order to use another language for WordPress it is necessary to set a WordPress version to the required language and in the configuration wp file - `wp-config.php` in the line `define('WPLANG', '');` you should enter `define('WPLANG', 'ru_RU');`. If everything is done properly the admin panel will be in Russian.
-2. Make sure the files `ru_RU.po` and `ru_RU.mo` are present in the plugin (the folder "Languages" in the plugin root).
-3. If there are no such files you should copy the other files from this folder (for example, for German or Italian) and rename them (you should write `ru_RU` instead of `de_DE` in both files).
-4. The files can be edited with the help of the program Poedit - http://www.poedit.net/download.php - please download this program, install it, open the file using this program (the required language file) and for each line in English you should write translation in Russian.
-5. If everything is done properly all lines will be in Russian in the admin panel and in the front-end.
+Yes. They will be recovered.
 
 = I have some problems with the plugin's work. What Information should I provide to receive proper support? =
 
@@ -82,15 +74,26 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 1. the link to the page where the problem occurs
 2. the name of the plugin and its version. If you are using a pro version - your order number.
 3. the version of your WordPress installation
-4. copy and paste into the message your system status report. Please read more here: <a href="https://docs.google.com/document/d/1Wi2X8RdRGXk9kMszQy1xItJrpN0ncXgioH935MaBKtc/edit" target="_blank">Instuction on System Status</a>
+4. copy and paste into the message your system status report. Please read more here: <a href="https://docs.google.com/document/d/1Wi2X8RdRGXk9kMszQy1xItJrpN0ncXgioH935MaBKtc/edit" target="_blank">Instruction on System Status</a>
 
 == Screenshots ==
 
-1. Plugin interface on a single blog wordpress setup.
-2. Plugin flat view in WordPress Multisite network admin panel.
-3. Plugin table view in WordPress Multisite network admin panel.
+1. Roles page.
+2. Edit administrator`s role page.
+3. Edit author`s role page.
+4. Roles page for network admin panel.
+5. Edit administrator`s role page on network admin panel.
 
 == Changelog ==
+
+= V1.4.9 - 04.11.2015 =
+* New : We added the edit role page.
+* New : We added the ability to copy capabilities from another role.
+* New : We added the ability to change the role name.
+* Bugfix : We fixed bug with displaying of custom capabilities.
+* Update : We update the page of displaying the list of roles.
+* Update : We updated all functionality for wordpress 4.3.1.
+* Update : We removed functionality of Interface v2.
 
 = V1.4.8 - 15.07.2015 =
 * Update : Input maxlength is added.
@@ -149,6 +152,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * NEW : Css-style was added for Internet Explorer 10.
 
 == Upgrade Notice ==
+
+= V1.4.9 =
+We added the edit role page. We added the ability to copy capabilities from another role. We added the ability to change the role name. We fixed bug with displaying of custom capabilities. We update the page of displaying the list of roles. We updated all functionality for wordpress 4.3.1. We removed functionality of Interface v2.
 
 = V1.4.8 =
 Input maxlength is added. BWS plugins section is updated.
