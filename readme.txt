@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: http://bestwebsoft.com/donate/
 Tags: add tool, add plugin, access, button, capability, capability editor, capability manager, custom post type capabilities, custom post type permissions, custom post types, editor, change capabilities, confirmation dialogue, editor, groups,  manage role, manage roles, menu editor, multisite role editor, multisite roles, multisite user roles, permission, post type capabilities, post type permissions, role, role editor, role manager, role menu, role menu editor, roles, roles editor, roles manager, security, user, user role, user role editor, user roles, user roles editor, permissions, recover, recover button, recover capabilites button, recover role capabilities, reset, reset role capabilites, reset settings, restore role capabilties, restore settings, role, role capabilities groups, role capabilitites, security, settings, user, user rol,  user role plugin, uzer, uzer rol,  wordpress, wp, wp plugin, wp free plugin, wp user role, wp user role plugin, wp simple user role plugin, wp free user role, wp free user role plugin, wordpress plugin, wordpress free plugin, wordpress user role, wordpress user role plugin, wordpress simple user role plugin, wordpress free user role, wordpress free user role plugin
 Requires at least: 3.8
-Tested up to: 4.3.1
-Stable tag: 1.4.9
+Tested up to: 4.4-RC1
+Stable tag: 1.5.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -14,7 +14,7 @@ User Role plugin allows to change wordpress user role capabilities.
 
 The User Role plugin allows you to change wordpress role capabilities. It is a very useful tool when your site has a bunch of visitors or subscribers. The plugin has intuitive and convenient interface so all the site visitors can be easily sorted by roles with a couple of clicks.
 
-http://www.youtube.com/watch?v=O7OBFHn0_wU
+http://www.youtube.com/watch?v=rYY8DJUjSNo
 
 <a href="http://www.youtube.com/watch?v=gz9BkouavtU" target="_blank">User Role by BestWebSoft Video instruction on Installation</a>
 
@@ -35,6 +35,7 @@ http://www.youtube.com/watch?v=O7OBFHn0_wU
 = Translation =
 
 * Russian (ru_RU)
+* Serbian (sr_RS) (thanks to <a href="mailto:andrijanan@webhostinggeeks.com">Andrijana Nikolic</a>, www.webhostinggeeks.com)
 * Ukrainian (uk)
 
 If you would like to create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text of PO and MO files</a> for <a href="http://support.bestwebsoft.com" target="_blank">BestWebSoft</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files  <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
@@ -85,6 +86,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 5. Edit administrator`s role page on network admin panel.
 
 == Changelog ==
+
+= V1.5.0 - 04.12.2015 =
+* Bugfix : The bug with plugin menu duplicating was fixed.
 
 = V1.4.9 - 04.11.2015 =
 * New : We added the edit role page.
@@ -152,6 +156,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * NEW : Css-style was added for Internet Explorer 10.
 
 == Upgrade Notice ==
+
+= V1.5.0 =
+The bug with plugin menu duplicating was fixed.
 
 = V1.4.9 =
 We added the edit role page. We added the ability to copy capabilities from another role. We added the ability to change the role name. We fixed bug with displaying of custom capabilities. We update the page of displaying the list of roles. We updated all functionality for wordpress 4.3.1. We removed functionality of Interface v2.

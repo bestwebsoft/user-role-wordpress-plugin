@@ -6,7 +6,7 @@ Description: The plugin allows to change wordpress user role capabilities.
 Author: BestWebSoft
 Text Domain: user-role
 Domain Path: /languages
-Version: 1.4.9
+Version: 1.5.0
 Author URI: http://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -29,7 +29,7 @@ License: GPLv3 or later
 
 if ( ! function_exists( 'srrl_add_pages' ) ) {
 	function srrl_add_pages() {
-		bws_add_general_menu( plugin_basename( __FILE__ ) );
+		bws_general_menu();
 		$settings = add_submenu_page( 'bws_plugins', 'User Role', 'User Role', 'administrator', 'user-role.php', 'srrl_main_page' );
 		add_action( 'load-' . $settings, 'srrl_add_tabs' );
 	}
@@ -167,10 +167,9 @@ if ( ! function_exists( 'srrl_main_page' ) ) {
 				$error = $go_pro_result['error'];
 			elseif ( ! empty( $go_pro_result['message'] ) )
 				$message = $go_pro_result['message'];
-		} /* Display form on the setting page */ 
-		?>
+		} /* Display form on the setting page */ ?>
 		<div class="wrap">
-			<h2 class="srrl_page_title srrl_row"><?php _e( 'User Role Settings', 'user-role' ); ?></h2>
+			<h1 class="srrl_page_title srrl_row"><?php _e( 'User Role Settings', 'user-role' ); ?></h1>
 			<h2 class="nav-tab-wrapper">
 				<a class="nav-tab<?php if ( ! isset( $_GET['action'] ) ) echo ' nav-tab-active'; ?>" href="admin.php?page=user-role.php"><?php _e( 'Settings', 'user-role' ); ?></a>
 				<a class="nav-tab bws_go_pro_tab<?php if ( isset( $_GET['action'] ) && 'go_pro' == $_GET['action'] ) echo ' nav-tab-active'; ?>" href="admin.php?page=user-role.php&amp;action=go_pro"><?php _e( 'Go PRO', 'user-role' ); ?></a>
