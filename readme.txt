@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: http://bestwebsoft.com/donate/
 Tags: add tool, add plugin, access, button, capability, capability editor, capability manager, custom post type capabilities, custom post type permissions, custom post types, editor, change capabilities, confirmation dialogue, editor, groups,  manage role, manage roles, menu editor, multisite role editor, multisite roles, multisite user roles, permission, post type capabilities, post type permissions, role, role editor, role manager, role menu, role menu editor, roles, roles editor, roles manager, security, user, user role, user role editor, user roles, user roles editor, permissions, recover, recover button, recover capabilites button, recover role capabilities, reset, reset role capabilites, reset settings, restore role capabilties, restore settings, role, role capabilities groups, role capabilitites, security, settings, user, user rol,  user role plugin, uzer, uzer rol,  wordpress, wp, wp plugin, wp free plugin, wp user role, wp user role plugin, wp simple user role plugin, wp free user role, wp free user role plugin, wordpress plugin, wordpress free plugin, wordpress user role, wordpress user role plugin, wordpress simple user role plugin, wordpress free user role, wordpress free user role plugin
 Requires at least: 3.8
-Tested up to: 4.4-RC1
-Stable tag: 1.5.0
+Tested up to: 4.4.2
+Stable tag: 1.5.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -31,6 +31,8 @@ http://www.youtube.com/watch?v=rYY8DJUjSNo
 * Change the role name.
 * Recover wordpress role capabilities ( Recover button has confirmation dialogue, so that you won't reset your settings occasionally ).
 * All role capabilities are separated into groups.
+
+If you have a feature, suggestion or idea you'd like to see in the plugin, we'd love to hear about it! <a href="http://support.bestwebsoft.com/hc/en-us/requests/new" target="_blank">Suggest a Feature</a>
 
 = Translation =
 
@@ -86,6 +88,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 5. Edit administrator`s role page on network admin panel.
 
 == Changelog ==
+
+= V1.5.1 - 06.04.2016 =
+* Update : We updated all functionality for wordpress 4.4.2.
+* Update : BWS plugins section is updated.
 
 = V1.5.0 - 04.12.2015 =
 * Bugfix : The bug with plugin menu duplicating was fixed.
@@ -156,6 +162,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * NEW : Css-style was added for Internet Explorer 10.
 
 == Upgrade Notice ==
+
+= V1.5.1 =
+We updated all functionality for wordpress 4.4.2. BWS plugins section is updated.
 
 = V1.5.0 =
 The bug with plugin menu duplicating was fixed.

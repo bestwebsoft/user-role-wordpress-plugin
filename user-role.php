@@ -6,12 +6,12 @@ Description: The plugin allows to change wordpress user role capabilities.
 Author: BestWebSoft
 Text Domain: user-role
 Domain Path: /languages
-Version: 1.5.0
+Version: 1.5.1
 Author URI: http://bestwebsoft.com/
 License: GPLv3 or later
 */
 
-/*  © Copyright 2015  BestWebSoft  ( http://support.bestwebsoft.com )
+/*  © Copyright 2016  BestWebSoft  ( http://support.bestwebsoft.com )
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License, version 2, as
@@ -90,8 +90,9 @@ if ( ! function_exists( 'srrl_default_options' ) ) {
 	function srrl_default_options() {
 		global $srrl_options, $srrl_plugin_info;
 		$srrl_default_options = array(
-			'plugin_option_version' => $srrl_plugin_info["Version"],
-			'first_install'         => strtotime( "now" ),
+			'plugin_option_version' 	=> $srrl_plugin_info["Version"],
+			'first_install'         	=> strtotime( "now" ),
+			'suggest_feature_banner'	=> 1,
 		);
 		$srrl_options = get_option( 'srrl_options' );
 		if ( ! $srrl_options ) {
@@ -174,8 +175,8 @@ if ( ! function_exists( 'srrl_main_page' ) ) {
 				<a class="nav-tab<?php if ( ! isset( $_GET['action'] ) ) echo ' nav-tab-active'; ?>" href="admin.php?page=user-role.php"><?php _e( 'Settings', 'user-role' ); ?></a>
 				<a class="nav-tab bws_go_pro_tab<?php if ( isset( $_GET['action'] ) && 'go_pro' == $_GET['action'] ) echo ' nav-tab-active'; ?>" href="admin.php?page=user-role.php&amp;action=go_pro"><?php _e( 'Go PRO', 'user-role' ); ?></a>
 			</h2>
-			<div class="updated" <?php if ( empty( $message ) ) echo "style=\"display:none\""; ?>><p><strong><?php echo $message; ?></strong></p></div>
-			<div class="error" <?php if ( empty( $error ) ) echo "style=\"display:none\""; ?>><p><strong><?php echo $error; ?></strong></p></div>
+			<div class="updated below-h2" <?php if ( empty( $message ) ) echo "style=\"display:none\""; ?>><p><strong><?php echo $message; ?></strong></p></div>
+			<div class="error below-h2" <?php if ( empty( $error ) ) echo "style=\"display:none\""; ?>><p><strong><?php echo $error; ?></strong></p></div>
 			<?php if ( isset( $_REQUEST['srrl_action'] ) && in_array( $_REQUEST['srrl_action'], array( 'edit', 'update' ) ) ) {
 				/* display add/edit role page */
 				$file = dirname( __FILE__ ) . '/includes/edit-role-page.php';
@@ -450,12 +451,18 @@ if ( ! function_exists( 'srrl_plugin_action_links' ) ) {
 if ( ! function_exists ( 'srrl_plugin_banner' ) ) {
 	function srrl_plugin_banner() {
 		global $hook_suffix, $srrl_plugin_info, $srrl_options;
-		if ( empty( $srrl_options ) )
-			$srrl_options = get_option( 'srrl_options' );
+		
 		if ( 'plugins.php' == $hook_suffix ) {
+			if ( empty( $srrl_options ) )
+				$srrl_options = get_option( 'srrl_options' );
+
 			if ( isset( $srrl_options['first_install'] ) && strtotime( '-1 week' ) > $srrl_options['first_install'] )
 				bws_plugin_banner( $srrl_plugin_info, 'srrl', 'user-role', 'a2f27e2893147873133fe67d81fa274d', '132', '//ps.w.org/user-role/assets/icon-128x128.png' );
 			bws_plugin_banner_to_settings( $srrl_plugin_info, 'srrl_options', 'user-role', 'admin.php?page=user-role.php' );
+		}
+
+		if ( isset( $_GET['page'] ) && 'user-role.php' == $_GET['page'] ) {
+			bws_plugin_suggest_feature_banner( $srrl_plugin_info, 'srrl_options', 'user-role' );
 		}
 	}
 }
@@ -495,6 +502,10 @@ if ( ! function_exists ( 'srrl_delete_options' ) ) {
 			delete_option( 'srrl_backup_option_capabilities' );
 			delete_option( 'srrl_options' );
 		}
+
+		require_once( dirname( __FILE__ ) . '/bws_menu/bws_include.php' );
+		bws_include_init( plugin_basename( __FILE__ ) );
+		bws_delete_plugin( plugin_basename( __FILE__ ) );
 	}
 }
 
