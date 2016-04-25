@@ -21,9 +21,12 @@
 }
 #srrl_form .hndle {
 	cursor: pointer;
+	position: relative;
+	z-index: 10;
 }
-.srrl_postbox div.hndle select {
-	cursor: text;
+#srrl_form .postbox .handlediv {
+	position: relative;
+	z-index: 5;
 }
 .srrl_blogs_list span {
 	display: table-cell;
@@ -88,7 +91,12 @@
 	display: table-cell;
 	vertical-align: middle;
 }
-
+@media only screen and ( max-width: 782px ) {
+	.srrl_label_cap,
+	.srrl_blogs_list {
+		margin-top: 10px;
+	}
+}
 @media only screen and ( max-width: 450px ) {
 	.srrl_row,
 	.srrl_cell {
@@ -97,13 +105,16 @@
 	.srrl_blog_switcher_top {
 		display: none;
 	}
-	.srrl_label_cap,
-	.srrl_blogs_list,
 	.srrl_blog_switcher_bottom,
 	.srrl_postbox select {
 		width: 100%;
 		box-sizing: border-box;
 		overflow: hidden;
+	}	
+	.srrl_label_cap,
+	.srrl_blogs_list {
+		width: 100%;
+		box-sizing: border-box;
 	}
 	.srrl_blogs_list {
 		padding-bottom: 4px;

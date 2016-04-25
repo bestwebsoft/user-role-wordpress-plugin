@@ -6,7 +6,7 @@ Description: The plugin allows to change wordpress user role capabilities.
 Author: BestWebSoft
 Text Domain: user-role
 Domain Path: /languages
-Version: 1.5.1
+Version: 1.5.2
 Author URI: http://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -219,20 +219,20 @@ if ( ! function_exists( 'srrl_main_page' ) ) {
 					/* display confirm form */ ?>
 					<p><?php echo $question; ?></p>
 					<form method="post" action="<?php get_admin_url(); ?>admin.php?page=user-role.php" style="margin-bottom: 20px;">
-						<?php if ( isset( $_REQUEST['srrl_slug'] ) && ! empty( $_REQUEST['srrl_slug'] ) ) {
-							foreach( (array)$_REQUEST['srrl_slug'] as $role_slug ) { ?>
-								<input type="hidden" name="srrl_slug[]" value="<?php echo $role_slug; ?>"/>
+						<?php if ( ! empty( $_REQUEST['srrl_slug'] ) ) {
+							foreach ( (array)$_REQUEST['srrl_slug'] as $role_slug ) { ?>
+								<input type="hidden" name="srrl_slug[]" value="<?php echo esc_attr( $role_slug ); ?>"/>
 							<?php }
 						} ?>
 						<input type="submit" class="button" name="srrl_confirm_action" value="<?php echo $confirn_title; ?>"/>
 						<?php $admin_link = is_network_admin() ? network_admin_url() . 'admin.php?page=user-role.php' : get_admin_url() . 'admin.php?page=user-role.php';
 						if ( isset( $_REQUEST['srrl_blog_id'] ) )
-							$admin_link .= '&srrl_blog_id=' . $_REQUEST['srrl_blog_id']; ?>
-						<a class="button" href="<?php echo $admin_link; ?>"><?php _e( 'No, go back to the roles list', 'user-role' ); ?></a>
+							$admin_link .= '&srrl_blog_id=' . intval( $_REQUEST['srrl_blog_id'] ); ?>
+						<a class="button" href="<?php echo esc_url( $admin_link ); ?>"><?php _e( 'No, go back to the roles list', 'user-role' ); ?></a>
 						<?php if ( isset( $_REQUEST['srrl_blog_id'] ) ) { ?>
-							<input type="hidden" name="srrl_blog_id" value="<?php echo $_REQUEST['srrl_blog_id']; ?>"/>
+							<input type="hidden" name="srrl_blog_id" value="<?php echo intval( $_REQUEST['srrl_blog_id'] ); ?>"/>
 						<?php } ?>
-						<input type="hidden" name="srrl_action" value="<?php echo $action; ?>"/>
+						<input type="hidden" name="srrl_action" value="<?php echo esc_attr( $action ); ?>"/>
 						<?php wp_nonce_field( $plugin_basename, 'srrl_nonce_name' ); ?>
 					</form>
 				<?php } else {
@@ -297,7 +297,7 @@ if ( ! function_exists( 'srrl_single_handle_role' ) ) {
 if ( ! function_exists( 'srrl_copy_role' ) ) {
 	function srrl_copy_role() {
 		$result = array( 'error' => '', 'message' => '', 'caps' => array() );
-		if ( isset( $_REQUEST['srrl_select_role'] ) && '-1' !=  $_REQUEST['srrl_select_role'] ) {
+		if ( isset( $_REQUEST['srrl_select_role'] ) && '-1' != $_REQUEST['srrl_select_role'] ) {
 			global $wpdb;
 			$prefix     = $wpdb->get_blog_prefix();
 			$blog_roles = get_option( "{$prefix}user_roles" );

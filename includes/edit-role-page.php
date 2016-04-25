@@ -27,13 +27,13 @@ $labels_array = array(
 	'default' => __( 'Others default actions', 'user-role' ),
 	'custom'  => __( 'Others custom actions', 'user-role' )
 );
-$submit_title = __( 'Save Changes', 'user-role' );
+$submit_title = __( 'Update Role', 'user-role' );
 
 /**
  * perform the necessary actions
  * and forming of the result
  */
-switch( $_REQUEST['srrl_action'] ) {
+switch ( $_REQUEST['srrl_action'] ) {
 	case 'update':
 		check_admin_referer( $plugin_basename, 'srrl_nonce_name' );
 		$role_name    = isset( $_REQUEST['srrl_role_name'] ) ? stripslashes( trim( esc_html( $_REQUEST['srrl_role_name'] ) ) ) : '';
@@ -124,7 +124,7 @@ if ( ! empty( $role_slug ) ) {
 			}
 		}
 	}
-	foreach( $caps_array as $key => $value ) {
+	foreach ( $caps_array as $key => $value ) {
 		asort( $value );
 		$caps_array[ $key ] = $value;
 	}
@@ -136,7 +136,7 @@ if ( ! empty( $role_slug ) ) {
 	foreach ( $caps_array as $key => $value ) {
 		add_meta_box( 
 			"postbox-{$key}", 
-			'<label class="srrl_group_label"><input class="hide-if-no-js srrl_group_cap" id="' . $key . '_checkbox" type="checkbox" value="srrl_' . $key . '" />' . $labels_array[$key] . '</label>',
+			'<label class="srrl_group_label"><input class="hide-if-no-js srrl_group_cap" id="' . $key . '_checkbox" type="checkbox" value="srrl_' . $key . '" />' . $labels_array[ $key ] . '</label>',
 			'srrl_metabox_content', 
 			'user-role.php',
 			'normal',

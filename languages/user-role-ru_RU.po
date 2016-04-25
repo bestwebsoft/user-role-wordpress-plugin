@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: User Role\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-04 11:00+0300\n"
+"POT-Creation-Date: 2016-04-25 10:44+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: BestWebSoft team <wp@bestwebsoft.com>\n"
 "Language-Team: bestwebsoft.com <plugin@bestwebsoft.com>\n"
@@ -18,127 +18,127 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: user-role.php:172
+#: user-role.php:173
 msgid "User Role Settings"
 msgstr "Настройки User Role"
 
-#: user-role.php:174 user-role.php:443 user-role.php:468
+#: user-role.php:175 user-role.php:444 user-role.php:475
 msgid "Settings"
 msgstr "Настройки"
 
-#: user-role.php:175
+#: user-role.php:176
 msgid "Go PRO"
 msgstr "Перейти на PRO версию"
 
-#: user-role.php:210
+#: user-role.php:211
 msgid "Are you sure, that you want to recover selected role(s)?"
 msgstr "Вы уверены, что хотите восстановить выбранные роли?"
 
-#: user-role.php:211
+#: user-role.php:212
 msgid "Yes, recover role(s)"
 msgstr "Да, восстановить роль(и)"
 
-#: user-role.php:214
+#: user-role.php:215
 msgid "Are you sure, that you want to do selected action?"
 msgstr "Вы уверены, что хотите выполнить действие?"
 
-#: user-role.php:215
+#: user-role.php:216
 msgid "Yes, do it"
 msgstr "Да, выполнить"
 
-#: user-role.php:230
+#: user-role.php:231
 msgid "No, go back to the roles list"
 msgstr "Нет, вернуться к списку ролей"
 
-#: user-role.php:264
+#: user-role.php:265
 msgid "Please enter role name"
 msgstr "Пожалуйста, введите имя роли"
 
-#: user-role.php:266
+#: user-role.php:267
 msgid "Please enter role slug"
 msgstr "Пожалуйста, введите слаг роли"
 
-#: user-role.php:268
+#: user-role.php:269
 msgid "Please select some capabilities for role"
 msgstr "Пожалуйста, выберите некоторые возможности для роли"
 
-#: user-role.php:279
+#: user-role.php:280
 msgid "Wrong slug. See allowed symbols"
 msgstr "Неправильный слаг. Смотри доступные символы"
 
-#: user-role.php:282
+#: user-role.php:283
 msgid "Some error occured"
 msgstr "Возникли некоторые ошибки"
 
-#: user-role.php:284
+#: user-role.php:285
 msgid "Role was successfully updated"
 msgstr "Роль успешно обновлена"
 
-#: user-role.php:304
+#: user-role.php:305
 msgid "Can not get capabilities of the selected role"
 msgstr "Невозможно получить возможности выбранной роли"
 
-#: user-role.php:308
+#: user-role.php:309
 msgid "Capabilities were successfully loaded"
 msgstr "Возможности успешно загружены"
 
-#: user-role.php:308 includes/edit-role-page.php:30
+#: user-role.php:309
 msgid "Save Changes"
 msgstr "Сохранить Изменения"
 
-#: user-role.php:310
+#: user-role.php:311
 msgid "Selected role is not exists. Capabilities not loaded"
 msgstr "Выбранная роль не существует. Возможности не загружены"
 
-#: user-role.php:374
+#: user-role.php:375
 msgid "Can not recover selected roles"
 msgstr "Невозможно перезаписать выбранные роли"
 
-#: user-role.php:384
+#: user-role.php:385
 msgid "Selected roles were recovered successfully"
 msgstr "Выбранные роли успешно восстановлены по умолчанию"
 
-#: user-role.php:386
+#: user-role.php:387
 msgid "Can not recover next roles"
 msgstr "Невозможно перезаписать следующие роли"
 
-#: user-role.php:469
+#: user-role.php:476
 msgid "FAQ"
 msgstr "FAQ"
 
-#: user-role.php:470
+#: user-role.php:477
 msgid "Support"
 msgstr "Поддержка"
 
-#: user-role.php:524
+#: user-role.php:535
 msgid "This option is available in Pro version of plugin"
 msgstr "Эта опция доступна в Pro-версии плагина"
 
-#: user-role.php:527
+#: user-role.php:538
 msgid "Close"
 msgstr "Закрыть"
 
-#: user-role.php:534
+#: user-role.php:545
 msgid "Unlock premium options by upgrading to Pro version"
 msgstr "Активируйте премиум опции обновившись до Pro версии"
 
-#: user-role.php:535
+#: user-role.php:546
 msgid "Learn More"
 msgstr "Подробнее"
 
-#: user-role.php:549
+#: user-role.php:560
 msgid "Switch to Blog"
-msgstr "Переключиться на блок"
+msgstr "Переключиться на блог"
 
-#: user-role.php:557
+#: user-role.php:568
 msgid "Allow for blogs"
 msgstr "Применить к блогам"
 
-#: user-role.php:567
+#: user-role.php:578
 msgid "Select blog"
 msgstr "Выберите блог"
 
-#: user-role.php:576
+#: user-role.php:587
 msgid "Add New Role"
 msgstr "Добавить новую роль"
 
@@ -169,6 +169,10 @@ msgstr "Стандартные действия вне категорий"
 #: includes/edit-role-page.php:28
 msgid "Others custom actions"
 msgstr "Дополнительные действия"
+
+#: includes/edit-role-page.php:30
+msgid "Update Role"
+msgstr "Обновить роль"
 
 #: includes/edit-role-page.php:161
 msgid "role not exists"
@@ -333,9 +337,6 @@ msgstr "Неизвестное действие"
 #~ msgstr ""
 #~ "Возможности успешно загружены. Для того, чтобы сохранить изменения, "
 #~ "нажмите кнопку \"Обновить Роль\""
-
-#~ msgid "Update Role"
-#~ msgstr "Обновить роль"
 
 #~ msgid "Select Roles"
 #~ msgstr "Выберите роль"

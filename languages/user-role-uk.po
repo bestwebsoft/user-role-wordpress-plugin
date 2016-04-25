@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: User Role\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-30 14:27+0300\n"
+"POT-Creation-Date: 2016-04-25 10:44+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: BestWebSoft team <wp@bestwebsoft.com>\n"
 "Language-Team: bestwebsoft.com <plugin@bestwebsoft.com>\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "User Role Settings"
 msgstr "Налаштування User Role"
 
-#: user-role.php:175 user-role.php:444 user-role.php:469
+#: user-role.php:175 user-role.php:444 user-role.php:475
 msgid "Settings"
 msgstr "Налаштування"
 
@@ -82,7 +82,7 @@ msgstr "Неможливо отримати можливості обраної 
 msgid "Capabilities were successfully loaded"
 msgstr "Можливості успішно завантажені"
 
-#: user-role.php:309 includes/edit-role-page.php:30
+#: user-role.php:309
 msgid "Save Changes"
 msgstr "Зберегти зміни"
 
@@ -102,45 +102,151 @@ msgstr "Обрані ролi були успiшно перезаписані"
 msgid "Can not recover next roles"
 msgstr "Неможливо перезаписати наступні ролі"
 
-#: user-role.php:470
+#: user-role.php:476
 msgid "FAQ"
 msgstr "FAQ"
 
-#: user-role.php:471
+#: user-role.php:477
 msgid "Support"
 msgstr "Тех. підтримка"
 
-#: user-role.php:525
+#: user-role.php:535
 msgid "This option is available in Pro version of plugin"
 msgstr "Ця опція доступна тільки в Pro-версії плагіна"
 
-#: user-role.php:528
+#: user-role.php:538
 msgid "Close"
 msgstr "Закрити"
 
-#: user-role.php:535
+#: user-role.php:545
 msgid "Unlock premium options by upgrading to Pro version"
 msgstr "Зробити доступними преміум-опції, перейшовши на Pro версію"
 
-#: user-role.php:536
+#: user-role.php:546
 msgid "Learn More"
 msgstr "Детальніше"
 
-#: user-role.php:550
+#: user-role.php:560
 msgid "Switch to Blog"
 msgstr "Переключитися на блог"
 
-#: user-role.php:558
+#: user-role.php:568
 msgid "Allow for blogs"
 msgstr "Застосувати для блогів"
 
-#: user-role.php:568
+#: user-role.php:578
 msgid "Select blog"
-msgstr "Виберіть блог"
+msgstr "Оберіть блог"
 
-#: user-role.php:577
+#: user-role.php:587
 msgid "Add New Role"
 msgstr "Додати нову роль"
+
+#: includes/edit-role-page.php:22
+msgid "Actions with posts"
+msgstr "Дії із записами"
+
+#: includes/edit-role-page.php:23
+msgid "Actions with pages"
+msgstr "Дії зі сторінками"
+
+#: includes/edit-role-page.php:24
+msgid "Actions with themes"
+msgstr "Дії з темами"
+
+#: includes/edit-role-page.php:25
+msgid "Actions with users"
+msgstr "Дії з користувачами"
+
+#: includes/edit-role-page.php:26
+msgid "Actions with plugins"
+msgstr "Дії з плагінами"
+
+#: includes/edit-role-page.php:27
+msgid "Others default actions"
+msgstr "Інші стандартні дії"
+
+#: includes/edit-role-page.php:28
+msgid "Others custom actions"
+msgstr "Інші додаткові дії"
+
+#: includes/edit-role-page.php:30
+msgid "Update Role"
+msgstr "Оновити роль"
+
+#: includes/edit-role-page.php:161
+msgid "role not exists"
+msgstr "роль не існує"
+
+#: includes/edit-role-page.php:172 includes/edit-role-page.php:244
+msgid "All"
+msgstr "Обрати усі"
+
+#: includes/edit-role-page.php:177
+msgid ""
+"For blogs, for which role does not exist, it will be created automatically"
+msgstr "Для блогів, для яких роль не існує, роль буде створена автоматично"
+
+#: includes/edit-role-page.php:203
+msgid "Warning:"
+msgstr "Увага:"
+
+#: includes/edit-role-page.php:203
+msgid "You are trying to edit your own role. Please read before"
+msgstr ""
+"Ви намагаєтесь редагувати Вашу власну роль. Будь-ласка прочитайте передусім"
+
+#: includes/edit-role-page.php:203
+msgid "Roles and Capabilities"
+msgstr "ролі та можливості"
+
+#: includes/edit-role-page.php:204
+msgid ""
+"Changes will be applied immediately after saving. If you are not sure - do "
+"not click \"Update Role\" button."
+msgstr ""
+"Зміни будуть застосовані негайно після збереження. Якщо Ви не впевнені - не "
+"натискайте кнопку \"Оновити роль\""
+
+#: includes/edit-role-page.php:219
+msgid "Notice"
+msgstr "Попередження"
+
+#: includes/edit-role-page.php:219
+msgid "The role's settings have been changed."
+msgstr "Налаштування ролі були змінені."
+
+#: includes/edit-role-page.php:226 includes/class-user-role.php:116
+msgid "Role Name"
+msgstr "Ім’я ролі"
+
+#: includes/edit-role-page.php:230 includes/class-user-role.php:117
+msgid "Role Slug"
+msgstr "Слаг ролі"
+
+#: includes/edit-role-page.php:233
+msgid ""
+"Slug must contain only latin letters. Also You can add numbers and symbols "
+"\"-\" or \"_\""
+msgstr ""
+"Слаг має містити тільки латинські літери. Також Ви можете додати цифри та "
+"символи \"-\"  чи  \"_\""
+
+#: includes/edit-role-page.php:238 includes/class-user-role.php:120
+msgid "Capabilities"
+msgstr "Можливості"
+
+#: includes/edit-role-page.php:248
+msgid "Copy from"
+msgstr "Скопіювати з"
+
+#: includes/edit-role-page.php:256
+msgid "Select role"
+msgstr "Оберіть роль"
+
+#: includes/edit-role-page.php:259
+msgid "Apply"
+msgstr "Застосувати"
 
 #: includes/class-user-role.php:74
 msgid "Roles not found"
@@ -158,14 +264,6 @@ msgstr[0] "%s роль"
 msgstr[1] "%s ролі"
 msgstr[2] "%s ролей"
 
-#: includes/class-user-role.php:116 includes/edit-role-page.php:226
-msgid "Role Name"
-msgstr "Ім’я ролі"
-
-#: includes/class-user-role.php:117 includes/edit-role-page.php:230
-msgid "Role Slug"
-msgstr "Слаг ролі"
-
 #: includes/class-user-role.php:118
 msgid "Type"
 msgstr "Тип"
@@ -173,10 +271,6 @@ msgstr "Тип"
 #: includes/class-user-role.php:119
 msgid "Users"
 msgstr "Користувачі"
-
-#: includes/class-user-role.php:120 includes/edit-role-page.php:238
-msgid "Capabilities"
-msgstr "Можливості"
 
 #: includes/class-user-role.php:177
 msgid "Edit"
@@ -230,96 +324,6 @@ msgstr "Додаткова"
 msgid "Unknown action"
 msgstr "Невідома дія"
 
-#: includes/edit-role-page.php:22
-msgid "Actions with posts"
-msgstr "Дії із записами"
-
-#: includes/edit-role-page.php:23
-msgid "Actions with pages"
-msgstr "Дії зі сторінками"
-
-#: includes/edit-role-page.php:24
-msgid "Actions with themes"
-msgstr "Дії з темами"
-
-#: includes/edit-role-page.php:25
-msgid "Actions with users"
-msgstr "Дії з користувачами"
-
-#: includes/edit-role-page.php:26
-msgid "Actions with plugins"
-msgstr "Дії з плагінами"
-
-#: includes/edit-role-page.php:27
-msgid "Others default actions"
-msgstr "Інші стандартні дії"
-
-#: includes/edit-role-page.php:28
-msgid "Others custom actions"
-msgstr "Інші додаткові дії"
-
-#: includes/edit-role-page.php:161
-msgid "role not exists"
-msgstr "роль не існує"
-
-#: includes/edit-role-page.php:172 includes/edit-role-page.php:244
-msgid "All"
-msgstr "Обрати усі"
-
-#: includes/edit-role-page.php:177
-msgid ""
-"For blogs, for which role does not exist, it will be created automatically"
-msgstr "Для блогів, для яких роль не існує, роль буде створена автоматично"
-
-#: includes/edit-role-page.php:203
-msgid "Warning:"
-msgstr "Увага:"
-
-#: includes/edit-role-page.php:203
-msgid "You are trying to edit your own role. Please read before"
-msgstr ""
-"Ви намагаєтесь редагувати Вашу власну роль. Будь-ласка прочитайте передусім"
-
-#: includes/edit-role-page.php:203
-msgid "Roles and Capabilities"
-msgstr "ролі та можливості"
-
-#: includes/edit-role-page.php:204
-msgid ""
-"Changes will be applied immediately after saving. If you are not sure - do "
-"not click \"Update Role\" button."
-msgstr ""
-"Зміни будуть застосовані негайно після збереження. Якщо Ви не впевнені - не "
-"натискайте кнопку \"Оновити роль\""
-
-#: includes/edit-role-page.php:219
-msgid "Notice"
-msgstr "Попередження"
-
-#: includes/edit-role-page.php:219
-msgid "The role's settings have been changed."
-msgstr "Налаштування ролі були змінені."
-
-#: includes/edit-role-page.php:233
-msgid ""
-"Slug must contain only latin letters. Also You can add numbers and symbols "
-"\"-\" or \"_\""
-msgstr ""
-"Слаг має містити тільки латинські літери. Також Ви можете додати цифри та "
-"символи \"-\"  чи  \"_\""
-
-#: includes/edit-role-page.php:248
-msgid "Copy from"
-msgstr "Скопіювати з"
-
-#: includes/edit-role-page.php:256
-msgid "Select role"
-msgstr "Оберіть роль"
-
-#: includes/edit-role-page.php:259
-msgid "Apply"
-msgstr "Застосувати"
-
 #~ msgid ""
 #~ "The role slug can include Latin letters, numbers, symbols \"-\" or \"_\" "
 #~ "only"
@@ -333,9 +337,6 @@ msgstr "Застосувати"
 #~ msgstr ""
 #~ "Можливості успішно завантажені. Для збереження змін, будь-ласка натисніть "
 #~ "кнопку \"Оновити роль\""
-
-#~ msgid "Update Role"
-#~ msgstr "Оновити роль"
 
 #~ msgid "Select Roles"
 #~ msgstr "Оберіть роль"

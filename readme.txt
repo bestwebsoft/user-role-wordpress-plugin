@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: http://bestwebsoft.com/donate/
 Tags: add tool, add plugin, access, button, capability, capability editor, capability manager, custom post type capabilities, custom post type permissions, custom post types, editor, change capabilities, confirmation dialogue, editor, groups,  manage role, manage roles, menu editor, multisite role editor, multisite roles, multisite user roles, permission, post type capabilities, post type permissions, role, role editor, role manager, role menu, role menu editor, roles, roles editor, roles manager, security, user, user role, user role editor, user roles, user roles editor, permissions, recover, recover button, recover capabilites button, recover role capabilities, reset, reset role capabilites, reset settings, restore role capabilties, restore settings, role, role capabilities groups, role capabilitites, security, settings, user, user rol,  user role plugin, uzer, uzer rol,  wordpress, wp, wp plugin, wp free plugin, wp user role, wp user role plugin, wp simple user role plugin, wp free user role, wp free user role plugin, wordpress plugin, wordpress free plugin, wordpress user role, wordpress user role plugin, wordpress simple user role plugin, wordpress free user role, wordpress free user role plugin
 Requires at least: 3.8
-Tested up to: 4.4.2
-Stable tag: 1.5.1
+Tested up to: 4.5
+Stable tag: 1.5.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -44,7 +44,7 @@ If you would like to create your own language pack or update the existing one, y
 
 = Technical support =
 
-Dear users, our plugins are available for free download. If you have any questions or recommendations regarding the functionality of our plugins (existing options, new options, current issues), please feel free to contact us. Please note that we accept requests in English only. All messages in another languages won't be accepted.
+Dear users, our plugins are available for free download. If you have any questions or recommendations regarding the functionality of our plugins (existing options, new options, current issues), please feel free to contact us. Please note that we accept requests in English only. All messages in other languages won't be accepted.
 
 If you notice any bugs in the plugin's work, you can notify us about it and we'll investigate and fix the issue then. Your request should contain URL of the website, issues description and WordPress admin panel credentials.
 Moreover we can customize the plugin according to your requirements. It's a paid service (as a rule it costs $40, but the price can vary depending on the amount of the necessary changes and their complexity). Please note that we could also include this or that feature (developed for you) in the next release and share with the other users then.
@@ -88,6 +88,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 5. Edit administrator`s role page on network admin panel.
 
 == Changelog ==
+
+= V1.5.2 - 25.04.2016 =
+* Bugfix : Security Vulnerability was fixed.
 
 = V1.5.1 - 06.04.2016 =
 * Update : We updated all functionality for wordpress 4.4.2.
@@ -162,6 +165,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * NEW : Css-style was added for Internet Explorer 10.
 
 == Upgrade Notice ==
+
+= V1.5.2 =
+Security Vulnerability was fixed.
 
 = V1.5.1 =
 We updated all functionality for wordpress 4.4.2. BWS plugins section is updated.
