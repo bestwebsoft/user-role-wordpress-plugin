@@ -6,7 +6,7 @@ Description: The plugin allows to change wordpress user role capabilities.
 Author: BestWebSoft
 Text Domain: user-role
 Domain Path: /languages
-Version: 1.5.2
+Version: 1.5.3
 Author URI: http://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -30,7 +30,7 @@ License: GPLv3 or later
 if ( ! function_exists( 'srrl_add_pages' ) ) {
 	function srrl_add_pages() {
 		bws_general_menu();
-		$settings = add_submenu_page( 'bws_plugins', 'User Role', 'User Role', 'administrator', 'user-role.php', 'srrl_main_page' );
+		$settings = add_submenu_page( 'bws_panel', 'User Role', 'User Role', 'administrator', 'user-role.php', 'srrl_main_page' );
 		add_action( 'load-' . $settings, 'srrl_add_tabs' );
 	}
 }
@@ -57,7 +57,7 @@ if ( ! function_exists( 'srrl_init' ) ) {
 		}
 		
 		/* Function check if plugin is compatible with current WP version */
-		bws_wp_min_version_check( plugin_basename( __FILE__ ), $srrl_plugin_info, '3.8', '3.6' );
+		bws_wp_min_version_check( plugin_basename( __FILE__ ), $srrl_plugin_info, '3.8' );
 	}
 }
 

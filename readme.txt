@@ -1,10 +1,10 @@
 === User Role by BestWebSoft ===
 Contributors: bestwebsoft
 Donate link: http://bestwebsoft.com/donate/
-Tags: add tool, add plugin, access, button, capability, capability editor, capability manager, custom post type capabilities, custom post type permissions, custom post types, editor, change capabilities, confirmation dialogue, editor, groups,  manage role, manage roles, menu editor, multisite role editor, multisite roles, multisite user roles, permission, post type capabilities, post type permissions, role, role editor, role manager, role menu, role menu editor, roles, roles editor, roles manager, security, user, user role, user role editor, user roles, user roles editor, permissions, recover, recover button, recover capabilites button, recover role capabilities, reset, reset role capabilites, reset settings, restore role capabilties, restore settings, role, role capabilities groups, role capabilitites, security, settings, user, user rol,  user role plugin, uzer, uzer rol,  wordpress, wp, wp plugin, wp free plugin, wp user role, wp user role plugin, wp simple user role plugin, wp free user role, wp free user role plugin, wordpress plugin, wordpress free plugin, wordpress user role, wordpress user role plugin, wordpress simple user role plugin, wordpress free user role, wordpress free user role plugin
+Tags: capability, change capabilities, capability editor, capability manager, role manager, user role, user role plugin, recover capabilities button, recover role capabilities, roles manager, user role editor, restore role capabilities
 Requires at least: 3.8
-Tested up to: 4.5
-Stable tag: 1.5.2
+Tested up to: 4.5.3
+Stable tag: 1.5.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -40,7 +40,7 @@ If you have a feature, suggestion or idea you'd like to see in the plugin, we'd 
 * Serbian (sr_RS) (thanks to <a href="mailto:andrijanan@webhostinggeeks.com">Andrijana Nikolic</a>, www.webhostinggeeks.com)
 * Ukrainian (uk)
 
-If you would like to create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text of PO and MO files</a> for <a href="http://support.bestwebsoft.com" target="_blank">BestWebSoft</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files  <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
+Some of these translations are not complete. We are constantly adding new features which should be translated. If you would like to create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text of PO and MO files</a> for <a href="http://support.bestwebsoft.com/hc/en-us/requests/new" target="_blank">BestWebSoft</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files  <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
 
 = Technical support =
 
@@ -88,6 +88,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 5. Edit administrator`s role page on network admin panel.
 
 == Changelog ==
+
+= V1.5.3 - 28.06.2016 =
+* Update : BWS panel section is updated.
 
 = V1.5.2 - 25.04.2016 =
 * Bugfix : Security Vulnerability was fixed.
@@ -165,6 +168,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * NEW : Css-style was added for Internet Explorer 10.
 
 == Upgrade Notice ==
+
+= V1.5.3 =
+BWS panel section is updated.
 
 = V1.5.2 =
 Security Vulnerability was fixed.
