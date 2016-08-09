@@ -1,0 +1,1051 @@
+# Translation of Stable (latest release) in Belarusian
+# This file is distributed under the same license as the Stable (latest release) package.
+msgid ""
+msgstr ""
+"Project-Id-Version: User Role\n"
+"POT-Creation-Date: 2016-08-09 11:56+0300\n"
+"PO-Revision-Date: 2016-08-09 11:56+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: be\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: user-role.php:173
+msgid "User Role Settings"
+msgstr "Налады  User Role"
+
+#: user-role.php:175 user-role.php:444 user-role.php:475
+msgid "Settings"
+msgstr "Налады."
+
+#: user-role.php:176
+msgid "Go PRO"
+msgstr "Перайсці на PRO версію"
+
+#: user-role.php:211
+msgid "Are you sure, that you want to recover selected role(s)?"
+msgstr "Вы ўпэўненыя, што хочаце аднавіць выбраныя ролі?"
+
+#: user-role.php:212
+msgid "Yes, recover role(s)"
+msgstr "Так, аднавіць ролю (і)"
+
+#: user-role.php:215
+msgid "Are you sure, that you want to do selected action?"
+msgstr "Вы ўпэўненыя, што хочаце выканаць дзеянне?"
+
+#: user-role.php:216
+msgid "Yes, do it"
+msgstr "Так, выканаць"
+
+#: user-role.php:231
+msgid "No, go back to the roles list"
+msgstr "Не, вярнуцца да спісу роляў"
+
+#: user-role.php:265
+msgid "Please enter role name"
+msgstr "Калі ласка, увядзіце імя ролі"
+
+#: user-role.php:267
+msgid "Please enter role slug"
+msgstr "Калі ласка, увядзіце слаг ролі"
+
+#: user-role.php:269
+msgid "Please select some capabilities for role"
+msgstr "Калі ласка, абярыце некаторыя магчымасці для ролі"
+
+#: user-role.php:280
+msgid "Wrong slug. See allowed symbols"
+msgstr "Няправільны слаг. Глядзі даступныя сімвалы"
+
+#: user-role.php:283
+msgid "Some error occured"
+msgstr "Паўсталі некаторыя памылкі"
+
+#: user-role.php:285
+msgid "Role was successfully updated"
+msgstr "Роля паспяхова абноўлена"
+
+#: user-role.php:305
+msgid "Can not get capabilities of the selected role"
+msgstr "Не ўдалося ўзяць магчымасці абранай ролі"
+
+#: user-role.php:309
+msgid "Capabilities were successfully loaded"
+msgstr "Магчымасці паспяхова загружаны"
+
+#: user-role.php:309
+msgid "Save Changes"
+msgstr "захаваць змены"
+
+#: user-role.php:311
+msgid "Selected role is not exists. Capabilities not loaded"
+msgstr "Абраная роля не існуе. Магчымасці не загружаны"
+
+#: user-role.php:375
+msgid "Can not recover selected roles"
+msgstr "Немагчыма перазапісаць выбраныя ролі"
+
+#: user-role.php:385
+msgid "Selected roles were recovered successfully"
+msgstr "Выбраныя ролі пасьпяхова адноўленыя па змаўчанні"
+
+#: user-role.php:387
+msgid "Can not recover next roles"
+msgstr "Немагчыма перазапісаць наступныя ролі"
+
+#: user-role.php:476
+msgid "FAQ"
+msgstr "\tFAQ"
+
+#: user-role.php:477
+msgid "Support"
+msgstr "тэхпадтрымка"
+
+#: user-role.php:535
+msgid "This option is available in Pro version of plugin"
+msgstr "Гэтая опцыя даступная ў Pro-версіі плагіна"
+
+#: user-role.php:538
+msgid "Close"
+msgstr "Затвори"
+
+#: user-role.php:545
+msgid "Unlock premium options by upgrading to Pro version"
+msgstr "Разблакаваць прэміум опцыі, абнаўленне да Pro версіі"
+
+#: user-role.php:546
+msgid "Learn More"
+msgstr "чытаць далей"
+
+#: user-role.php:560
+msgid "Switch to Blog"
+msgstr "Пераключыцца на блок"
+
+#: user-role.php:568
+msgid "Allow for blogs"
+msgstr "Прымяніць да блогаў"
+
+#: user-role.php:578
+msgid "Select blog"
+msgstr "выберыце блог"
+
+#: user-role.php:587
+msgid "Add New Role"
+msgstr "дадаць Ролю"
+
+#: includes/edit-role-page.php:22
+msgid "Actions with posts"
+msgstr "Дзеянні з запісамі"
+
+#: includes/edit-role-page.php:23
+msgid "Actions with pages"
+msgstr "Дзеянні з старонкамі"
+
+#: includes/edit-role-page.php:24
+msgid "Actions with themes"
+msgstr "Дзеянні з тэмамі"
+
+#: includes/edit-role-page.php:25
+msgid "Actions with users"
+msgstr "Дзеянні з карыстальнікамі"
+
+#: includes/edit-role-page.php:26
+msgid "Actions with plugins"
+msgstr "Дзеянні з ўбудовамі"
+
+#: includes/edit-role-page.php:27
+msgid "Others default actions"
+msgstr "Стандартныя дзеянні па-за катэгорыямі"
+
+#: includes/edit-role-page.php:28
+msgid "Others custom actions"
+msgstr "дадатковыя дзеянні"
+
+#: includes/edit-role-page.php:30
+msgid "Update Role"
+msgstr "Абнаўленне ролі"
+
+#: includes/edit-role-page.php:161
+msgid "role not exists"
+msgstr "роль не існуе"
+
+#: includes/edit-role-page.php:172 includes/edit-role-page.php:244
+msgid "All"
+msgstr "Усё"
+
+#: includes/edit-role-page.php:177
+msgid ""
+"For blogs, for which role does not exist, it will be created automatically"
+msgstr "Для блогаў, для якіх роль не існуе, яна будзе створана аўтаматычна"
+
+#: includes/edit-role-page.php:203
+msgid "Warning:"
+msgstr "Увага:"
+
+#: includes/edit-role-page.php:203
+msgid "You are trying to edit your own role. Please read before"
+msgstr "Вы рэдагуеце сваю ўласную ролю. Калі ласка найперш прачытайце"
+
+#: includes/edit-role-page.php:203
+msgid "Roles and Capabilities"
+msgstr "ролі і магчымасці"
+
+#: includes/edit-role-page.php:204
+msgid ""
+"Changes will be applied immediately after saving. If you are not sure - do "
+"not click \"Update Role\" button."
+msgstr ""
+"Налады будуць ужытыя неадкладна пасля захавання. Калі Вы не ўпэўненыя - не "
+"націскайце на кнопку \"Абнавіць ролю\""
+
+#: includes/edit-role-page.php:219
+msgid "Notice"
+msgstr "апавяшчэнне"
+
+#: includes/edit-role-page.php:219
+msgid "The role's settings have been changed."
+msgstr "Налады ролі былі змененыя"
+
+#: includes/edit-role-page.php:226 includes/class-user-role.php:116
+msgid "Role Name"
+msgstr "Імя ролі"
+
+#: includes/edit-role-page.php:230 includes/class-user-role.php:117
+msgid "Role Slug"
+msgstr "Слаг ролі"
+
+#: includes/edit-role-page.php:233
+msgid ""
+"Slug must contain only latin letters. Also You can add numbers and symbols "
+"\"-\" or \"_\""
+msgstr ""
+"Слаг павінен утрымліваць толькі лацінскія сімвалы. Таксама Вы можаце дадаць "
+"лічбы і сімвалы \"-\" ці \"_\""
+
+#: includes/edit-role-page.php:238 includes/class-user-role.php:120
+msgid "Capabilities"
+msgstr "Полномочия"
+
+#: includes/edit-role-page.php:248
+msgid "Copy from"
+msgstr "скапіяваць з"
+
+#: includes/edit-role-page.php:256
+msgid "Select role"
+msgstr "выберыце ролю"
+
+#: includes/edit-role-page.php:259
+msgid "Apply"
+msgstr "Ужыць"
+
+#: includes/class-user-role.php:74
+msgid "Roles not found"
+msgstr "Ролі не знойдзены"
+
+#: includes/class-user-role.php:83 includes/class-user-role.php:178
+msgid "Recover"
+msgstr "Аднавіць"
+
+#: includes/class-user-role.php:118
+msgid "Type"
+msgstr "Тып"
+
+#: includes/class-user-role.php:119
+msgid "Users"
+msgstr "Карыстальнікі"
+
+#: includes/class-user-role.php:177
+msgid "Edit"
+msgstr "рэдагаваць"
+
+#: includes/class-user-role.php:179
+msgid "Reset"
+msgstr "перазагрузіць"
+
+#: includes/class-user-role.php:180
+msgid "Delete"
+msgstr "выдаліць"
+
+#: includes/class-user-role.php:187
+msgid "Edit capabilities of the role"
+msgstr "Рэдагаваць магчымасці ролі"
+
+#: includes/class-user-role.php:192
+msgid ""
+"The default WordPress role will be restored to the default WordPress "
+"capabilities. This option is available in Pro version of plugin"
+msgstr ""
+"Магчымасці стандартнай ролі будуць адноўлены да магчымасцяў па змаўчанні. "
+"Гэтая опцыя даступна ў Pro-версіі плагіна"
+
+#: includes/class-user-role.php:197
+msgid ""
+"Restore a role to capabilities that were set at the time of the plugin "
+"activation or when the role was created"
+msgstr ""
+"Аднавіць магчымасці ролі на момант, калі ўбудова была актывавана або на "
+"момант стварэння ролі"
+
+#: includes/class-user-role.php:202
+msgid "Delete role. This option is available in Pro version of plugin"
+msgstr "Выдаліць ролю. Гэтая опцыя даступная ў Pro-версіі плагіна"
+
+#: includes/class-user-role.php:231
+msgid "default"
+msgstr "Па змаўчанні"
+
+#: includes/class-user-role.php:235
+msgid "Built-in"
+msgstr "убудаваная"
+
+#: includes/class-user-role.php:235
+msgid "Custom"
+msgstr "дадаткова"
+
+#: includes/class-user-role.php:267
+msgid "Unknown action"
+msgstr "невядомае дзеянне"
+
+#~ msgid "http://bestwebsoft.com/products/user-role/"
+#~ msgstr "http://bestwebsoft.com/products/user-role/"
+
+#~ msgid ""
+#~ "Powerful user role management plugin for WordPress website. Create, edit, "
+#~ "copy, and delete user roles."
+#~ msgstr ""
+#~ "Магутны карыстальніцкая ўбудова кіравання ролямі для сайта WordPress. "
+#~ "Стварэнне, рэдагаванне, капіраванне і выдаленне роляў карыстальнікаў."
+
+#~ msgid "System Status"
+#~ msgstr "Стан сістэмы"
+
+#~ msgid "Thank you for installing plugins by BestWebSoft!"
+#~ msgstr "Дзякуем за ўстаноўку ўбудоў ад BestWebSoft!"
+
+#~ msgid "More Details"
+#~ msgstr "Больш падрабязна"
+
+#~ msgid "Less Details"
+#~ msgstr "Менш дэталяў"
+
+#~ msgid "Donations play an important role in supporting great projects"
+#~ msgstr "Ахвяраванні гуляюць важную ролю ў падтрымцы вялікіх праектаў"
+
+#~ msgid "Enter your license key to install and activate"
+#~ msgstr "Увядзіце ліцэнзійны ключ для ўстаноўкі і актывацыі"
+
+#~ msgid "version of the plugin."
+#~ msgstr "версія ўбудовы."
+
+#~ msgid "License key can be found in the"
+#~ msgstr "Ліцэнзійны ключ можна знайсці ў"
+
+#~ msgid "(your username is the email address specified during the purchase)."
+#~ msgstr ""
+#~ "(Вашым імем карыстальніка з'яўляецца адрас электроннай пошты пазначаны "
+#~ "пры куплі)."
+
+#~ msgid "Add BWS Shortcode"
+#~ msgstr "Дадаць шоткод BWS"
+
+#~ msgid "Not enough permissions to create the file"
+#~ msgstr "Не хапае правоў для стварэння файла"
+
+#~ msgid ""
+#~ "These PHP code will be hooked to the %s action and will be printed on "
+#~ "front end only."
+#~ msgstr ""
+#~ "Гэты PHP код будзе зачэплтвае  %s  дзеянні і будзе надрукаваны толькі на "
+#~ "пярэднім канцы."
+
+#~ msgid ""
+#~ "This license key is bind to another website. Change it via personal "
+#~ "Client Area."
+#~ msgstr ""
+#~ "Гэты ліцэнзійны ключ звязваецца з іншым вэб-сайтам. Зменіце яго з "
+#~ "дапамогай асабістага кліенцкай вобласці."
+
+#~ msgid "Log in"
+#~ msgstr "Увайсці"
+
+#~ msgid "Congratulations! Pro Membership license is successfully activated."
+#~ msgstr "Віншуем! Pro ліцэнзія сяброўства паспяхова актываваная."
+
+#~ msgid "Manage purchased licenses & subscriptions"
+#~ msgstr "Кіраванне набытых ліцэнзій і падпіскі"
+
+#~ msgid "My Account"
+#~ msgstr "Мой рахунак"
+
+#~ msgid "Get Access to %s+ Premium Plugins"
+#~ msgstr "Атрымаць доступ да %s+ Premium убудоў"
+
+#~ msgid ""
+#~ "Join BestWebSoft Pro Membership today, cancel any time and use all "
+#~ "plugins on a single website %s for only %s per month."
+#~ msgstr ""
+#~ "Рэгістрацыя BestWebSoft Pro Сяброўства сёння, адмяніць у любы час і "
+#~ "выкарыстоўваць усе ўбудовы на адным сайце %s толькі %s  у месяц."
+
+#~ msgid "Enter your license key"
+#~ msgstr "Увядзіце ліцэнзійны ключ"
+
+#~ msgid "Activate Membership"
+#~ msgstr "Актываваць Сяброўства"
+
+#~ msgid "Don’t have valid license key yet?"
+#~ msgstr "Яшчэ не мееце дзеючы ліцэнзійны ключ?"
+
+#~ msgid "Subscribe to Pro Membership"
+#~ msgstr "Падпісацца на Pro Сяброўства"
+
+#~ msgid "Upload Plugin"
+#~ msgstr "загрузіць убудову"
+
+#~ msgid ""
+#~ "The plugin generated %d characters of <strong>unexpected output</strong> "
+#~ "during activation. If you notice &#8220;headers already sent&#8221; "
+#~ "messages, problems with syndication feeds or other issues, try "
+#~ "deactivating or removing this plugin."
+#~ msgstr ""
+#~ "Убудова генеруецца %d сімвалаў <strong> нечаканы выхад </strong> падчас "
+#~ "актывацыі. Калі вы заўважылі паведамленні \"загалоўкі ўжо дасланыя\" , "
+#~ "праблемы з сіндыкацыяй канала ці іншыя пытанні, паспрабуйце дэзактываваць "
+#~ "або выдаліць гэты плагін."
+
+#~ msgid ""
+#~ "Plugin could not be activated because it triggered a <strong>fatal error</"
+#~ "strong>."
+#~ msgstr ""
+#~ "Убудова не можа быць актываваны, паколькі яна выклікала <strong>фатальную "
+#~ "памылку</strong>."
+
+#~ msgid "Plugin <strong>activated</strong>."
+#~ msgstr "Плагін <strong>актываваны</strong>."
+
+#~ msgid "Installing Plugin"
+#~ msgstr "Устаноўка убудоў"
+
+#~ msgid "Downloading install package from"
+#~ msgstr "Запампоўка усталявальнага пакета з"
+
+#~ msgid "Unpacking the package"
+#~ msgstr "Распакаванне пакета"
+
+#~ msgid "Installing the plugin"
+#~ msgstr "Устаноўка плагіна"
+
+#~ msgid "Successfully installed the plugin"
+#~ msgstr "Убудова паспяхова ўсталявана"
+
+#~ msgid "Activate Plugin"
+#~ msgstr "Актываваць плагін"
+
+#~ msgid "Return to BestWebSoft Panel"
+#~ msgstr "Вяртанне да панэлі  BestWebSoft "
+
+#~ msgid "Not Installed"
+#~ msgstr "Не ўстаноўлены"
+
+#~ msgid "Filter results"
+#~ msgstr "Фільтр вынікаў"
+
+#~ msgid "Category"
+#~ msgstr "Катэгорыя"
+
+#~ msgid "Renew to get updates"
+#~ msgstr "Абнавіць для атрымання абнаўленняў"
+
+#~ msgid "Update to v %s"
+#~ msgstr "Абнаўленне аб %s"
+
+#~ msgid "Upgrade to Pro"
+#~ msgstr "Абнаўленне да Pro"
+
+#~ msgid "Donate"
+#~ msgstr "ахвяраваць"
+
+#~ msgid "Install this plugin"
+#~ msgstr "Усталяваць гэтую убудову"
+
+#~ msgid "Nothing found. Try another criteria."
+#~ msgstr "Нічога не знойдзена. Паспрабуйце яшчэ крытэрыі."
+
+#~ msgid "Browse Free WordPress Themes"
+#~ msgstr "Бясплатны агляд тэмы WordPress"
+
+#~ msgid "Advertisement"
+#~ msgstr "Рэклама"
+
+#~ msgid "Content & Media"
+#~ msgstr "Змест і СМІ"
+
+#~ msgid "Management"
+#~ msgstr "Кіраванне"
+
+#~ msgid "Security"
+#~ msgstr "Бяспекі"
+
+#~ msgid "Site Stats"
+#~ msgstr "Статыстыка сайта"
+
+#~ msgid "Social"
+#~ msgstr "сацыяльная"
+
+#~ msgid "Utilities"
+#~ msgstr "Уціліты"
+
+#~ msgid "Other"
+#~ msgstr "Іншае"
+
+#~ msgid "Browsing"
+#~ msgstr "Прагляд"
+
+#~ msgid "Learn more about %s"
+#~ msgstr "Больш падрабязна пра  %s"
+
+#~ msgid ""
+#~ "You need to make this files writable before you can save your changes. "
+#~ "See %s the Codex %s for more information."
+#~ msgstr ""
+#~ "Вы павінны зрабіць гэтыя файлы даступныя для запісу, перш чым вы можаце "
+#~ "захаваць змены. Глядзіце Codex %s  для атрымання дадатковай інфармацыі."
+
+#~ msgid "Not enough permissions to create or update the file"
+#~ msgstr "Не хапае дазволаў для стварэння або абнаўлення файла"
+
+#~ msgid "These styles will be added to the header on all pages of your site."
+#~ msgstr ""
+#~ "Гэтыя стылі будуць дададзены ў загаловак на ўсіх старонках вашага сайта."
+
+#~ msgid "Editing"
+#~ msgstr "рэдагаваць"
+
+#~ msgid "File %s edited successfully."
+#~ msgstr "Файл %s паспяхова зьменены."
+
+#~ msgid "Thank you for choosing"
+#~ msgstr "Дзякуй за выбар"
+
+#~ msgid ""
+#~ "If you have a feature, suggestion or idea you'd like to see in the "
+#~ "plugin, we'd love to hear about it!"
+#~ msgstr ""
+#~ "Калі ў вас ёсць прапановы па даданні новага або паляпшэнню бягучага "
+#~ "функцыяналу плагіна, калі ласка, дасылайце іх нам! Мы вседа адкрытыя для "
+#~ "новых ідэй!"
+
+#~ msgid "Suggest a Feature"
+#~ msgstr "Прапанаваць функцыянал"
+
+#~ msgid ""
+#~ "You do not have sufficient permissions to edit plugins for this site."
+#~ msgstr ""
+#~ "У вас недастаткова паўнамоцтваў, каб рэдагаваць убудовы на гэтым сайце."
+
+#~ msgid "requires"
+#~ msgstr "патрабуе"
+
+#~ msgid ""
+#~ "or higher, that is why it has been deactivated! Please upgrade WordPress "
+#~ "and try again."
+#~ msgstr ""
+#~ "або вышэй, таму ён быў дэактываваны! Калі ласка, абновіце WordPress і "
+#~ "паспрабуйце яшчэ раз."
+
+#~ msgid "Back to the WordPress"
+#~ msgstr "Вярнуцца да WordPress на"
+
+#~ msgid "Plugins page"
+#~ msgstr "Старонку ўбудоў"
+
+#~ msgid ""
+#~ "or higher! We do not guarantee that our plugin will work correctly. "
+#~ "Please upgrade to WordPress latest version."
+#~ msgstr ""
+#~ "або вышэй! Мы не гарантуем, што наша ўбудова будзе працаваць карэктна. "
+#~ "Калі ласка, абновіце WordPress да апошняй версіі."
+
+#~ msgid "It’s time to upgrade your"
+#~ msgstr "Настаў час абнавіць Ваш"
+
+#~ msgid "to"
+#~ msgstr "к"
+
+#~ msgid "version!"
+#~ msgstr "версіі!"
+
+#~ msgid "Extend standard plugin functionality with new great options."
+#~ msgstr "Пашырае магчымасці стандартнага функцыяналу ўбудовы."
+
+#~ msgid "If you enjoy our plugin, please give it 5 stars on WordPress"
+#~ msgstr ""
+#~ "Калі вам спадабалася ўбудова, калі ласка, пастаўце нам 5 зорак на "
+#~ "WordPress"
+
+#~ msgid "Rate the plugin"
+#~ msgstr "Ацаніць убудову"
+
+#~ msgid "If there is something wrong about it, please contact us"
+#~ msgstr "Калі ў вас ёсць нейкія пытанні, звяртайцеся"
+
+#~ msgid "Check premium options on the plugin settings page!"
+#~ msgstr "Праглядзіце прэміум опцыі на старонцы настроек плагіна!"
+
+#~ msgid "Wrong license key"
+#~ msgstr "Неправильный лицензионный ключ"
+
+#~ msgid ""
+#~ "Something went wrong. Please try again later. If the error appears again, "
+#~ "please contact us"
+#~ msgstr ""
+#~ "Нешта пайшло не так. Паспрабуйце яшчэ раз пазней. Калі памылка з'явіцца "
+#~ "зноў, калі ласка, звяжыцеся з намі"
+
+#~ msgid "We are sorry for inconvenience."
+#~ msgstr "Просім прабачэння за нязручнасці."
+
+#~ msgid "This license key is bind to another site"
+#~ msgstr "Гэты ліцэнзійны ключ прывязаны да іншага сайту"
+
+#~ msgid ""
+#~ "Unfortunately, you have exceeded the number of available tries per day. "
+#~ "Please, upload the plugin manually."
+#~ msgstr ""
+#~ "На жаль, вы перавысілі колькасць даступных спробаў у дзень. Калі ласка, "
+#~ "загрузіце убудову ўручную."
+
+#~ msgid ""
+#~ "Unfortunately, Your license has expired. To continue getting top-priority "
+#~ "support and plugin updates you should extend it in your"
+#~ msgstr ""
+#~ "На жаль, час выкарыстання вашай ліцэнзіі скончыўся. Для атрымання "
+#~ "абнаўленняў прыярытэтнага саппорта вам трэба падоўжыць ліцэнзію "
+#~ "перайшоўшы на вашай"
+
+#~ msgid ""
+#~ "Unfortunately, the Pro licence was already installed to this domain. The "
+#~ "Pro Trial license can be installed only once."
+#~ msgstr ""
+#~ "На жаль, Pro ліцэнзія ўжо была ўсталяваная на гэтым дамене. Pro Trial "
+#~ "ліцэнзія можа быць усталяваная толькі адзін раз."
+
+#~ msgid ""
+#~ "Failed to download the zip archive. Please, upload the plugin manually"
+#~ msgstr ""
+#~ "Не атрымалася загрузіць архіў ўбудовы. Калі ласка, загрузіце убудову "
+#~ "ўручную"
+
+#~ msgid "Failed to open the zip archive. Please, upload the plugin manually"
+#~ msgstr ""
+#~ "Не атрымалася адкрыць архіў ZIP. Калі ласка, загрузіце убудова ўручную"
+
+#~ msgid ""
+#~ "Your server does not support either ZipArchive or Phar. Please, upload "
+#~ "the plugin manually"
+#~ msgstr ""
+#~ "Ваш сервер не падтрымлівае ні бібліятэку ZipArchive, ні бібліятэку Phar. "
+#~ "Калі ласка, загрузіце убудову ўручную"
+
+#~ msgid "UploadDir is not writable. Please, upload the plugin manually"
+#~ msgstr ""
+#~ "Тэчка загрузкі недаступная для запісу. Калі ласка, загрузіце убудову "
+#~ "ўручную"
+
+#~ msgid ""
+#~ "Something went wrong. Try again later or upload the plugin manually. We "
+#~ "are sorry for inconvenience."
+#~ msgstr ""
+#~ "Нешта пайшло не так. Паспрабуйце яшчэ раз пазней ці загрузіце убудову "
+#~ "ўручную. Просім прабачэння за гэтыя нязручнасці."
+
+#~ msgid "Please, enter Your license key"
+#~ msgstr "Калі ласка, увядзіце ваш ліцэнзійны ключ"
+
+#~ msgid ""
+#~ "Congratulations! Pro version of the plugin is successfully installed and "
+#~ "activated."
+#~ msgstr "Віншуем! Pro версія ўбудовы была паспяхова ўсталявана і актывавана."
+
+#~ msgid "Please, go to"
+#~ msgstr "Калі ласка, перайдзіце на"
+
+#~ msgid "the setting page"
+#~ msgstr "старонку налад"
+
+#~ msgid "You will be redirected automatically in 5 seconds."
+#~ msgstr "Вы будзеце перанакіраваны аўтаматычна праз 5 секунд."
+
+#~ msgid "Show Pro features"
+#~ msgstr "Паказаць Pro опцыі"
+
+#~ msgid "or"
+#~ msgstr "ці"
+
+#~ msgid "Start Your Free %s-Day Trial Now"
+#~ msgstr "Паспрабуйце %s-дзённую Трыял версію бясплатна"
+
+#~ msgid "Activate"
+#~ msgstr "актывізаваць"
+
+#~ msgid ""
+#~ "In order to continue using the plugin it is necessary to buy a %s license."
+#~ msgstr "Каб працягнуць карыстацца убудовай, неабходна набыць %s ліцэнзію."
+
+#~ msgid "After that you can activate it by entering your license key."
+#~ msgstr "Пасля гэтага вы зможаце актываваць яго ўвёўшы ліцэнзійны ключ."
+
+#~ msgid ""
+#~ "Unfortunately, you have exceeded the number of available tries per day."
+#~ msgstr "На жаль, вы перавысілі колькасць даступных спробаў."
+
+#~ msgid ""
+#~ "Congratulations! The Pro license of the plugin is successfully activated."
+#~ msgstr "Віншуем! Pro версія ўбудовы была паспяхова актываваная."
+
+#~ msgid "Wrong license key."
+#~ msgstr "Няправільны ліцэнзійны ключ."
+
+#~ msgid "This license key is bind to another site."
+#~ msgstr "Гэты ліцэнзійны ключ прывязаны да іншага сайту."
+
+#~ msgid ""
+#~ "This license key is valid, but Your license has expired. If you want to "
+#~ "update our plugin in future, you should extend the license."
+#~ msgstr ""
+#~ "Ліцэнзійны ключ прыняты, але тэрмін дзеяння ліцэнзіі мінуў. Калі вы "
+#~ "хочаце абнаўляць убудова ў будучыні, вы павінны падоўжыць ліцэнзію."
+
+#~ msgid "Unfortunately, you have exceeded the number of available tries."
+#~ msgstr "На жаль, вы перавысілі колькасць даступных спробаў."
+
+#~ msgid ""
+#~ "Unfortunately, the Pro Trial licence was already installed to this "
+#~ "domain. The Pro Trial license can be installed only once."
+#~ msgstr ""
+#~ "На жаль, Pro ліцэнзія ўжо была ўсталяваная на гэтым дамене. Pro Trial "
+#~ "ліцэнзія можа быць усталяваная толькі адзін раз."
+
+#~ msgid "The Pro Trial license key is valid."
+#~ msgstr "Ключ Pro Trial версіі сапраўдны."
+
+#~ msgid "The license key is valid."
+#~ msgstr "Ліцэнзійны ключ сапраўдны."
+
+#~ msgid "Your license will expire on"
+#~ msgstr "Ваша ліцэнзія мінае"
+
+#~ msgid "Please, enter your license key"
+#~ msgstr "Калі ласка, увядзіце Ваш ліцэнзійны ключ"
+
+#~ msgid ""
+#~ "If needed you can check if the license key is correct or reenter it in "
+#~ "the field below. You can find your license key on your personal page - "
+#~ "Client area - on our website"
+#~ msgstr ""
+#~ "Пры неабходнасці вы можаце праверыць валіднасць ліцэнзійнага ключа або "
+#~ "паўторна ўвесці яго ў полі ніжэй. Вы можаце знайсці ваш ліцэнзійны ключ "
+#~ "на сваёй асабістай старонцы - Client area - на нашым сайце"
+
+#~ msgid ""
+#~ "(your username is the email address specified during the purchase). If "
+#~ "necessary, please submit \"Lost your password?\" request."
+#~ msgstr ""
+#~ "(Ваш карыстальнік гэта емейл, які вы пазначылі пры куплі прадукту). Пры "
+#~ "неабходнасці націсніце \"Забылі пароль?\"."
+
+#~ msgid "Check license key"
+#~ msgstr "Праверка ліцэнзійнага ключа"
+
+#~ msgid "WARNING: Illegal use notification"
+#~ msgstr "УВАГА: апавяшчэнне аб незаконным выкарыстанні"
+
+#~ msgid ""
+#~ "You can use one license of the Pro plugin for one domain only. Please "
+#~ "check and edit your license or domain if necessary using you personal "
+#~ "Client Area. We strongly recommend you to solve the problem within 24 "
+#~ "hours, otherwise the Pro plugin will be deactivated."
+#~ msgstr ""
+#~ "Вы можаце выкарыстаць адну ліцэнзію Pro плагіна толькі для аднаго дамена. "
+#~ "Калі ласка, праверце і адрэдагуйце пры неабходнасці ліцэнзію або дамен, "
+#~ "выкарыстоўваючы Ваш асабісты Client Area. Мы настойліва раім вам вырашыць "
+#~ "праблему на працягу 24 гадзін, у адваротным выпадку ўбудова будзе "
+#~ "дэактываваны."
+
+#~ msgid ""
+#~ "Notice: Your Pro Trial license has expired. To continue using the plugin "
+#~ "you should buy a Pro license"
+#~ msgstr ""
+#~ "Увага: Тэрмін дзеяння Pro Trial версіі мінуў. Каб працягнуць карыстацца "
+#~ "ўбудовай, калі ласка, набудзьце ліцэнзію Pro"
+
+#~ msgid ""
+#~ "Your license has expired. To continue getting top-priority support and "
+#~ "plugin updates you should extend it."
+#~ msgstr ""
+#~ "Час выкарыстання вашай ліцэнзіі скончыўся. Калі вы хочаце абнаўляць ваш "
+#~ "плагін ў далейшым і мець прыярытэтную Тых. падтрымку, то вам трэба "
+#~ "падоўжыць ліцэнзію."
+
+#~ msgid "Learn more"
+#~ msgstr "вывучыць больш"
+
+#~ msgid "Notice: You are using the Pro Trial license of %s plugin."
+#~ msgstr "Увага: Вы выкарыстоўваеце Pro Trial версію плагіна %s ."
+
+#~ msgid "Notice: You are using the Pro Trial license of plugin."
+#~ msgstr "Увага: Вы выкарыстоўваеце Pro Trial версію плагіна."
+
+#~ msgid "The Pro Trial license will expire on"
+#~ msgstr "Ваша ліцэнзія Pro Trial версіі плагіна мінае"
+
+#~ msgid "You license for"
+#~ msgstr "Ваш ліцэнзійны ключ для"
+
+#~ msgid "expires on"
+#~ msgstr "мінае"
+
+#~ msgid "and you won't be granted TOP-PRIORITY SUPPORT or UPDATES."
+#~ msgstr ""
+#~ "і вы не будзеце атрымліваць прыярытэтную тэхпадтрымку або абнаўлення."
+
+#~ msgid "Thank you for installing"
+#~ msgstr "Дзякуй за ўстаноўку"
+
+#~ msgid "Let's get started"
+#~ msgstr "давайце пачнем"
+
+#~ msgid "Add New"
+#~ msgstr "Дадаць новы"
+
+#~ msgid "Close notice"
+#~ msgstr "зачыніць паведамленне"
+
+#~ msgid "The plugin's settings have been changed."
+#~ msgstr "Налады ўбудовы былі змененыя"
+
+#~ msgid ""
+#~ "You can always look at premium options by clicking on the \"Show Pro "
+#~ "features\" in the \"Go PRO\" tab"
+#~ msgstr ""
+#~ "Вы заўсёды можаце паглядзець прэміум опцыі націснуўшы на кнопку "
+#~ "\"Паказаць Pro опцыі\" на ўкладцы \"Перайсці на PRO\""
+
+#~ msgid "Add BWS Plugins Shortcode"
+#~ msgstr "Дадаць шорткод BWS убудовы"
+
+#~ msgid "Add shortcode"
+#~ msgstr "дадаць шорткод"
+
+#~ msgid "Add BestWebSoft plugins' shortcodes using this button."
+#~ msgstr "Дадайце шорткоды BestWebSoft ўбудоў з дапамогай гэтай кнопкі."
+
+#~ msgid "Restore all plugin settings to defaults"
+#~ msgstr "Аднавіць усе налады ўбудовы да налад па змаўчанні"
+
+#~ msgid "Restore settings"
+#~ msgstr "аднавіць налады"
+
+#~ msgid "Are you sure you want to restore all settings by default?"
+#~ msgstr ""
+#~ "Вы ўпэўнены, што жадаеце аднавіць усе налады ўбудовы да налад па "
+#~ "змаўчанні?"
+
+#~ msgid "Yes, restore all settings"
+#~ msgstr "Так, аднавіць усе налады"
+
+#~ msgid "No, go back to the settings page"
+#~ msgstr "Не, вярнуцца на старонку налад"
+
+#~ msgid "Plugin"
+#~ msgstr "Плагін"
+
+#~ msgid "Shortcode settings"
+#~ msgstr "налады шорткодов"
+
+#~ msgid "The shortcode will be inserted"
+#~ msgstr "Будзе ўстаўлены шорткод"
+
+#~ msgid "Insert"
+#~ msgstr "Вставка"
+
+#~ msgid "Visit Help Center"
+#~ msgstr "Перайсці ў Help Center"
+
+#~ msgid "For more information:"
+#~ msgstr "Больш падрабязная інфармацыя:"
+
+#~ msgid "Documentation"
+#~ msgstr "дакументацыя"
+
+#~ msgid "Video Instructions"
+#~ msgstr "відэа інструкцыі"
+
+#~ msgid "Submit a Request"
+#~ msgstr "адправіць запыт"
+
+#~ msgid "Not set"
+#~ msgstr "няма ўсталёўкі"
+
+#~ msgid "On"
+#~ msgstr "Да"
+
+#~ msgid "Off"
+#~ msgstr "Не"
+
+#~ msgid "N/A"
+#~ msgstr "Не"
+
+#~ msgid " Mb"
+#~ msgstr "Mb"
+
+#~ msgid "Yes"
+#~ msgstr "Да"
+
+#~ msgid "No"
+#~ msgstr "не"
+
+#~ msgid "Operating System"
+#~ msgstr "Аперацыйная сістэма"
+
+#~ msgid "Server"
+#~ msgstr "сервер"
+
+#~ msgid "Memory usage"
+#~ msgstr "выкарыстанне памяці"
+
+#~ msgid "MYSQL Version"
+#~ msgstr "версія MYSQL"
+
+#~ msgid "SQL Mode"
+#~ msgstr "мадэль SQL"
+
+#~ msgid "PHP Version"
+#~ msgstr "Версія PHP"
+
+#~ msgid "PHP Safe Mode"
+#~ msgstr "PHP бяспечная мадэль"
+
+#~ msgid "PHP Allow URL fopen"
+#~ msgstr "PHP дазволіць URL fopen"
+
+#~ msgid "PHP Memory Limit"
+#~ msgstr "PHP абмежаванні памяці"
+
+#~ msgid "PHP Max Upload Size"
+#~ msgstr "PHP максімальны памер загрузкі"
+
+#~ msgid "PHP Max Post Size"
+#~ msgstr "PHP максмальный памер паста"
+
+#~ msgid "PHP Max Script Execute Time"
+#~ msgstr "PHP максмальное час выполненя скрыпту"
+
+#~ msgid "PHP Exif support"
+#~ msgstr "PHP падтрымка"
+
+#~ msgid "PHP IPTC support"
+#~ msgstr "PHP IPTC падтрымка"
+
+#~ msgid "PHP XML support"
+#~ msgstr "PHP XML падтрымка"
+
+#~ msgid "Site URL"
+#~ msgstr "адрас сайта"
+
+#~ msgid "Home URL"
+#~ msgstr "Дамашні URL"
+
+#~ msgid "WordPress Version"
+#~ msgstr "версія WordPress"
+
+#~ msgid "WordPress DB Version"
+#~ msgstr "Версія базы дадзеных WordPress"
+
+#~ msgid "Multisite"
+#~ msgstr "Многасайтовыя"
+
+#~ msgid "Active Theme"
+#~ msgstr "бягучая тэма"
+
+#~ msgid "Please enter a valid email address."
+#~ msgstr "Пакіньце Ваш email."
+
+#~ msgid "Email with system info is sent to "
+#~ msgstr "Email з сістэмнай інфармацыяй адпраўлены на"
+
+#~ msgid "Thank you for contacting us."
+#~ msgstr "Дзякуй, што звязаліся з намі."
+
+#~ msgid "Sorry, email message could not be delivered."
+#~ msgstr "Выбачайце, ваш емайл не можа быць адпраўлены."
+
+#~ msgid "System status"
+#~ msgstr "сістэмная інфармацыя"
+
+#~ msgid "Plugins"
+#~ msgstr "Убудовы"
+
+#~ msgid "Themes"
+#~ msgstr "Шаблоны"
+
+#~ msgid "Installed"
+#~ msgstr "Усталявана"
+
+#~ msgid "Activate this plugin"
+#~ msgstr "актываваць убудову"
+
+#~ msgid "Install Now"
+#~ msgstr "усталяваць цяпер"
+
+#~ msgid "This theme is already installed and is up to date"
+#~ msgstr "Гэтая тэма ўжо ўстаноўлена і абноўленая да апошняй версіі"
+
+#~ msgctxt "theme"
+#~ msgid "Installed"
+#~ msgstr "Устаноўлена"
+
+#~ msgid "By %s"
+#~ msgstr "да %s"
+
+#~ msgid "Already Installed"
+#~ msgstr "Ужо ўсталявана"
+
+#~ msgid "Environment"
+#~ msgstr "атачэнне"
+
+#~ msgid "Active Plugins"
+#~ msgstr "актываваныя ўбудовы"
+
+#~ msgid "Inactive Plugins"
+#~ msgstr "Неактивированные ўбудовы"
+
+#~ msgid "Send to support"
+#~ msgstr "Адправіць у тэхпадтрымку"
+
+#~ msgid "Send to custom email &#187;"
+#~ msgstr "Адправіць на емейл  &#187;"
+
+#~ msgid "%s role"
+#~ msgid_plural "%s roles"
+#~ msgstr[0] "%s ролю"
+#~ msgstr[1] "%s ролі"
+#~ msgstr[2] "%s роляў"
+
+#~ msgid "User Role by BestWebSoft"
+#~ msgstr "Роля карыстальніка па BestWebSoft"
+
+#~ msgid "BestWebSoft"
+#~ msgstr "BestWebSoft"
+
+#~ msgid "http://bestwebsoft.com/"
+#~ msgstr "http://bestwebsoft.com/"

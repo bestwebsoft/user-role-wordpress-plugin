@@ -24,6 +24,7 @@ Features
 
 Translation
 -----------------------------
+* Belarusian (be_BY) (thanks to UStarCash, www.ustarcash.com)
 * Russian (ru_RU)
 * Serbian (sr_RS) (thanks to Andrijana Nikolic, www.webhostinggeeks.com)
 * Ukrainian (uk)

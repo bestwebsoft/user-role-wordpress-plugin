@@ -3,12 +3,12 @@ Contributors: bestwebsoft
 Donate link: http://bestwebsoft.com/donate/
 Tags: capability, change capabilities, capability editor, capability manager, role manager, user role, user role plugin, recover capabilities button, recover role capabilities, roles manager, user role editor, restore role capabilities
 Requires at least: 3.8
-Tested up to: 4.5.3
-Stable tag: 1.5.3
+Tested up to: 4.6
+Stable tag: 1.5.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-User Role plugin allows to change wordpress user role capabilities.
+Powerful user role management plugin for WordPress website. Create, edit, copy, and delete user roles.
 
 == Description ==
 
@@ -36,6 +36,7 @@ If you have a feature, suggestion or idea you'd like to see in the plugin, we'd 
 
 = Translation =
 
+* Belarusian (be_BY) (thanks to UStarCash, www.ustarcash.com)
 * Russian (ru_RU)
 * Serbian (sr_RS) (thanks to <a href="mailto:andrijanan@webhostinggeeks.com">Andrijana Nikolic</a>, www.webhostinggeeks.com)
 * Ukrainian (uk)
@@ -89,6 +90,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 
 == Changelog ==
 
+= V1.5.4 - 09.08.2016 =
+* NEW : The Belarusian language file was added (thanks to UStarCash, www.ustarcash.com).
+* Update : All functionality for WordPress 4.6 was updated.
+
 = V1.5.3 - 28.06.2016 =
 * Update : BWS panel section is updated.
 
@@ -96,7 +101,7 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * Bugfix : Security Vulnerability was fixed.
 
 = V1.5.1 - 06.04.2016 =
-* Update : We updated all functionality for wordpress 4.4.2.
+* Update : We updated all functionality for WordPress 4.4.2.
 * Update : BWS plugins section is updated.
 
 = V1.5.0 - 04.12.2015 =
@@ -108,7 +113,7 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 * New : We added the ability to change the role name.
 * Bugfix : We fixed bug with displaying of custom capabilities.
 * Update : We update the page of displaying the list of roles.
-* Update : We updated all functionality for wordpress 4.3.1.
+* Update : We updated all functionality for WordPress 4.3.1.
 * Update : We removed functionality of Interface v2.
 
 = V1.4.8 - 15.07.2015 =
@@ -118,14 +123,14 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 = V1.4.7 - 22.05.2015 =
 * Bugfix : We fixed plugins work with Table view on the Network. 
 * Bugfix : We fixed the selection of current role when switching between view modes on the Network.
-* Update : We updated all functionality for wordpress 4.2.2.
+* Update : We updated all functionality for WordPress 4.2.2.
 
 = V1.4.6 - 27.03.2015 =
 * Update : BWS plugins section is updated.
-* Update : We updated all functionality for wordpress 4.1.1.
+* Update : We updated all functionality for WordPress 4.1.1.
 
 = V1.4.5 - 09.01.2015 =
-* Update : We updated all functionality for wordpress 4.1.
+* Update : We updated all functionality for WordPress 4.1.
 
 = V1.4.4 - 13.11.2014 =
 * Bugfix : Plugin optimization is done.
@@ -134,10 +139,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 = V1.4.3 - 17.09.2014 =
 * Bugfix : Bug with disappearing of capabilities from the list was fixed.
 * Bugfix : When plugin is deleted the roles are restored to the capabilities that were before the plugin was installed.
-* Update : We updated all functionality for wordpress 4.0.
+* Update : We updated all functionality for WordPress 4.0.
 
 = V1.4.2 - 08.08.2014 =
-* Update : We updated all functionality for wordpress 4.0-beta3.
+* Update : We updated all functionality for WordPress 4.0-beta3.
 * Budfix : The bug with breaking words is fixed.
 * Budfix : Security Exploit was fixed.
 
@@ -169,6 +174,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 
 == Upgrade Notice ==
 
+= V1.5.4 =
+* The compatibility with new WordPress version updated.
+* New languages added.
+
 = V1.5.3 =
 BWS panel section is updated.
 
@@ -176,35 +185,35 @@ BWS panel section is updated.
 Security Vulnerability was fixed.
 
 = V1.5.1 =
-We updated all functionality for wordpress 4.4.2. BWS plugins section is updated.
+We updated all functionality for WordPress 4.4.2. BWS plugins section is updated.
 
 = V1.5.0 =
 The bug with plugin menu duplicating was fixed.
 
 = V1.4.9 =
-We added the edit role page. We added the ability to copy capabilities from another role. We added the ability to change the role name. We fixed bug with displaying of custom capabilities. We update the page of displaying the list of roles. We updated all functionality for wordpress 4.3.1. We removed functionality of Interface v2.
+We added the edit role page. We added the ability to copy capabilities from another role. We added the ability to change the role name. We fixed bug with displaying of custom capabilities. We update the page of displaying the list of roles. We updated all functionality for WordPress 4.3.1. We removed functionality of Interface v2.
 
 = V1.4.8 =
 Input maxlength is added. BWS plugins section is updated.
 
 = V1.4.7 =
-We fixed plugins work with Table view on the Network.  We fixed the selection of current role when switching between view modes on the Network. We updated all functionality for wordpress 4.2.2.
+We fixed plugins work with Table view on the Network.  We fixed the selection of current role when switching between view modes on the Network. We updated all functionality for WordPress 4.2.2.
 
 = V1.4.6 =
-We updated all functionality for wordpress 4.1.1. BWS plugins section is updated.
+We updated all functionality for WordPress 4.1.1. BWS plugins section is updated.
 
 
 = V1.4.5 =
-We updated all functionality for wordpress 4.1.
+We updated all functionality for WordPress 4.1.
 
 = V1.4.4 =
 Plugin optimization is done. BWS plugins section is updated.
 
 = V1.4.3 =
-Bug with disappearing of capabilities from the list was fixed. When plugin is deleted the roles are restored to the capabilities that were before the plugin was installed. We updated all functionality for wordpress 4.0.
+Bug with disappearing of capabilities from the list was fixed. When plugin is deleted the roles are restored to the capabilities that were before the plugin was installed. We updated all functionality for WordPress 4.0.
 
 = V1.4.2 =
-We updated all functionality for wordpress 4.0-beta3. The bug with breaking words is fixed. Security Exploit was fixed.
+We updated all functionality for WordPress 4.0-beta3. The bug with breaking words is fixed. Security Exploit was fixed.
 
 = V1.4.1 =
 Problem with Masonry in WordPress versions below 3.9 on the plugin settings page is fixed.

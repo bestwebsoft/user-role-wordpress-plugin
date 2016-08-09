@@ -1,12 +1,12 @@
 <?php
 /*
 Plugin Name: User Role by BestWebSoft
-Plugin URI: http://bestwebsoft.com/products/
-Description: The plugin allows to change wordpress user role capabilities.
+Plugin URI: http://bestwebsoft.com/products/user-role/
+Description: Powerful user role management plugin for WordPress website. Create, edit, copy, and delete user roles.
 Author: BestWebSoft
 Text Domain: user-role
 Domain Path: /languages
-Version: 1.5.3
+Version: 1.5.4
 Author URI: http://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -94,19 +94,16 @@ if ( ! function_exists( 'srrl_default_options' ) ) {
 			'first_install'         	=> strtotime( "now" ),
 			'suggest_feature_banner'	=> 1,
 		);
+		
 		$srrl_options = get_option( 'srrl_options' );
 		if ( ! $srrl_options ) {
 			$srrl_options = $srrl_default_options;
 			add_option( 'srrl_options', $srrl_options );
 		}
-		if ( ! isset( $srrl_options['plugin_option_version'] ) || 0 > version_compare( $srrl_options['plugin_option_version'], $srrl_plugin_info["Version"] ) ) {
+
+		if ( ! isset( $srrl_options['plugin_option_version'] ) || $srrl_plugin_info["Version"] != $srrl_options['plugin_option_version'] ) {
 			$srrl_options['plugin_option_version'] = $srrl_plugin_info["Version"];
 			$srrl_options['hide_premium_options']  = array();
-			delete_option( 'srrl_interface_version' );
-			if ( is_multisite() ) {
-				delete_site_option( 'srrl_backup_option_capabilities' );
-				delete_site_option( 'srrl_interface_version' );
-			}
 			update_option( 'srrl_options', $srrl_options );
 		}
 	}
@@ -472,43 +469,13 @@ if ( ! function_exists( 'srrl_register_plugin_links' ) ) {
 	function srrl_register_plugin_links( $links, $file ) {
 		$base = plugin_basename( __FILE__ );
 		if ( $file == $base ) {
-			$links[]	=	'<a href="admin.php?page=user-role.php">' . __( 'Settings', 'user-role' ) . '</a>';
-			$links[]	=	'<a href="http://wordpress.org/plugins/user-role/faq/" target="_blank">' . __( 'FAQ', 'user-role' ) . '</a>';
-			$links[]	=	'<a href="http://support.bestwebsoft.com">' . __( 'Support', 'user-role' ) . '</a>';
+			$links[] = '<a href="admin.php?page=user-role.php">' . __( 'Settings', 'user-role' ) . '</a>';
+			$links[] = '<a href="http://wordpress.org/plugins/user-role/faq/" target="_blank">' . __( 'FAQ', 'user-role' ) . '</a>';
+			$links[] = '<a href="http://support.bestwebsoft.com">' . __( 'Support', 'user-role' ) . '</a>';
 		}
 		return $links;
 	}
 }
-
-/* Plugin delete options */
-if ( ! function_exists ( 'srrl_delete_options' ) ) {
-	function srrl_delete_options() {
-		/* recover all options on every blog to the ones in the backup */
-		global $wpdb;
-		if ( is_multisite() ) {
-			$all_blogs = $wpdb->get_col( "SELECT `blog_id` FROM `" . $wpdb->prefix . "blogs`" );
-			foreach ( $all_blogs as $blog_id ) {
-				$srrl_repair_roles = get_blog_option( $blog_id, 'srrl_backup_option_capabilities' );
-				if ( is_array( $srrl_repair_roles ) && ! empty( $srrl_repair_roles ) )
-					update_blog_option( $blog_id, $wpdb->get_blog_prefix( $blog_id ) . 'user_roles', $srrl_repair_roles );
-				delete_blog_option( $blog_id, 'srrl_backup_option_capabilities' );
-				delete_blog_option( $blog_id, 'srrl_options' );
-			}
-			delete_site_option( 'srrl_options' );
-		} else {
-			$srrl_repair_roles = get_option( 'srrl_backup_option_capabilities' );
-			if ( is_array( $srrl_repair_roles ) && ! empty( $srrl_repair_roles ) )
-				update_option( $wpdb->prefix . 'user_roles', $srrl_repair_roles );
-			delete_option( 'srrl_backup_option_capabilities' );
-			delete_option( 'srrl_options' );
-		}
-
-		require_once( dirname( __FILE__ ) . '/bws_menu/bws_include.php' );
-		bws_include_init( plugin_basename( __FILE__ ) );
-		bws_delete_plugin( plugin_basename( __FILE__ ) );
-	}
-}
-
 
 /** 
  * Add help tab on settings page
@@ -547,7 +514,7 @@ if ( ! function_exists( 'srrl_pro_block' ) ) {
 					</div>
 				<?php } ?>
 			</div>
-	<?php }
+		<?php }
 	}
 }
 
@@ -589,6 +556,43 @@ if ( ! function_exists( 'srrl_add_new' ) ) {
 	<?php }
 }
 
+/* Plugin delete options */
+if ( ! function_exists ( 'srrl_delete_options' ) ) {
+	function srrl_delete_options() {
+		/* recover all options on every blog to the ones in the backup */
+		global $wpdb;
+
+		if ( ! function_exists( 'get_plugins' ) )
+			require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+		
+		$all_plugins = get_plugins();
+
+		if ( ! array_key_exists( 'user-role-pro/user-role-pro.php', $all_plugins ) ) {
+			if ( is_multisite() ) {
+				$all_blogs = $wpdb->get_col( "SELECT `blog_id` FROM `" . $wpdb->prefix . "blogs`" );
+				foreach ( $all_blogs as $blog_id ) {
+					$srrl_repair_roles = get_blog_option( $blog_id, 'srrl_backup_option_capabilities' );
+					if ( is_array( $srrl_repair_roles ) && ! empty( $srrl_repair_roles ) )
+						update_blog_option( $blog_id, $wpdb->get_blog_prefix( $blog_id ) . 'user_roles', $srrl_repair_roles );
+					delete_blog_option( $blog_id, 'srrl_backup_option_capabilities' );
+					delete_blog_option( $blog_id, 'srrl_options' );
+				}
+				delete_site_option( 'srrl_options' );
+			} else {
+				$srrl_repair_roles = get_option( 'srrl_backup_option_capabilities' );
+				if ( is_array( $srrl_repair_roles ) && ! empty( $srrl_repair_roles ) )
+					update_option( $wpdb->prefix . 'user_roles', $srrl_repair_roles );
+				delete_option( 'srrl_backup_option_capabilities' );
+				delete_option( 'srrl_options' );
+			}
+		}
+
+		require_once( dirname( __FILE__ ) . '/bws_menu/bws_include.php' );
+		bws_include_init( plugin_basename( __FILE__ ) );
+		bws_delete_plugin( plugin_basename( __FILE__ ) );
+	}
+}
+
 add_action( 'admin_menu', 'srrl_add_pages' );
 add_action( 'network_admin_menu', 'srrl_add_pages' );
 add_action( 'plugins_loaded', 'srrl_plugins_loaded' );
@@ -602,4 +606,4 @@ add_filter( 'plugin_row_meta', 'srrl_register_plugin_links', 10, 2 );
 /* add notice about plugin license timeout */
 add_action( 'admin_notices', 'srrl_plugin_banner' );
 /* uninstall function */
-register_uninstall_hook( plugin_basename( __FILE__ ), 'srrl_delete_options' );
+register_uninstall_hook( __FILE__, 'srrl_delete_options' );

@@ -38,9 +38,9 @@ if ( ! class_exists( 'Srrl_Roles_List' ) ) {
 		 */
 		function display_list() { 
 			$result = $this->get_result_message(); ?>
-			<div class="updated" <?php if ( empty( $result['message'] ) ) echo "style=\"display:none\""; ?>><p><strong><?php echo $result['message']; ?></strong></p></div>
-			<div class="error" <?php if ( empty( $result['notice'] ) ) echo "style=\"display:none\""; ?>><p><strong><?php echo $result['notice']; ?></strong></p></div>
-			<div class="error" <?php if ( empty( $result['error'] ) ) echo "style=\"display:none\""; ?>><p><strong><?php echo $result['error']; ?></strong></p></div>
+			<div class="updated inline" <?php if ( empty( $result['message'] ) ) echo "style=\"display:none\""; ?>><p><strong><?php echo $result['message']; ?></strong></p></div>
+			<div class="error inline" <?php if ( empty( $result['notice'] ) ) echo "style=\"display:none\""; ?>><p><strong><?php echo $result['notice']; ?></strong></p></div>
+			<div class="error inline" <?php if ( empty( $result['error'] ) ) echo "style=\"display:none\""; ?>><p><strong><?php echo $result['error']; ?></strong></p></div>
 			<form id="srrl_list_table" method="post" action="<?php get_admin_url(); ?>?page=user-role.php">
 				<?php 
 				srrl_pro_block( 'srrl_add_new', 'srrl_add_new' );

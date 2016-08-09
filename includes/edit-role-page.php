@@ -200,7 +200,7 @@ if ( ! empty( $role_slug ) ) {
 		$user_roles = $current_user->roles;
 		$user_role  = array_shift($user_roles);
 		if ( $user_role == $role_slug ) { ?>
-			<div class="error"><p><strong><?php _e( 'Warning:', 'user-role' ); ?></strong>&nbsp;<?php _e( 'You are trying to edit your own role. Please read before', 'user-role' ); ?>&nbsp;<a href="https://codex.wordpress.org/Roles_and_Capabilities" target="_blank"><?php _e( 'Roles and Capabilities', 'user-role' ); ?></a>.<br/>
+			<div class="error inline"><p><strong><?php _e( 'Warning:', 'user-role' ); ?></strong>&nbsp;<?php _e( 'You are trying to edit your own role. Please read before', 'user-role' ); ?>&nbsp;<a href="https://codex.wordpress.org/Roles_and_Capabilities" target="_blank"><?php _e( 'Roles and Capabilities', 'user-role' ); ?></a>.<br/>
 			<?php _e( 'Changes will be applied immediately after saving. If you are not sure - do not click "Update Role" button.', 'user-role' ); ?></p></div>
 		<?php }
 	}
