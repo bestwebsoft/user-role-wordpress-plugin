@@ -1,0 +1,333 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: User Role\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-10-03 12:34+0300\n"
+"PO-Revision-Date: 2016-10-03 12:40+0300\n"
+"Last-Translator: BestWebSoft team <wp@bestwebsoft.com>\n"
+"Language-Team: Cathy <cathy@loroseo.com>\n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Loco-Source-Locale: it_IT\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Loco-Parser: loco_parse_po\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SearrchPath-0: .\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: user-role.php:170
+msgid "User Role Settings"
+msgstr "Le impostazioni del ruolo di utente"
+
+#: user-role.php:172 user-role.php:441 user-role.php:472
+msgid "Settings"
+msgstr "Le impostazioni"
+
+#: user-role.php:173
+msgid "Go PRO"
+msgstr "Passare alla versione PRO"
+
+#: user-role.php:208
+msgid "Are you sure, that you want to recover selected role(s)?"
+msgstr "Sei sicuro di voler ripristinare il ruolo selezionato?"
+
+#: user-role.php:209
+msgid "Yes, recover role(s)"
+msgstr "Sì, ripristinare il ruolo"
+
+#: user-role.php:212
+msgid "Are you sure, that you want to do selected action?"
+msgstr "Sei sicuro di voler eseguire un'azione?"
+
+#: user-role.php:213
+msgid "Yes, do it"
+msgstr "Sì, eseguire"
+
+#: user-role.php:228
+msgid "No, go back to the roles list"
+msgstr "No, tornare alla lista dei ruoli"
+
+#: user-role.php:262
+msgid "Please enter role name"
+msgstr "Si prega di inserire il nome del ruolo"
+
+#: user-role.php:264
+msgid "Please enter role slug"
+msgstr "Inserire lo slug del ruolo"
+
+#: user-role.php:266
+msgid "Please select some capabilities for role"
+msgstr "Si prega di selezionare alcune funzionalità per il ruolo"
+
+#: user-role.php:277
+msgid "Wrong slug. See allowed symbols"
+msgstr "Lo slug sbagliato. Guarda i caratteri disponibili"
+
+#: user-role.php:280
+msgid "Some error occured"
+msgstr "Ci sono stati alcuni errori"
+
+#: user-role.php:282
+msgid "Role was successfully updated"
+msgstr "Il ruolo è aggiornato con successo"
+
+#: user-role.php:302
+msgid "Can not get capabilities of the selected role"
+msgstr "Non può ottenere le funzionalità del ruolo selezionato"
+
+#: user-role.php:306
+msgid "Capabilities were successfully loaded"
+msgstr "Le funzionalità sono scaricate con successo"
+
+#: user-role.php:306
+msgid "Save Changes"
+msgstr "Salva le modifiche"
+
+#: user-role.php:308
+msgid "Selected role is not exists. Capabilities not loaded"
+msgstr "Il ruolo selezionato non esiste. Le funzionalità non sono caricate"
+
+#: user-role.php:372
+msgid "Can not recover selected roles"
+msgstr "Non è possibile sovrascrivere il ruolo selezionato"
+
+#: user-role.php:382
+msgid "Selected roles were recovered successfully"
+msgstr ""
+"I ruoli selezionati ripristinate con successo alla sua impostazione "
+"predefinita"
+
+#: user-role.php:384
+msgid "Can not recover next roles"
+msgstr "Non è possibile sovrascrivere i seguenti ruoli"
+
+#: user-role.php:473
+msgid "FAQ"
+msgstr "FAQ"
+
+#: user-role.php:474
+msgid "Support"
+msgstr "Lo supporto"
+
+#: user-role.php:502
+msgid "This option is available in Pro version of plugin"
+msgstr "Questa opzione è disponibile nella Pro-versione del plugin"
+
+#: user-role.php:505
+msgid "Close"
+msgstr "Chiudere"
+
+#: user-role.php:512
+msgid "Unlock premium options by upgrading to Pro version"
+msgstr "Attivare l'opzione premium stanno aggiornato alla Pro-versione "
+
+#: user-role.php:513
+msgid "Learn More"
+msgstr "Sapere più"
+
+#: user-role.php:527
+msgid "Switch to Blog"
+msgstr "Passare a blog"
+
+#: user-role.php:535
+msgid "Allow for blogs"
+msgstr "Applicare ai blog"
+
+#: user-role.php:545
+msgid "Select blog"
+msgstr "Selezionare il blog"
+
+#: user-role.php:554
+msgid "Add New Role"
+msgstr "Aggiungere un nuovo ruolo"
+
+#: includes/edit-role-page.php:22
+msgid "Actions with posts"
+msgstr "Azioni con i messaggi"
+
+#: includes/edit-role-page.php:23
+msgid "Actions with pages"
+msgstr "Azioni con le pagine"
+
+#: includes/edit-role-page.php:24
+msgid "Actions with themes"
+msgstr "Azioni con i temi"
+
+#: includes/edit-role-page.php:25
+msgid "Actions with users"
+msgstr "Azioni con gli utenti"
+
+#: includes/edit-role-page.php:26
+msgid "Actions with plugins"
+msgstr "Azioni con il plugin"
+
+#: includes/edit-role-page.php:27
+msgid "Others default actions"
+msgstr "Azioni standard senza categorie "
+
+#: includes/edit-role-page.php:28
+msgid "Others custom actions"
+msgstr "Altre azioni"
+
+#: includes/edit-role-page.php:30
+msgid "Update Role"
+msgstr "Ricarica il ruolo"
+
+#: includes/edit-role-page.php:161
+msgid "role not exists"
+msgstr "Il ruolo non esiste "
+
+#: includes/edit-role-page.php:172 includes/edit-role-page.php:244
+msgid "All"
+msgstr "Seleziona tutto"
+
+#: includes/edit-role-page.php:177
+msgid ""
+"For blogs, for which role does not exist, it will be created automatically"
+msgstr ""
+"Per i blog, per i quali il ruolo non esiste, il ruolo sarà creato "
+"automaticamente"
+
+#: includes/edit-role-page.php:203
+msgid "Warning:"
+msgstr "Attenzione:"
+
+#: includes/edit-role-page.php:203
+msgid "You are trying to edit your own role. Please read before"
+msgstr "Si sta modificando il proprio ruolo. Si prega di leggere prima"
+
+#: includes/edit-role-page.php:203
+msgid "Roles and Capabilities"
+msgstr "Il ruolo e le funzionalità"
+
+#: includes/edit-role-page.php:204
+msgid ""
+"Changes will be applied immediately after saving. If you are not sure - do "
+"not click \"Update Role\" button."
+msgstr ""
+"Le impostazioni sarranno applicate immediatamente dopo il salvataggio. Se "
+"non è sicuro - non clicca \"Aggiorna il ruolo\""
+
+#: includes/edit-role-page.php:219
+msgid "Notice"
+msgstr "Avviso"
+
+#: includes/edit-role-page.php:219
+msgid "The role's settings have been changed."
+msgstr "Le impostazioni sono state modificate."
+
+#: includes/edit-role-page.php:226 includes/class-user-role.php:116
+msgid "Role Name"
+msgstr "Il nome del ruolo"
+
+#: includes/edit-role-page.php:230 includes/class-user-role.php:117
+msgid "Role Slug"
+msgstr "Lo slug del ruolo"
+
+#: includes/edit-role-page.php:233
+msgid ""
+"Slug must contain only latin letters. Also You can add numbers and symbols "
+"\"-\" or \"_\""
+msgstr ""
+"Lo slug dovrebbe contenere solo i caratteri latini. Inoltre è possibile "
+"aggiungere i numeri e i simboli \"-\" o \"_\""
+
+#: includes/edit-role-page.php:238 includes/class-user-role.php:120
+msgid "Capabilities"
+msgstr "Le funzionalità"
+
+#: includes/edit-role-page.php:248
+msgid "Copy from"
+msgstr "Copia di"
+
+#: includes/edit-role-page.php:256
+msgid "Select role"
+msgstr "Selezionare il ruolo"
+
+#: includes/edit-role-page.php:259
+msgid "Apply"
+msgstr "Applicare"
+
+#: includes/class-user-role.php:74
+msgid "Roles not found"
+msgstr "I ruoli non sono trovati"
+
+#: includes/class-user-role.php:83 includes/class-user-role.php:178
+msgid "Recover"
+msgstr "Ripristinare"
+
+#: includes/class-user-role.php:103
+#, php-format
+msgid "%s role"
+msgid_plural "%s roles"
+msgstr[0] "%s ruolo"
+msgstr[1] "%s ruolo"
+msgstr[2] "%s ruolo"
+
+#: includes/class-user-role.php:118
+msgid "Type"
+msgstr "Tipo"
+
+#: includes/class-user-role.php:119
+msgid "Users"
+msgstr "Gli utenti"
+
+#: includes/class-user-role.php:177
+msgid "Edit"
+msgstr "Modifica"
+
+#: includes/class-user-role.php:179
+msgid "Reset"
+msgstr "Il reset"
+
+#: includes/class-user-role.php:180
+msgid "Delete"
+msgstr "Cancellare"
+
+#: includes/class-user-role.php:187
+msgid "Edit capabilities of the role"
+msgstr "Modifica le funzionalità del ruolo"
+
+#: includes/class-user-role.php:192
+msgid ""
+"The default WordPress role will be restored to the default WordPress "
+"capabilities. This option is available in Pro version of plugin"
+msgstr ""
+"Le funzionalità dei ruoli standard saranno ripristinati alle opzioni "
+"predefinite. Questa opzione è disponibile nella Pro-versione del plugin"
+
+#: includes/class-user-role.php:197
+msgid ""
+"Restore a role to capabilities that were set at the time of the plugin "
+"activation or when the role was created"
+msgstr ""
+"Ripristinare le funzionalità del ruolo nel momento in cui il plugin è stato "
+"attivato o al momento della creazione del ruolo"
+
+#: includes/class-user-role.php:202
+msgid "Delete role. This option is available in Pro version of plugin"
+msgstr ""
+"Rimuovere il ruolo. Questa opzione è disponibile nella Pro-versione del "
+"plugin"
+
+#: includes/class-user-role.php:231
+msgid "default"
+msgstr "Impostazione predefinita"
+
+#: includes/class-user-role.php:235
+msgid "Built-in"
+msgstr "Integrato"
+
+#: includes/class-user-role.php:235
+msgid "Custom"
+msgstr "Aggiuntivo"
+
+#: includes/class-user-role.php:267
+msgid "Unknown action"
+msgstr "Azione sconosciuta"

@@ -1,0 +1,326 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: User Role\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-10-03 12:39+0300\n"
+"PO-Revision-Date: 2016-10-03 12:40+0300\n"
+"Last-Translator: BestWebSoft team <wp@bestwebsoft.com>\n"
+"Language-Team: Cathy <cathy@loroseo.com>\n"
+"Language: cz-CZ\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Loco-Source-Locale: cz_CZ\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Loco-Parser: loco_parse_po\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: user-role.php:170
+msgid "User Role Settings"
+msgstr "Nastavení role uživatele"
+
+#: user-role.php:172 user-role.php:441 user-role.php:472
+msgid "Settings"
+msgstr "Nastavení"
+
+#: user-role.php:173
+msgid "Go PRO"
+msgstr "Přejděte na verzi PRO"
+
+#: user-role.php:208
+msgid "Are you sure, that you want to recover selected role(s)?"
+msgstr "Jste si jisti, že chcete obnovit vybranou úlohu?"
+
+#: user-role.php:209
+msgid "Yes, recover role(s)"
+msgstr "Ano, obnovit úlohu (y)"
+
+#: user-role.php:212
+msgid "Are you sure, that you want to do selected action?"
+msgstr "Jste si jisti, že chcete provést akci?"
+
+#: user-role.php:213
+msgid "Yes, do it"
+msgstr "Ano, provádíme"
+
+#: user-role.php:228
+msgid "No, go back to the roles list"
+msgstr "Ne, návrat do seznamu rolí"
+
+#: user-role.php:262
+msgid "Please enter role name"
+msgstr "Zadejte název role"
+
+#: user-role.php:264
+msgid "Please enter role slug"
+msgstr "Prosím, zadejte roli slug"
+
+#: user-role.php:266
+msgid "Please select some capabilities for role"
+msgstr "Vyberte některé možnosti pro roli"
+
+#: user-role.php:277
+msgid "Wrong slug. See allowed symbols"
+msgstr "Špatné slug. Viz dostupné znaky"
+
+#: user-role.php:280
+msgid "Some error occured"
+msgstr "Tam byly některé chyby"
+
+#: user-role.php:282
+msgid "Role was successfully updated"
+msgstr "Role úspěšně aktualizováno"
+
+#: user-role.php:302
+msgid "Can not get capabilities of the selected role"
+msgstr "Nemůže dostat možnost vybrat si roli"
+
+#: user-role.php:306
+msgid "Capabilities were successfully loaded"
+msgstr "Příležitosti úspěšně staženy"
+
+#: user-role.php:306
+msgid "Save Changes"
+msgstr "Uložit změny"
+
+#: user-role.php:308
+msgid "Selected role is not exists. Capabilities not loaded"
+msgstr "Vybraná role neexistuje. Příležitosti nejsou načteny"
+
+#: user-role.php:372
+msgid "Can not recover selected roles"
+msgstr "Není možné přepsat vybranou roli"
+
+#: user-role.php:382
+msgid "Selected roles were recovered successfully"
+msgstr "Vybrané role úspěšně obnovit na výchozí"
+
+#: user-role.php:384
+msgid "Can not recover next roles"
+msgstr "Nelze přepsat následující role"
+
+#: user-role.php:473
+msgid "FAQ"
+msgstr "FAQ"
+
+#: user-role.php:474
+msgid "Support"
+msgstr "podpora"
+
+#: user-role.php:502
+msgid "This option is available in Pro version of plugin"
+msgstr "Tato možnost je k dispozici v Pro verzi zásuvného"
+
+#: user-role.php:505
+msgid "Close"
+msgstr "zavřít"
+
+#: user-role.php:512
+msgid "Unlock premium options by upgrading to Pro version"
+msgstr "Aktivovat prémiovou možnost upgrade na verzi Pro"
+
+#: user-role.php:513
+msgid "Learn More"
+msgstr "více"
+
+#: user-role.php:527
+msgid "Switch to Blog"
+msgstr "Přepnutí do blogu"
+
+#: user-role.php:535
+msgid "Allow for blogs"
+msgstr "Naneste na blogu"
+
+#: user-role.php:545
+msgid "Select blog"
+msgstr "Vybrat blog"
+
+#: user-role.php:554
+msgid "Add New Role"
+msgstr "Přidání nové role"
+
+#: includes/edit-role-page.php:22
+msgid "Actions with posts"
+msgstr "Akce se záznamy"
+
+#: includes/edit-role-page.php:23
+msgid "Actions with pages"
+msgstr "Akce se stránkami"
+
+#: includes/edit-role-page.php:24
+msgid "Actions with themes"
+msgstr "Akce s tématy"
+
+#: includes/edit-role-page.php:25
+msgid "Actions with users"
+msgstr "Akce s uživateli"
+
+#: includes/edit-role-page.php:26
+msgid "Actions with plugins"
+msgstr "Akce s pluginů"
+
+#: includes/edit-role-page.php:27
+msgid "Others default actions"
+msgstr "standardní akce mimo kategorií"
+
+#: includes/edit-role-page.php:28
+msgid "Others custom actions"
+msgstr "Další akce"
+
+#: includes/edit-role-page.php:30
+msgid "Update Role"
+msgstr "aktualizovat role"
+
+#: includes/edit-role-page.php:161
+msgid "role not exists"
+msgstr "role neexistuje"
+
+#: includes/edit-role-page.php:172 includes/edit-role-page.php:244
+msgid "All"
+msgstr "vybrat vše"
+
+#: includes/edit-role-page.php:177
+msgid ""
+"For blogs, for which role does not exist, it will be created automatically"
+msgstr "Pro blogy, pro které role neexistuje, bude vytvořen automaticky"
+
+#: includes/edit-role-page.php:203
+msgid "Warning:"
+msgstr "Varování:"
+
+#: includes/edit-role-page.php:203
+msgid "You are trying to edit your own role. Please read before"
+msgstr "Nyní editujete svou vlastní roli. Přečtěte si prosím před"
+
+#: includes/edit-role-page.php:203
+msgid "Roles and Capabilities"
+msgstr "Role a možnosti"
+
+#: includes/edit-role-page.php:204
+msgid ""
+"Changes will be applied immediately after saving. If you are not sure - do "
+"not click \"Update Role\" button."
+msgstr ""
+"Nastavení budou použita ihned po uložení. Pokud si nejste jisti - neklikejte "
+"na tlačítko \"Aktualizovat role\""
+
+#: includes/edit-role-page.php:219
+msgid "Notice"
+msgstr "Pozor"
+
+#: includes/edit-role-page.php:219
+msgid "The role's settings have been changed."
+msgstr "Bylo změněno nastavení role."
+
+#: includes/edit-role-page.php:226 includes/class-user-role.php:116
+msgid "Role Name"
+msgstr "Jméno role"
+
+#: includes/edit-role-page.php:230 includes/class-user-role.php:117
+msgid "Role Slug"
+msgstr "Role Slug"
+
+#: includes/edit-role-page.php:233
+msgid ""
+"Slug must contain only latin letters. Also You can add numbers and symbols "
+"\"-\" or \"_\""
+msgstr ""
+"Slug by měl obsahovat pouze latinku. Můžete také přidat čísla a symboly \"-"
+"\" nebo \"_\""
+
+#: includes/edit-role-page.php:238 includes/class-user-role.php:120
+msgid "Capabilities"
+msgstr "příležitosti"
+
+#: includes/edit-role-page.php:248
+msgid "Copy from"
+msgstr "kopie z"
+
+#: includes/edit-role-page.php:256
+msgid "Select role"
+msgstr "Vybrat role"
+
+#: includes/edit-role-page.php:259
+msgid "Apply"
+msgstr "aplikovat"
+
+#: includes/class-user-role.php:74
+msgid "Roles not found"
+msgstr "Role nalezeno"
+
+#: includes/class-user-role.php:83 includes/class-user-role.php:178
+msgid "Recover"
+msgstr "obnovit"
+
+#: includes/class-user-role.php:103
+#, php-format
+msgid "%s role"
+msgid_plural "%s roles"
+msgstr[0] "%s role"
+msgstr[1] "%s роли"
+msgstr[2] "%s ролей"
+
+#: includes/class-user-role.php:118
+msgid "Type"
+msgstr "typ"
+
+#: includes/class-user-role.php:119
+msgid "Users"
+msgstr "uživatelé"
+
+#: includes/class-user-role.php:177
+msgid "Edit"
+msgstr "editovat"
+
+#: includes/class-user-role.php:179
+msgid "Reset"
+msgstr "resetovat"
+
+#: includes/class-user-role.php:180
+msgid "Delete"
+msgstr "vymazat"
+
+#: includes/class-user-role.php:187
+msgid "Edit capabilities of the role"
+msgstr "editovat funkce role"
+
+#: includes/class-user-role.php:192
+msgid ""
+"The default WordPress role will be restored to the default WordPress "
+"capabilities. This option is available in Pro version of plugin"
+msgstr ""
+"Představuje standardní role bude obnoveno na výchozí možnosti. Tato možnost "
+"je k dispozici v Pro-verzi zásuvného modulu"
+
+#: includes/class-user-role.php:197
+msgid ""
+"Restore a role to capabilities that were set at the time of the plugin "
+"activation or when the role was created"
+msgstr ""
+"Obnovit možnou úlohu v době, kdy byl aktivován zástrčka, nebo v době "
+"vytvoření úlohy"
+
+#: includes/class-user-role.php:202
+msgid "Delete role. This option is available in Pro version of plugin"
+msgstr "Vymazat role. Tato možnost je k dispozici v Pro-verzi zásuvného modulu"
+
+#: includes/class-user-role.php:231
+msgid "default"
+msgstr "Ve výchozím nastavení"
+
+#: includes/class-user-role.php:235
+msgid "Built-in"
+msgstr "integrovaný"
+
+#: includes/class-user-role.php:235
+msgid "Custom"
+msgstr "kompletní"
+
+#: includes/class-user-role.php:267
+msgid "Unknown action"
+msgstr "neznámá akce"
