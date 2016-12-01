@@ -117,7 +117,7 @@ Please make sure that the problem hasn't been discussed yet on our forum (<http:
 = V1.5.5 - 03.10.2016 =
 * NEW : The Italian language file was added.
 * NEW : The Czech language file was added.
-* NEW : The French language file was added.
+* NEW : The French language file was added. 
 
 = V1.5.4 - 09.08.2016 =
 * NEW : The Belarusian language file was added.

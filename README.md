@@ -1,51 +1,81 @@
-<a href="http://bestwebsoft.com/products/user-role/" target=_blank>User Role WordPress Plugin</a>
+<a href="http://bestwebsoft.com/products/wordpress/plugins/user-role/" target=_blank>User Role WordPress Plugin</a>
 ========================
 
 Powerful user role management plugin for WordPress website. Create, edit, copy, and delete user roles.
 
-<img src="http://bestwebsoft.com/wp-content/uploads/2014/09/user-role-banner-website.jpg" />
+<p>User Role plugin makes it easy to manage your WordPress website role capabilities. Add new and manage existing user roles. Quickly control what users can and cannot do on your website.</p>
 
-<p>The User Role plugin allows you to change wordpress role capabilities. It is a very useful tool when your site has a bunch of visitors or subscribers. The plugin has intuitive and convenient interface so all the site visitors can be easily sorted by roles with a couple of clicks.</p>
+<p>Change role name, copy permissions from another role, and other great features. Extend the default user management features today!</p>
 
 
 <div class='video'></div>
 
 
-<p><a href="http://www.youtube.com/watch?v=gz9BkouavtU">User Role by BestWebSoft Video instruction on Installation</a></p>
-
-<p><a href="http://wordpress.org/plugins/user-role/faq/">User Role by BestWebSoft FAQ</a></p>
-
-<p><a href="http://support.bestwebsoft.com">User Role by BestWebSoft Support</a></p>
-
-<p><a href="http://bestwebsoft.com/products/user-role/?k=dabe729fc0e7bef82e30dcb21a6cefc3">Upgrade to User Role Pro by BestWebSoft</a></p>
-
-<h4>Features</h4>
+<h4>Free Features</h4>
 
 <ul>
-<li>View and change role сapabilities.</li>
-<li>Copy сapabilities from another role.</li>
-<li>Change the role name.</li>
-<li>Recover wordpress role capabilities ( Recover button has confirmation dialogue, so that you won't reset your settings occasionally ).</li>
-<li>All role capabilities are separated into groups.</li>
+<li>View information about each role</li>
+<li>Manage role capabilities</li>
+<li>Copy capabilities from another role</li>
+<li>Change role name</li>
+<li>Recover any role to capabilities set before the plugin was installed</li>
+<li>Compatible with latest WordPress version </li>
+<li>Incredibly simple settings for fast setup without modifying code</li>
+<li>Detailed step-by-step documentation and videos</li>
+<li>Multilingual and RTL ready</li>
 </ul>
 
-<p>If you have a feature, suggestion or idea you'd like to see in the plugin, we'd love to hear about it! <a href="http://support.bestwebsoft.com/hc/en-us/requests/new">Suggest a Feature</a></p>
+<blockquote>
+  <p><strong>Pro Features</strong></p>
+  
+  <p>All features from Free version included plus:</p>
+  
+  <ul>
+  <li>Add and manage unlimited custom user roles</li>
+  <li>Reset standard WordPress roles capabilities to default</li>
+  <li>Сonfigure all subsites on the network</li>
+  <li>Get answer to your support question within one business day (<a href="http://bestwebsoft.com/support-policy/">Support Policy</a>)</li>
+  </ul>
+  
+  <p><a href="http://bestwebsoft.com/products/wordpress/plugins/user-role/?k=dabe729fc0e7bef82e30dcb21a6cefc3">Upgrade to Pro Now</a></p>
+</blockquote>
+
+<p>If you have a feature suggestion or idea you'd like to see in the plugin, we'd love to hear about it! <a href="http://support.bestwebsoft.com/hc/en-us/requests/new">Suggest a Feature</a></p>
+
+<h4>Documentation &#38; Videos</h4>
+
+<ul>
+<li><a href="https://docs.google.com/document/d/1uEr5TxEhupny3p6luzUNF1a6rNXes24359HkEGREtV4/">[Doc] Installation</a></li>
+<li><a href="https://docs.google.com/document/d/1vnPaBioP41_N1eobYAx_zFP53okbnNUqWhlOhMx0E_8/">[Doc] Purchase, Installation &#38; Configuration</a></li>
+<li><a href="http://www.youtube.com/watch?v=gz9BkouavtU">[Video] Installation Instruction</a></li>
+</ul>
+
+<h4>Help &#38; Support</h4>
+
+<p>Visit our Help Center if you have any questions, our friendly Support Team is happy to help &#8212; <a href="http://support.bestwebsoft.com/">http://support.bestwebsoft.com/</a></p>
 
 <h4>Translation</h4>
 
 <ul>
 <li>Belarusian (be_BY) (thanks to UStarCash, <a href="http://www.ustarcash.com" rel="nofollow">http://www.ustarcash.com</a>)</li>
+<li>Czech (cz_CZ) (thanks to Cathy, <a href="http://www.cathydoesloans.com" rel="nofollow">http://www.cathydoesloans.com</a>)</li>
+<li>Italian (it_IT) (thanks to Cathy, <a href="http://www.cathydoesloans.com" rel="nofollow">http://www.cathydoesloans.com</a>)</li>
+<li>French (fr_FR) (thanks to Cathy, <a href="http://www.cathydoesloans.com" rel="nofollow">http://www.cathydoesloans.com</a>)</li>
 <li>Russian (ru_RU)</li>
 <li>Serbian (sr_RS) (thanks to <a href="mailto:andrijanan@webhostinggeeks.com">Andrijana Nikolic</a>, <a href="http://www.webhostinggeeks.com" rel="nofollow">http://www.webhostinggeeks.com</a>)</li>
 <li>Ukrainian (uk)</li>
 </ul>
 
-<p>Some of these translations are not complete. We are constantly adding new features which should be translated. If you would like to create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress">the text of PO and MO files</a> for <a href="http://support.bestwebsoft.com/hc/en-us/requests/new">BestWebSoft</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files  <a href="http://www.poedit.net/download.php">Poedit</a>.</p>
+<p>Some of these translations are not complete. We are constantly adding new features which should be translated. If you would like to create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress">the text of PO and MO files</a> to <a href="http://support.bestwebsoft.com/hc/en-us/requests/new">BestWebSoft</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO <a href="http://www.poedit.net/download.php">files Poedit</a>.</p>
 
-<h4>Technical support</h4>
+<h4>Recommended Plugins</h4>
 
-<p>Dear users, our plugins are available for free download. If you have any questions or recommendations regarding the functionality of our plugins (existing options, new options, current issues), please feel free to contact us. Please note that we accept requests in English only. All messages in other languages won't be accepted.</p>
+<ul>
+<li><a href="http://bestwebsoft.com/products/wordpress/plugins/updater/?k=0864088de1701a5e104ffb77c6d7011c">Updater</a> - Automatically check and update WordPress core with all installed plugins to the latest versions. Manual mode, email notifications and backups of all your files and database before updating.</li>
+</ul>
 
-<p>If you notice any bugs in the plugin's work, you can notify us about it and we'll investigate and fix the issue then. Your request should contain URL of the website, issues description and WordPress admin panel credentials.
-Moreover we can customize the plugin according to your requirements. It's a paid service (as a rule it costs $40, but the price can vary depending on the amount of the necessary changes and their complexity). Please note that we could also include this or that feature (developed for you) in the next release and share with the other users then.
-We can fix some things for free for the users who provide translation of our plugin into their native language (this should be a new translation of a certain plugin, you can check available translations on the official plugin page).</p>
+<h4>Donate</h4>
+
+<p>Donations play an important role in supporting open-source projects. We greatly appreciate any donation you can make to help us continue further development of free products.</p>
+
+<p><a href="http://bestwebsoft.com/donate/">Donate Now</a></p>
