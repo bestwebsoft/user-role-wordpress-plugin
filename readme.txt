@@ -1,10 +1,10 @@
 === User Role by BestWebSoft ===
 Contributors: bestwebsoft
-Donate link: http://bestwebsoft.com/donate/
+Donate link: https://bestwebsoft.com/donate/
 Tags: capability, change capabilities, capability editor, capability manager, role manager, user role, user role plugin, recover capabilities button, recover role capabilities, roles manager, user role editor, restore role capabilities
 Requires at least: 3.8
-Tested up to: 4.6.1
-Stable tag: 1.5.5
+Tested up to: 4.7.3
+Stable tag: 1.5.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -16,7 +16,7 @@ User Role plugin makes it easy to manage your WordPress website role capabilitie
 
 Change role name, copy permissions from another role, and other great features. Extend the default user management features today!
 
-http://www.youtube.com/watch?v=rYY8DJUjSNo
+https://www.youtube.com/watch?v=rYY8DJUjSNo
 
 = Free Features =
 
@@ -37,21 +37,21 @@ http://www.youtube.com/watch?v=rYY8DJUjSNo
 > * Add and manage unlimited custom user roles
 > * Reset standard WordPress roles capabilities to default
 > * Сonfigure all subsites on the network
-> * Get answer to your support question within one business day ([Support Policy](http://bestwebsoft.com/support-policy/))
+> * Get answer to your support question within one business day ([Support Policy](https://bestwebsoft.com/support-policy/))
 >
-> [Upgrade to Pro Now](http://bestwebsoft.com/products/wordpress/plugins/user-role/?k=dabe729fc0e7bef82e30dcb21a6cefc3)
+> [Upgrade to Pro Now](https://bestwebsoft.com/products/wordpress/plugins/user-role/?k=dabe729fc0e7bef82e30dcb21a6cefc3)
 
-If you have a feature suggestion or idea you'd like to see in the plugin, we'd love to hear about it! [Suggest a Feature](http://support.bestwebsoft.com/hc/en-us/requests/new)
+If you have a feature suggestion or idea you'd like to see in the plugin, we'd love to hear about it! [Suggest a Feature](https://support.bestwebsoft.com/hc/en-us/requests/new)
 
 = Documentation & Videos =
 
-* [[Doc] Installation](https://docs.google.com/document/d/1uEr5TxEhupny3p6luzUNF1a6rNXes24359HkEGREtV4/)
-* [[Doc] Purchase, Installation & Configuration](https://docs.google.com/document/d/1vnPaBioP41_N1eobYAx_zFP53okbnNUqWhlOhMx0E_8/)
-* [[Video] Installation Instruction](http://www.youtube.com/watch?v=gz9BkouavtU)
+* [[Doc] Installation](https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/)
+* [[Doc] Purchase](https://docs.google.com/document/d/1EUdBVvnm7IHZ6y0DNyldZypUQKpB8UVPToSc_LdOYQI/)
+* [[Video] Installation Instruction](https://www.youtube.com/watch?v=gz9BkouavtU)
 
 = Help & Support =
 
-Visit our Help Center if you have any questions, our friendly Support Team is happy to help — <http://support.bestwebsoft.com/>
+Visit our Help Center if you have any questions, our friendly Support Team is happy to help — <https://support.bestwebsoft.com/>
 
 = Translation =
 
@@ -59,37 +59,32 @@ Visit our Help Center if you have any questions, our friendly Support Team is ha
 * Czech (cz_CZ) (thanks to Cathy, www.cathydoesloans.com)
 * Italian (it_IT) (thanks to Cathy, www.cathydoesloans.com)
 * French (fr_FR) (thanks to Cathy, www.cathydoesloans.com)
+* German (de_DE) (thanks to [Marcel Leonhard](mailto:marcel@neomediacorporation.eu) www.mleonhard.info)
 * Russian (ru_RU)
 * Serbian (sr_RS) (thanks to [Andrijana Nikolic](mailto:andrijanan@webhostinggeeks.com), www.webhostinggeeks.com)
 * Ukrainian (uk)
 
-Some of these translations are not complete. We are constantly adding new features which should be translated. If you would like to create your own language pack or update the existing one, you can send [the text of PO and MO files](http://codex.wordpress.org/Translating_WordPress) to [BestWebSoft](http://support.bestwebsoft.com/hc/en-us/requests/new) and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO [files Poedit](http://www.poedit.net/download.php).
+Some of these translations are not complete. We are constantly adding new features which should be translated. If you would like to create your own language pack or update the existing one, you can send [the text of PO and MO files](https://codex.wordpress.org/Translating_WordPress) to [BestWebSoft](https://support.bestwebsoft.com/hc/en-us/requests/new) and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO [files Poedit](https://www.poedit.net/download.php).
 
 = Recommended Plugins =
 
-* [Updater](http://bestwebsoft.com/products/wordpress/plugins/updater/?k=0864088de1701a5e104ffb77c6d7011c) - Automatically check and update WordPress core with all installed plugins to the latest versions. Manual mode, email notifications and backups of all your files and database before updating.
-
-= Donate =
-
-Donations play an important role in supporting open-source projects. We greatly appreciate any donation you can make to help us continue further development of free products.
-
-[Donate Now](http://bestwebsoft.com/donate/)
+* [Updater](https://bestwebsoft.com/products/wordpress/plugins/updater/?k=0864088de1701a5e104ffb77c6d7011c) - Automatically check and update WordPress core with all installed plugins to the latest versions. Manual mode, email notifications and backups of all your files and database before updating.
 
 == Installation ==
 
 1. Deactivate the plugin if you have the previous version installed.
 2. Extract "user-role.zip" archive content to the "/wp-content/plugins/user-role" directory.
-3. Activate "user-role" plugin via 'Plugins' menu in WordPress admin menu.
+3. Activate User Role plugin via 'Plugins' menu in WordPress admin menu.
 
-[View a Step-by-step Instruction on User Role Installation](https://docs.google.com/document/d/1uEr5TxEhupny3p6luzUNF1a6rNXes24359HkEGREtV4/)
+[View a Step-by-step Instruction on User Role Installation](https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/)
 
-http://www.youtube.com/watch?v=gz9BkouavtU
+https://www.youtube.com/watch?v=gz9BkouavtU
 
 == Frequently Asked Questions ==
 
 = What settings will be restored if I click on the Recover link? =
 
-Roles will be restored to capabilities that were set at the time of the plugin activation. If the role was created after plugin activation, then it will be restored to cabalities that were set at the time of the the role creation.
+Roles will be restored to capabilities that were set at the time of the plugin activation. If the role was created after plugin activation, then it will be restored to capabilities that were set at the time of the role creation.
 
 = When I delete the User Role plugin will the settings of privileges be changed back? =
 
@@ -97,7 +92,7 @@ Yes. They will be recovered.
 
 = I have some problems with the plugin's work. What Information should I provide to receive proper support? =
 
-Please make sure that the problem hasn't been discussed yet on our forum (<http://support.bestwebsoft.com>). If no, please provide the following data along with your problem's description:
+Please make sure that the problem hasn't been discussed yet on our forum (<https://support.bestwebsoft.com>). If no, please provide the following data along with your problem's description:
 
 1. the link to the page where the problem occurs
 2. the name of the plugin and its version. If you are using a pro version - your order number.
@@ -113,6 +108,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<http:
 5. Edit administrator`s role page on network admin panel.
 
 == Changelog ==
+
+= V1.5.6 - 14.04.2017 =
+* Bugfix : Multiple Cross-Site Scripting (XSS) vulnerability was fixed.
+* NEW : German language file was added.
 
 = V1.5.5 - 03.10.2016 =
 * NEW : The Italian language file was added.
@@ -202,6 +201,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<http:
 * NEW : Css-style was added for Internet Explorer 10.
 
 == Upgrade Notice ==
+
+= V1.5.6 =
+* Bugs fixed.
 
 = V1.5.5 =
 * New languages added.

@@ -1,4 +1,4 @@
-<a href="http://bestwebsoft.com/products/wordpress/plugins/user-role/" target=_blank>User Role WordPress Plugin</a>
+<a href="https://bestwebsoft.com/products/wordpress/plugins/user-role/" target=_blank>User Role WordPress Plugin</a>
 ========================
 
 Powerful user role management plugin for WordPress website. Create, edit, copy, and delete user roles.
@@ -34,25 +34,25 @@ Powerful user role management plugin for WordPress website. Create, edit, copy, 
   <li>Add and manage unlimited custom user roles</li>
   <li>Reset standard WordPress roles capabilities to default</li>
   <li>Сonfigure all subsites on the network</li>
-  <li>Get answer to your support question within one business day (<a href="http://bestwebsoft.com/support-policy/">Support Policy</a>)</li>
+  <li>Get answer to your support question within one business day (<a href="https://bestwebsoft.com/support-policy/">Support Policy</a>)</li>
   </ul>
   
-  <p><a href="http://bestwebsoft.com/products/wordpress/plugins/user-role/?k=dabe729fc0e7bef82e30dcb21a6cefc3">Upgrade to Pro Now</a></p>
+  <p><a href="https://bestwebsoft.com/products/wordpress/plugins/user-role/?k=dabe729fc0e7bef82e30dcb21a6cefc3">Upgrade to Pro Now</a></p>
 </blockquote>
 
-<p>If you have a feature suggestion or idea you'd like to see in the plugin, we'd love to hear about it! <a href="http://support.bestwebsoft.com/hc/en-us/requests/new">Suggest a Feature</a></p>
+<p>If you have a feature suggestion or idea you'd like to see in the plugin, we'd love to hear about it! <a href="https://support.bestwebsoft.com/hc/en-us/requests/new">Suggest a Feature</a></p>
 
 <h4>Documentation &#38; Videos</h4>
 
 <ul>
-<li><a href="https://docs.google.com/document/d/1uEr5TxEhupny3p6luzUNF1a6rNXes24359HkEGREtV4/">[Doc] Installation</a></li>
-<li><a href="https://docs.google.com/document/d/1vnPaBioP41_N1eobYAx_zFP53okbnNUqWhlOhMx0E_8/">[Doc] Purchase, Installation &#38; Configuration</a></li>
-<li><a href="http://www.youtube.com/watch?v=gz9BkouavtU">[Video] Installation Instruction</a></li>
+<li><a href="https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/">[Doc] Installation</a></li>
+<li><a href="https://docs.google.com/document/d/1EUdBVvnm7IHZ6y0DNyldZypUQKpB8UVPToSc_LdOYQI/">[Doc] Purchase</a></li>
+<li><a href="https://www.youtube.com/watch?v=gz9BkouavtU">[Video] Installation Instruction</a></li>
 </ul>
 
 <h4>Help &#38; Support</h4>
 
-<p>Visit our Help Center if you have any questions, our friendly Support Team is happy to help &#8212; <a href="http://support.bestwebsoft.com/">http://support.bestwebsoft.com/</a></p>
+<p>Visit our Help Center if you have any questions, our friendly Support Team is happy to help &#8212; <a href="https://support.bestwebsoft.com/">https://support.bestwebsoft.com/</a></p>
 
 <h4>Translation</h4>
 
@@ -61,21 +61,16 @@ Powerful user role management plugin for WordPress website. Create, edit, copy, 
 <li>Czech (cz_CZ) (thanks to Cathy, <a href="http://www.cathydoesloans.com" rel="nofollow">http://www.cathydoesloans.com</a>)</li>
 <li>Italian (it_IT) (thanks to Cathy, <a href="http://www.cathydoesloans.com" rel="nofollow">http://www.cathydoesloans.com</a>)</li>
 <li>French (fr_FR) (thanks to Cathy, <a href="http://www.cathydoesloans.com" rel="nofollow">http://www.cathydoesloans.com</a>)</li>
+<li>German (de_DE) (thanks to <a href="mailto:marcel@neomediacorporation.eu">Marcel Leonhard</a> <a href="http://www.mleonhard.info" rel="nofollow">http://www.mleonhard.info</a>)</li>
 <li>Russian (ru_RU)</li>
 <li>Serbian (sr_RS) (thanks to <a href="mailto:andrijanan@webhostinggeeks.com">Andrijana Nikolic</a>, <a href="http://www.webhostinggeeks.com" rel="nofollow">http://www.webhostinggeeks.com</a>)</li>
 <li>Ukrainian (uk)</li>
 </ul>
 
-<p>Some of these translations are not complete. We are constantly adding new features which should be translated. If you would like to create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress">the text of PO and MO files</a> to <a href="http://support.bestwebsoft.com/hc/en-us/requests/new">BestWebSoft</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO <a href="http://www.poedit.net/download.php">files Poedit</a>.</p>
+<p>Some of these translations are not complete. We are constantly adding new features which should be translated. If you would like to create your own language pack or update the existing one, you can send <a href="https://codex.wordpress.org/Translating_WordPress">the text of PO and MO files</a> to <a href="https://support.bestwebsoft.com/hc/en-us/requests/new">BestWebSoft</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO <a href="https://www.poedit.net/download.php">files Poedit</a>.</p>
 
 <h4>Recommended Plugins</h4>
 
 <ul>
-<li><a href="http://bestwebsoft.com/products/wordpress/plugins/updater/?k=0864088de1701a5e104ffb77c6d7011c">Updater</a> - Automatically check and update WordPress core with all installed plugins to the latest versions. Manual mode, email notifications and backups of all your files and database before updating.</li>
+<li><a href="https://bestwebsoft.com/products/wordpress/plugins/updater/?k=0864088de1701a5e104ffb77c6d7011c">Updater</a> - Automatically check and update WordPress core with all installed plugins to the latest versions. Manual mode, email notifications and backups of all your files and database before updating.</li>
 </ul>
-
-<h4>Donate</h4>
-
-<p>Donations play an important role in supporting open-source projects. We greatly appreciate any donation you can make to help us continue further development of free products.</p>
-
-<p><a href="http://bestwebsoft.com/donate/">Donate Now</a></p>

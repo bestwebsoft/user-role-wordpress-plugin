@@ -1,17 +1,17 @@
 <?php
 /*
 Plugin Name: User Role by BestWebSoft
-Plugin URI: http://bestwebsoft.com/products/wordpress/plugins/user-role/
+Plugin URI: https://bestwebsoft.com/products/wordpress/plugins/user-role/
 Description: Powerful user role management plugin for WordPress website. Create, edit, copy, and delete user roles.
 Author: BestWebSoft
 Text Domain: user-role
 Domain Path: /languages
-Version: 1.5.5
-Author URI: http://bestwebsoft.com/
+Version: 1.5.6
+Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
 */
 
-/*  © Copyright 2016  BestWebSoft  ( http://support.bestwebsoft.com )
+/*  © Copyright 2017  BestWebSoft  ( https://support.bestwebsoft.com )
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License, version 2, as
@@ -470,8 +470,8 @@ if ( ! function_exists( 'srrl_register_plugin_links' ) ) {
 		$base = plugin_basename( __FILE__ );
 		if ( $file == $base ) {
 			$links[] = '<a href="admin.php?page=user-role.php">' . __( 'Settings', 'user-role' ) . '</a>';
-			$links[] = '<a href="http://wordpress.org/plugins/user-role/faq/" target="_blank">' . __( 'FAQ', 'user-role' ) . '</a>';
-			$links[] = '<a href="http://support.bestwebsoft.com">' . __( 'Support', 'user-role' ) . '</a>';
+			$links[] = '<a href="https://support.bestwebsoft.com/hc/en-us/sections/200538799" target="_blank">' . __( 'FAQ', 'user-role' ) . '</a>';
+			$links[] = '<a href="https://support.bestwebsoft.com">' . __( 'Support', 'user-role' ) . '</a>';
 		}
 		return $links;
 	}
@@ -509,8 +509,7 @@ if ( ! function_exists( 'srrl_pro_block' ) ) {
 				</div>
 				<?php if ( $show_link ) { ?>
 					<div class="bws_pro_version_tooltip">
-						<div class="bws_info"><?php _e( 'Unlock premium options by upgrading to Pro version', 'user-role' ); ?></div>
-						<a class="bws_button" href="http://bestwebsoft.com/products/wordpress/plugins/user-role/buy/?k=0e8fa1e4abf7647412878a5570d4977a&pn=132&v=<?php echo $srrl_plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>" target="_blank" title="User Role Pro Plugin"><?php _e( 'Learn More', 'user-role' ); ?></a>
+						<a class="bws_button" href="https://bestwebsoft.com/products/wordpress/plugins/user-role/buy/?k=0e8fa1e4abf7647412878a5570d4977a&pn=132&v=<?php echo $srrl_plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>" target="_blank" title="User Role Pro Plugin"><?php _e( 'Learn More', 'user-role' ); ?></a>
 					</div>
 				<?php } ?>
 			</div>

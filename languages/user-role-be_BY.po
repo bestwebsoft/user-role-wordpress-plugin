@@ -315,8 +315,8 @@ msgstr "дадаткова"
 msgid "Unknown action"
 msgstr "невядомае дзеянне"
 
-#~ msgid "http://bestwebsoft.com/products/user-role/"
-#~ msgstr "http://bestwebsoft.com/products/user-role/"
+#~ msgid "https://bestwebsoft.com/products/user-role/"
+#~ msgstr "https://bestwebsoft.com/products/user-role/"
 
 #~ msgid ""
 #~ "Powerful user role management plugin for WordPress website. Create, edit, "
@@ -1047,5 +1047,5 @@ msgstr "невядомае дзеянне"
 #~ msgid "BestWebSoft"
 #~ msgstr "BestWebSoft"
 
-#~ msgid "http://bestwebsoft.com/"
-#~ msgstr "http://bestwebsoft.com/"
+#~ msgid "https://bestwebsoft.com/"
+#~ msgstr "https://bestwebsoft.com/"
