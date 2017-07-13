@@ -170,14 +170,8 @@ if ( ! empty( $role_slug ) ) {
 		$blog_list_title = 
 			'<label>
 				<input class="hide-if-no-js" id="all_blogs_checkbox" type="checkbox" disabled="disabled" />' . __( 'All', 'user-role' ) . 
-			'</label>
-			<div class="bws_help_box dashicons dashicons-editor-help">
-				<div class="bws_hidden_help_text" style="min-width: 200px;">
-					<p>' .
-						__( 'For blogs, for which role does not exist, it will be created automatically', 'user-role' ) .
-					'</p>
-				</div>
-			</div>';
+			'</label>' .
+			bws_add_help_box( __( 'For blogs, for which role does not exist, it will be created automatically', 'user-role' ) );
 
 		add_meta_box( 
 			"postbox-list-of-blogs", 

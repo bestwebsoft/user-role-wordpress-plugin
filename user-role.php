@@ -6,7 +6,7 @@ Description: Powerful user role management plugin for WordPress website. Create,
 Author: BestWebSoft
 Text Domain: user-role
 Domain Path: /languages
-Version: 1.5.6
+Version: 1.5.7
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -57,7 +57,7 @@ if ( ! function_exists( 'srrl_init' ) ) {
 		}
 		
 		/* Function check if plugin is compatible with current WP version */
-		bws_wp_min_version_check( plugin_basename( __FILE__ ), $srrl_plugin_info, '3.8' );
+		bws_wp_min_version_check( plugin_basename( __FILE__ ), $srrl_plugin_info, '3.9' );
 	}
 }
 
@@ -66,7 +66,7 @@ if ( ! function_exists( 'srrl_admin_init' ) ) {
 	function srrl_admin_init() {
 		global $bws_plugin_info, $srrl_plugin_info;
 	
-		if ( ! isset( $bws_plugin_info ) || empty( $bws_plugin_info ) )
+		if ( empty( $bws_plugin_info ) )
 			$bws_plugin_info = array( 'id' => '132', 'version' => $srrl_plugin_info["Version"] );
 	}
 }
@@ -78,6 +78,8 @@ if ( ! function_exists( 'srrl_admin_head' ) ) {
 		if ( isset( $_REQUEST['page'] ) && 'user-role.php' == $_REQUEST['page'] ) {
 			wp_enqueue_style( 'srrl_stylesheet', plugins_url( 'css/style.css', __FILE__ ) );
 			wp_enqueue_script( 'srrl_script', plugins_url( '/js/script.js', __FILE__ ), array( 'jquery' ) );
+
+			bws_enqueue_settings_scripts();
 		}
 	}
 }
