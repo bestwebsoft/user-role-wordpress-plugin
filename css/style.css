@@ -11,12 +11,12 @@
 	display: inline-block;
 	width: 100%;
 	box-sizing: border-box;
-	line-height: 2.2em; 
+	line-height: 2.2em;
 	padding-right: 15px;
-	font-size: 14px; 
+	font-size: 14px;
 	padding: 8px 12px;
 	margin: 0px;
-	cursor: default !important; 
+	cursor: default !important;
 	border: none;
 }
 #srrl_form .hndle {
@@ -40,7 +40,7 @@
 	margin-top: 0;
 }
 
-/* 
+/*
  * styles for ADS
  */
 .bws_pro_version_table_bloc .bws_table_bg {
@@ -88,7 +88,7 @@
 }
 .srrl_page_title > span,
 .srrl_cell {
-	display: table-cell;
+	display: inline-block;
 	vertical-align: middle;
 }
 @media only screen and ( max-width: 782px ) {
@@ -110,7 +110,7 @@
 		width: 100%;
 		box-sizing: border-box;
 		overflow: hidden;
-	}	
+	}
 	.srrl_label_cap,
 	.srrl_blogs_list {
 		width: 100%;

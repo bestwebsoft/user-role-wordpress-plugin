@@ -6,7 +6,7 @@ Description: Powerful user role management plugin for WordPress website. Create,
 Author: BestWebSoft
 Text Domain: user-role
 Domain Path: /languages
-Version: 1.5.7
+Version: 1.5.8
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -29,8 +29,11 @@ License: GPLv3 or later
 
 if ( ! function_exists( 'srrl_add_pages' ) ) {
 	function srrl_add_pages() {
-		bws_general_menu();
-		$settings = add_submenu_page( 'bws_panel', 'User Role', 'User Role', 'administrator', 'user-role.php', 'srrl_main_page' );
+
+		$settings = add_menu_page( __( 'User Role Settings', 'user-role' ), 'User Role', 'manage_options', 'user-role.php', 'srrl_main_page', 'none' );
+		add_submenu_page( 'user-role.php', __( 'User Role Settings', 'user-role' ), __( 'Settings', 'user-role' ), 'manage_options', 'user-role.php', 'srrl_main_page' );
+		add_submenu_page( 'user-role.php', 'BWS Panel', 'BWS Panel', 'manage_options', 'srrl-bws-panel', 'bws_add_menu_render' );
+
 		add_action( 'load-' . $settings, 'srrl_add_tabs' );
 	}
 }
@@ -55,7 +58,7 @@ if ( ! function_exists( 'srrl_init' ) ) {
 				require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 			$srrl_plugin_info = get_plugin_data( dirname(__FILE__) . '/user-role.php' );
 		}
-		
+
 		/* Function check if plugin is compatible with current WP version */
 		bws_wp_min_version_check( plugin_basename( __FILE__ ), $srrl_plugin_info, '3.9' );
 	}
@@ -65,21 +68,34 @@ if ( ! function_exists( 'srrl_init' ) ) {
 if ( ! function_exists( 'srrl_admin_init' ) ) {
 	function srrl_admin_init() {
 		global $bws_plugin_info, $srrl_plugin_info;
-	
+
 		if ( empty( $bws_plugin_info ) )
 			$bws_plugin_info = array( 'id' => '132', 'version' => $srrl_plugin_info["Version"] );
 	}
 }
 
-
 /* Style & js on */
 if ( ! function_exists( 'srrl_admin_head' ) ) {
-	function srrl_admin_head() {		
+	function srrl_admin_head() {
+		wp_enqueue_style( 'srrl_icon', plugins_url( 'css/icon.css', __FILE__ ) );
 		if ( isset( $_REQUEST['page'] ) && 'user-role.php' == $_REQUEST['page'] ) {
 			wp_enqueue_style( 'srrl_stylesheet', plugins_url( 'css/style.css', __FILE__ ) );
 			wp_enqueue_script( 'srrl_script', plugins_url( '/js/script.js', __FILE__ ), array( 'jquery' ) );
 
 			bws_enqueue_settings_scripts();
+		}
+	}
+}
+
+/*Plugin activate*/
+if ( ! function_exists( 'srrl_plugin_activate' ) ) {
+	function srrl_plugin_activate() {
+		if ( is_multisite() ) {
+			switch_to_blog( 1 );
+			register_uninstall_hook( __FILE__, 'srrl_delete_options' );
+			restore_current_blog();
+		} else {
+			register_uninstall_hook( __FILE__, 'srrl_delete_options' );
 		}
 	}
 }
@@ -92,11 +108,11 @@ if ( ! function_exists( 'srrl_default_options' ) ) {
 	function srrl_default_options() {
 		global $srrl_options, $srrl_plugin_info;
 		$srrl_default_options = array(
-			'plugin_option_version' 	=> $srrl_plugin_info["Version"],
-			'first_install'         	=> strtotime( "now" ),
-			'suggest_feature_banner'	=> 1,
+			'plugin_option_version' => $srrl_plugin_info["Version"],
+			'first_install'         => strtotime( "now" ),
+			'suggest_feature_banner'=> 1,
 		);
-		
+
 		$srrl_options = get_option( 'srrl_options' );
 		if ( ! $srrl_options ) {
 			$srrl_options = $srrl_default_options;
@@ -104,6 +120,7 @@ if ( ! function_exists( 'srrl_default_options' ) ) {
 		}
 
 		if ( ! isset( $srrl_options['plugin_option_version'] ) || $srrl_plugin_info["Version"] != $srrl_options['plugin_option_version'] ) {
+			srrl_plugin_activate();
 			$srrl_options['plugin_option_version'] = $srrl_plugin_info["Version"];
 			$srrl_options['hide_premium_options']  = array();
 			update_option( 'srrl_options', $srrl_options );
@@ -111,7 +128,7 @@ if ( ! function_exists( 'srrl_default_options' ) ) {
 	}
 }
 
- /**
+/**
  * Create backup-options
  * when we go to the plugin settings page
  * @return void
@@ -138,7 +155,7 @@ if ( ! function_exists( 'srrl_create_backup' ) ) {
 }
 
 /**
- * Display plugin settings page 
+ * Display plugin settings page
  * @return void
  */
 if ( ! function_exists( 'srrl_main_page' ) ) {
@@ -147,18 +164,18 @@ if ( ! function_exists( 'srrl_main_page' ) ) {
 		$message = $error = '';
 		$plugin_basename = plugin_basename( __FILE__ );
 		$is_network = is_multisite() && is_network_admin() ? true : false;
-		
+
 		/* create plugin options */
 		srrl_default_options();
 		/* create 'restore'-options */
-		srrl_create_backup(); 
+		srrl_create_backup();
 		/* hide pro blocks */
 		if ( isset( $_POST['bws_hide_premium_options'] ) && check_admin_referer( $plugin_basename, 'srrl_nonce_name' ) ) {
 			$hide_result  = bws_hide_premium_options( $srrl_options );
 			$srrl_options = $hide_result['options'];
 			$message      = $hide_result['message'];
 			update_option( 'srrl_options', $srrl_options );
-		} 
+		}
 
 		/* GO PRO */
 		if ( isset( $_GET['action'] ) && 'go_pro' == $_GET['action'] ) {
@@ -183,38 +200,38 @@ if ( ! function_exists( 'srrl_main_page' ) ) {
 					require_once( $file );
 			} elseif( isset( $_GET['action'] ) && 'go_pro' == $_GET['action'] ) {
 				$show = bws_hide_premium_options_check( $srrl_options ) ? true : false;
-				bws_go_pro_tab_show( 
-					$show, 
-					$srrl_plugin_info, 
-					$plugin_basename, 
-					'user-role.php', 
-					'user-role-pro.php', 
-					'user-role-pro/user-role-pro.php', 
-					'user-role', 
-					'0e8fa1e4abf7647412878a5570d4977a', 
-					'132', 
-					isset( $go_pro_result['pro_plugin_is_activated'] ) 
+				bws_go_pro_tab_show(
+					$show,
+					$srrl_plugin_info,
+					$plugin_basename,
+					'user-role.php',
+					'user-role-pro.php',
+					'user-role-pro/user-role-pro.php',
+					'user-role',
+					'0e8fa1e4abf7647412878a5570d4977a',
+					'132',
+					isset( $go_pro_result['pro_plugin_is_activated'] )
 				);
 			} else {
 				$action = isset( $_POST['action'] ) && '-1' != $_POST['action'] ? $_POST['action'] : '';
 				$action = empty( $action ) && isset( $_POST['action2'] ) && '-1' != $_POST['action2'] ? $_POST['action2'] : $action;
 				$action = empty( $action ) && isset( $_REQUEST['srrl_action'] ) && ! in_array( $_REQUEST['srrl_action'], array( 'add', 'edit', 'update', 'new' ) ) ? $_REQUEST['srrl_action'] : $action;
-				if ( 
-						! empty( $action ) && 
-						! isset( $_REQUEST['srrl_confirm_action'] ) && 
-						isset( $_REQUEST['srrl_slug'] ) && 
+				if (
+						! empty( $action ) &&
+						! isset( $_REQUEST['srrl_confirm_action'] ) &&
+						isset( $_REQUEST['srrl_slug'] ) &&
 						! empty( $_REQUEST['srrl_slug'] )
 				) {
 					switch ( $action ) {
 						case 'recover':
-							$question      = __( 'Are you sure, that you want to recover selected role(s)?', 'user-role' );
+							$question      = __( 'Are you sure, you want to recover selected role(s)?', 'user-role' );
 							$confirn_title = __( 'Yes, recover role(s)', 'user-role' );
 							break;
 						default:
-							$question      = __( 'Are you sure, that you want to do selected action?', 'user-role' );
+							$question      = __( 'Are you sure, you want to do selected action?', 'user-role' );
 							$confirn_title = __( 'Yes, do it', 'user-role' );
 							break;
-					} 
+					}
 					/* display confirm form */ ?>
 					<p><?php echo $question; ?></p>
 					<form method="post" action="<?php get_admin_url(); ?>admin.php?page=user-role.php" style="margin-bottom: 20px;">
@@ -236,7 +253,7 @@ if ( ! function_exists( 'srrl_main_page' ) ) {
 					</form>
 				<?php } else {
 					/* display list of roles */
-					$file = dirname( __FILE__ ) . '/includes/class-user-role.php'; 
+					$file = dirname( __FILE__ ) . '/includes/class-user-role.php';
 					if ( file_exists( $file ) )
 					require_once( $file );
 					if ( class_exists( 'Srrl_Roles_List' ) )
@@ -250,7 +267,7 @@ if ( ! function_exists( 'srrl_main_page' ) ) {
 }
 
 /**
- * Add new or update an existing one role ( from "edit_role"-page ) 
+ * Add new or update an existing one role ( from "edit_role"-page )
  * @param      string    $name       role display name
  * @param      string    $slug       role name
  * @param      array     $caps       allowed capabilities
@@ -271,7 +288,7 @@ if ( ! function_exists( 'srrl_single_handle_role' ) ) {
 		} else {
 			$slug = strtolower( trim( stripslashes( esc_html( $slug ) ) ) );
 			$name = trim( stripslashes( esc_html( $name ) ) );
-			if ( 
+			if (
 				! preg_match( "/^[a-zA-Z0-9]+([-_\s]?[a-zA-Z0-9])*$/", $slug ) || /* not only latin, numbers, '-' or '_' */
 				preg_match( "/^([-_\s]*?)$/", $slug ) || /* only '-' or '_' */
 				is_numeric( $slug ) /* only numbers */
@@ -280,11 +297,17 @@ if ( ! function_exists( 'srrl_single_handle_role' ) ) {
 			} else {
 				if ( 0 === srrl_update_role( $slug, $name, $caps ) )
 					$result['error'] = __( 'Some error occured', 'user-role' );
-				else 
+				else
 					$result['message'] = __( 'Role was successfully updated', 'user-role' );
 			}
 		}
-		$wp_roles->reinit();
+
+		if ( method_exists( $wp_roles, 'for_site' ) ){
+			$wp_roles->for_site();
+		} else {
+			$wp_roles->reinit();
+		}
+
 		return $result;
 	}
 }
@@ -292,7 +315,7 @@ if ( ! function_exists( 'srrl_single_handle_role' ) ) {
 /**
  * Getting capabilities of the selected role
  * @return     array    $result    result message and capabilities of the selected role
- */ 
+ */
 if ( ! function_exists( 'srrl_copy_role' ) ) {
 	function srrl_copy_role() {
 		$result = array( 'error' => '', 'message' => '', 'caps' => array() );
@@ -317,7 +340,7 @@ if ( ! function_exists( 'srrl_copy_role' ) ) {
 
 /**
  * Update of the role
- * @return   mixed      an integer (1 or 0) or WP_Role object 
+ * @return   mixed      an integer (1 or 0) or WP_Role object
  */
 if ( ! function_exists( 'srrl_update_role' ) ) {
 	function srrl_update_role( $slug, $name, $caps ) {
@@ -359,8 +382,8 @@ if ( ! function_exists( 'srrl_update_role' ) ) {
 	}
 }
 
-/** 
- * Recovers or resets of capabilities 
+/**
+ * Recovers or resets of capabilities
  * @param      array/string  $slug_array   roles slugs
  * @return     void
  */
@@ -400,16 +423,16 @@ if ( ! function_exists( 'srrl_metabox_content' ) ) {
 	function srrl_metabox_content( $post, $metabox ) {
 		$slug = isset( $_REQUEST['srrl_slug'] ) ? stripslashes( trim( esc_html( $_REQUEST['srrl_slug'] ) ) ) : '';
 		$slug = empty( $slug ) && isset( $_REQUEST['srrl_role_slug'] ) ? stripslashes( trim( esc_html( $_REQUEST['srrl_role_slug'] ) ) ) : $slug;
-		$admin_capabilities = 
-				'administrator' == $slug 
-			? 
-				array( 
-					'activate_plugins', 'create_users', 'delete_plugins', 'delete_themes', 
-					'delete_users', 'edit_files', 'edit_plugins', 'edit_theme_options', 
-					'edit_themes', 'edit_users', 'export', 'import', 'install_plugins', 
-					'install_themes', 'list_users', 'manage_options', 'promote_users', 
-					'remove_users', 'switch_themes', 'update_core', 'update_plugins', 
-					'update_themes', 'edit_dashboard', 'add_users' 
+		$admin_capabilities =
+				'administrator' == $slug
+			?
+				array(
+					'activate_plugins', 'create_users', 'delete_plugins', 'delete_themes',
+					'delete_users', 'edit_files', 'edit_plugins', 'edit_theme_options',
+					'edit_themes', 'edit_users', 'export', 'import', 'install_plugins',
+					'install_themes', 'list_users', 'manage_options', 'promote_users',
+					'remove_users', 'switch_themes', 'update_core', 'update_plugins',
+					'update_themes', 'edit_dashboard', 'add_users'
 				)
 			:
 				array();
@@ -422,14 +445,14 @@ if ( ! function_exists( 'srrl_metabox_content' ) ) {
 }
 
 /**
- * Display list of Blogs 
+ * Display list of Blogs
  * @param    object      $post       WP_Post object
  * @param    array       $metabox    parameters, which was passed thru add_meta_box() action
  * @return   void
  */
 if ( ! function_exists( 'srrl_list_of_blogs' ) ) {
-	function srrl_list_of_blogs( $post, $metabox ) { 
-		echo $metabox['args'][0]; 
+	function srrl_list_of_blogs( $post, $metabox ) {
+		echo $metabox['args'][0];
 	}
 }
 
@@ -437,7 +460,7 @@ if ( ! function_exists( 'srrl_list_of_blogs' ) ) {
 if ( ! function_exists( 'srrl_plugin_action_links' ) ) {
 	function srrl_plugin_action_links( $links, $file ) {
 		static $this_plugin;
-		if ( ! $this_plugin ) 
+		if ( ! $this_plugin )
 			$this_plugin = plugin_basename(__FILE__);
 		if ( $file == $this_plugin ) {
 			$settings_link = '<a href="admin.php?page=user-role.php">' . __( 'Settings', 'user-role' ) . '</a>';
@@ -450,7 +473,7 @@ if ( ! function_exists( 'srrl_plugin_action_links' ) ) {
 if ( ! function_exists ( 'srrl_plugin_banner' ) ) {
 	function srrl_plugin_banner() {
 		global $hook_suffix, $srrl_plugin_info, $srrl_options;
-		
+
 		if ( 'plugins.php' == $hook_suffix ) {
 			if ( empty( $srrl_options ) )
 				$srrl_options = get_option( 'srrl_options' );
@@ -466,7 +489,6 @@ if ( ! function_exists ( 'srrl_plugin_banner' ) ) {
 	}
 }
 
-
 if ( ! function_exists( 'srrl_register_plugin_links' ) ) {
 	function srrl_register_plugin_links( $links, $file ) {
 		$base = plugin_basename( __FILE__ );
@@ -479,9 +501,9 @@ if ( ! function_exists( 'srrl_register_plugin_links' ) ) {
 	}
 }
 
-/** 
+/**
  * Add help tab on settings page
- * @return void 
+ * @return void
  */
 if ( ! function_exists( 'srrl_add_tabs' ) ) {
 	function srrl_add_tabs() {
@@ -493,12 +515,12 @@ if ( ! function_exists( 'srrl_add_tabs' ) ) {
 	}
 }
 
-/** 
+/**
  * Show ads for PRO
- * @return void 
+ * @return void
  */
 if ( ! function_exists( 'srrl_pro_block' ) ) {
-	function srrl_pro_block( $class = "", $func, $show_link = true, $show_cross = true ) { 
+	function srrl_pro_block( $class = "", $func, $show_link = true, $show_cross = true ) {
 		global $srrl_plugin_info, $wp_version, $srrl_options;
 		if ( ! bws_hide_premium_options_check( $srrl_options ) ) { ?>
 			<div class="bws_pro_version_bloc <?php echo $class;?>" title="<?php _e( 'This option is available in Pro version of plugin', 'user-role' ); ?>">
@@ -565,7 +587,7 @@ if ( ! function_exists ( 'srrl_delete_options' ) ) {
 
 		if ( ! function_exists( 'get_plugins' ) )
 			require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-		
+
 		$all_plugins = get_plugins();
 
 		if ( ! array_key_exists( 'user-role-pro/user-role-pro.php', $all_plugins ) ) {
@@ -594,6 +616,8 @@ if ( ! function_exists ( 'srrl_delete_options' ) ) {
 	}
 }
 
+register_activation_hook( __FILE__, 'srrl_plugin_activate' );
+
 add_action( 'admin_menu', 'srrl_add_pages' );
 add_action( 'network_admin_menu', 'srrl_add_pages' );
 add_action( 'plugins_loaded', 'srrl_plugins_loaded' );
@@ -606,5 +630,3 @@ add_filter( 'plugin_action_links', 'srrl_plugin_action_links', 10, 2 );
 add_filter( 'plugin_row_meta', 'srrl_register_plugin_links', 10, 2 );
 /* add notice about plugin license timeout */
 add_action( 'admin_notices', 'srrl_plugin_banner' );
-/* uninstall function */
-register_uninstall_hook( __FILE__, 'srrl_delete_options' );

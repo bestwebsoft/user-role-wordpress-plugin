@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: User Role\n"
-"POT-Creation-Date: 2016-08-09 11:56+0300\n"
-"PO-Revision-Date: 2016-08-09 11:56+0300\n"
+"POT-Creation-Date: 2018-01-10 08:25+0200\n"
+"PO-Revision-Date: 2018-01-10 08:25+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: be\n"
@@ -13,134 +13,88 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.8.7.1\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: user-role.php:173
-msgid "User Role Settings"
-msgstr "Налады  User Role"
+#: includes/class-user-role.php:74
+msgid "Roles not found"
+msgstr "Ролі не знойдзены"
 
-#: user-role.php:175 user-role.php:444 user-role.php:475
-msgid "Settings"
-msgstr "Налады."
+#: includes/class-user-role.php:83 includes/class-user-role.php:178
+msgid "Recover"
+msgstr "Аднавіць"
 
-#: user-role.php:176
-msgid "Go PRO"
-msgstr "Перайсці на PRO версію"
+#: includes/class-user-role.php:116 includes/edit-role-page.php:220
+msgid "Role Name"
+msgstr "Імя ролі"
 
-#: user-role.php:211
-msgid "Are you sure, that you want to recover selected role(s)?"
-msgstr "Вы ўпэўненыя, што хочаце аднавіць выбраныя ролі?"
+#: includes/class-user-role.php:117 includes/edit-role-page.php:224
+msgid "Role Slug"
+msgstr "Слаг ролі"
 
-#: user-role.php:212
-msgid "Yes, recover role(s)"
-msgstr "Так, аднавіць ролю (і)"
+#: includes/class-user-role.php:118
+msgid "Type"
+msgstr "Тып"
 
-#: user-role.php:215
-msgid "Are you sure, that you want to do selected action?"
-msgstr "Вы ўпэўненыя, што хочаце выканаць дзеянне?"
+#: includes/class-user-role.php:119
+msgid "Users"
+msgstr "Карыстальнікі"
 
-#: user-role.php:216
-msgid "Yes, do it"
-msgstr "Так, выканаць"
+#: includes/class-user-role.php:120 includes/edit-role-page.php:232
+msgid "Capabilities"
+msgstr "Полномочия"
 
-#: user-role.php:231
-msgid "No, go back to the roles list"
-msgstr "Не, вярнуцца да спісу роляў"
+#: includes/class-user-role.php:177
+msgid "Edit"
+msgstr "рэдагаваць"
 
-#: user-role.php:265
-msgid "Please enter role name"
-msgstr "Калі ласка, увядзіце імя ролі"
+#: includes/class-user-role.php:179
+msgid "Reset"
+msgstr "перазагрузіць"
 
-#: user-role.php:267
-msgid "Please enter role slug"
-msgstr "Калі ласка, увядзіце слаг ролі"
+#: includes/class-user-role.php:180
+msgid "Delete"
+msgstr "выдаліць"
 
-#: user-role.php:269
-msgid "Please select some capabilities for role"
-msgstr "Калі ласка, абярыце некаторыя магчымасці для ролі"
+#: includes/class-user-role.php:187
+msgid "Edit role capabilities"
+msgstr ""
 
-#: user-role.php:280
-msgid "Wrong slug. See allowed symbols"
-msgstr "Няправільны слаг. Глядзі даступныя сімвалы"
+#: includes/class-user-role.php:192
+msgid ""
+"The default WordPress role will be restored to the default WordPress "
+"capabilities. This option is available in Pro version of plugin"
+msgstr ""
+"Магчымасці стандартнай ролі будуць адноўлены да магчымасцяў па змаўчанні. "
+"Гэтая опцыя даступна ў Pro-версіі плагіна"
 
-#: user-role.php:283
-msgid "Some error occured"
-msgstr "Паўсталі некаторыя памылкі"
+#: includes/class-user-role.php:197
+msgid ""
+"Restore role capabilities that were set at the time of the plugin activation "
+"or when the role was created"
+msgstr ""
 
-#: user-role.php:285
-msgid "Role was successfully updated"
-msgstr "Роля паспяхова абноўлена"
+#: includes/class-user-role.php:202
+msgid "Delete role. This option is available in Pro version of plugin"
+msgstr "Выдаліць ролю. Гэтая опцыя даступная ў Pro-версіі плагіна"
 
-#: user-role.php:305
-msgid "Can not get capabilities of the selected role"
-msgstr "Не ўдалося ўзяць магчымасці абранай ролі"
+#: includes/class-user-role.php:236
+msgid "default"
+msgstr "Па змаўчанні"
 
-#: user-role.php:309
-msgid "Capabilities were successfully loaded"
-msgstr "Магчымасці паспяхова загружаны"
+#: includes/class-user-role.php:240
+msgid "Built-in"
+msgstr "убудаваная"
 
-#: user-role.php:309
-msgid "Save Changes"
-msgstr "захаваць змены"
+#: includes/class-user-role.php:240
+msgid "Custom"
+msgstr "дадаткова"
 
-#: user-role.php:311
-msgid "Selected role is not exists. Capabilities not loaded"
-msgstr "Абраная роля не існуе. Магчымасці не загружаны"
-
-#: user-role.php:375
-msgid "Can not recover selected roles"
-msgstr "Немагчыма перазапісаць выбраныя ролі"
-
-#: user-role.php:385
-msgid "Selected roles were recovered successfully"
-msgstr "Выбраныя ролі пасьпяхова адноўленыя па змаўчанні"
-
-#: user-role.php:387
-msgid "Can not recover next roles"
-msgstr "Немагчыма перазапісаць наступныя ролі"
-
-#: user-role.php:476
-msgid "FAQ"
-msgstr "\tFAQ"
-
-#: user-role.php:477
-msgid "Support"
-msgstr "тэхпадтрымка"
-
-#: user-role.php:535
-msgid "This option is available in Pro version of plugin"
-msgstr "Гэтая опцыя даступная ў Pro-версіі плагіна"
-
-#: user-role.php:538
-msgid "Close"
-msgstr "Затвори"
-
-#: user-role.php:545
-msgid "Unlock premium options by upgrading to Pro version"
-msgstr "Разблакаваць прэміум опцыі, абнаўленне да Pro версіі"
-
-#: user-role.php:546
-msgid "Learn More"
-msgstr "чытаць далей"
-
-#: user-role.php:560
-msgid "Switch to Blog"
-msgstr "Пераключыцца на блок"
-
-#: user-role.php:568
-msgid "Allow for blogs"
-msgstr "Прымяніць да блогаў"
-
-#: user-role.php:578
-msgid "Select blog"
-msgstr "выберыце блог"
-
-#: user-role.php:587
-msgid "Add New Role"
-msgstr "дадаць Ролю"
+#: includes/class-user-role.php:272
+msgid "Unknown action"
+msgstr "невядомае дзеянне"
 
 #: includes/edit-role-page.php:22
 msgid "Actions with posts"
@@ -163,43 +117,43 @@ msgid "Actions with plugins"
 msgstr "Дзеянні з ўбудовамі"
 
 #: includes/edit-role-page.php:27
-msgid "Others default actions"
-msgstr "Стандартныя дзеянні па-за катэгорыямі"
+msgid "Other default actions"
+msgstr ""
 
 #: includes/edit-role-page.php:28
-msgid "Others custom actions"
-msgstr "дадатковыя дзеянні"
+msgid "Other custom actions"
+msgstr ""
 
 #: includes/edit-role-page.php:30
 msgid "Update Role"
 msgstr "Абнаўленне ролі"
 
 #: includes/edit-role-page.php:161
-msgid "role not exists"
-msgstr "роль не існуе"
+msgid "role doesn't exists"
+msgstr ""
 
-#: includes/edit-role-page.php:172 includes/edit-role-page.php:244
+#: includes/edit-role-page.php:172 includes/edit-role-page.php:238
 msgid "All"
 msgstr "Усё"
 
-#: includes/edit-role-page.php:177
+#: includes/edit-role-page.php:174
 msgid ""
-"For blogs, for which role does not exist, it will be created automatically"
-msgstr "Для блогаў, для якіх роль не існуе, яна будзе створана аўтаматычна"
+"The role will be created automatically for blogs where it does not exist"
+msgstr ""
 
-#: includes/edit-role-page.php:203
+#: includes/edit-role-page.php:197
 msgid "Warning:"
 msgstr "Увага:"
 
-#: includes/edit-role-page.php:203
+#: includes/edit-role-page.php:197
 msgid "You are trying to edit your own role. Please read before"
 msgstr "Вы рэдагуеце сваю ўласную ролю. Калі ласка найперш прачытайце"
 
-#: includes/edit-role-page.php:203
+#: includes/edit-role-page.php:197
 msgid "Roles and Capabilities"
 msgstr "ролі і магчымасці"
 
-#: includes/edit-role-page.php:204
+#: includes/edit-role-page.php:198
 msgid ""
 "Changes will be applied immediately after saving. If you are not sure - do "
 "not click \"Update Role\" button."
@@ -207,23 +161,15 @@ msgstr ""
 "Налады будуць ужытыя неадкладна пасля захавання. Калі Вы не ўпэўненыя - не "
 "націскайце на кнопку \"Абнавіць ролю\""
 
-#: includes/edit-role-page.php:219
+#: includes/edit-role-page.php:213
 msgid "Notice"
 msgstr "апавяшчэнне"
 
-#: includes/edit-role-page.php:219
+#: includes/edit-role-page.php:213
 msgid "The role's settings have been changed."
 msgstr "Налады ролі былі змененыя"
 
-#: includes/edit-role-page.php:226 includes/class-user-role.php:116
-msgid "Role Name"
-msgstr "Імя ролі"
-
-#: includes/edit-role-page.php:230 includes/class-user-role.php:117
-msgid "Role Slug"
-msgstr "Слаг ролі"
-
-#: includes/edit-role-page.php:233
+#: includes/edit-role-page.php:227
 msgid ""
 "Slug must contain only latin letters. Also You can add numbers and symbols "
 "\"-\" or \"_\""
@@ -231,89 +177,169 @@ msgstr ""
 "Слаг павінен утрымліваць толькі лацінскія сімвалы. Таксама Вы можаце дадаць "
 "лічбы і сімвалы \"-\" ці \"_\""
 
-#: includes/edit-role-page.php:238 includes/class-user-role.php:120
-msgid "Capabilities"
-msgstr "Полномочия"
-
-#: includes/edit-role-page.php:248
+#: includes/edit-role-page.php:242
 msgid "Copy from"
 msgstr "скапіяваць з"
 
-#: includes/edit-role-page.php:256
+#: includes/edit-role-page.php:250
 msgid "Select role"
 msgstr "выберыце ролю"
 
-#: includes/edit-role-page.php:259
+#: includes/edit-role-page.php:253
 msgid "Apply"
 msgstr "Ужыць"
 
-#: includes/class-user-role.php:74
-msgid "Roles not found"
-msgstr "Ролі не знойдзены"
+#: user-role.php:33 user-role.php:34 user-role.php:190
+msgid "User Role Settings"
+msgstr "Налады  User Role"
 
-#: includes/class-user-role.php:83 includes/class-user-role.php:178
-msgid "Recover"
-msgstr "Аднавіць"
+#: user-role.php:34 user-role.php:192 user-role.php:467 user-role.php:498
+msgid "Settings"
+msgstr "Налады."
 
-#: includes/class-user-role.php:118
-msgid "Type"
-msgstr "Тып"
+#: user-role.php:193
+msgid "Go PRO"
+msgstr "Перайсці на PRO версію"
 
-#: includes/class-user-role.php:119
-msgid "Users"
-msgstr "Карыстальнікі"
-
-#: includes/class-user-role.php:177
-msgid "Edit"
-msgstr "рэдагаваць"
-
-#: includes/class-user-role.php:179
-msgid "Reset"
-msgstr "перазагрузіць"
-
-#: includes/class-user-role.php:180
-msgid "Delete"
-msgstr "выдаліць"
-
-#: includes/class-user-role.php:187
-msgid "Edit capabilities of the role"
-msgstr "Рэдагаваць магчымасці ролі"
-
-#: includes/class-user-role.php:192
-msgid ""
-"The default WordPress role will be restored to the default WordPress "
-"capabilities. This option is available in Pro version of plugin"
+#: user-role.php:228
+msgid "Are you sure, you want to recover selected role(s)?"
 msgstr ""
-"Магчымасці стандартнай ролі будуць адноўлены да магчымасцяў па змаўчанні. "
-"Гэтая опцыя даступна ў Pro-версіі плагіна"
 
-#: includes/class-user-role.php:197
-msgid ""
-"Restore a role to capabilities that were set at the time of the plugin "
-"activation or when the role was created"
+#: user-role.php:229
+msgid "Yes, recover role(s)"
+msgstr "Так, аднавіць ролю (і)"
+
+#: user-role.php:232
+msgid "Are you sure, you want to do selected action?"
 msgstr ""
-"Аднавіць магчымасці ролі на момант, калі ўбудова была актывавана або на "
-"момант стварэння ролі"
 
-#: includes/class-user-role.php:202
-msgid "Delete role. This option is available in Pro version of plugin"
-msgstr "Выдаліць ролю. Гэтая опцыя даступная ў Pro-версіі плагіна"
+#: user-role.php:233
+msgid "Yes, do it"
+msgstr "Так, выканаць"
 
-#: includes/class-user-role.php:231
-msgid "default"
-msgstr "Па змаўчанні"
+#: user-role.php:248
+msgid "No, go back to the roles list"
+msgstr "Не, вярнуцца да спісу роляў"
 
-#: includes/class-user-role.php:235
-msgid "Built-in"
-msgstr "убудаваная"
+#: user-role.php:282
+msgid "Please enter role name"
+msgstr "Калі ласка, увядзіце імя ролі"
 
-#: includes/class-user-role.php:235
-msgid "Custom"
-msgstr "дадаткова"
+#: user-role.php:284
+msgid "Please enter role slug"
+msgstr "Калі ласка, увядзіце слаг ролі"
 
-#: includes/class-user-role.php:267
-msgid "Unknown action"
-msgstr "невядомае дзеянне"
+#: user-role.php:286
+msgid "Please select some capabilities for role"
+msgstr "Калі ласка, абярыце некаторыя магчымасці для ролі"
+
+#: user-role.php:297
+msgid "Wrong slug. See allowed symbols"
+msgstr "Няправільны слаг. Глядзі даступныя сімвалы"
+
+#: user-role.php:300
+msgid "Some error occured"
+msgstr "Паўсталі некаторыя памылкі"
+
+#: user-role.php:302
+msgid "Role was successfully updated"
+msgstr "Роля паспяхова абноўлена"
+
+#: user-role.php:328
+msgid "Can not get capabilities of the selected role"
+msgstr "Не ўдалося ўзяць магчымасці абранай ролі"
+
+#: user-role.php:332
+msgid "Capabilities were successfully loaded"
+msgstr "Магчымасці паспяхова загружаны"
+
+#: user-role.php:332
+msgid "Save Changes"
+msgstr "захаваць змены"
+
+#: user-role.php:334
+msgid "Selected role is not exists. Capabilities not loaded"
+msgstr "Абраная роля не існуе. Магчымасці не загружаны"
+
+#: user-role.php:398
+msgid "Can not recover selected roles"
+msgstr "Немагчыма перазапісаць выбраныя ролі"
+
+#: user-role.php:408
+msgid "Selected roles were recovered successfully"
+msgstr "Выбраныя ролі пасьпяхова адноўленыя па змаўчанні"
+
+#: user-role.php:410
+msgid "Can not recover next roles"
+msgstr "Немагчыма перазапісаць наступныя ролі"
+
+#: user-role.php:499
+msgid "FAQ"
+msgstr "\tFAQ"
+
+#: user-role.php:500
+msgid "Support"
+msgstr "тэхпадтрымка"
+
+#: user-role.php:528
+msgid "This option is available in Pro version of plugin"
+msgstr "Гэтая опцыя даступная ў Pro-версіі плагіна"
+
+#: user-role.php:531
+msgid "Close"
+msgstr "Затвори"
+
+#: user-role.php:538
+msgid "Learn More"
+msgstr "чытаць далей"
+
+#: user-role.php:552
+msgid "Switch to Blog"
+msgstr "Пераключыцца на блок"
+
+#: user-role.php:560
+msgid "Allow for blogs"
+msgstr "Прымяніць да блогаў"
+
+#: user-role.php:570
+msgid "Select blog"
+msgstr "выберыце блог"
+
+#: user-role.php:579
+msgid "Add New Role"
+msgstr "дадаць Ролю"
+
+#~ msgid "Are you sure, that you want to recover selected role(s)?"
+#~ msgstr "Вы ўпэўненыя, што хочаце аднавіць выбраныя ролі?"
+
+#~ msgid "Are you sure, that you want to do selected action?"
+#~ msgstr "Вы ўпэўненыя, што хочаце выканаць дзеянне?"
+
+#~ msgid "Unlock premium options by upgrading to Pro version"
+#~ msgstr "Разблакаваць прэміум опцыі, абнаўленне да Pro версіі"
+
+#~ msgid "Others default actions"
+#~ msgstr "Стандартныя дзеянні па-за катэгорыямі"
+
+#~ msgid "Others custom actions"
+#~ msgstr "дадатковыя дзеянні"
+
+#~ msgid "role not exists"
+#~ msgstr "роль не існуе"
+
+#~ msgid ""
+#~ "For blogs, for which role does not exist, it will be created automatically"
+#~ msgstr "Для блогаў, для якіх роль не існуе, яна будзе створана аўтаматычна"
+
+#~ msgid "Edit capabilities of the role"
+#~ msgstr "Рэдагаваць магчымасці ролі"
+
+#~ msgid ""
+#~ "Restore a role to capabilities that were set at the time of the plugin "
+#~ "activation or when the role was created"
+#~ msgstr ""
+#~ "Аднавіць магчымасці ролі на момант, калі ўбудова была актывавана або на "
+#~ "момант стварэння ролі"
 
 #~ msgid "https://bestwebsoft.com/products/user-role/"
 #~ msgstr "https://bestwebsoft.com/products/user-role/"

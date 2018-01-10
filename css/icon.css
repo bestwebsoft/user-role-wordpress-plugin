@@ -1,0 +1,5 @@
+/* User Role icon */
+#toplevel_page_user-role .wp-menu-image:before {
+	content: "\e933";
+	font-family: 'bwsicons' !important;
+}

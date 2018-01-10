@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Display Content of Add/Edit Role Page
  * @package User Role
@@ -6,14 +6,14 @@
  */
 
 /**
- * geting of the necessary data 
+ * geting of the necessary data
  */
 
 global $wp_roles;
 $roles   = $wp_roles->roles;
-$default = array( 
+$default = array(
 	"manage_links", "export", "manage_options", "unfiltered_html", "import", "moderate_comments",
-	"unfiltered_upload", "edit_dashboard", "manage_categories", "update_core", "manage_categories", 
+	"unfiltered_upload", "edit_dashboard", "manage_categories", "update_core", "manage_categories",
 	"edit_files", "read", "upload_files" );
 $temp = $caps_array = array();
 $result = array( 'error' => '', 'message' => '' );
@@ -24,8 +24,8 @@ $labels_array = array(
 	'themes'  => __( 'Actions with themes', 'user-role' ),
 	'users'   => __( 'Actions with users', 'user-role' ),
 	'plugins' => __( 'Actions with plugins', 'user-role' ),
-	'default' => __( 'Others default actions', 'user-role' ),
-	'custom'  => __( 'Others custom actions', 'user-role' )
+	'default' => __( 'Other default actions', 'user-role' ),
+	'custom'  => __( 'Other custom actions', 'user-role' )
 );
 $submit_title = __( 'Update Role', 'user-role' );
 
@@ -93,7 +93,7 @@ switch ( $_REQUEST['srrl_action'] ) {
 
 if ( ! empty( $role_slug ) ) {
 	/**
-	 * getting array of registered capabilities 
+	 * getting array of registered capabilities
 	 */
 	foreach ( $roles as $key => $data_value ) {
 		$select_roles .= '<option value="' . $key . '">' . $data_value['name'] . '</option>';
@@ -130,27 +130,27 @@ if ( ! empty( $role_slug ) ) {
 	}
 	asort( $caps_array );
 
-	/* 
+	/*
 	 * forming html-structure of the list of capabilities via metaboxes
 	 */
 	foreach ( $caps_array as $key => $value ) {
-		add_meta_box( 
-			"postbox-{$key}", 
+		add_meta_box(
+			"postbox-{$key}",
 			'<label class="srrl_group_label"><input class="hide-if-no-js srrl_group_cap" id="' . $key . '_checkbox" type="checkbox" value="srrl_' . $key . '" />' . $labels_array[ $key ] . '</label>',
-			'srrl_metabox_content', 
+			'srrl_metabox_content',
 			'user-role.php',
 			'normal',
 			'default',
-			array( $value, $allowed_caps, 'srrl_' . $key ) 
+			array( $value, $allowed_caps, 'srrl_' . $key )
 		);
 	}
 
 	/**
-	 * forming html-structure of additional settings on network 
+	 * forming html-structure of additional settings on network
 	 */
 	if ( $is_network ) {
 		global $wpdb;
-		$blogs = $wpdb->get_results( "SELECT `blog_id`, `domain` FROM `{$wpdb->base_prefix}blogs`;" ); 
+		$blogs = $wpdb->get_results( "SELECT `blog_id`, `domain` FROM `{$wpdb->base_prefix}blogs`;" );
 		$selected_blog = isset( $_REQUEST['srrl_blog_id'] ) ? $_REQUEST['srrl_blog_id'] : 1;
 		$checkboxes    = '';
 		foreach ( $blogs as $blog ) {
@@ -158,25 +158,25 @@ if ( ! empty( $role_slug ) ) {
 			$blog_name = $wpdb->get_var( "SELECT `option_value` FROM `{$prefix}options` WHERE `option_name` = 'blogname'" );
 			/* check if role is already exists for current blog */
 			if ( in_array( $_REQUEST['srrl_action'], array( 'update', 'edit' ) ) )
-				$role_exists = array_key_exists( $role_slug, get_blog_option( $blog->blog_id, $prefix .'user_roles' ) ) ? '' : __( 'role not exists', 'user-role' );
+				$role_exists = array_key_exists( $role_slug, get_blog_option( $blog->blog_id, $prefix .'user_roles' ) ) ? '' : __( 'role doesn\'t exists', 'user-role' );
 			else
 				$role_exists = '';
-			$checkboxes   .= 
+			$checkboxes   .=
 				'<label class="srrl_blogs_list">
 					<span class="srrl_blog_checkbox"><input class="srrl_blog" type="checkbox" disabled="disabled" /></span>
 					<span class="srrl_blog_info">' . $blog_name . '&nbsp;<br />(' . $blog->domain . ')<br /></span>
 				</label>';
 		}
-		$blog_list_title = 
+		$blog_list_title =
 			'<label>
-				<input class="hide-if-no-js" id="all_blogs_checkbox" type="checkbox" disabled="disabled" />' . __( 'All', 'user-role' ) . 
+				<input class="hide-if-no-js" id="all_blogs_checkbox" type="checkbox" disabled="disabled" />' . __( 'All', 'user-role' ) .
 			'</label>' .
-			bws_add_help_box( __( 'For blogs, for which role does not exist, it will be created automatically', 'user-role' ) );
+			bws_add_help_box( __( 'The role will be created automatically for blogs where it does not exist', 'user-role' ) );
 
-		add_meta_box( 
-			"postbox-list-of-blogs", 
+		add_meta_box(
+			"postbox-list-of-blogs",
 			$blog_list_title,
-			'srrl_list_of_blogs', 
+			'srrl_list_of_blogs',
 			'user-role-blog.php',
 			'normal',
 			'default',
@@ -204,13 +204,13 @@ if ( ! empty( $role_slug ) ) {
 	 */
 	if ( ! empty( $message ) ) { ?>
 		<div class="updated"><p><strong><?php echo $message; ?>.</strong></p></div>
-	<?php } 
+	<?php }
 	if ( ! empty( $error ) ) { ?>
 		<div class="error"><p><strong><?php echo $error; ?>.</strong></p></div>
 	<?php } ?>
 	<div id="bws_save_settings_notice" class="updated fade" style="display:none">
 		<p>
-			<strong><?php _e( 'Notice', 'user-role' ); ?></strong>: <?php _e( "The role's settings have been changed.", 'user-role' ); ?> 
+			<strong><?php _e( 'Notice', 'user-role' ); ?></strong>: <?php _e( "The role's settings have been changed.", 'user-role' ); ?>
 			<a class="bws_save_anchor" href="#bws-submit-button"><?php echo $submit_title; ?></a>
 		</p>
 	</div>

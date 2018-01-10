@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * List with user roles
  * @package User Role
@@ -10,7 +10,7 @@ if( ! class_exists( 'WP_List_Table' ) ) {
 }
 if ( ! class_exists( 'Srrl_Roles_List' ) ) {
 	class Srrl_Roles_List extends WP_List_Table {
-		
+
 		static public $default_roles = array( 'administrator', 'author', 'editor', 'contributor', 'subscriber' );
 		public $default_role;
 		public $total_items;
@@ -19,7 +19,7 @@ if ( ! class_exists( 'Srrl_Roles_List' ) ) {
 		public $show_ads;
 
 		/**
-		* Constructor of class 
+		* Constructor of class
 		*/
 		function __construct( $plugin_basename ) {
 			global $srrl_options;
@@ -36,13 +36,13 @@ if ( ! class_exists( 'Srrl_Roles_List' ) ) {
 		 * Disaply list of roles
 		 * @return void
 		 */
-		function display_list() { 
+		function display_list() {
 			$result = $this->get_result_message(); ?>
 			<div class="updated inline" <?php if ( empty( $result['message'] ) ) echo "style=\"display:none\""; ?>><p><strong><?php echo $result['message']; ?></strong></p></div>
 			<div class="error inline" <?php if ( empty( $result['notice'] ) ) echo "style=\"display:none\""; ?>><p><strong><?php echo $result['notice']; ?></strong></p></div>
 			<div class="error inline" <?php if ( empty( $result['error'] ) ) echo "style=\"display:none\""; ?>><p><strong><?php echo $result['error']; ?></strong></p></div>
 			<form id="srrl_list_table" method="post" action="<?php get_admin_url(); ?>?page=user-role.php">
-				<?php 
+				<?php
 				srrl_pro_block( 'srrl_add_new', 'srrl_add_new' );
 				$this->current_action();
 				$this->prepare_items();
@@ -59,7 +59,7 @@ if ( ! class_exists( 'Srrl_Roles_List' ) ) {
 		function prepare_items() {
 			$this->_column_headers = array( $this->get_columns(), array(), $this->get_sortable_columns() );
 			$this->items           = $this->items_list();
-			$this->set_pagination_args( array( 
+			$this->set_pagination_args( array(
 				"total_items" => count( $this->items ),
 				"total_pages" => 1,
 				"per_page"    => 9999
@@ -89,7 +89,7 @@ if ( ! class_exists( 'Srrl_Roles_List' ) ) {
 		 * @param    string     $which    'top' - function call before displaying of the list of roles, 'bottom' - after displaying of the list of roles
 		 * @return   void
 		 */
-		function extra_tablenav( $which ) { 
+		function extra_tablenav( $which ) {
 			if ( $this->is_network )
 				srrl_pro_block( 'srrl_blog_switcher alignright', 'srrl_blog_switcher', false, false );
 		}
@@ -97,10 +97,10 @@ if ( ! class_exists( 'Srrl_Roles_List' ) ) {
 		function pagination( $which ) {
 			global $srrl_options;
 			$style = $this->show_ads ? ' style="margin-top: 17px;"' : '';
-			$this->_pagination = 
+			$this->_pagination =
 				'<div class="tablenav-pages alignright"' . $style . '>
-					<span class="displaying-num">' . 
-						sprintf( _n( '%s role', '%s roles', $this->_pagination_args['total_items'], 'user-role' ), number_format_i18n( $this->_pagination_args['total_items'] ) ) . 
+					<span class="displaying-num">' .
+						sprintf( _n( '%s role', '%s roles', $this->_pagination_args['total_items'], 'user-role' ), number_format_i18n( $this->_pagination_args['total_items'] ) ) .
 					'</span>
 				</div>';
 			echo $this->_pagination;
@@ -158,7 +158,7 @@ if ( ! class_exists( 'Srrl_Roles_List' ) ) {
 		}
 
 		/**
-		 * Add column of checboxes 
+		 * Add column of checboxes
 		 * @param     array     $item        The cuurrent letter data.
 		 * @return    string                  with html-structure of <input type=['checkbox']>
 		 */
@@ -184,7 +184,7 @@ if ( ! class_exists( 'Srrl_Roles_List' ) ) {
 
 				switch ( $key ) {
 					case 'edit':
-						$title = ' title="' . __( 'Edit capabilities of the role', 'user-role' ) . '"';
+						$title = ' title="' . __( 'Edit role capabilities', 'user-role' ) . '"';
 						$actions[ $key ] = "<a href=\"{$nonce_url}\"{$title}>{$value}</a>";
 						break;
 					case 'reset':
@@ -194,7 +194,7 @@ if ( ! class_exists( 'Srrl_Roles_List' ) ) {
 						}
 						break;
 					case 'recover':
-						$title = ' title="' . __( 'Restore a role to capabilities that were set at the time of the plugin activation or when the role was created', 'user-role' ) . '"';
+						$title = ' title="' . __( 'Restore role capabilities that were set at the time of the plugin activation or when the role was created', 'user-role' ) . '"';
 						$actions[ $key ] = "<a href=\"{$nonce_url}\"{$title}>{$value}</a>";
 						break;
 					case 'delete':
@@ -218,12 +218,17 @@ if ( ! class_exists( 'Srrl_Roles_List' ) ) {
 		 */
 		function items_list() {
 			global $wp_roles;
-			if ( isset( $_REQUEST['srrl_action'] ) && in_array( $_REQUEST['srrl_action'], array( "reset", "recover" ) ) )
-				$wp_roles->reinit();
+			if ( isset( $_REQUEST['srrl_action'] ) && in_array( $_REQUEST['srrl_action'], array( "reset", "recover" ) ) ) {
+				if ( method_exists( $wp_roles, 'for_site' ) ){
+					$wp_roles->for_site();
+				} else {
+					$wp_roles->reinit();
+				}
+			}
 			$list        = array();
 			$count_users = count_users();
 			$i = 0;
-			
+
 			foreach ( $wp_roles->roles as $key => $role ) {
 				$this->total_items ++;
 				/* edit link  */
@@ -238,7 +243,7 @@ if ( ! class_exists( 'Srrl_Roles_List' ) ) {
 				);
 			}
 			if ( ! empty( $list ) ) {
-				if ( isset( $_REQUEST['orderby'] ) && 'name' != $_REQUEST['orderby'] ) { 
+				if ( isset( $_REQUEST['orderby'] ) && 'name' != $_REQUEST['orderby'] ) {
 					$flag = isset( $_REQUEST['order'] ) && 'asc' == $_REQUEST['order'] ? SORT_ASC : SORT_DESC;
 					$list = $this->list_sort( $list, array( $_REQUEST['orderby'] => array( $flag, SORT_REGULAR ), 'name'=>array( SORT_ASC, SORT_STRING ) ) );
 				} else {
@@ -281,11 +286,11 @@ if ( ! class_exists( 'Srrl_Roles_List' ) ) {
 			foreach( $sort_flags as $column => $sort_attr ) {
 				$column_lists = array();
 				foreach ( $data as $key => $row ) {
-					$column_lists[ $column ][ $key ] = 
-							in_array( SORT_STRING, $sort_attr ) || in_array( SORT_REGULAR, $sort_attr ) 
-						? 
-							strtolower( $row[ $column ] ) 
-						: 
+					$column_lists[ $column ][ $key ] =
+							in_array( SORT_STRING, $sort_attr ) || in_array( SORT_REGULAR, $sort_attr )
+						?
+							strtolower( $row[ $column ] )
+						:
 							$row[ $column ];
 				}
 				$args[] = &$column_lists[ $column ];

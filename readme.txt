@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: capability, change capabilities, capability editor, capability manager, role manager, user role, user role plugin, recover capabilities button, recover role capabilities, roles manager, user role editor, restore role capabilities
 Requires at least: 3.9
-Tested up to: 4.8
-Stable tag: 1.5.7
+Tested up to: 4.9.1
+Stable tag: 1.5.8
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -25,7 +25,7 @@ https://www.youtube.com/watch?v=rYY8DJUjSNo
 * Copy capabilities from another role
 * Change role name
 * Recover any role to capabilities set before the plugin was installed
-* Compatible with latest WordPress version 
+* Compatible with latest WordPress version
 * Incredibly simple settings for fast setup without modifying code
 * Detailed step-by-step documentation and videos
 * Multilingual and RTL ready
@@ -51,7 +51,7 @@ If you have a feature suggestion or idea you'd like to see in the plugin, we'd l
 
 = Help & Support =
 
-Visit our Help Center if you have any questions, our friendly Support Team is happy to help — <https://support.bestwebsoft.com/>
+Visit our Help Center if you have any questions, our friendly Support Team is happy to help - <https://support.bestwebsoft.com/>
 
 = Translation =
 
@@ -109,6 +109,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 
 == Changelog ==
 
+= V1.5.8 - 10.01.2018 =
+* Update : We updated all functionality for WordPress 4.9.1.
+* Bugfix : Options removal from the database when working on a multisite network has been fixed.
+
 = V1.5.7 - 13.07.2017 =
 * Update : We updated all functionality for WordPress 4.8.
 
@@ -119,7 +123,7 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 = V1.5.5 - 03.10.2016 =
 * NEW : The Italian language file was added.
 * NEW : The Czech language file was added.
-* NEW : The French language file was added. 
+* NEW : The French language file was added.
 
 = V1.5.4 - 09.08.2016 =
 * NEW : The Belarusian language file was added.
@@ -152,7 +156,7 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * Update : BWS plugins section is updated.
 
 = V1.4.7 - 22.05.2015 =
-* Bugfix : We fixed plugins work with Table view on the Network. 
+* Bugfix : We fixed plugins work with Table view on the Network.
 * Bugfix : We fixed the selection of current role when switching between view modes on the Network.
 * Update : We updated all functionality for WordPress 4.2.2.
 
@@ -204,6 +208,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Css-style was added for Internet Explorer 10.
 
 == Upgrade Notice ==
+
+= V1.5.8 =
+* The compatibility with new WordPress version updated.
+* Bugs fixed.
 
 = V1.5.7 =
 * The compatibility with new WordPress version updated.
