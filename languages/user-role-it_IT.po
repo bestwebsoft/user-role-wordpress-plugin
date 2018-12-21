@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: User Role\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-10 08:23+0200\n"
-"PO-Revision-Date: 2018-01-10 08:25+0200\n"
+"POT-Creation-Date: 2018-12-18 15:10+0200\n"
+"PO-Revision-Date: 2018-12-18 15:10+0200\n"
 "Last-Translator: BestWebSoft team <wp@bestwebsoft.com>\n"
 "Language-Team: Cathy <cathy@loroseo.com>\n"
 "Language: it_IT\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_n:1,2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Loco-Parser: loco_parse_po\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-SearrchPath-0: .\n"
 "X-Poedit-SearchPath-0: .\n"
 
@@ -202,125 +202,133 @@ msgstr "Selezionare il ruolo"
 msgid "Apply"
 msgstr "Applicare"
 
-#: user-role.php:33 user-role.php:34 user-role.php:190
+#: user-role.php:33 user-role.php:34 user-role.php:189
 msgid "User Role Settings"
 msgstr "Le impostazioni del ruolo di utente"
 
-#: user-role.php:34 user-role.php:192 user-role.php:467 user-role.php:498
+#: user-role.php:34 user-role.php:191 user-role.php:473 user-role.php:503
 msgid "Settings"
 msgstr "Le impostazioni"
 
-#: user-role.php:193
+#: user-role.php:192
 msgid "Go PRO"
 msgstr "Passare alla versione PRO"
 
-#: user-role.php:228
+#: user-role.php:196
+msgid "WARNING"
+msgstr ""
+
+#: user-role.php:197
+msgid "The plugin works correctly only if JavaScript is enabled."
+msgstr ""
+
+#: user-role.php:234
 msgid "Are you sure, you want to recover selected role(s)?"
 msgstr ""
 
-#: user-role.php:229
+#: user-role.php:235
 msgid "Yes, recover role(s)"
 msgstr "Sì, ripristinare il ruolo"
 
-#: user-role.php:232
+#: user-role.php:238
 msgid "Are you sure, you want to do selected action?"
 msgstr ""
 
-#: user-role.php:233
+#: user-role.php:239
 msgid "Yes, do it"
 msgstr "Sì, eseguire"
 
-#: user-role.php:248
+#: user-role.php:254
 msgid "No, go back to the roles list"
 msgstr "No, tornare alla lista dei ruoli"
 
-#: user-role.php:282
+#: user-role.php:288
 msgid "Please enter role name"
 msgstr "Si prega di inserire il nome del ruolo"
 
-#: user-role.php:284
+#: user-role.php:290
 msgid "Please enter role slug"
 msgstr "Inserire lo slug del ruolo"
 
-#: user-role.php:286
+#: user-role.php:292
 msgid "Please select some capabilities for role"
 msgstr "Si prega di selezionare alcune funzionalità per il ruolo"
 
-#: user-role.php:297
+#: user-role.php:303
 msgid "Wrong slug. See allowed symbols"
 msgstr "Lo slug sbagliato. Guarda i caratteri disponibili"
 
-#: user-role.php:300
+#: user-role.php:306
 msgid "Some error occured"
 msgstr "Ci sono stati alcuni errori"
 
-#: user-role.php:302
+#: user-role.php:308
 msgid "Role was successfully updated"
 msgstr "Il ruolo è aggiornato con successo"
 
-#: user-role.php:328
+#: user-role.php:334
 msgid "Can not get capabilities of the selected role"
 msgstr "Non può ottenere le funzionalità del ruolo selezionato"
 
-#: user-role.php:332
+#: user-role.php:338
 msgid "Capabilities were successfully loaded"
 msgstr "Le funzionalità sono scaricate con successo"
 
-#: user-role.php:332
+#: user-role.php:338
 msgid "Save Changes"
 msgstr "Salva le modifiche"
 
-#: user-role.php:334
+#: user-role.php:340
 msgid "Selected role is not exists. Capabilities not loaded"
 msgstr "Il ruolo selezionato non esiste. Le funzionalità non sono caricate"
 
-#: user-role.php:398
+#: user-role.php:404
 msgid "Can not recover selected roles"
 msgstr "Non è possibile sovrascrivere il ruolo selezionato"
 
-#: user-role.php:408
+#: user-role.php:414
 msgid "Selected roles were recovered successfully"
 msgstr ""
 "I ruoli selezionati ripristinate con successo alla sua impostazione "
 "predefinita"
 
-#: user-role.php:410
+#: user-role.php:416
 msgid "Can not recover next roles"
 msgstr "Non è possibile sovrascrivere i seguenti ruoli"
 
-#: user-role.php:499
+#: user-role.php:504
 msgid "FAQ"
 msgstr "FAQ"
 
-#: user-role.php:500
+#: user-role.php:505
 msgid "Support"
 msgstr "Lo supporto"
 
-#: user-role.php:528
+#: user-role.php:533
 msgid "This option is available in Pro version of plugin"
 msgstr "Questa opzione è disponibile nella Pro-versione del plugin"
 
-#: user-role.php:531
+#: user-role.php:536
 msgid "Close"
 msgstr "Chiudere"
 
-#: user-role.php:538
+#: user-role.php:543
 msgid "Learn More"
 msgstr "Sapere più"
 
-#: user-role.php:552
+#: user-role.php:557
 msgid "Switch to Blog"
 msgstr "Passare a blog"
 
-#: user-role.php:560
+#: user-role.php:565
 msgid "Allow for blogs"
 msgstr "Applicare ai blog"
 
-#: user-role.php:570
+#: user-role.php:575
 msgid "Select blog"
 msgstr "Selezionare il blog"
 
-#: user-role.php:579
+#: user-role.php:584
 msgid "Add New Role"
 msgstr "Aggiungere un nuovo ruolo"
 

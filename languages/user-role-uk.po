@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: User Role\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-22 12:53+0200\n"
+"POT-Creation-Date: 2018-12-18 15:11+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: BestWebSoft team <wp@bestwebsoft.com>\n"
 "Language-Team: bestwebsoft.com <plugin@bestwebsoft.com>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2\n"
 "X-Poedit-Basepath: ..\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.2\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -200,123 +200,131 @@ msgstr "Оберіть роль"
 msgid "Apply"
 msgstr "Застосувати"
 
-#: user-role.php:34 user-role.php:35 user-role.php:198
+#: user-role.php:33 user-role.php:34 user-role.php:189
 msgid "User Role Settings"
 msgstr "Налаштування User Role"
 
-#: user-role.php:35 user-role.php:200 user-role.php:475 user-role.php:506
+#: user-role.php:34 user-role.php:191 user-role.php:473 user-role.php:503
 msgid "Settings"
 msgstr "Налаштування"
 
-#: user-role.php:201
+#: user-role.php:192
 msgid "Go PRO"
 msgstr "Перейти на Pro версію"
 
-#: user-role.php:236
+#: user-role.php:196
+msgid "WARNING"
+msgstr "УВАГА"
+
+#: user-role.php:197
+msgid "The plugin works correctly only if JavaScript is enabled."
+msgstr "Плагін працює правильно, лише якщо ввімкнено JavaScript."
+
+#: user-role.php:234
 msgid "Are you sure, you want to recover selected role(s)?"
 msgstr "Ви упевнені, що хочете відновити обрані ролi?"
 
-#: user-role.php:237
+#: user-role.php:235
 msgid "Yes, recover role(s)"
 msgstr "Так, відновити рол(і)"
 
-#: user-role.php:240
+#: user-role.php:238
 msgid "Are you sure, you want to do selected action?"
 msgstr "Ви упевнені, що хочете виконати обрану дію?"
 
-#: user-role.php:241
+#: user-role.php:239
 msgid "Yes, do it"
 msgstr "Так, виконати"
 
-#: user-role.php:256
+#: user-role.php:254
 msgid "No, go back to the roles list"
 msgstr "Ні, назад до списку ролей"
 
-#: user-role.php:290
+#: user-role.php:288
 msgid "Please enter role name"
 msgstr "Будь-ласка, введіть ім’я ролі"
 
-#: user-role.php:292
+#: user-role.php:290
 msgid "Please enter role slug"
 msgstr "Будь-ласка, введіть слаг ролі"
 
-#: user-role.php:294
+#: user-role.php:292
 msgid "Please select some capabilities for role"
 msgstr "Будь-ласка вкажіть можливості для ролі"
 
-#: user-role.php:305
+#: user-role.php:303
 msgid "Wrong slug. See allowed symbols"
 msgstr "Невірний формат. Дивись доступні формати"
 
-#: user-role.php:308
+#: user-role.php:306
 msgid "Some error occured"
 msgstr "Виникли деякі помилки"
 
-#: user-role.php:310
+#: user-role.php:308
 msgid "Role was successfully updated"
 msgstr "Роль була успішно оновлена"
 
-#: user-role.php:336
+#: user-role.php:334
 msgid "Can not get capabilities of the selected role"
 msgstr "Неможливо отримати можливості обраної ролі"
 
-#: user-role.php:340
+#: user-role.php:338
 msgid "Capabilities were successfully loaded"
 msgstr "Можливості успішно завантажені"
 
-#: user-role.php:340
+#: user-role.php:338
 msgid "Save Changes"
 msgstr "Зберегти зміни"
 
-#: user-role.php:342
+#: user-role.php:340
 msgid "Selected role is not exists. Capabilities not loaded"
 msgstr "Обраної ролі не існує. Можливості не завантажені"
 
-#: user-role.php:406
+#: user-role.php:404
 msgid "Can not recover selected roles"
 msgstr "Неможливо перезаписати обрані ролі"
 
-#: user-role.php:416
+#: user-role.php:414
 msgid "Selected roles were recovered successfully"
 msgstr "Обрані ролi були успiшно перезаписані"
 
-#: user-role.php:418
+#: user-role.php:416
 msgid "Can not recover next roles"
 msgstr "Неможливо перезаписати наступні ролі"
 
-#: user-role.php:507
+#: user-role.php:504
 msgid "FAQ"
 msgstr "FAQ"
 
-#: user-role.php:508
+#: user-role.php:505
 msgid "Support"
 msgstr "Тех. підтримка"
 
-#: user-role.php:536
+#: user-role.php:533
 msgid "This option is available in Pro version of plugin"
 msgstr "Ця опція доступна тільки в Pro-версії плагіна"
 
-#: user-role.php:539
+#: user-role.php:536
 msgid "Close"
 msgstr "Закрити"
 
-#: user-role.php:546
+#: user-role.php:543
 msgid "Learn More"
 msgstr "Детальніше"
 
-#: user-role.php:560
+#: user-role.php:557
 msgid "Switch to Blog"
 msgstr "Переключитися на блог"
 
-#: user-role.php:568
+#: user-role.php:565
 msgid "Allow for blogs"
 msgstr "Застосувати для блогів"
 
-#: user-role.php:578
+#: user-role.php:575
 msgid "Select blog"
 msgstr "Оберіть блог"
 
-#: user-role.php:587
+#: user-role.php:584
 msgid "Add New Role"
 msgstr "Додати нову роль"
 

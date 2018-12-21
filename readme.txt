@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: capability, change capabilities, capability editor, capability manager, role manager, user role, user role plugin, recover capabilities button, recover role capabilities, roles manager, user role editor, restore role capabilities
 Requires at least: 3.9
-Tested up to: 4.9.1
-Stable tag: 1.5.8
+Tested up to: 5.0.2
+Stable tag: 1.5.9
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -109,6 +109,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 
 == Changelog ==
 
+= V1.5.9 - 21.12.2018 = 
+* Update : All functionality was updated for WordPress 5.0.2.
+* Bugfix : Fixed small bugs.
+
 = V1.5.8 - 10.01.2018 =
 * Update : We updated all functionality for WordPress 4.9.1.
 * Bugfix : Options removal from the database when working on a multisite network has been fixed.
@@ -208,6 +212,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Css-style was added for Internet Explorer 10.
 
 == Upgrade Notice ==
+
+= V1.5.9 =
+* The compatibility with new WordPress version updated.
 
 = V1.5.8 =
 * The compatibility with new WordPress version updated.
