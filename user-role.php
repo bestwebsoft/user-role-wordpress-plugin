@@ -6,7 +6,7 @@ Description: Powerful user role management plugin for WordPress website. Create,
 Author: BestWebSoft
 Text Domain: user-role
 Domain Path: /languages
-Version: 1.5.9
+Version: 1.6.0
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -559,6 +559,25 @@ if ( ! function_exists( 'srrl_blog_list' ) ) {
 			<table class="form-table"><tr><th><?php _e( 'Allow for blogs', 'user-role' ); ?></th></tr></table>
 			<?php do_meta_boxes( 'user-role-blog.php', 'normal', null ); ?>
 		</div>
+	<?php }
+}
+
+if ( ! function_exists( 'srrl_menu_list' ) ) {
+	function srrl_menu_list() {
+		global $menu; ?>
+        <div id="postbox-plugins" class="postbox">
+            <button type="button" class="handlediv" aria-expanded="true"><span class="screen-reader-text">Toggle panel: <label class="srrl_group_label"><input class="hide-if-no-js srrl_group_cap" id="plugins_checkbox" type="checkbox" value="srrl_plugins"><?php _e( 'Access to plugins (menu items)', 'user-role-pro' ); ?></label></span><span class="toggle-indicator" aria-hidden="true"></span></button><h2 class="hndle"><span><label class="srrl_group_label"><input class="hide-if-no-js srrl_group_cap" id="plugins_checkbox" type="checkbox" value="srrl_plugins"><?php _e( 'Access to plugins (menu items)', 'user-role-pro' ); ?></label></span></h2>
+            <div class="inside">
+				<?php $menu_array = $menu;
+				foreach ( $menu_array as $single_menu ){
+				    if( '' == $single_menu[0] )
+				        continue;
+					if( strpos( $single_menu[0], " <" ) )
+						$single_menu[0] = substr($single_menu[0], 0, strpos($single_menu[0], " <") ); ?>
+                    <label class="srrl_label_cap" for="srrl_activate_menus"><input class="srrl_check_cap srrl_menus" type="checkbox" name="" id="srrl_activate_menus" value="0"><?php echo $single_menu[0]; ?></label>
+				<?php } ?>
+            </div>
+        </div>
 	<?php }
 }
 

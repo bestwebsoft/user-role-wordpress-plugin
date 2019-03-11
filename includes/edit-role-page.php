@@ -255,7 +255,8 @@ if ( ! empty( $role_slug ) ) {
 					</div>
 				</div>
 			</div>
-			<?php do_meta_boxes( 'user-role.php', 'normal', null ); ?>
+            <?php srrl_pro_block( 'srrl_menu_list', 'srrl_menu_list' );
+            do_meta_boxes( 'user-role.php', 'normal', null ); ?>
 		</div>
 		<?php if ( $is_network )
 			srrl_pro_block( 'srrl_blog_list', 'srrl_blog_list' ); ?>
