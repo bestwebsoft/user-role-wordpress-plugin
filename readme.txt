@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: capability, change capabilities, capability editor, capability manager, role manager, user role, user role plugin, recover capabilities button, recover role capabilities, roles manager, user role editor, restore role capabilities
 Requires at least: 3.9
-Tested up to: 5.1
-Stable tag: 1.6.0
+Tested up to: 5.2.2
+Stable tag: 1.6.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -35,7 +35,7 @@ https://www.youtube.com/watch?v=rYY8DJUjSNo
 > All features from Free version included plus:
 >
 > * Add and manage unlimited custom user roles
-> * Enable/disable access to certain plugins and Dashboard menu items [NEW]
+> * Enable/disable access to certain plugins and Dashboard menu items
 > * Reset standard WordPress roles capabilities to default
 > * Сonfigure all subsites on the network
 > * Get answer to your support question within one business day ([Support Policy](https://bestwebsoft.com/support-policy/))
@@ -109,6 +109,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 5. Edit administrator`s role page on network admin panel.
 
 == Changelog ==
+
+= V1.6.1 - 16.07.2019 =
+* Bugfix : Fixed small bugs.
 
 = V1.6.0 - 11.03.2019 =
 * PRO : An ability to enable/disable access to certain plugins and Dashboard menu items was added. 
@@ -217,6 +220,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Css-style was added for Internet Explorer 10.
 
 == Upgrade Notice ==
+
+= V1.6.1 =
+* Bugs fixed.
 
 = V1.6.0 =
 * New features added.

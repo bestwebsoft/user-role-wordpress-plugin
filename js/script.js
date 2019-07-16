@@ -4,7 +4,7 @@
 		 * some necessary variables
 		 */
 		var all_checkbox     = $( 'input[name="srrl_all_capabilities"]' ),
-			group_checkboxes = $( '.srrl_group_cap' );
+			group_checkboxes = $( '.srrl_group_cap' ),
 			single_checkbox  = $( '.srrl_check_cap' );
 
 		/*

@@ -6,12 +6,12 @@ Description: Powerful user role management plugin for WordPress website. Create,
 Author: BestWebSoft
 Text Domain: user-role
 Domain Path: /languages
-Version: 1.6.0
+Version: 1.6.1
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
 */
 
-/*  © Copyright 2018  BestWebSoft  ( https://support.bestwebsoft.com )
+/*  © Copyright 2019  BestWebSoft  ( https://support.bestwebsoft.com )
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License, version 2, as
@@ -56,7 +56,7 @@ if ( ! function_exists( 'srrl_init' ) ) {
 		if ( empty( $srrl_plugin_info ) ) {
 			if ( ! function_exists( 'get_plugin_data' ) )
 				require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-			$srrl_plugin_info = get_plugin_data( dirname(__FILE__) . '/user-role.php' );
+			$srrl_plugin_info = get_plugin_data( dirname( __FILE__ ) . '/user-role.php' );
 		}
 
 		/* Function check if plugin is compatible with current WP version */
@@ -201,6 +201,7 @@ if ( ! function_exists( 'srrl_main_page' ) ) {
 					require_once( $file );
 			} elseif( isset( $_GET['action'] ) && 'go_pro' == $_GET['action'] ) {
 				$show = bws_hide_premium_options_check( $srrl_options ) ? true : false;
+				if ( isset( $go_pro_result['pro_plugin_is_activated'] ) ) deactivate_plugins( $plugin_basename );
 				bws_go_pro_tab_show(
 					$show,
 					$srrl_plugin_info,
@@ -462,7 +463,7 @@ if ( ! function_exists( 'srrl_plugin_action_links' ) ) {
 	function srrl_plugin_action_links( $links, $file ) {
 		static $this_plugin;
 		if ( ! $this_plugin )
-			$this_plugin = plugin_basename(__FILE__);
+			$this_plugin = plugin_basename( __FILE__ );
 		if ( $file == $this_plugin ) {
 			$settings_link = '<a href="admin.php?page=user-role.php">' . __( 'Settings', 'user-role' ) . '</a>';
 			array_unshift( $links, $settings_link );
@@ -573,7 +574,7 @@ if ( ! function_exists( 'srrl_menu_list' ) ) {
 				    if( '' == $single_menu[0] )
 				        continue;
 					if( strpos( $single_menu[0], " <" ) )
-						$single_menu[0] = substr($single_menu[0], 0, strpos($single_menu[0], " <") ); ?>
+						$single_menu[0] = substr( $single_menu[0], 0, strpos($single_menu[0], " <" ) ); ?>
                     <label class="srrl_label_cap" for="srrl_activate_menus"><input class="srrl_check_cap srrl_menus" type="checkbox" name="" id="srrl_activate_menus" value="0"><?php echo $single_menu[0]; ?></label>
 				<?php } ?>
             </div>

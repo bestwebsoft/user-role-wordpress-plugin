@@ -21,7 +21,7 @@
 <p>All features from Free version included plus:</p>
 <ul>
 <li>Add and manage unlimited custom user roles</li>
-<li>Enable/disable access to certain plugins and Dashboard menu items [NEW]</li>
+<li>Enable/disable access to certain plugins and Dashboard menu items</li>
 <li>Reset standard WordPress roles capabilities to default</li>
 <li>Сonfigure all subsites on the network</li>
 <li>Get answer to your support question within one business day (<a href="https://bestwebsoft.com/support-policy/" rel="nofollow">Support Policy</a>)</li>
