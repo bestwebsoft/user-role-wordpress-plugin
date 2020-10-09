@@ -24,32 +24,33 @@
 <li>Enable/disable access to certain plugins and Dashboard menu items</li>
 <li>Reset standard WordPress roles capabilities to default</li>
 <li>Сonfigure all subsites on the network</li>
-<li>Get answer to your support question within one business day (<a href="https://bestwebsoft.com/support-policy/" rel="nofollow">Support Policy</a>)</li>
+<li>Get answer to your support question within one business day (<a href="https://bestwebsoft.com/support-policy/" rel="nofollow ugc">Support Policy</a>)</li>
 </ul>
-<p><a href="https://bestwebsoft.com/products/wordpress/plugins/user-role/?k=dabe729fc0e7bef82e30dcb21a6cefc3" rel="nofollow">Upgrade to Pro Now</a></p>
+<p><a href="https://bestwebsoft.com/products/wordpress/plugins/user-role/?k=dabe729fc0e7bef82e30dcb21a6cefc3" rel="nofollow ugc">Upgrade to Pro Now</a></p>
 </blockquote>
-<p>If you have a feature suggestion or idea you&#8217;d like to see in the plugin, we&#8217;d love to hear about it! <a href="https://support.bestwebsoft.com/hc/en-us/requests/new" rel="nofollow">Suggest a Feature</a></p>
+<p>If you have a feature suggestion or idea you&#8217;d like to see in the plugin, we&#8217;d love to hear about it! <a href="https://support.bestwebsoft.com/hc/en-us/requests/new" rel="nofollow ugc">Suggest a Feature</a></p>
 <h4>Documentation &amp; Videos</h4>
 <ul>
-<li><a href="https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/" rel="nofollow">[Doc] Installation</a></li>
-<li><a href="https://docs.google.com/document/d/1EUdBVvnm7IHZ6y0DNyldZypUQKpB8UVPToSc_LdOYQI/" rel="nofollow">[Doc] Purchase</a></li>
-<li><a href="https://www.youtube.com/watch?v=gz9BkouavtU" rel="nofollow">[Video] Installation Instruction</a></li>
+<li><a href="https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/" rel="nofollow ugc">[Doc] Installation</a></li>
+<li><a href="https://docs.google.com/document/d/1EUdBVvnm7IHZ6y0DNyldZypUQKpB8UVPToSc_LdOYQI/" rel="nofollow ugc">[Doc] Purchase</a></li>
+<li><a href="https://www.youtube.com/watch?v=gz9BkouavtU" rel="nofollow ugc">[Video] Installation Instruction</a></li>
+<li><a href="https://docs.google.com/document/d/1IJvHCU_bn3w0WnPP2mQ5dq6LLicRvOSNwaq_M26GsIY/" rel="nofollow ugc">[Doc] User Guide</a></li>
 </ul>
 <h4>Help &amp; Support</h4>
-<p>Visit our Help Center if you have any questions, our friendly Support Team is happy to help &#8211; <a href="https://support.bestwebsoft.com/" rel="nofollow">https://support.bestwebsoft.com/</a></p>
+<p>Visit our Help Center if you have any questions, our friendly Support Team is happy to help &#8211; <a href="https://support.bestwebsoft.com/" rel="nofollow ugc">https://support.bestwebsoft.com/</a></p>
 <h4>Translation</h4>
 <ul>
 <li>Belarusian (be_BY) (thanks to UStarCash, www.ustarcash.com)</li>
 <li>Czech (cz_CZ) (thanks to Cathy, www.cathydoesloans.com)</li>
 <li>Italian (it_IT) (thanks to Cathy, www.cathydoesloans.com)</li>
 <li>French (fr_FR) (thanks to Cathy, www.cathydoesloans.com)</li>
-<li>German (de_DE) (thanks to <a href="mailto:&#109;a&#x72;&#099;e&#x6c;&#064;n&#x65;&#111;m&#x65;&#100;i&#x61;&#099;o&#x72;&#112;o&#x72;&#097;&#116;&#x69;&#111;&#110;&#x2e;&#101;&#117;" rel="nofollow">Marcel Leonhard</a> www.mleonhard.info)</li>
+<li>German (de_DE) (thanks to <a href="mailto:&#109;a&#x72;&#099;e&#x6c;&#064;n&#x65;&#111;m&#x65;&#100;i&#x61;&#099;o&#x72;&#112;o&#x72;&#097;&#116;&#x69;&#111;&#110;&#x2e;&#101;&#117;" rel="nofollow ugc">Marcel Leonhard</a> www.mleonhard.info)</li>
 <li>Russian (ru_RU)</li>
-<li>Serbian (sr_RS) (thanks to <a href="mailto:&#x61;&#110;&#x64;&#114;&#x69;&#106;&#x61;&#110;&#x61;&#110;&#x40;&#119;&#x65;&#098;&#x68;&#111;&#x73;&#116;&#x69;&#110;&#x67;&#103;&#x65;&#101;&#x6b;&#115;&#x2e;&#099;&#x6f;&#109;" rel="nofollow">Andrijana Nikolic</a>, www.webhostinggeeks.com)</li>
+<li>Serbian (sr_RS) (thanks to <a href="mailto:&#x61;&#110;&#x64;&#114;&#x69;&#106;&#x61;&#110;&#x61;&#110;&#x40;&#119;&#x65;&#098;&#x68;&#111;&#x73;&#116;&#x69;&#110;&#x67;&#103;&#x65;&#101;&#x6b;&#115;&#x2e;&#099;&#x6f;&#109;" rel="nofollow ugc">Andrijana Nikolic</a>, www.webhostinggeeks.com)</li>
 <li>Ukrainian (uk)</li>
 </ul>
-<p>Some of these translations are not complete. We are constantly adding new features which should be translated. If you would like to create your own language pack or update the existing one, you can send <a href="https://codex.wordpress.org/Translating_WordPress" rel="nofollow">the text of PO and MO files</a> to <a href="https://support.bestwebsoft.com/hc/en-us/requests/new" rel="nofollow">BestWebSoft</a> and we&#8217;ll add it to the plugin. You can download the latest version of the program for work with PO and MO <a href="https://www.poedit.net/download.php" rel="nofollow">files Poedit</a>.</p>
+<p>Some of these translations are not complete. We are constantly adding new features which should be translated. If you would like to create your own language pack or update the existing one, you can send <a href="https://codex.wordpress.org/Translating_WordPress" rel="nofollow ugc">the text of PO and MO files</a> to <a href="https://support.bestwebsoft.com/hc/en-us/requests/new" rel="nofollow ugc">BestWebSoft</a> and we&#8217;ll add it to the plugin. You can download the latest version of the program for work with PO and MO <a href="https://www.poedit.net/download.php" rel="nofollow ugc">files Poedit</a>.</p>
 <h4>Recommended Plugins</h4>
 <ul>
-<li><a href="https://bestwebsoft.com/products/wordpress/plugins/updater/?k=0864088de1701a5e104ffb77c6d7011c" rel="nofollow">Updater</a> &#8211; Automatically check and update WordPress website core with all installed plugins and themes to the latest versions.</li>
+<li><a href="https://bestwebsoft.com/products/wordpress/plugins/updater/?k=0864088de1701a5e104ffb77c6d7011c" rel="nofollow ugc">Updater</a> &#8211; Automatically check and update WordPress website core with all installed plugins and themes to the latest versions.</li>
 </ul>

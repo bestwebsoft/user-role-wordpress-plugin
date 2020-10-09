@@ -12,21 +12,22 @@
 	width: 100%;
 	box-sizing: border-box;
 	line-height: 2.2em;
-	padding-right: 15px;
 	font-size: 14px;
 	padding: 8px 12px;
-	margin: 0px;
 	cursor: default !important;
 	border: none;
-}
-#srrl_form .hndle {
-	cursor: pointer;
-	position: relative;
-	z-index: 10;
 }
 #srrl_form .postbox .handlediv {
 	position: relative;
 	z-index: 5;
+}
+#srrl_form .postbox .srrl_handlediv {
+	position: absolute;
+	right: 0;
+}
+.handle-actions .handle-order-higher,
+.handle-actions .handle-order-lower {
+	display: none;
 }
 .srrl_blogs_list span {
 	display: table-cell;
@@ -91,6 +92,16 @@
 	display: inline-block;
 	vertical-align: middle;
 }
+
+/**
+ * @todo remove if the corresponding functionality appears in the bws-menu
+ * Hides the Default Settings option in the Misc tab because the plugin is missing settings
+ */
+#srrl_misc_tab .form-table tr:last-child {
+	display: none;
+}
+/* endtodo */
+
 @media only screen and ( max-width: 782px ) {
 	.srrl_label_cap,
 	.srrl_blogs_list {

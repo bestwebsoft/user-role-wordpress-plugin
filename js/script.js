@@ -1,98 +1,89 @@
 (function($) {
 	$(document).ready( function() {
-		/*
-		 * some necessary variables
-		 */
 		var all_checkbox     = $( 'input[name="srrl_all_capabilities"]' ),
-			group_checkboxes = $( '.srrl_group_cap' ),
+			group_checkboxes = $( '.hndle .srrl_group_cap' ),
 			single_checkbox  = $( '.srrl_check_cap' );
 
-		/*
-		 * show/hide lists of capabilities
-		 */
-		$('.hndle, .handlediv').click( function( event ) {
-			if( event.target.className == 'hndle' || event.target.className == 'handlediv' ) {
-				var this_parent = $( this ).parent( '.postbox' );
-				$('.postbox').not( this_parent ).not( '#postbox-list-of-blogs' ).addClass( 'closed' );
-				$( this_parent ).toggleClass( 'closed' );
-			}
-		});
+		/* Show/Hide lists of capabilities */
+		$( '#normal-sortables .hndle, #normal-sortables .handlediv' ).click( function() {
+			$( this ).closest( '.postbox' ).toggleClass( 'closed' )
+		} );
+		$( '.srrl_group_label' ).click( function( e ) {
+			e.stopPropagation();
+		} );
 
-		/*
-		 * check/uncheck "group"- and "all"-checkboxes and
-		 * close meta_boxes in which all "capabilities"-checkboxes are unchecked
-		 * after page loading
-		 */
+		/* Hide lists of capabilities if all checkboxes are not active */
 		single_checkbox.each( function() {
 			var class_list     = $( this ).attr( 'class' ).split( /\s+/ ),
-				group_checkbox = $( 'input[value="' + class_list[1] + '"]' ),
 				group          = $( '.' + class_list[1] );
-			if ( $( this ).is( ':checked' ) ) {
-				group_checkbox.attr( 'checked', group.not(':checked').length > 0 ? false : true );
-				all_checkbox.attr( 'checked', group_checkboxes.not(':checked').length > 0 ? false : true );
-			} else {
-				all_checkbox.attr( 'checked', false );
-				group_checkbox.attr( 'checked', false );
-			}
-			if ( group.not(':checked').length == group.length )
+
+			if ( ! group.is( ':checked' ) &&  'srrl_menus' !== class_list[1] ) {
 				$( this ).closest( '.postbox' ).addClass( 'closed' );
-		});
-		group_checkboxes.each( function() {
-			$( this ).attr( 'disabled', $( '.' + $( this ).val() + ':disabled' ).length == $( '.' + $( this ).val() ).length ? true : false );
-		});
-
-		/*
-		 * check/uncheck "group"- and "capabilities"-checkboxes
-		 * if we click on "all"-checkbox
-		 */
-		all_checkbox.click( function() {
-			$( '.srrl_group_cap, .srrl_check_cap' ).not( ':disabled' ).attr( 'checked', $( this ).is( ':checked' ) ? true : false );
-			$( '.srrl_group_cap' ).each( function() {
-				$( this ).attr( 'checked', $( '.' + $( this ).val() ).not(':checked').length > 0 ? false : true );
-			});
-		});
-
-		/*
-		 * check/uncheck  "group"-, "all"- and current "capabilities"-checkboxes
-		 * if we click on "group"-checkbox
-		 */
-		group_checkboxes.click( function() {
-			var children = $( '.' + $( this ).val() );
-			children.not( ':disabled' ).attr( 'checked', $( this ).is( ':checked' ) ? true : false );
-			$( this ).attr( 'checked', children.not( ':checked' ).length > 0 ? false : true );
-			all_checkbox.attr( 'checked', group_checkboxes.not( ':checked' ).length > 0 ? false : true );
-		});
-
-		/*
-		 * check/uncheck  "group"- and "all"-checkboxes
-		 * if we click on "capability"-checkbox
-		 */
-		single_checkbox.not( ':disabled' ).click( function() {
-			var class_list     = $( this ).attr( 'class' ).split( /\s+/ ),
-				group_checkbox = $( 'input[value="' + class_list[1] + '"]' );
-			if ( $( this ).is( ':checked' ) ) {
-				group_checkbox.attr( 'checked', $( '.' + class_list[1] ).not(':checked').length > 0 ? false : true );
-				all_checkbox.attr( 'checked', group_checkboxes.not(':checked').length > 0 ? false : true );
-			} else {
-				all_checkbox.attr( 'checked', false );
-				group_checkbox.attr( 'checked', false );
 			}
-		});
+		} );
 
 		/*
-		 * check/uncheck "blog"-checkboxes
-		 * if we click on "all-blogs"-checkbox
+		 * Disables the group checkbox if all single checkboxes are disabled
+		 * Also activates the group checkbox if all single checkboxes are checked
 		 */
-		$( '#all_blogs_checkbox' ).click( function() {
-			$( '.srrl_blog' ).not( ':disabled' ).attr( 'checked', $( this ).is( ':checked' ) ? true : false );
-		});
+		group_checkboxes.each( function() {
+			var group_length = $( '.' + $( this ).val() ).length
+			if ( $( '.' + $( this ).val() + ':disabled' ).length === group_length ) {
+				$( this ).prop( 'disabled', true );
+			}
+			if ( $( '.' + $( this ).val() + ':checked' ).length === group_length ) {
+				$( this ).prop( 'checked', true );
+			}
+		} );
 
-		/*
-		 * check/uncheck "all"-checkbox
-		 * if we click on "blog"-checkbox
-		 */
-		$( '.srrl_blog' ).click( function() {
-			$( '#all_blogs_checkbox' ).attr( 'checked', $( '.srrl_blog' ).not(':checked').length > 0 ? false : true );
-		});
-	});
-})( jQuery );
+		/* Activates the "All" checkbox if all groups checkbox are checked */
+		if ( group_checkboxes.filter( ":checked" ).length === group_checkboxes.length ) {
+			all_checkbox.prop( 'checked', true );
+		}
+
+		/* Check/Uncheck all group checkboxes */
+		all_checkbox.click( function() {
+			if ( $( this ).is( ':checked' ) ) {
+				$( '.postbox:not(#postbox-menu)' ).removeClass( 'closed' );
+				$( '.srrl_group_cap:not(#srrl_menu_checkbox), .srrl_check_cap:not(.srrl_menus)' ).prop( 'checked', true );
+			} else {
+				$( '.postbox:not(#postbox-menu)' ).addClass( 'closed' );
+				$( '.srrl_group_cap:not(#srrl_menu_checkbox), .srrl_check_cap:not(.srrl_menus)' ).prop( 'checked', false );
+			}
+		} );
+
+		/* Check/Uncheck some group checkboxes */
+		group_checkboxes.click( function() {
+			var children = $( '.' + $( this ).val() + ':not(:disabled)' );
+			if ( $( this ).is( ':checked' ) ) {
+				children.prop( 'checked', true );
+				$( this ).closest( '.postbox' ).removeClass( 'closed' );
+			} else {
+				children.prop( 'checked', false );
+				$( this ).closest( '.postbox' ).addClass( 'closed' );
+			}
+			if ( all_checkbox.is( ':checked' ) ) {
+				all_checkbox.prop( 'checked', false );
+			}
+		} );
+
+		/* Uncheck "All" or "Group" if one of the checkboxes isn't active */
+		single_checkbox.click( function() {
+			var class_list     = $( this ).prop( 'class' ).split( /\s+/ ),
+				group_checkbox = $( 'input[value="' + class_list[1] + '"]' );
+			if ( group_checkbox.is( ':checked' ) ) {
+				group_checkbox.prop( 'checked', false );
+			}
+			if ( all_checkbox.is( ':checked' ) ) {
+				all_checkbox.prop( 'checked', false );
+			}
+		} );
+
+		$( 'a[data-confirm]' ).click( function() {
+			if ( 'recover' === $( this ).attr( 'data-confirm' ) ) {
+				return confirm( srrl_translation.confirm_recover );
+			}
+		} );
+
+	} );
+} )( jQuery );

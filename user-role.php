@@ -6,12 +6,12 @@ Description: Powerful user role management plugin for WordPress website. Create,
 Author: BestWebSoft
 Text Domain: user-role
 Domain Path: /languages
-Version: 1.6.2
+Version: 1.6.3
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
 */
 
-/*  © Copyright 2019  BestWebSoft  ( https://support.bestwebsoft.com )
+/*  © Copyright 2020  BestWebSoft  ( https://support.bestwebsoft.com )
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License, version 2, as
@@ -29,10 +29,20 @@ License: GPLv3 or later
 
 if ( ! function_exists( 'srrl_add_pages' ) ) {
 	function srrl_add_pages() {
+		global $submenu, $srrl_plugin_info, $wp_version;
 
-		$settings = add_menu_page( __( 'User Role Settings', 'user-role' ), 'User Role', 'manage_options', 'user-role.php', 'srrl_main_page', 'none' );
-		add_submenu_page( 'user-role.php', __( 'User Role Settings', 'user-role' ), __( 'Settings', 'user-role' ), 'manage_options', 'user-role.php', 'srrl_main_page' );
+		$settings = add_menu_page( __( 'Roles', 'user-role' ), 'User Role', 'manage_options', 'user-role.php', 'srrl_main_page', 'none' );
+		add_submenu_page( 'user-role.php', __( 'Roles', 'user-role' ), __( 'Roles', 'user-role' ), 'manage_options', 'user-role.php', 'srrl_main_page' );
+        add_submenu_page( 'user-role.php', __( 'Add New', 'user-role' ), __( 'Add New', 'user-role' ), 'manage_options', 'srrl_add_new_roles', 'srrl_add_new_roles' );
+        add_submenu_page( 'user-role.php', __( 'User Role Settings', 'user-role' ), __( 'Settings', 'user-role' ), 'manage_options', 'srrl_settings', 'srrl_settings_page' );
 		add_submenu_page( 'user-role.php', 'BWS Panel', 'BWS Panel', 'manage_options', 'srrl-bws-panel', 'bws_add_menu_render' );
+
+		if ( isset( $submenu['user-role.php'] ) ) {
+			$submenu['user-role.php'][] = array(
+				'<span style="color:#d86463"> ' . __( 'Upgrade to Pro', 'user-role' ) . '</span>',
+				'manage_options',
+				'https://bestwebsoft.com/products/wordpress/plugins/user-role/?k=0e8fa1e4abf7647412878a5570d4977a&pn=132&v=' . $srrl_plugin_info["Version"] . '&wp_v=' . $wp_version );
+		}
 
 		add_action( 'load-' . $settings, 'srrl_add_tabs' );
 	}
@@ -60,17 +70,36 @@ if ( ! function_exists( 'srrl_init' ) ) {
 		}
 
 		/* Function check if plugin is compatible with current WP version */
-		bws_wp_min_version_check( plugin_basename( __FILE__ ), $srrl_plugin_info, '3.9' );
+		bws_wp_min_version_check( plugin_basename( __FILE__ ), $srrl_plugin_info, '4.5' );
 	}
 }
 
 /* Plugin admin init function */
 if ( ! function_exists( 'srrl_admin_init' ) ) {
 	function srrl_admin_init() {
-		global $bws_plugin_info, $srrl_plugin_info;
+		global $bws_plugin_info, $srrl_plugin_info, $pagenow, $srrl_options;
 
 		if ( empty( $bws_plugin_info ) )
 			$bws_plugin_info = array( 'id' => '132', 'version' => $srrl_plugin_info["Version"] );
+
+		/* Call register settings function */
+		$plugin_pages = array(
+			'user-role.php',
+			'srrl_add_new_roles',
+			'srrl_settings'
+		);
+		if ( isset( $_GET['page'] ) && in_array( $_GET['page'], $plugin_pages ) ) {
+			srrl_register_settings();
+		}
+
+        if ( 'plugins.php' == $pagenow ) {
+            /* Install the option defaults */
+            if ( function_exists( 'bws_plugin_banner_go_pro' ) ) {
+	            srrl_register_settings();
+	            bws_plugin_banner_go_pro( $srrl_options, $srrl_plugin_info, 'srrl', 'user-role', 'a2f27e2893147873133fe67d81fa274d', '132', 'user-role' );
+
+            }
+        }
 	}
 }
 
@@ -78,9 +107,19 @@ if ( ! function_exists( 'srrl_admin_init' ) ) {
 if ( ! function_exists( 'srrl_admin_head' ) ) {
 	function srrl_admin_head() {
 		wp_enqueue_style( 'srrl_icon', plugins_url( 'css/icon.css', __FILE__ ) );
-		if ( isset( $_REQUEST['page'] ) && 'user-role.php' == $_REQUEST['page'] ) {
+
+		$plugin_pages = array(
+			'user-role.php',
+			'srrl_add_new_roles',
+			'srrl_settings'
+		);
+		if ( isset( $_GET['page'] ) && in_array( $_GET['page'], $plugin_pages ) ) {
 			wp_enqueue_style( 'srrl_stylesheet', plugins_url( 'css/style.css', __FILE__ ) );
 			wp_enqueue_script( 'srrl_script', plugins_url( '/js/script.js', __FILE__ ), array( 'jquery' ) );
+			$srrl_translation_array = array(
+				'confirm_recover' => __( 'Are you sure, you want to recover selected role(s)?', 'user-role' )
+			);
+			wp_localize_script( 'srrl_script', 'srrl_translation', $srrl_translation_array );
 
 			bws_enqueue_settings_scripts();
 		}
@@ -100,33 +139,72 @@ if ( ! function_exists( 'srrl_plugin_activate' ) ) {
 	}
 }
 
+if ( ! function_exists( 'srrl_get_options_default' ) ) {
+	function srrl_get_options_default() {
+		global $srrl_plugin_info;
+
+		return array(
+			'plugin_option_version'     => $srrl_plugin_info["Version"],
+			'first_install'             => strtotime( "now" ),
+			'suggest_feature_banner'    => 1
+		);
+	}
+}
 
 /**
  * Create plugin options
  * @return void
  */
-if ( ! function_exists( 'srrl_default_options' ) ) {
-	function srrl_default_options() {
-		global $srrl_options, $srrl_plugin_info;
-		$srrl_default_options = array(
-			'plugin_option_version' => $srrl_plugin_info["Version"],
-			'first_install'         => strtotime( "now" ),
-			'suggest_feature_banner'=> 1,
-		);
+if ( ! function_exists( 'srrl_register_settings' ) ) {
+	function srrl_register_settings() {
+		global $srrl_options, $srrl_plugin_info, $wpdb;
 
-		$srrl_options = get_option( 'srrl_options' );
-		if ( ! $srrl_options ) {
-			$srrl_options = $srrl_default_options;
-			add_option( 'srrl_options', $srrl_options );
+		if ( is_multisite() && is_network_admin() ) {
+			if ( ! get_site_option( 'srrl_options' ) )
+				add_site_option( 'srrl_options', srrl_get_options_default() );
+
+			$srrl_options = get_site_option( 'srrl_options' );
+		} else {
+			if ( ! get_option( 'srrl_options' ) )
+				add_option( 'srrl_options', srrl_get_options_default() );
+
+			$srrl_options = get_option( 'srrl_options' );
 		}
 
 		if ( ! isset( $srrl_options['plugin_option_version'] ) || $srrl_plugin_info["Version"] != $srrl_options['plugin_option_version'] ) {
-			srrl_plugin_activate();
 			$srrl_options['plugin_option_version'] = $srrl_plugin_info["Version"];
 			$srrl_options['hide_premium_options']  = array();
-			update_option( 'srrl_options', $srrl_options );
+			if ( is_multisite() ) {
+				$all_blogs = $wpdb->get_col( "SELECT `blog_id` FROM `" . $wpdb->base_prefix . "blogs`" );
+				foreach ( $all_blogs as $blog_id ) {
+					update_blog_option( $blog_id, 'srrl_options', $srrl_options );
+				}
+				update_site_option( 'srrl_options', $srrl_options );
+				switch_to_blog( 1 );
+				register_uninstall_hook( __FILE__, 'srrl_delete_options' );
+				restore_current_blog();
+			} else {
+				update_option( 'srrl_options', $srrl_options );
+				register_uninstall_hook( __FILE__, 'srrl_delete_options' );
+			}
 		}
 	}
+}
+
+/**
+ * Settings page
+ */
+if ( ! function_exists ( 'srrl_settings_page' ) ) {
+    function srrl_settings_page () {
+        if ( ! class_exists( 'Bws_Settings_Tabs' ) )
+            require_once( dirname( __FILE__ ) . '/bws_menu/class-bws-settings.php' );
+        require_once( dirname( __FILE__ ) . '/includes/class-srrl-settings.php' );
+        $page = new Srrl_Settings_Tabs( plugin_basename( __FILE__ ) ); ?>
+        <div class="wrap">
+            <h1 class="srrl-title"><?php _e( 'User Role Settings', 'user-role' ); ?></h1>
+            <?php $page->display_content(); ?>
+        </div>
+    <?php }
 }
 
 /**
@@ -156,115 +234,34 @@ if ( ! function_exists( 'srrl_create_backup' ) ) {
 }
 
 /**
- * Display plugin settings page
+ * Display plugin roles page
  * @return void
  */
 if ( ! function_exists( 'srrl_main_page' ) ) {
-	function srrl_main_page() {
-		global $srrl_options, $srrl_plugin_info, $wpdb;
-		$message = $error = '';
-		$plugin_basename = plugin_basename( __FILE__ );
-		$is_network = is_multisite() && is_network_admin() ? true : false;
+	function srrl_main_page() { ?>
+        <div class="wrap">
+            <h1>
+                <?php _e( 'Roles', 'user-role' );
+                srrl_pro_block( 'srrl_add_new', 'srrl_add_new', false ); ?>
+            </h1>
+			<?php require_once( dirname( __FILE__ ) . '/includes/class-user-role.php' );
+			$roles_list = new Srrl_Roles_List( plugin_basename( __FILE__ ) );
+			$roles_list->display_list(); ?>
+        </div>
+	<?php }
+}
 
-		/* create plugin options */
-		srrl_default_options();
-		/* create 'restore'-options */
-		srrl_create_backup();
-		/* hide pro blocks */
-		if ( isset( $_POST['bws_hide_premium_options'] ) && check_admin_referer( $plugin_basename, 'srrl_nonce_name' ) ) {
-			$hide_result  = bws_hide_premium_options( $srrl_options );
-			$srrl_options = $hide_result['options'];
-			$message      = $hide_result['message'];
-			update_option( 'srrl_options', $srrl_options );
-		}
-
-		/* GO PRO */
-		if ( isset( $_GET['action'] ) && 'go_pro' == $_GET['action'] ) {
-			$go_pro_result = bws_go_pro_tab_check( $plugin_basename, 'srrl_options' );
-			if ( ! empty( $go_pro_result['error'] ) )
-				$error = $go_pro_result['error'];
-			elseif ( ! empty( $go_pro_result['message'] ) )
-				$message = $go_pro_result['message'];
-		} /* Display form on the setting page */ ?>
-		<div class="wrap">
-			<h1 class="srrl_page_title srrl_row"><?php _e( 'User Role Settings', 'user-role' ); ?></h1>
-			<h2 class="nav-tab-wrapper">
-				<a class="nav-tab<?php if ( ! isset( $_GET['action'] ) ) echo ' nav-tab-active'; ?>" href="admin.php?page=user-role.php"><?php _e( 'Settings', 'user-role' ); ?></a>
-				<a class="nav-tab bws_go_pro_tab<?php if ( isset( $_GET['action'] ) && 'go_pro' == $_GET['action'] ) echo ' nav-tab-active'; ?>" href="admin.php?page=user-role.php&amp;action=go_pro"><?php _e( 'Go PRO', 'user-role' ); ?></a>
-			</h2>
-			<div class="updated below-h2" <?php if ( empty( $message ) ) echo "style=\"display:none\""; ?>><p><strong><?php echo $message; ?></strong></p></div>
-			<div class="error below-h2" <?php if ( empty( $error ) ) echo "style=\"display:none\""; ?>><p><strong><?php echo $error; ?></strong></p></div>
-			<?php if ( isset( $_REQUEST['srrl_action'] ) && in_array( $_REQUEST['srrl_action'], array( 'edit', 'update' ) ) ) {
-				/* display add/edit role page */
-				$file = dirname( __FILE__ ) . '/includes/edit-role-page.php';
-				if ( file_exists( $file ) )
-					require_once( $file );
-			} elseif( isset( $_GET['action'] ) && 'go_pro' == $_GET['action'] ) {
-				$show = bws_hide_premium_options_check( $srrl_options ) ? true : false;
-				if ( isset( $go_pro_result['pro_plugin_is_activated'] ) ) deactivate_plugins( $plugin_basename );
-				bws_go_pro_tab_show(
-					$show,
-					$srrl_plugin_info,
-					$plugin_basename,
-					'user-role.php',
-					'user-role-pro.php',
-					'user-role-pro/user-role-pro.php',
-					'user-role',
-					'0e8fa1e4abf7647412878a5570d4977a',
-					'132',
-					isset( $go_pro_result['pro_plugin_is_activated'] )
-				);
-			} else {
-				$action = isset( $_POST['action'] ) && '-1' != $_POST['action'] ? $_POST['action'] : '';
-				$action = empty( $action ) && isset( $_POST['action2'] ) && '-1' != $_POST['action2'] ? $_POST['action2'] : $action;
-				$action = empty( $action ) && isset( $_REQUEST['srrl_action'] ) && ! in_array( $_REQUEST['srrl_action'], array( 'add', 'edit', 'update', 'new' ) ) ? $_REQUEST['srrl_action'] : $action;
-				if (
-						! empty( $action ) &&
-						! isset( $_REQUEST['srrl_confirm_action'] ) &&
-						isset( $_REQUEST['srrl_slug'] ) &&
-						! empty( $_REQUEST['srrl_slug'] )
-				) {
-					switch ( $action ) {
-						case 'recover':
-							$question      = __( 'Are you sure, you want to recover selected role(s)?', 'user-role' );
-							$confirn_title = __( 'Yes, recover role(s)', 'user-role' );
-							break;
-						default:
-							$question      = __( 'Are you sure, you want to do selected action?', 'user-role' );
-							$confirn_title = __( 'Yes, do it', 'user-role' );
-							break;
-					}
-					/* display confirm form */ ?>
-					<p><?php echo $question; ?></p>
-					<form method="post" action="<?php get_admin_url(); ?>admin.php?page=user-role.php" style="margin-bottom: 20px;">
-						<?php if ( ! empty( $_REQUEST['srrl_slug'] ) ) {
-							foreach ( (array)$_REQUEST['srrl_slug'] as $role_slug ) { ?>
-								<input type="hidden" name="srrl_slug[]" value="<?php echo esc_attr( $role_slug ); ?>"/>
-							<?php }
-						} ?>
-						<input type="submit" class="button" name="srrl_confirm_action" value="<?php echo $confirn_title; ?>"/>
-						<?php $admin_link = is_network_admin() ? network_admin_url() . 'admin.php?page=user-role.php' : get_admin_url() . 'admin.php?page=user-role.php';
-						if ( isset( $_REQUEST['srrl_blog_id'] ) )
-							$admin_link .= '&srrl_blog_id=' . intval( $_REQUEST['srrl_blog_id'] ); ?>
-						<a class="button" href="<?php echo esc_url( $admin_link ); ?>"><?php _e( 'No, go back to the roles list', 'user-role' ); ?></a>
-						<?php if ( isset( $_REQUEST['srrl_blog_id'] ) ) { ?>
-							<input type="hidden" name="srrl_blog_id" value="<?php echo intval( $_REQUEST['srrl_blog_id'] ); ?>"/>
-						<?php } ?>
-						<input type="hidden" name="srrl_action" value="<?php echo esc_attr( $action ); ?>"/>
-						<?php wp_nonce_field( $plugin_basename, 'srrl_nonce_name' ); ?>
-					</form>
-				<?php } else {
-					/* display list of roles */
-					$file = dirname( __FILE__ ) . '/includes/class-user-role.php';
-					if ( file_exists( $file ) )
-					require_once( $file );
-					if ( class_exists( 'Srrl_Roles_List' ) )
-					$srrl_list = new Srrl_Roles_List( $plugin_basename );
-
-				}
-			}
-			bws_plugin_reviews_block( $srrl_plugin_info['Name'], 'user-role' ); ?>
-		</div><!--end wrap-->
+/**
+ * Display plugin add new role page
+ * @return void
+ */
+if ( ! function_exists( 'srrl_add_new_roles' ) ) {
+	function srrl_add_new_roles() {
+		$title = ( isset( $_GET['srrl_action'] ) && 'edit' == $_GET['srrl_action'] ) ? __( 'Edit Role', 'user-role-pro' ) : __( 'Add New', 'user-role-pro' ); ?>
+        <div class="wrap">
+            <h1><?php echo $title ?></h1>
+			<?php require_once( dirname( __FILE__ ) . '/includes/edit-role-page.php' ); ?>
+        </div>
 	<?php }
 }
 
@@ -465,7 +462,7 @@ if ( ! function_exists( 'srrl_plugin_action_links' ) ) {
 		if ( ! $this_plugin )
 			$this_plugin = plugin_basename( __FILE__ );
 		if ( $file == $this_plugin ) {
-			$settings_link = '<a href="admin.php?page=user-role.php">' . __( 'Settings', 'user-role' ) . '</a>';
+			$settings_link = '<a href="admin.php?page=srrl_settings">' . __( 'Settings', 'user-role' ) . '</a>';
 			array_unshift( $links, $settings_link );
 		}
 		return $links;
@@ -474,15 +471,10 @@ if ( ! function_exists( 'srrl_plugin_action_links' ) ) {
 
 if ( ! function_exists ( 'srrl_plugin_banner' ) ) {
 	function srrl_plugin_banner() {
-		global $hook_suffix, $srrl_plugin_info, $srrl_options;
+		global $hook_suffix, $srrl_plugin_info;
 
 		if ( 'plugins.php' == $hook_suffix ) {
-			if ( empty( $srrl_options ) )
-				$srrl_options = get_option( 'srrl_options' );
-
-			if ( isset( $srrl_options['first_install'] ) && strtotime( '-1 week' ) > $srrl_options['first_install'] )
-				bws_plugin_banner( $srrl_plugin_info, 'srrl', 'user-role', 'a2f27e2893147873133fe67d81fa274d', '132', '//ps.w.org/user-role/assets/icon-128x128.png' );
-			bws_plugin_banner_to_settings( $srrl_plugin_info, 'srrl_options', 'user-role', 'admin.php?page=user-role.php' );
+			bws_plugin_banner_to_settings( $srrl_plugin_info, 'srrl_options', 'user-role', 'admin.php?page=srrl_settings' );
 		}
 
 		if ( isset( $_GET['page'] ) && 'user-role.php' == $_GET['page'] ) {
@@ -495,7 +487,7 @@ if ( ! function_exists( 'srrl_register_plugin_links' ) ) {
 	function srrl_register_plugin_links( $links, $file ) {
 		$base = plugin_basename( __FILE__ );
 		if ( $file == $base ) {
-			$links[] = '<a href="admin.php?page=user-role.php">' . __( 'Settings', 'user-role' ) . '</a>';
+			$links[] = '<a href="admin.php?page=srrl_settings">' . __( 'Settings', 'user-role' ) . '</a>';
 			$links[] = '<a href="https://support.bestwebsoft.com/hc/en-us/sections/200538799" target="_blank">' . __( 'FAQ', 'user-role' ) . '</a>';
 			$links[] = '<a href="https://support.bestwebsoft.com">' . __( 'Support', 'user-role' ) . '</a>';
 		}
@@ -522,21 +514,22 @@ if ( ! function_exists( 'srrl_add_tabs' ) ) {
  * @return void
  */
 if ( ! function_exists( 'srrl_pro_block' ) ) {
-	function srrl_pro_block( $class = "", $func, $show_link = true, $show_cross = true ) {
+	function srrl_pro_block( $func, $class = '', $show_cross = true, $show_link = true ) {
 		global $srrl_plugin_info, $wp_version, $srrl_options;
 		if ( ! bws_hide_premium_options_check( $srrl_options ) ) { ?>
-			<div class="bws_pro_version_bloc <?php echo $class;?>" title="<?php _e( 'This option is available in Pro version of plugin', 'user-role' ); ?>">
+			<div class="bws_pro_version_bloc <?php echo $class;?>">
 				<div class="bws_pro_version_table_bloc">
-					<?php if ( $show_cross ) { ?>
-						<button type="submit" name="bws_hide_premium_options" class="notice-dismiss bws_hide_premium_options" title="<?php _e( 'Close', 'user-role' ); ?>"></button>
-					<?php } ?>
-					<div class="bws_table_bg"></div>
-					<?php call_user_func( $func ); ?>
+			        <?php if ( $show_cross ) { ?>
+                        <button type="submit" name="bws_hide_premium_options" class="notice-dismiss bws_hide_premium_options" title="<?php _e( 'Close', 'user-role' ); ?>"></button>
+			        <?php } ?>
+                    <div class="bws_table_bg"></div>
+                    <?php call_user_func( $func ); ?>
 				</div>
 				<?php if ( $show_link ) { ?>
 					<div class="bws_pro_version_tooltip">
-						<a class="bws_button" href="https://bestwebsoft.com/products/wordpress/plugins/user-role/buy/?k=0e8fa1e4abf7647412878a5570d4977a&pn=132&v=<?php echo $srrl_plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>" target="_blank" title="User Role Pro Plugin"><?php _e( 'Learn More', 'user-role' ); ?></a>
-					</div>
+                        <a class="bws_button" href="https://bestwebsoft.com/products/wordpress/plugins/user-role/?k=0e8fa1e4abf7647412878a5570d4977a&pn=132&v=<?php echo $srrl_plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>" target="_blank" title="User Role Pro Plugin"><?php _e( 'Upgrade to Pro', 'user-role' ); ?></a>
+                        <div class="clear"></div>
+                    </div>
 				<?php } ?>
 			</div>
 		<?php }
@@ -547,7 +540,7 @@ if ( ! function_exists( 'srrl_blog_switcher' ) ) {
 	function srrl_blog_switcher() { ?>
 		<div class="srrl_blog_switcher bws_pro_version">
 			<select name="srrl_blog_id" disabled="disabled">
-				<option value="off"><?php echo get_bloginfo() . '&nbsp;(' . get_bloginfo( 'url' ) . ')'; ?></option>
+				<option value="off"><?php echo get_bloginfo() . '&nbsp;(' . parse_url( get_bloginfo( 'url' ), PHP_URL_HOST ) . ')'; ?></option>
 			</select>
 			<input type="submit" class="button-primary" name="srrl_switch_to_blog" value="<?php _e( 'Switch to Blog', 'user-role' ); ?>" disabled="disabled" />
 		</div>
@@ -566,8 +559,8 @@ if ( ! function_exists( 'srrl_blog_list' ) ) {
 if ( ! function_exists( 'srrl_menu_list' ) ) {
 	function srrl_menu_list() {
 		global $menu; ?>
-        <div id="postbox-plugins" class="postbox">
-            <button type="button" class="handlediv" aria-expanded="true"><span class="screen-reader-text">Toggle panel: <label class="srrl_group_label"><input class="hide-if-no-js srrl_group_cap" id="plugins_checkbox" type="checkbox" value="srrl_plugins"><?php _e( 'Access to plugins (menu items)', 'user-role-pro' ); ?></label></span><span class="toggle-indicator" aria-hidden="true"></span></button><h2 class="hndle"><span><label class="srrl_group_label"><input class="hide-if-no-js srrl_group_cap" id="plugins_checkbox" type="checkbox" value="srrl_plugins"><?php _e( 'Access to plugins (menu items)', 'user-role-pro' ); ?></label></span></h2>
+        <div id="postbox-menu" class="postbox">
+            <h2 class="hndle" style="position: unset;"><span><label class="srrl_group_label"><input class="hide-if-no-js srrl_group_cap" id="srrl_menu_checkbox" type="checkbox" value="srrl_plugins"><?php _e( 'Access to plugins (menu items)', 'user-role' ); ?></label></span></h2>
             <div class="inside">
 				<?php $menu_array = $menu;
 				foreach ( $menu_array as $single_menu ){
@@ -575,7 +568,7 @@ if ( ! function_exists( 'srrl_menu_list' ) ) {
 				        continue;
 					if( strpos( $single_menu[0], " <" ) )
 						$single_menu[0] = substr( $single_menu[0], 0, strpos($single_menu[0], " <" ) ); ?>
-                    <label class="srrl_label_cap" for="srrl_activate_menus"><input class="srrl_check_cap srrl_menus" type="checkbox" name="" id="srrl_activate_menus" value="0"><?php echo $single_menu[0]; ?></label>
+                    <label class="srrl_label_cap" ><input class="srrl_check_cap srrl_menus" type="checkbox" name="" value="0"><?php echo $single_menu[0]; ?></label>
 				<?php } ?>
             </div>
         </div>
@@ -595,7 +588,7 @@ if ( ! function_exists( 'srrl_select' ) ) {
 if ( ! function_exists( 'srrl_add_new' ) ) {
 	function srrl_add_new() { ?>
 		<div class="bws_pro_version">
-			<button class="button-primary" disabled="disabled"><?php _e( 'Add New Role', 'user-role' ); ?></button>
+			<button class="button-primary" disabled="disabled"><?php _e( 'Add New', 'user-role' ); ?></button>
 		</div>
 	<?php }
 }

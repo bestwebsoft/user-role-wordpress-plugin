@@ -9,7 +9,7 @@
  * geting of the necessary data
  */
 
-global $wp_roles;
+global $wp_roles, $srrl_options;
 $roles   = $wp_roles->roles;
 $default = array(
 	"manage_links", "export", "manage_options", "unfiltered_html", "import", "moderate_comments",
@@ -28,67 +28,70 @@ $labels_array = array(
 	'custom'  => __( 'Other custom actions', 'user-role' )
 );
 $submit_title = __( 'Update Role', 'user-role' );
+$plugin_basename = 'user-role/user-role.php';
+$is_network = is_multisite() && is_network_admin();
 
 /**
  * perform the necessary actions
  * and forming of the result
  */
-switch ( $_REQUEST['srrl_action'] ) {
-	case 'update':
-		check_admin_referer( $plugin_basename, 'srrl_nonce_name' );
-		$role_name    = isset( $_REQUEST['srrl_role_name'] ) ? stripslashes( trim( esc_html( $_REQUEST['srrl_role_name'] ) ) ) : '';
-		$role_slug    = isset( $_REQUEST['srrl_role_slug'] ) ? stripslashes( trim( esc_html( $_REQUEST['srrl_role_slug'] ) ) ) : '';
-		$allowed_caps = array();
-		if ( isset( $_POST['srrl_role_caps'] ) && ! empty( $_POST['srrl_role_caps'] ) ) {
-			foreach ( $_POST['srrl_role_caps'] as $capability ) {
-				$allowed_caps[ $capability ] = true;
+if ( isset( $_REQUEST['srrl_action'] ) ) {
+	switch ( $_REQUEST['srrl_action'] ) {
+		case 'update':
+			$role_name    = isset( $_REQUEST['srrl_role_name'] ) ? sanitize_text_field( $_REQUEST['srrl_role_name'] ) : '';
+			$role_slug    = isset( $_REQUEST['srrl_role_slug'] ) ? sanitize_title( $_REQUEST['srrl_role_slug'] ) : '';
+			$allowed_caps = array();
+			if ( isset( $_POST['srrl_role_caps'] ) && ! empty( $_POST['srrl_role_caps'] ) ) {
+				foreach ( $_POST['srrl_role_caps'] as $capability ) {
+					$allowed_caps[ $capability ] = true;
+				}
 			}
-		}
-		if ( 'administrator' == $role_slug ) {
-			$allowed_caps['activate_plugins']   = true;
-			$allowed_caps['create_users']       = true;
-			$allowed_caps['delete_plugins']     = true;
-			$allowed_caps['delete_themes']      = true;
-			$allowed_caps['delete_users']       = true;
-			$allowed_caps['edit_files']         = true;
-			$allowed_caps['edit_plugins']       = true;
-			$allowed_caps['edit_theme_options'] = true;
-			$allowed_caps['edit_themes']        = true;
-			$allowed_caps['edit_users']         = true;
-			$allowed_caps['export']             = true;
-			$allowed_caps['import']             = true;
-			$allowed_caps['install_plugins']    = true;
-			$allowed_caps['install_themes']     = true;
-			$allowed_caps['list_users']         = true;
-			$allowed_caps['manage_options']     = true;
-			$allowed_caps['promote_users']      = true;
-			$allowed_caps['remove_users']       = true;
-			$allowed_caps['switch_themes']      = true;
-			$allowed_caps['update_core']        = true;
-			$allowed_caps['update_plugins']     = true;
-			$allowed_caps['update_themes']      = true;
-			$allowed_caps['edit_dashboard']     = true;
-			$allowed_caps['add_users']          = true;
-		}
-		/* save changes */
-		if ( isset( $_REQUEST['srrl_save'] ) ) {
-			$result = srrl_single_handle_role( $role_name, $role_slug, $allowed_caps );
-		/* copy capabilities from another role */
-		} elseif ( isset( $_REQUEST['srrl_copy_role'] ) && isset( $_REQUEST['srrl_select_role'] ) && '-1' != $_REQUEST['srrl_select_role'] ) {
-			$result = srrl_copy_role();
-			$allowed_caps = $result['caps'];
-		}
-		$error        = $result['error'];
-		$message      = $result['message'];
-		break;
-	case 'edit':
-		check_admin_referer( 'srrl_' . $_REQUEST['srrl_slug'] );
-		$role_slug    = stripslashes( trim( esc_html( $_REQUEST['srrl_slug'] ) ) );
-		$role_name    = $wp_roles->roles[ $role_slug ]['name'];
-		$allowed_caps = $wp_roles->roles[ $role_slug ]['capabilities'];
-		break;
-	default:
-		break;
+			if ( 'administrator' == $role_slug ) {
+				$allowed_caps['activate_plugins']   = true;
+				$allowed_caps['create_users']       = true;
+				$allowed_caps['delete_plugins']     = true;
+				$allowed_caps['delete_themes']      = true;
+				$allowed_caps['delete_users']       = true;
+				$allowed_caps['edit_files']         = true;
+				$allowed_caps['edit_plugins']       = true;
+				$allowed_caps['edit_theme_options'] = true;
+				$allowed_caps['edit_themes']        = true;
+				$allowed_caps['edit_users']         = true;
+				$allowed_caps['export']             = true;
+				$allowed_caps['import']             = true;
+				$allowed_caps['install_plugins']    = true;
+				$allowed_caps['install_themes']     = true;
+				$allowed_caps['list_users']         = true;
+				$allowed_caps['manage_options']     = true;
+				$allowed_caps['promote_users']      = true;
+				$allowed_caps['remove_users']       = true;
+				$allowed_caps['switch_themes']      = true;
+				$allowed_caps['update_core']        = true;
+				$allowed_caps['update_plugins']     = true;
+				$allowed_caps['update_themes']      = true;
+				$allowed_caps['edit_dashboard']     = true;
+				$allowed_caps['add_users']          = true;
+			}
+			/* save changes */
+			if ( isset( $_REQUEST['srrl_save'] ) ) {
+				$result = srrl_single_handle_role( $role_name, $role_slug, $allowed_caps );
+				/* copy capabilities from another role */
+			} elseif ( isset( $_REQUEST['srrl_copy_role'] ) && isset( $_REQUEST['srrl_select_role'] ) && '-1' != $_REQUEST['srrl_select_role'] ) {
+				$result       = srrl_copy_role();
+				$allowed_caps = $result['caps'];
+			}
+			$error   = $result['error'];
+			$message = $result['message'];
+			break;
+		case 'edit':
+			check_admin_referer( 'srrl_nonce_action' );
+			$role_slug    = sanitize_title( $_REQUEST['srrl_slug'] );
+			$role_name    = $wp_roles->roles[ $role_slug ]['name'];
+			$allowed_caps = $wp_roles->roles[ $role_slug ]['capabilities'];
+			break;
+		default:
+			break;
+	}
 }
 
 if ( ! empty( $role_slug ) ) {
@@ -136,7 +139,7 @@ if ( ! empty( $role_slug ) ) {
 	foreach ( $caps_array as $key => $value ) {
 		add_meta_box(
 			"postbox-{$key}",
-			'<label class="srrl_group_label"><input class="hide-if-no-js srrl_group_cap" id="' . $key . '_checkbox" type="checkbox" value="srrl_' . $key . '" />' . $labels_array[ $key ] . '</label>',
+			'<label class="srrl_group_label"><input class="hide-if-no-js srrl_group_cap" type="checkbox" value="srrl_' . $key . '" />' . $labels_array[ $key ] . '</label>',
 			'srrl_metabox_content',
 			'user-role.php',
 			'normal',
@@ -169,7 +172,7 @@ if ( ! empty( $role_slug ) ) {
 		}
 		$blog_list_title =
 			'<label>
-				<input class="hide-if-no-js" id="all_blogs_checkbox" type="checkbox" disabled="disabled" />' . __( 'All', 'user-role' ) .
+				<input class="hide-if-no-js" type="checkbox" disabled="disabled" />' . __( 'All', 'user-role' ) .
 			'</label>' .
 			bws_add_help_box( __( 'The role will be created automatically for blogs where it does not exist', 'user-role' ) );
 
@@ -208,13 +211,7 @@ if ( ! empty( $role_slug ) ) {
 	if ( ! empty( $error ) ) { ?>
 		<div class="error"><p><strong><?php echo $error; ?>.</strong></p></div>
 	<?php } ?>
-	<div id="bws_save_settings_notice" class="updated fade" style="display:none">
-		<p>
-			<strong><?php _e( 'Notice', 'user-role' ); ?></strong>: <?php _e( "The role's settings have been changed.", 'user-role' ); ?>
-			<a class="bws_save_anchor" href="#bws-submit-button"><?php echo $submit_title; ?></a>
-		</p>
-	</div>
-	<form class="bws_form" id="srrl_form" method="post" action="<?php get_admin_url(); ?>?page=user-role.php">
+	<form class="bws_form" id="srrl_form" method="post" action="<?php get_admin_url(); ?>?page=srrl_add_new_roles">
 		<table class="form-table">
 			<tr>
 				<th><?php _e( 'Role Name', 'user-role' ); ?></th>
@@ -255,15 +252,31 @@ if ( ! empty( $role_slug ) ) {
 					</div>
 				</div>
 			</div>
-            <?php srrl_pro_block( 'srrl_menu_list', 'srrl_menu_list' );
+            <?php srrl_pro_block( 'srrl_menu_list', '', false );
             do_meta_boxes( 'user-role.php', 'normal', null ); ?>
 		</div>
 		<?php if ( $is_network )
-			srrl_pro_block( 'srrl_blog_list', 'srrl_blog_list' ); ?>
+			srrl_pro_block( 'srrl_blog_list', 'srrl_blog_list', false ); ?>
 		<p>
 			<input id="bws-submit-button" type="submit" class="button-primary" name="srrl_save" value="<?php echo $submit_title; ?>" />
 			<input type="hidden" name="srrl_action" value="update" />
 			<?php wp_nonce_field( $plugin_basename, 'srrl_nonce_name' ); ?>
 		</p>
 	</form>
-<?php } ?>
+<?php } else {
+	$bws_hide_premium = bws_hide_premium_options_check( $srrl_options );
+
+    if ( $bws_hide_premium ) { ?>
+        <p>
+            <?php _e( 'This tab contains Pro options only.', 'pdf-print' );
+            echo ' ' . sprintf(
+                    __( '%sChange the settings%s to view the Pro options.', 'pdf-print' ),
+                    '<a href="admin.php?page=srrl_settings&bws_active_tab=misc">',
+                    '</a>'
+                ); ?>
+        </p>
+    <?php } else {
+	    require_once( dirname( __FILE__ ) . '/pro-tabs.php' );
+	    srrl_pro_block( 'srrl_pro_add_new_block', '', false );
+    }
+} ?>

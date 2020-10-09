@@ -2,9 +2,9 @@
 Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: capability, change capabilities, capability editor, capability manager, role manager, user role, user role plugin, recover capabilities button, recover role capabilities, roles manager, user role editor, restore role capabilities
-Requires at least: 3.9
-Tested up to: 5.2.2
-Stable tag: 1.6.2
+Requires at least: 4.5
+Tested up to: 5.5.1
+Stable tag: 1.6.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -49,6 +49,7 @@ If you have a feature suggestion or idea you'd like to see in the plugin, we'd l
 * [[Doc] Installation](https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/)
 * [[Doc] Purchase](https://docs.google.com/document/d/1EUdBVvnm7IHZ6y0DNyldZypUQKpB8UVPToSc_LdOYQI/)
 * [[Video] Installation Instruction](https://www.youtube.com/watch?v=gz9BkouavtU)
+* [[Doc] User Guide](https://docs.google.com/document/d/1IJvHCU_bn3w0WnPP2mQ5dq6LLicRvOSNwaq_M26GsIY/)
 
 = Help & Support =
 
@@ -109,6 +110,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 5. Edit administrator`s role page on network admin panel.
 
 == Changelog ==
+
+= V1.6.3 - 09.10.2020 =
+* Update : The plugin settings page was changed.
+* Update : BWS Panel section was updated.
 
 = V1.6.2 - 04.09.2019 =
 * Update: The deactivation feedback has been changed. Misleading buttons have been removed.
@@ -223,6 +228,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Css-style was added for Internet Explorer 10.
 
 == Upgrade Notice ==
+
+= V1.6.3 =
+* Plugin optimization completed.
 
 = V1.6.2 =
 * Usability improved.

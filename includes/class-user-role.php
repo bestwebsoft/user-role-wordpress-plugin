@@ -19,8 +19,10 @@ if ( ! class_exists( 'Srrl_Roles_List' ) ) {
 		public $show_ads;
 
 		/**
-		* Constructor of class
-		*/
+		 * Constructor of class
+		 *
+		 * @param $plugin_basename
+		 */
 		function __construct( $plugin_basename ) {
 			global $srrl_options;
 			$this->basename     = $plugin_basename;
@@ -29,7 +31,6 @@ if ( ! class_exists( 'Srrl_Roles_List' ) ) {
 			$this->is_network   = is_multisite() && is_network_admin() ? true : false;
 			$this->show_ads     = ! bws_hide_premium_options_check( $srrl_options );
 			parent::__construct();
-			$this->display_list();
 		}
 
 		/**
@@ -42,12 +43,9 @@ if ( ! class_exists( 'Srrl_Roles_List' ) ) {
 			<div class="error inline" <?php if ( empty( $result['notice'] ) ) echo "style=\"display:none\""; ?>><p><strong><?php echo $result['notice']; ?></strong></p></div>
 			<div class="error inline" <?php if ( empty( $result['error'] ) ) echo "style=\"display:none\""; ?>><p><strong><?php echo $result['error']; ?></strong></p></div>
 			<form id="srrl_list_table" method="post" action="<?php get_admin_url(); ?>?page=user-role.php">
-				<?php
-				srrl_pro_block( 'srrl_add_new', 'srrl_add_new' );
-				$this->current_action();
+				<?php $this->current_action();
 				$this->prepare_items();
-				$this->display();
-				wp_nonce_field( $this->basename, 'srrl_nonce_name' ); ?>
+				$this->display(); ?>
 			</form>
 			<div class="clear"></div>
 		<?php }
@@ -91,7 +89,7 @@ if ( ! class_exists( 'Srrl_Roles_List' ) ) {
 		 */
 		function extra_tablenav( $which ) {
 			if ( $this->is_network )
-				srrl_pro_block( 'srrl_blog_switcher alignright', 'srrl_blog_switcher', false, false );
+				srrl_pro_block( 'srrl_blog_switcher', 'srrl_blog_switcher alignright', false, false );
 		}
 
 		function pagination( $which ) {
@@ -153,7 +151,7 @@ if ( ! class_exists( 'Srrl_Roles_List' ) ) {
 				case 'caps':
 					return $item[ $column_name ];
 				default:
-					return print_r( $item, true ) ;
+					return print_r( $item, true );
 			}
 		}
 
@@ -180,11 +178,10 @@ if ( ! class_exists( 'Srrl_Roles_List' ) ) {
 				'delete'  => __( 'Delete', 'user-role' )
 			);
 			foreach ( $row_actions as $key => $value ) {
-				$nonce_url = wp_nonce_url( "?page=user-role.php&srrl_action={$key}&srrl_slug={$item['slug']}", "srrl_{$item['slug']}" );
-
 				switch ( $key ) {
 					case 'edit':
 						$title = ' title="' . __( 'Edit role capabilities', 'user-role' ) . '"';
+						$nonce_url = wp_nonce_url( "?page=srrl_add_new_roles&srrl_action={$key}&srrl_slug={$item['slug']}", "srrl_nonce_action" );
 						$actions[ $key ] = "<a href=\"{$nonce_url}\"{$title}>{$value}</a>";
 						break;
 					case 'reset':
@@ -195,7 +192,8 @@ if ( ! class_exists( 'Srrl_Roles_List' ) ) {
 						break;
 					case 'recover':
 						$title = ' title="' . __( 'Restore role capabilities that were set at the time of the plugin activation or when the role was created', 'user-role' ) . '"';
-						$actions[ $key ] = "<a href=\"{$nonce_url}\"{$title}>{$value}</a>";
+						$nonce_url = wp_nonce_url( "?page=user-role.php&srrl_action={$key}&srrl_slug={$item['slug']}", "srrl_nonce_action" );
+						$actions[ $key ] = "<a data-confirm=\"recover\" href=\"{$nonce_url}\"{$title}>{$value}</a>";
 						break;
 					case 'delete':
 						if ( ! in_array( $item['slug'], self::$default_roles ) && $this->show_ads ) {
@@ -205,6 +203,7 @@ if ( ! class_exists( 'Srrl_Roles_List' ) ) {
 						break;
 					default:
 						$title = '';
+						$nonce_url = wp_nonce_url( "?page=user-role.php&srrl_action={$key}&srrl_slug={$item['slug']}", "srrl_nonce_action" );
 						$actions[ $key ] = "<a href=\"{$nonce_url}\"{$title}>{$value}</a>";
 						break;
 				}
@@ -232,7 +231,7 @@ if ( ! class_exists( 'Srrl_Roles_List' ) ) {
 			foreach ( $wp_roles->roles as $key => $role ) {
 				$this->total_items ++;
 				/* edit link  */
-				$nonce_url = wp_nonce_url( "?page=user-role.php&srrl_action=edit&srrl_slug={$key}", "srrl_{$key}" );
+				$nonce_url = wp_nonce_url( "?page=user-role.php&srrl_action=edit&srrl_slug={$key}", "srrl_nonce_action" );
 				$default = $key == $this->default_role ? '&nbsp;<i>-&nbsp;' . __( 'default', 'user-role' ) . '</i>' : '';
 				$list[] = array(
 					'name'  => "<strong><a href=\"{$nonce_url}\">{$role['name']}</a></strong>{$default}",
@@ -261,11 +260,11 @@ if ( ! class_exists( 'Srrl_Roles_List' ) ) {
 		function get_result_message() {
 			$exclude_actions = array( 'edit', 'update' );
 			$result = array( 'error' => '', 'notice' => '', 'message' => '' );
-			$action = '';
-			$error  = 0;
-			$action = isset( $_REQUEST['srrl_action'] ) && ! in_array( $_REQUEST['srrl_action'], $exclude_actions ) ? $_REQUEST['srrl_action'] : '';
+			$action = isset( $_POST['action'] ) && '-1' != $_POST['action'] ? $_POST['action'] : '';
+			$action = empty( $action ) && isset( $_POST['action2'] ) && '-1' != $_POST['action2'] ? $_POST['action2'] : $action;
+			$action = empty( $action ) && isset( $_REQUEST['srrl_action'] ) && ! in_array( $_REQUEST['srrl_action'], $exclude_actions ) ? $_REQUEST['srrl_action'] : $action;
 			if ( ! empty( $action ) && isset( $_REQUEST['srrl_slug'] ) && ! empty( $_REQUEST['srrl_slug'] ) ) {
-				check_admin_referer( $this->basename, 'srrl_nonce_name' );
+				check_admin_referer( 'srrl_nonce_action' );
 				if ( 'recover' == $action )
 					$result = srrl_recover_role( $_REQUEST['srrl_slug'] );
 				else
