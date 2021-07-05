@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: capability, change capabilities, capability editor, capability manager, role manager, user role, user role plugin, recover capabilities button, recover role capabilities, roles manager, user role editor, restore role capabilities
 Requires at least: 4.5
-Tested up to: 5.5.1
-Stable tag: 1.6.3
+Tested up to: 5.7.2
+Stable tag: 1.6.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -15,6 +15,8 @@ Powerful user role management plugin for WordPress website. Create, edit, copy, 
 User Role plugin makes it easy to manage your WordPress website role capabilities. Add new and manage existing user roles. Quickly control what users can and cannot do on your website.
 
 Change role name, copy permissions from another role, and other great features. Extend the default user management features today!
+
+[View Demo](https://bestwebsoft.com/demo-user-role-plugin/?ref=readme)
 
 https://www.youtube.com/watch?v=rYY8DJUjSNo
 
@@ -46,10 +48,10 @@ If you have a feature suggestion or idea you'd like to see in the plugin, we'd l
 
 = Documentation & Videos =
 
-* [[Doc] Installation](https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/)
-* [[Doc] Purchase](https://docs.google.com/document/d/1EUdBVvnm7IHZ6y0DNyldZypUQKpB8UVPToSc_LdOYQI/)
+* [[Doc] User Guide](https://bestwebsoft.com/documentation/user-role/user-role-user-guide/)
+* [[Doc] Installation](https://bestwebsoft.com/documentation/how-to-install-a-wordpress-product/how-to-install-a-wordpress-plugin/)
+* [[Doc] Purchase](https://bestwebsoft.com/documentation/how-to-purchase-a-wordpress-plugin/how-to-purchase-wordpress-plugin-from-bestwebsoft/)
 * [[Video] Installation Instruction](https://www.youtube.com/watch?v=gz9BkouavtU)
-* [[Doc] User Guide](https://docs.google.com/document/d/1IJvHCU_bn3w0WnPP2mQ5dq6LLicRvOSNwaq_M26GsIY/)
 
 = Help & Support =
 
@@ -66,7 +68,7 @@ Visit our Help Center if you have any questions, our friendly Support Team is ha
 * Serbian (sr_RS) (thanks to [Andrijana Nikolic](mailto:andrijanan@webhostinggeeks.com), www.webhostinggeeks.com)
 * Ukrainian (uk)
 
-Some of these translations are not complete. We are constantly adding new features which should be translated. If you would like to create your own language pack or update the existing one, you can send [the text of PO and MO files](https://codex.wordpress.org/Translating_WordPress) to [BestWebSoft](https://support.bestwebsoft.com/hc/en-us/requests/new) and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO [files Poedit](https://www.poedit.net/download.php).
+Some of these translations are not complete. We are constantly adding new features which should be translated. If you would like to create your own language pack or update the existing one, you can send [the text of PO and MO files](https://make.wordpress.org/polyglots/handbook/) to [BestWebSoft](https://support.bestwebsoft.com/hc/en-us/requests/new) and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO [files Poedit](https://www.poedit.net/download.php).
 
 = Recommended Plugins =
 
@@ -78,7 +80,7 @@ Some of these translations are not complete. We are constantly adding new featur
 2. Extract "user-role.zip" archive content to the "/wp-content/plugins/user-role" directory.
 3. Activate User Role plugin via 'Plugins' menu in WordPress admin menu.
 
-[View a Step-by-step Instruction on User Role Installation](https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/)
+[View a Step-by-step Instruction on User Role Installation](https://bestwebsoft.com/documentation/how-to-install-a-wordpress-product/how-to-install-a-wordpress-plugin/)
 
 https://www.youtube.com/watch?v=gz9BkouavtU
 
@@ -99,7 +101,7 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 1. the link to the page where the problem occurs
 2. the name of the plugin and its version. If you are using a pro version - your order number.
 3. the version of your WordPress installation
-4. copy and paste into the message your system status report. Please read more here: [Instruction on System Status](https://docs.google.com/document/d/1Wi2X8RdRGXk9kMszQy1xItJrpN0ncXgioH935MaBKtc/)
+4. copy and paste into the message your system status report. Please read more here: [Instruction on System Status](https://bestwebsoft.com/documentation/admin-panel-issues/system-status/)
 
 == Screenshots ==
 
@@ -111,6 +113,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 
 == Changelog ==
 
+= V1.6.4 - 02.07.2021 =
+* Update : We updated all functionality for WordPress 5.7.2.
+* Update : BWS Panel section was updated.
+ 
 = V1.6.3 - 09.10.2020 =
 * Update : The plugin settings page was changed.
 * Update : BWS Panel section was updated.
@@ -228,6 +234,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Css-style was added for Internet Explorer 10.
 
 == Upgrade Notice ==
+
+= V1.6.4 =
+* The compatibility with new WordPress version updated.
+* Bugs fixed.
 
 = V1.6.3 =
 * Plugin optimization completed.

@@ -34,7 +34,7 @@ if ( ! class_exists( 'Srrl_Settings_Tabs' ) ) {
                 'wp_slug'				=> 'user-role',
 	            'link_key'				=> '0e8fa1e4abf7647412878a5570d4977a',
 				'link_pn'				=> '132',
-                'doc_link'              => 'https://docs.google.com/document/d/1IJvHCU_bn3w0WnPP2mQ5dq6LLicRvOSNwaq_M26GsIY/'
+                'doc_link'              => 'https://bestwebsoft.com/documentation/user-role/user-role-user-guide/'
             ) );
 
         }

@@ -6,12 +6,12 @@ Description: Powerful user role management plugin for WordPress website. Create,
 Author: BestWebSoft
 Text Domain: user-role
 Domain Path: /languages
-Version: 1.6.3
+Version: 1.6.4
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
 */
 
-/*  © Copyright 2020  BestWebSoft  ( https://support.bestwebsoft.com )
+/*  © Copyright 2021  BestWebSoft  ( https://support.bestwebsoft.com )
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License, version 2, as
@@ -199,7 +199,10 @@ if ( ! function_exists ( 'srrl_settings_page' ) ) {
         if ( ! class_exists( 'Bws_Settings_Tabs' ) )
             require_once( dirname( __FILE__ ) . '/bws_menu/class-bws-settings.php' );
         require_once( dirname( __FILE__ ) . '/includes/class-srrl-settings.php' );
-        $page = new Srrl_Settings_Tabs( plugin_basename( __FILE__ ) ); ?>
+        $page = new Srrl_Settings_Tabs( plugin_basename( __FILE__ ) ); 
+        if ( method_exists( $page,'add_request_feature' ) ) {
+			$page->add_request_feature(); 
+		} ?>    
         <div class="wrap">
             <h1 class="srrl-title"><?php _e( 'User Role Settings', 'user-role' ); ?></h1>
             <?php $page->display_content(); ?>
