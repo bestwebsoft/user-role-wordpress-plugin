@@ -6,7 +6,7 @@ Description: Powerful user role management plugin for WordPress website. Create,
 Author: BestWebSoft
 Text Domain: user-role
 Domain Path: /languages
-Version: 1.6.4
+Version: 1.6.5
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -88,18 +88,18 @@ if ( ! function_exists( 'srrl_admin_init' ) ) {
 			'srrl_add_new_roles',
 			'srrl_settings'
 		);
-		if ( isset( $_GET['page'] ) && in_array( $_GET['page'], $plugin_pages ) ) {
+		if ( isset( $_GET['page'] ) && in_array( sanitize_text_field( $_GET['page'] ), $plugin_pages ) ) {
 			srrl_register_settings();
 		}
 
-        if ( 'plugins.php' == $pagenow ) {
-            /* Install the option defaults */
-            if ( function_exists( 'bws_plugin_banner_go_pro' ) ) {
-	            srrl_register_settings();
-	            bws_plugin_banner_go_pro( $srrl_options, $srrl_plugin_info, 'srrl', 'user-role', 'a2f27e2893147873133fe67d81fa274d', '132', 'user-role' );
+		if ( 'plugins.php' == $pagenow ) {
+			/* Install the option defaults */
+			if ( function_exists( 'bws_plugin_banner_go_pro' ) ) {
+				srrl_register_settings();
+				bws_plugin_banner_go_pro( $srrl_options, $srrl_plugin_info, 'srrl', 'user-role', 'a2f27e2893147873133fe67d81fa274d', '132', 'user-role' );
 
-            }
-        }
+			}
+		}
 	}
 }
 
@@ -113,7 +113,7 @@ if ( ! function_exists( 'srrl_admin_head' ) ) {
 			'srrl_add_new_roles',
 			'srrl_settings'
 		);
-		if ( isset( $_GET['page'] ) && in_array( $_GET['page'], $plugin_pages ) ) {
+		if ( isset( $_GET['page'] ) && in_array( sanitize_text_field( $_GET['page'] ), $plugin_pages ) ) {
 			wp_enqueue_style( 'srrl_stylesheet', plugins_url( 'css/style.css', __FILE__ ) );
 			wp_enqueue_script( 'srrl_script', plugins_url( '/js/script.js', __FILE__ ), array( 'jquery' ) );
 			$srrl_translation_array = array(
@@ -195,19 +195,19 @@ if ( ! function_exists( 'srrl_register_settings' ) ) {
  * Settings page
  */
 if ( ! function_exists ( 'srrl_settings_page' ) ) {
-    function srrl_settings_page () {
-        if ( ! class_exists( 'Bws_Settings_Tabs' ) )
-            require_once( dirname( __FILE__ ) . '/bws_menu/class-bws-settings.php' );
-        require_once( dirname( __FILE__ ) . '/includes/class-srrl-settings.php' );
-        $page = new Srrl_Settings_Tabs( plugin_basename( __FILE__ ) ); 
-        if ( method_exists( $page,'add_request_feature' ) ) {
+	function srrl_settings_page () {
+		if ( ! class_exists( 'Bws_Settings_Tabs' ) )
+			require_once( dirname( __FILE__ ) . '/bws_menu/class-bws-settings.php' );
+		require_once( dirname( __FILE__ ) . '/includes/class-srrl-settings.php' );
+		$page = new Srrl_Settings_Tabs( plugin_basename( __FILE__ ) ); 
+		if ( method_exists( $page,'add_request_feature' ) ) {
 			$page->add_request_feature(); 
-		} ?>    
-        <div class="wrap">
-            <h1 class="srrl-title"><?php _e( 'User Role Settings', 'user-role' ); ?></h1>
-            <?php $page->display_content(); ?>
-        </div>
-    <?php }
+		} ?>	
+		<div class="wrap">
+			<h1 class="srrl-title"><?php _e( 'User Role Settings', 'user-role' ); ?></h1>
+			<?php $page->display_content(); ?>
+		</div>
+	<?php }
 }
 
 /**
@@ -242,12 +242,16 @@ if ( ! function_exists( 'srrl_create_backup' ) ) {
  */
 if ( ! function_exists( 'srrl_main_page' ) ) {
 	function srrl_main_page() { ?>
-        <div class="wrap">
-            <h1>
-                <?php _e( 'Roles', 'user-role' );
-                srrl_pro_block( 'srrl_add_new', 'srrl_add_new', false ); ?>
-            </h1>
+		<div class="wrap">
+			<h1>
+				<?php _e( 'Roles', 'user-role' );
+				srrl_pro_block( 'srrl_add_new', 'srrl_add_new', false ); ?>
+			</h1>
 			<?php require_once( dirname( __FILE__ ) . '/includes/class-user-role.php' );
+			
+			/* create 'restore'-options */
+			srrl_create_backup();
+
 			$roles_list = new Srrl_Roles_List( plugin_basename( __FILE__ ) );
 			$roles_list->display_list(); ?>
         </div>
@@ -260,11 +264,11 @@ if ( ! function_exists( 'srrl_main_page' ) ) {
  */
 if ( ! function_exists( 'srrl_add_new_roles' ) ) {
 	function srrl_add_new_roles() {
-		$title = ( isset( $_GET['srrl_action'] ) && 'edit' == $_GET['srrl_action'] ) ? __( 'Edit Role', 'user-role-pro' ) : __( 'Add New', 'user-role-pro' ); ?>
+		$title = ( isset( $_GET['srrl_action'] ) && 'edit' == sanitize_text_field( $_GET['srrl_action'] ) ) ? __( 'Edit Role', 'user-role-pro' ) : __( 'Add New', 'user-role-pro' ); ?>
         <div class="wrap">
-            <h1><?php echo $title ?></h1>
+            <h1><?php echo esc_html( $title ) ?></h1>
 			<?php require_once( dirname( __FILE__ ) . '/includes/edit-role-page.php' ); ?>
-        </div>
+		</div>
 	<?php }
 }
 
@@ -321,15 +325,15 @@ if ( ! function_exists( 'srrl_single_handle_role' ) ) {
 if ( ! function_exists( 'srrl_copy_role' ) ) {
 	function srrl_copy_role() {
 		$result = array( 'error' => '', 'message' => '', 'caps' => array() );
-		if ( isset( $_REQUEST['srrl_select_role'] ) && '-1' != $_REQUEST['srrl_select_role'] ) {
+		if ( isset( $_REQUEST['srrl_select_role'] ) && '-1' != sanitize_text_field( $_REQUEST['srrl_select_role'] ) ) {
 			global $wpdb;
 			$prefix     = $wpdb->get_blog_prefix();
 			$blog_roles = get_option( "{$prefix}user_roles" );
 			if ( empty( $blog_roles ) ) {
 				$result['error'] = __( 'Can not get capabilities of the selected role', 'user-role' );
 			} else {
-				if ( array_key_exists( $_REQUEST['srrl_select_role'], $blog_roles ) ) {
-					$result['caps']    = $blog_roles[ $_REQUEST['srrl_select_role'] ]['capabilities'];
+				if ( array_key_exists( sanitize_text_field( $_REQUEST['srrl_select_role'] ), $blog_roles ) ) {
+					$result['caps']    = $blog_roles[ sanitize_text_field( $_REQUEST['srrl_select_role'] ) ]['capabilities'];
 					$result['message'] = __( 'Capabilities were successfully loaded', 'user-role' ) . '.&nbsp;<a class="bws_save_anchor" href="#bws-submit-button">' . __( 'Save Changes', 'user-role' ) . '</a>';
 				} else {
 					$result['error'] = __( 'Selected role is not exists. Capabilities not loaded', 'user-role' );
@@ -399,7 +403,7 @@ if ( ! function_exists( 'srrl_recover_role' ) ) {
 			$result['error'] = __( "Can not recover selected roles", 'user-role' );
 		} else {
 			$blog_roles = get_option( "{$wpdb->prefix}user_roles" );
-			foreach ( (array)$slug_array as $slug ) {
+			foreach ( (array)$slug_array as $slug ) {var_dump($slug);
 				if ( array_key_exists( $slug, $action_info ) )
 					$blog_roles[ $slug ] = $action_info[ $slug ];
 				else
@@ -423,8 +427,8 @@ if ( ! function_exists( 'srrl_recover_role' ) ) {
  */
 if ( ! function_exists( 'srrl_metabox_content' ) ) {
 	function srrl_metabox_content( $post, $metabox ) {
-		$slug = isset( $_REQUEST['srrl_slug'] ) ? stripslashes( trim( esc_html( $_REQUEST['srrl_slug'] ) ) ) : '';
-		$slug = empty( $slug ) && isset( $_REQUEST['srrl_role_slug'] ) ? stripslashes( trim( esc_html( $_REQUEST['srrl_role_slug'] ) ) ) : $slug;
+		$slug = isset( $_REQUEST['srrl_slug'] ) ? stripslashes( trim( esc_html( sanitize_text_field( $_REQUEST['srrl_slug'] ) ) ) ) : '';
+		$slug = empty( $slug ) && isset( $_REQUEST['srrl_role_slug'] ) ? stripslashes( trim( esc_html( sanitize_text_field( $_REQUEST['srrl_role_slug'] ) ) ) ) : $slug;
 		$admin_capabilities =
 				'administrator' == $slug
 			?
@@ -441,7 +445,7 @@ if ( ! function_exists( 'srrl_metabox_content' ) ) {
 		foreach ( $metabox['args'][0] as $key => $value ) {
 			$checked  = ( array_key_exists( $value, $metabox['args'][1] ) ) ? ' checked="checked"' : '';
 			$readonly = in_array( $value, $admin_capabilities ) ? ' disabled="disabled"' : '';
-			echo '<label class="srrl_label_cap" for="srrl_' . $value . '"><input class="srrl_check_cap ' . $metabox['args'][2] . '" type="checkbox" name="srrl_role_caps[]" id="srrl_' . $value . '" value="' . $value . '"' . $checked . $readonly .' />'. $value . '</label>';
+			echo '<label class="srrl_label_cap" for="srrl_' . esc_attr( $value ) . '"><input class="srrl_check_cap ' . esc_attr( $metabox['args'][2] ) . '" type="checkbox" name="srrl_role_caps[]" id="srrl_' . esc_attr( $value ) . '" value="' . esc_attr( $value ) . '"' . $checked . $readonly .' />'. esc_attr( $value ) . '</label>';
 		}
 	}
 }
@@ -454,7 +458,7 @@ if ( ! function_exists( 'srrl_metabox_content' ) ) {
  */
 if ( ! function_exists( 'srrl_list_of_blogs' ) ) {
 	function srrl_list_of_blogs( $post, $metabox ) {
-		echo $metabox['args'][0];
+		echo esc_attr( $metabox['args'][0] );
 	}
 }
 
@@ -480,7 +484,7 @@ if ( ! function_exists ( 'srrl_plugin_banner' ) ) {
 			bws_plugin_banner_to_settings( $srrl_plugin_info, 'srrl_options', 'user-role', 'admin.php?page=srrl_settings' );
 		}
 
-		if ( isset( $_GET['page'] ) && 'user-role.php' == $_GET['page'] ) {
+		if ( isset( $_GET['page'] ) && 'user-role.php' == sanitize_text_field( $_GET['page'] ) ) {
 			bws_plugin_suggest_feature_banner( $srrl_plugin_info, 'srrl_options', 'user-role' );
 		}
 	}
@@ -520,19 +524,19 @@ if ( ! function_exists( 'srrl_pro_block' ) ) {
 	function srrl_pro_block( $func, $class = '', $show_cross = true, $show_link = true ) {
 		global $srrl_plugin_info, $wp_version, $srrl_options;
 		if ( ! bws_hide_premium_options_check( $srrl_options ) ) { ?>
-			<div class="bws_pro_version_bloc <?php echo $class;?>">
+			<div class="bws_pro_version_bloc <?php echo esc_attr( $class );?>">
 				<div class="bws_pro_version_table_bloc">
-			        <?php if ( $show_cross ) { ?>
-                        <button type="submit" name="bws_hide_premium_options" class="notice-dismiss bws_hide_premium_options" title="<?php _e( 'Close', 'user-role' ); ?>"></button>
-			        <?php } ?>
-                    <div class="bws_table_bg"></div>
-                    <?php call_user_func( $func ); ?>
+					<?php if ( $show_cross ) { ?>
+						<button type="submit" name="bws_hide_premium_options" class="notice-dismiss bws_hide_premium_options" title="<?php _e( 'Close', 'user-role' ); ?>"></button>
+					<?php } ?>
+					<div class="bws_table_bg"></div>
+					<?php call_user_func( $func ); ?>
 				</div>
 				<?php if ( $show_link ) { ?>
 					<div class="bws_pro_version_tooltip">
-                        <a class="bws_button" href="https://bestwebsoft.com/products/wordpress/plugins/user-role/?k=0e8fa1e4abf7647412878a5570d4977a&pn=132&v=<?php echo $srrl_plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>" target="_blank" title="User Role Pro Plugin"><?php _e( 'Upgrade to Pro', 'user-role' ); ?></a>
-                        <div class="clear"></div>
-                    </div>
+						<a class="bws_button" href="https://bestwebsoft.com/products/wordpress/plugins/user-role/?k=0e8fa1e4abf7647412878a5570d4977a&pn=132&v=<?php echo esc_attr( $srrl_plugin_info["Version"] ); ?>&wp_v=<?php echo esc_attr( $wp_version ); ?>" target="_blank" title="User Role Pro Plugin"><?php _e( 'Upgrade to Pro', 'user-role' ); ?></a>
+						<div class="clear"></div>
+					</div>
 				<?php } ?>
 			</div>
 		<?php }
@@ -562,19 +566,19 @@ if ( ! function_exists( 'srrl_blog_list' ) ) {
 if ( ! function_exists( 'srrl_menu_list' ) ) {
 	function srrl_menu_list() {
 		global $menu; ?>
-        <div id="postbox-menu" class="postbox">
-            <h2 class="hndle" style="position: unset;"><span><label class="srrl_group_label"><input class="hide-if-no-js srrl_group_cap" id="srrl_menu_checkbox" type="checkbox" value="srrl_plugins"><?php _e( 'Access to plugins (menu items)', 'user-role' ); ?></label></span></h2>
-            <div class="inside">
+		<div id="postbox-menu" class="postbox">
+			<h2 class="hndle" style="position: unset;"><span><label class="srrl_group_label"><input class="hide-if-no-js srrl_group_cap" id="srrl_menu_checkbox" type="checkbox" value="srrl_plugins"><?php _e( 'Access to plugins (menu items)', 'user-role' ); ?></label></span></h2>
+			<div class="inside">
 				<?php $menu_array = $menu;
 				foreach ( $menu_array as $single_menu ){
-				    if( '' == $single_menu[0] )
-				        continue;
+					if( '' == $single_menu[0] )
+						continue;
 					if( strpos( $single_menu[0], " <" ) )
 						$single_menu[0] = substr( $single_menu[0], 0, strpos($single_menu[0], " <" ) ); ?>
-                    <label class="srrl_label_cap" ><input class="srrl_check_cap srrl_menus" type="checkbox" name="" value="0"><?php echo $single_menu[0]; ?></label>
+					<label class="srrl_label_cap" ><input class="srrl_check_cap srrl_menus" type="checkbox" name="" value="0"><?php echo esc_attr( $single_menu[0] ); ?></label>
 				<?php } ?>
-            </div>
-        </div>
+			</div>
+		</div>
 	<?php }
 }
 

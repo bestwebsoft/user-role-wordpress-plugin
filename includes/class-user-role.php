@@ -39,9 +39,9 @@ if ( ! class_exists( 'Srrl_Roles_List' ) ) {
 		 */
 		function display_list() {
 			$result = $this->get_result_message(); ?>
-			<div class="updated inline" <?php if ( empty( $result['message'] ) ) echo "style=\"display:none\""; ?>><p><strong><?php echo $result['message']; ?></strong></p></div>
-			<div class="error inline" <?php if ( empty( $result['notice'] ) ) echo "style=\"display:none\""; ?>><p><strong><?php echo $result['notice']; ?></strong></p></div>
-			<div class="error inline" <?php if ( empty( $result['error'] ) ) echo "style=\"display:none\""; ?>><p><strong><?php echo $result['error']; ?></strong></p></div>
+			<div class="updated inline" <?php if ( empty( $result['message'] ) ) echo "style=\"display:none\""; ?>><p><strong><?php echo esc_html( $result['message'] ); ?></strong></p></div>
+			<div class="error inline" <?php if ( empty( $result['notice'] ) ) echo "style=\"display:none\""; ?>><p><strong><?php echo esc_html( $result['notice'] ); ?></strong></p></div>
+			<div class="error inline" <?php if ( empty( $result['error'] ) ) echo "style=\"display:none\""; ?>><p><strong><?php echo esc_html( $result['error'] ); ?></strong></p></div>
 			<form id="srrl_list_table" method="post" action="<?php get_admin_url(); ?>?page=user-role.php">
 				<?php $this->current_action();
 				$this->prepare_items();
@@ -217,7 +217,7 @@ if ( ! class_exists( 'Srrl_Roles_List' ) ) {
 		 */
 		function items_list() {
 			global $wp_roles;
-			if ( isset( $_REQUEST['srrl_action'] ) && in_array( $_REQUEST['srrl_action'], array( "reset", "recover" ) ) ) {
+			if ( isset( $_REQUEST['srrl_action'] ) && in_array( sanitize_text_field( $_REQUEST['srrl_action'] ), array( "reset", "recover" ) ) ) {
 				if ( method_exists( $wp_roles, 'for_site' ) ){
 					$wp_roles->for_site();
 				} else {
@@ -242,11 +242,11 @@ if ( ! class_exists( 'Srrl_Roles_List' ) ) {
 				);
 			}
 			if ( ! empty( $list ) ) {
-				if ( isset( $_REQUEST['orderby'] ) && 'name' != $_REQUEST['orderby'] ) {
-					$flag = isset( $_REQUEST['order'] ) && 'asc' == $_REQUEST['order'] ? SORT_ASC : SORT_DESC;
-					$list = $this->list_sort( $list, array( $_REQUEST['orderby'] => array( $flag, SORT_REGULAR ), 'name'=>array( SORT_ASC, SORT_STRING ) ) );
+				if ( isset( $_REQUEST['orderby'] ) && 'name' != sanitize_text_field( $_REQUEST['orderby'] ) ) {
+					$flag = isset( $_REQUEST['order'] ) && 'asc' == sanitize_text_field( $_REQUEST['order'] ) ? SORT_ASC : SORT_DESC;
+					$list = $this->list_sort( $list, array( sanitize_text_field( $_REQUEST['orderby'] ) => array( $flag, SORT_REGULAR ), 'name'=>array( SORT_ASC, SORT_STRING ) ) );
 				} else {
-					$flag = isset( $_REQUEST['order'] ) && 'desc' == $_REQUEST['order'] ? SORT_DESC : SORT_ASC;
+					$flag = isset( $_REQUEST['order'] ) && 'desc' == sanitize_text_field( $_REQUEST['order'] ) ? SORT_DESC : SORT_ASC;
 					$list = $this->list_sort( $list, array('name'=>array( $flag, SORT_STRING ) ) );
 				}
 			}
@@ -260,13 +260,13 @@ if ( ! class_exists( 'Srrl_Roles_List' ) ) {
 		function get_result_message() {
 			$exclude_actions = array( 'edit', 'update' );
 			$result = array( 'error' => '', 'notice' => '', 'message' => '' );
-			$action = isset( $_POST['action'] ) && '-1' != $_POST['action'] ? $_POST['action'] : '';
-			$action = empty( $action ) && isset( $_POST['action2'] ) && '-1' != $_POST['action2'] ? $_POST['action2'] : $action;
-			$action = empty( $action ) && isset( $_REQUEST['srrl_action'] ) && ! in_array( $_REQUEST['srrl_action'], $exclude_actions ) ? $_REQUEST['srrl_action'] : $action;
+			$action = isset( $_POST['action'] ) && '-1' != sanitize_text_field( $_POST['action'] ) ? sanitize_text_field( $_POST['action'] ) : '';
+			$action = empty( $action ) && isset( $_POST['action2'] ) && '-1' != sanitize_text_field( $_POST['action2'] ) ? sanitize_text_field( $_POST['action2'] ) : $action;
+			$action = empty( $action ) && isset( $_REQUEST['srrl_action'] ) && ! in_array( sanitize_text_field( $_REQUEST['srrl_action'] ), $exclude_actions ) ? $_REQUEST['srrl_action'] : $action;
 			if ( ! empty( $action ) && isset( $_REQUEST['srrl_slug'] ) && ! empty( $_REQUEST['srrl_slug'] ) ) {
 				check_admin_referer( 'srrl_nonce_action' );
 				if ( 'recover' == $action )
-					$result = srrl_recover_role( $_REQUEST['srrl_slug'] );
+					$result = srrl_recover_role( sanitize_text_field( $_REQUEST['srrl_slug'] ) );
 				else
 					$result['error'] = __( 'Unknown action', 'user-role' );
 			}

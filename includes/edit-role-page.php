@@ -43,7 +43,7 @@ if ( isset( $_REQUEST['srrl_action'] ) ) {
 			$allowed_caps = array();
 			if ( isset( $_POST['srrl_role_caps'] ) && ! empty( $_POST['srrl_role_caps'] ) ) {
 				foreach ( $_POST['srrl_role_caps'] as $capability ) {
-					$allowed_caps[ $capability ] = true;
+					$allowed_caps[ sanitize_text_field( $capability ) ] = true;
 				}
 			}
 			if ( 'administrator' == $role_slug ) {
@@ -76,7 +76,7 @@ if ( isset( $_REQUEST['srrl_action'] ) ) {
 			if ( isset( $_REQUEST['srrl_save'] ) ) {
 				$result = srrl_single_handle_role( $role_name, $role_slug, $allowed_caps );
 				/* copy capabilities from another role */
-			} elseif ( isset( $_REQUEST['srrl_copy_role'] ) && isset( $_REQUEST['srrl_select_role'] ) && '-1' != $_REQUEST['srrl_select_role'] ) {
+			} elseif ( isset( $_REQUEST['srrl_copy_role'] ) && isset( $_REQUEST['srrl_select_role'] ) && '-1' != sanitize_text_field( $_REQUEST['srrl_select_role'] ) ) {
 				$result       = srrl_copy_role();
 				$allowed_caps = $result['caps'];
 			}
@@ -99,7 +99,7 @@ if ( ! empty( $role_slug ) ) {
 	 * getting array of registered capabilities
 	 */
 	foreach ( $roles as $key => $data_value ) {
-		$select_roles .= '<option value="' . $key . '">' . $data_value['name'] . '</option>';
+		$select_roles .= '<option value="' . esc_attr( $key ) . '">' . esc_attr( $data_value['name'] ) . '</option>';
 		if ( ! empty( $data_value['capabilities'] ) ) {
 			foreach( $data_value['capabilities'] as $capability => $value ) {
 				if ( in_array( $capability, $temp ) ) {
@@ -154,13 +154,13 @@ if ( ! empty( $role_slug ) ) {
 	if ( $is_network ) {
 		global $wpdb;
 		$blogs = $wpdb->get_results( "SELECT `blog_id`, `domain` FROM `{$wpdb->base_prefix}blogs`;" );
-		$selected_blog = isset( $_REQUEST['srrl_blog_id'] ) ? $_REQUEST['srrl_blog_id'] : 1;
+		$selected_blog = isset( $_REQUEST['srrl_blog_id'] ) ? intval( $_REQUEST['srrl_blog_id'] ) : 1;
 		$checkboxes    = '';
 		foreach ( $blogs as $blog ) {
 			$prefix    = 1 == $blog->blog_id ? $wpdb->base_prefix : $wpdb->base_prefix . $blog->blog_id . '_';
 			$blog_name = $wpdb->get_var( "SELECT `option_value` FROM `{$prefix}options` WHERE `option_name` = 'blogname'" );
 			/* check if role is already exists for current blog */
-			if ( in_array( $_REQUEST['srrl_action'], array( 'update', 'edit' ) ) )
+			if ( in_array( sanitize_text_field( $_REQUEST['srrl_action'] ), array( 'update', 'edit' ) ) )
 				$role_exists = array_key_exists( $role_slug, get_blog_option( $blog->blog_id, $prefix .'user_roles' ) ) ? '' : __( 'role doesn\'t exists', 'user-role' );
 			else
 				$role_exists = '';
@@ -192,7 +192,7 @@ if ( ! empty( $role_slug ) ) {
 	/**
 	 * display warning-message
 	 */
-	if ( in_array( $_REQUEST['srrl_action'], array( 'edit', 'update' ) ) ) {
+	if ( in_array( sanitize_text_field( $_REQUEST['srrl_action'] ), array( 'edit', 'update' ) ) ) {
 		global $current_user;
 		$user_roles = $current_user->roles;
 		$user_role  = array_shift($user_roles);
@@ -206,21 +206,21 @@ if ( ! empty( $role_slug ) ) {
 	 * display page
 	 */
 	if ( ! empty( $message ) ) { ?>
-		<div class="updated"><p><strong><?php echo $message; ?>.</strong></p></div>
+		<div class="updated"><p><strong><?php echo esc_html( $message ); ?>.</strong></p></div>
 	<?php }
 	if ( ! empty( $error ) ) { ?>
-		<div class="error"><p><strong><?php echo $error; ?>.</strong></p></div>
+		<div class="error"><p><strong><?php echo esc_html( $error ); ?>.</strong></p></div>
 	<?php } ?>
 	<form class="bws_form" id="srrl_form" method="post" action="<?php get_admin_url(); ?>?page=srrl_add_new_roles">
 		<table class="form-table">
 			<tr>
 				<th><?php _e( 'Role Name', 'user-role' ); ?></th>
-				<td><input type="text" name="srrl_role_name" value="<?php echo $role_name; ?>" maxlength="150" /></td>
+				<td><input type="text" name="srrl_role_name" value="<?php echo esc_attr( $role_name ); ?>" maxlength="150" /></td>
 			</tr>
 			<tr>
 				<th><?php _e( 'Role Slug', 'user-role' ); ?></th>
 				<td>
-					<input type="text" name="srrl_role_slug" value="<?php echo $role_slug; ?>" maxlength="150" readonly="readonly" /><br />
+					<input type="text" name="srrl_role_slug" value="<?php echo esc_attr( $role_slug ); ?>" maxlength="150" readonly="readonly" /><br />
 					<span class="bws_info"><?php _e( 'Slug must contain only latin letters. Also You can add numbers and symbols "-" or "_"', 'user-role' ); ?>.</span>
 				</td>
 			</tr>
@@ -252,13 +252,13 @@ if ( ! empty( $role_slug ) ) {
 					</div>
 				</div>
 			</div>
-            <?php srrl_pro_block( 'srrl_menu_list', '', false );
-            do_meta_boxes( 'user-role.php', 'normal', null ); ?>
+			<?php srrl_pro_block( 'srrl_menu_list', '', false );
+			do_meta_boxes( 'user-role.php', 'normal', null ); ?>
 		</div>
 		<?php if ( $is_network )
 			srrl_pro_block( 'srrl_blog_list', 'srrl_blog_list', false ); ?>
 		<p>
-			<input id="bws-submit-button" type="submit" class="button-primary" name="srrl_save" value="<?php echo $submit_title; ?>" />
+			<input id="bws-submit-button" type="submit" class="button-primary" name="srrl_save" value="<?php echo esc_attr( $submit_title ); ?>" />
 			<input type="hidden" name="srrl_action" value="update" />
 			<?php wp_nonce_field( $plugin_basename, 'srrl_nonce_name' ); ?>
 		</p>
@@ -266,17 +266,17 @@ if ( ! empty( $role_slug ) ) {
 <?php } else {
 	$bws_hide_premium = bws_hide_premium_options_check( $srrl_options );
 
-    if ( $bws_hide_premium ) { ?>
-        <p>
-            <?php _e( 'This tab contains Pro options only.', 'pdf-print' );
-            echo ' ' . sprintf(
-                    __( '%sChange the settings%s to view the Pro options.', 'pdf-print' ),
-                    '<a href="admin.php?page=srrl_settings&bws_active_tab=misc">',
-                    '</a>'
-                ); ?>
-        </p>
-    <?php } else {
-	    require_once( dirname( __FILE__ ) . '/pro-tabs.php' );
-	    srrl_pro_block( 'srrl_pro_add_new_block', '', false );
-    }
+	if ( $bws_hide_premium ) { ?>
+		<p>
+			<?php _e( 'This tab contains Pro options only.', 'pdf-print' );
+			echo ' ' . sprintf(
+					__( '%sChange the settings%s to view the Pro options.', 'pdf-print' ),
+					'<a href="admin.php?page=srrl_settings&bws_active_tab=misc">',
+					'</a>'
+				); ?>
+		</p>
+	<?php } else {
+		require_once( dirname( __FILE__ ) . '/pro-tabs.php' );
+		srrl_pro_block( 'srrl_pro_add_new_block', '', false );
+	}
 } ?>
