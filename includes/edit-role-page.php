@@ -248,6 +248,7 @@ if ( ! empty( $role_slug ) ) {
 								<?php echo $select_roles; ?>
 							</select>
 							<input type="submit" class="button-primary" name="srrl_copy_role" value="<?php _e( 'Apply', 'user-role' ); ?>" />
+							<input type="hidden" name="srrl_action" value="update" />
 						</div>
 					</div>
 				</div>

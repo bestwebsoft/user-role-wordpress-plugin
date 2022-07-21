@@ -6,7 +6,7 @@ Description: Powerful user role management plugin for WordPress website. Create,
 Author: BestWebSoft
 Text Domain: user-role
 Domain Path: /languages
-Version: 1.6.5
+Version: 1.6.6
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
 */
@@ -264,7 +264,7 @@ if ( ! function_exists( 'srrl_main_page' ) ) {
  */
 if ( ! function_exists( 'srrl_add_new_roles' ) ) {
 	function srrl_add_new_roles() {
-		$title = ( isset( $_GET['srrl_action'] ) && 'edit' == sanitize_text_field( $_GET['srrl_action'] ) ) ? __( 'Edit Role', 'user-role-pro' ) : __( 'Add New', 'user-role-pro' ); ?>
+		$title = ( isset( $_REQUEST['srrl_action'] ) && 'edit' == in_array( sanitize_text_field( $_REQUEST['srrl_action'] ), array( 'update', 'edit' ) ) ) ? __( 'Edit Role', 'user-role-pro' ) : __( 'Add New', 'user-role-pro' ); ?>
         <div class="wrap">
             <h1><?php echo esc_html( $title ) ?></h1>
 			<?php require_once( dirname( __FILE__ ) . '/includes/edit-role-page.php' ); ?>
@@ -403,7 +403,7 @@ if ( ! function_exists( 'srrl_recover_role' ) ) {
 			$result['error'] = __( "Can not recover selected roles", 'user-role' );
 		} else {
 			$blog_roles = get_option( "{$wpdb->prefix}user_roles" );
-			foreach ( (array)$slug_array as $slug ) {var_dump($slug);
+			foreach ( (array)$slug_array as $slug ) {
 				if ( array_key_exists( $slug, $action_info ) )
 					$blog_roles[ $slug ] = $action_info[ $slug ];
 				else

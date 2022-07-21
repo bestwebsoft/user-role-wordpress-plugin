@@ -1,10 +1,10 @@
-=== User Role by BestWebSoft - Add and Customize Roles and Capabilities in WordPress ===
+﻿=== User Role by BestWebSoft - Add and Customize Roles and Capabilities in WordPress ===
 Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: capability, change capabilities, capability editor, capability manager, role manager, user role, user role plugin, recover capabilities button, recover role capabilities, roles manager, user role editor, restore role capabilities
 Requires at least: 4.5
-Tested up to: 5.8.2
-Stable tag: 1.6.5
+Tested up to: 6.0
+Stable tag: 1.6.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -116,6 +116,12 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 5. Edit administrator`s role page on network admin panel.
 
 == Changelog ==
+
+= V1.6.6 - 10.07.2022 =
+* Update : We updated all functionality for WordPress 6.0.
+* Update : BWS Panel section was updated.
+* PRO : The issue with role recover has been fixed.
+* Bugfix : The issue with role capabilities copy has been fixed.
 
 = V1.6.5 - 21.12.2021 =
 * Update : We updated all functionality for WordPress 5.8.2.
@@ -242,6 +248,14 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Css-style was added for Internet Explorer 10.
 
 == Upgrade Notice ==
+
+= V1.6.6 =
+* Plugin optimization completed.
+* The compatibility with new WordPress version updated.
+* Bugs fixed.
+
+= V1.6.5 =
+* Bugs fixed.
 
 = V1.6.5 =
 * The compatibility with new WordPress version updated.

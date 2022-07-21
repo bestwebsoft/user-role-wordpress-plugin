@@ -260,15 +260,25 @@ if ( ! class_exists( 'Srrl_Roles_List' ) ) {
 		function get_result_message() {
 			$exclude_actions = array( 'edit', 'update' );
 			$result = array( 'error' => '', 'notice' => '', 'message' => '' );
-			$action = isset( $_POST['action'] ) && '-1' != sanitize_text_field( $_POST['action'] ) ? sanitize_text_field( $_POST['action'] ) : '';
-			$action = empty( $action ) && isset( $_POST['action2'] ) && '-1' != sanitize_text_field( $_POST['action2'] ) ? sanitize_text_field( $_POST['action2'] ) : $action;
-			$action = empty( $action ) && isset( $_REQUEST['srrl_action'] ) && ! in_array( sanitize_text_field( $_REQUEST['srrl_action'] ), $exclude_actions ) ? $_REQUEST['srrl_action'] : $action;
+			if ( isset( $_POST['action'] ) && '-1' != sanitize_text_field( wp_unslash( $_POST['action'] ) ) ) {
+				$action = sanitize_text_field( wp_unslash(  $_POST['action'] ) );
+			} else if ( isset( $_POST['action2'] ) && '-1' != sanitize_text_field( wp_unslash( $_POST['action2'] ) ) ) {
+				$action = sanitize_text_field( wp_unslash( $_POST['action2'] ) );
+			}
+			if ( isset( $_REQUEST['srrl_action'] ) && ! in_array( sanitize_text_field( wp_unslash( $_REQUEST['srrl_action'] ) ), $exclude_actions ) ) {
+				$action = sanitize_text_field( wp_unslash( $_REQUEST['srrl_action'] ) );
+			}
 			if ( ! empty( $action ) && isset( $_REQUEST['srrl_slug'] ) && ! empty( $_REQUEST['srrl_slug'] ) ) {
 				check_admin_referer( 'srrl_nonce_action' );
-				if ( 'recover' == $action )
-					$result = srrl_recover_role( sanitize_text_field( $_REQUEST['srrl_slug'] ) );
-				else
+				if ( 'recover' == $action ) {
+					if ( is_array( $_REQUEST['srrl_slug'] ) ) {
+						$result = srrl_recover_role( array_map( 'sanitize_text_field', array_map( 'wp_unslash', $_REQUEST['srrl_slug'] ) ) );
+					} else {
+						$result = srrl_recover_role( sanitize_text_field( wp_unslash( $_REQUEST['srrl_slug'] ) ) );
+					}
+				} else {
 					$result['error'] = __( 'Unknown action', 'user-role' );
+				}
 			}
 			return $result;
 		}
