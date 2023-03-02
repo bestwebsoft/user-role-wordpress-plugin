@@ -19,23 +19,25 @@ if ( ! class_exists( 'Srrl_Settings_Tabs' ) ) {
 			global $srrl_options, $srrl_plugin_info;
 
 			$tabs = array(
-				'misc'     => array( 'label' => __( 'Misc', 'user-role' ) ),
-				'license'  => array( 'label' => __( 'License Key', 'user-role' ) )
+				'misc'    => array( 'label' => __( 'Misc', 'user-role' ) ),
+				'license' => array( 'label' => __( 'License Key', 'user-role' ) ),
 			);
 
-			parent::__construct( array(
-				'plugin_basename'    => $plugin_basename,
-				'plugins_info'       => $srrl_plugin_info,
-				'prefix'             => 'srrl',
-				'default_options'    => srrl_get_options_default(),
-				'options'            => $srrl_options,
-				'is_network_options' => is_network_admin(),
-				'tabs'               => $tabs,
-				'wp_slug'            => 'user-role',
-				'link_key'           => '0e8fa1e4abf7647412878a5570d4977a',
-				'link_pn'            => '132',
-				'doc_link'           => 'https://bestwebsoft.com/documentation/user-role/user-role-user-guide/'
-			) );
+			parent::__construct(
+				array(
+					'plugin_basename'    => $plugin_basename,
+					'plugins_info'       => $srrl_plugin_info,
+					'prefix'             => 'srrl',
+					'default_options'    => srrl_get_options_default(),
+					'options'            => $srrl_options,
+					'is_network_options' => is_network_admin(),
+					'tabs'               => $tabs,
+					'wp_slug'            => 'user-role',
+					'link_key'           => '0e8fa1e4abf7647412878a5570d4977a',
+					'link_pn'            => '132',
+					'doc_link'           => 'https://bestwebsoft.com/documentation/user-role/user-role-user-guide/',
+				)
+			);
 
 		}
 

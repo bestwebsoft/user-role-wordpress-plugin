@@ -1,6 +1,7 @@
 <?php
 /**
  * Banners on plugin settings page
+ *
  * @package User Role
  * @since 1.6.3
  */
@@ -129,5 +130,6 @@ if ( ! function_exists( 'srrl_pro_add_new_block' ) ) {
 				</div>
 			</form>
 		</div>
-	<?php }
+		<?php
+	}
 }
