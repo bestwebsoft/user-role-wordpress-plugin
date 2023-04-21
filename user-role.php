@@ -6,13 +6,13 @@ Description: Powerful user role management plugin for WordPress website. Create,
 Author: BestWebSoft
 Text Domain: user-role
 Domain Path: /languages
-Version: 1.6.7
+Version: 1.6.8
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
  */
 
 /*
-  © Copyright 2021  BestWebSoft  ( https://support.bestwebsoft.com )
+  © Copyright 2023  BestWebSoft  ( https://support.bestwebsoft.com )
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License, version 2, as

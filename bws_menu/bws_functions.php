@@ -744,8 +744,12 @@ if ( ! function_exists( 'bws_admin_enqueue_scripts' ) ) {
 		$page = isset( $_GET['page'] ) ? sanitize_text_field( wp_unslash( $_GET['page'] ) ) : '';
 
 		$jquery_ui_version = isset( $wp_scripts->registered['jquery-ui-core']->ver ) ? $wp_scripts->registered['jquery-ui-core']->ver : '1.12.1';
-		WP_Filesystem();
-		if ( ! $wp_filesystem->exists( dirname( __FILE__ ) . '/css/jquery-ui-styles/' . $jquery_ui_version . '/' ) ) {
+		$connect = WP_Filesystem();
+		if ( false !== $connect ) {
+			if ( ! $wp_filesystem->exists( dirname( __FILE__ ) . '/css/jquery-ui-styles/' . $jquery_ui_version . '/' ) ) {
+				$jquery_ui_version = '1.12.1';
+			}
+		} else {
 			$jquery_ui_version = '1.12.1';
 		}
 		if ( 'et_divi_options' !== $page ) {
