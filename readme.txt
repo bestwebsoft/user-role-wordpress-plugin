@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: capability, change capabilities, capability editor, capability manager, role manager, user role, user role plugin, recover capabilities button, recover role capabilities, roles manager, user role editor, restore role capabilities
 Requires at least: 5.6
-Tested up to: 6.2
-Stable tag: 1.6.9
+Tested up to: 6.5
+Stable tag: 1.7.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -116,6 +116,11 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 5. Edit administrator`s role page on network admin panel.
 
 == Changelog ==
+
+= V1.7.0 - 30.04.2024 =
+* Update : Security fixes.
+* Update : BWS Panel section was updated.
+* Update : We updated all functionality for WordPress 6.5.
 
 = V1.6.9 - 10.07.2023 =
 * Bugfix : Notice and Warnings issues have been fixed.
@@ -263,6 +268,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Css-style was added for Internet Explorer 10.
 
 == Upgrade Notice ==
+
+= V1.7.0 =
+* Plugin optimization completed.
 
 = V1.6.9 =
 * Bugs fixed.

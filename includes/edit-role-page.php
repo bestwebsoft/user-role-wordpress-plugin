@@ -6,10 +6,13 @@
  * @since 1.4.9
  */
 
-/**
- * geting of the necessary data
- */
+if ( ! defined( 'ABSPATH' ) ) {
+	die();
+}
 
+/**
+ * Geting of the necessary data
+ */
 global $wp_roles, $srrl_options;
 $roles           = $wp_roles->roles;
 $default         = array(
@@ -28,12 +31,15 @@ $default         = array(
 	'read',
 	'upload_files',
 );
-$temp            = $caps_array = array();
+$temp            = array();
+$caps_array      = array();
 $result          = array(
 	'error'   => '',
 	'message' => '',
 );
-$select_roles    = $error = $message = '';
+$select_roles    = '';
+$edit_role_error = '';
+$message         = '';
 $labels_array    = array(
 	'posts'   => __( 'Actions with posts', 'user-role' ),
 	'pages'   => __( 'Actions with pages', 'user-role' ),
@@ -48,7 +54,7 @@ $plugin_basename = 'user-role/user-role.php';
 $is_network      = is_multisite() && is_network_admin();
 
 /**
- * perform the necessary actions
+ * Perform the necessary actions
  * and forming of the result
  */
 if ( ( isset( $_POST['srrl_add_nonce_field'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['srrl_add_nonce_field'] ) ), 'srrl_add_action' ) ) || ( isset( $_REQUEST['_wpnonce'] ) && check_admin_referer( 'srrl_nonce_action' ) ) ) {
@@ -97,11 +103,11 @@ if ( ( isset( $_POST['srrl_add_nonce_field'] ) && wp_verify_nonce( sanitize_text
 					$result       = srrl_copy_role();
 					$allowed_caps = $result['caps'];
 				}
-				$error   = $result['error'];
+				$edit_role_error   = $result['error'];
 				$message = $result['message'];
 				break;
 			case 'edit':
-				$role_slug    = sanitize_title( $_REQUEST['srrl_slug'] );
+				$role_slug    = isset( $_REQUEST['srrl_slug'] ) ? sanitize_title( wp_unslash( $_REQUEST['srrl_slug'] ) ) : '';
 				$role_name    = $wp_roles->roles[ $role_slug ]['name'];
 				$allowed_caps = $wp_roles->roles[ $role_slug ]['capabilities'];
 				break;
@@ -113,7 +119,7 @@ if ( ( isset( $_POST['srrl_add_nonce_field'] ) && wp_verify_nonce( sanitize_text
 
 if ( ! empty( $role_slug ) ) {
 	/**
-	 * getting array of registered capabilities
+	 * Getting array of registered capabilities
 	 */
 	foreach ( $roles as $key => $data_value ) {
 		$select_roles .= '<option value="' . esc_attr( $key ) . '">' . esc_attr( $data_value['name'] ) . '</option>';
@@ -151,7 +157,7 @@ if ( ! empty( $role_slug ) ) {
 	asort( $caps_array );
 
 	/*
-	 * forming html-structure of the list of capabilities via metaboxes
+	 * Forming html-structure of the list of capabilities via metaboxes
 	 */
 	foreach ( $caps_array as $key => $value ) {
 		add_meta_box(
@@ -166,7 +172,7 @@ if ( ! empty( $role_slug ) ) {
 	}
 
 	/**
-	 * forming html-structure of additional settings on network
+	 * Forming html-structure of additional settings on network
 	 */
 	if ( $is_network ) {
 		global $wpdb;
@@ -175,7 +181,7 @@ if ( ! empty( $role_slug ) ) {
 		$checkboxes    = '';
 		foreach ( $blogs as $blog ) {
 			$prefix    = 1 === absint( $blog->blog_id ) ? $wpdb->base_prefix : $wpdb->base_prefix . $blog->blog_id . '_';
-			$blog_name = $wpdb->get_var( "SELECT `option_value` FROM `{$prefix}options` WHERE `option_name` = 'blogname'" );
+			$blog_name = $wpdb->get_var( 'SELECT `option_value` FROM `' . $prefix . 'options` WHERE `option_name` = "blogname"' );
 			/* check if role is already exists for current blog */
 			if ( in_array( sanitize_text_field( $_REQUEST['srrl_action'] ), array( 'update', 'edit' ) ) ) {
 				$role_exists = array_key_exists( $role_slug, get_blog_option( $blog->blog_id, $prefix . 'user_roles' ) ) ? '' : __( 'role doesn\'t exists', 'user-role' );
@@ -208,7 +214,7 @@ if ( ! empty( $role_slug ) ) {
 	}
 
 	/**
-	 * display warning-message
+	 * Display warning-message
 	 */
 	if ( in_array( sanitize_text_field( wp_unslash( $_REQUEST['srrl_action'] ) ), array( 'edit', 'update' ) ) ) {
 		global $current_user;
@@ -222,16 +228,16 @@ if ( ! empty( $role_slug ) ) {
 	}
 
 	/**
-	 * display page
+	 * Display page
 	 */
 	if ( ! empty( $message ) ) {
 		?>
 		<div class="updated"><p><strong><?php echo esc_html( $message ); ?>.</strong></p></div>
 		<?php
 	}
-	if ( ! empty( $error ) ) {
+	if ( ! empty( $edit_role_error ) ) {
 		?>
-		<div class="error"><p><strong><?php echo esc_html( $error ); ?>.</strong></p></div>
+		<div class="error"><p><strong><?php echo esc_html( $edit_role_error ); ?>.</strong></p></div>
 	<?php } ?>
 	<form class="bws_form" id="srrl_form" method="post" action="<?php get_admin_url(); ?>?page=srrl_add_new_roles">
 		<table class="form-table">

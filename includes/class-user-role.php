@@ -6,23 +6,60 @@
  * @since 1.4.9
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	die();
+}
+
 if ( ! class_exists( 'WP_List_Table' ) ) {
 	require_once ABSPATH . 'wp-admin/includes/class-wp-list-table.php';
 }
-if ( ! class_exists( 'Srrl_Roles_List' ) ) {
-	class Srrl_Roles_List extends WP_List_Table {
 
+if ( ! class_exists( 'Srrl_Roles_List' ) ) {
+	/**
+	 * Class for display table with user role
+	 */
+	class Srrl_Roles_List extends WP_List_Table {
+		/**
+		 * Array for default roles
+		 *
+		 * @var array
+		 */
 		public static $default_roles = array( 'administrator', 'author', 'editor', 'contributor', 'subscriber' );
+		/**
+		 * Default role
+		 *
+		 * @var string
+		 */
 		public $default_role;
+		/**
+		 * Count for all items
+		 *
+		 * @var int
+		 */
 		public $total_items;
+		/**
+		 * Flag for network
+		 *
+		 * @var bool
+		 */
 		public $is_network;
+		/**
+		 * Plugin basename
+		 *
+		 * @var string
+		 */
 		public $basename;
+		/**
+		 * Flag for show ads
+		 *
+		 * @var bool
+		 */
 		public $show_ads;
 
 		/**
 		 * Constructor of class
 		 *
-		 * @param $plugin_basename
+		 * @param string $plugin_basename Plugin basename.
 		 */
 		public function __construct( $plugin_basename ) {
 			global $srrl_options;
@@ -36,8 +73,6 @@ if ( ! class_exists( 'Srrl_Roles_List' ) ) {
 
 		/**
 		 * Disaply list of roles
-		 *
-		 * @return void
 		 */
 		public function display_list() {
 			$result = $this->get_result_message(); ?>
@@ -57,8 +92,6 @@ if ( ! class_exists( 'Srrl_Roles_List' ) ) {
 
 		/**
 		 * Fires before displaying of the list of roles
-		 *
-		 * @return void
 		 */
 		public function prepare_items() {
 			$this->_column_headers = array( $this->get_columns(), array(), $this->get_sortable_columns() );
@@ -74,8 +107,6 @@ if ( ! class_exists( 'Srrl_Roles_List' ) ) {
 
 		/**
 		 * Function to show message if not templates found
-		 *
-		 * @return void
 		 */
 		public function no_items() {
 			?>
@@ -96,8 +127,7 @@ if ( ! class_exists( 'Srrl_Roles_List' ) ) {
 		/**
 		 * Display dropdown menu with list of blogs
 		 *
-		 * @param    string $which    'top' - function call before displaying of the list of roles, 'bottom' - after displaying of the list of roles.
-		 * @return   void
+		 * @param string $which 'top' - function call before displaying of the list of roles, 'bottom' - after displaying of the list of roles.
 		 */
 		public function extra_tablenav( $which ) {
 			if ( $this->is_network ) {
@@ -105,6 +135,11 @@ if ( ! class_exists( 'Srrl_Roles_List' ) ) {
 			}
 		}
 
+		/**
+		 * Display paginations
+		 *
+		 * @param string $which 'top' - function call before displaying of the list of roles, 'bottom' - after displaying of the list of roles.
+		 */
 		public function pagination( $which ) {
 			global $srrl_options;
 			$style             = $this->show_ads ? ' style="margin-top: 17px;"' : '';
@@ -153,9 +188,8 @@ if ( ! class_exists( 'Srrl_Roles_List' ) ) {
 		/**
 		 * Fires when the default column output is displayed for a single row.
 		 *
-		 * @param      string $column_name      The custom column's name.
-		 * @param      array  $item             The cuurrent letter data.
-		 * @return    void
+		 * @param array  $item        The cuurrent letter data.
+		 * @param string $column_name The custom column's name.
 		 */
 		public function column_default( $item, $column_name ) {
 			switch ( $column_name ) {
@@ -184,8 +218,8 @@ if ( ! class_exists( 'Srrl_Roles_List' ) ) {
 		/**
 		 * Add action links to title column depenting on status page
 		 *
-		 * @param    array $item           The current letter data.
-		 * @return   string                     with action links
+		 * @param array $item The current letter data.
+		 * @return String with action links
 		 */
 		public function column_name( $item ) {
 			$actions     = array();
@@ -317,11 +351,11 @@ if ( ! class_exists( 'Srrl_Roles_List' ) ) {
 		}
 
 		/**
-		 * sorting array with roles before displaying
+		 * Sorting array with roles before displaying
 		 *
-		 * @param      array $data          array with roles
-		 * @param      array $sort_flags    array of flags
-		 * @return     array     $args          sorted array
+		 * @param array $data       Array with roles.
+		 * @param array $sort_flags Array of flags.
+		 * @return array $args Sorted array.
 		 */
 		public function list_sort( $data, $sort_flags ) {
 			$args = array();

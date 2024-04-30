@@ -6,7 +6,14 @@
  * @since 1.6.3
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	die();
+}
+
 if ( ! function_exists( 'srrl_pro_add_new_block' ) ) {
+	/**
+	 * Display pro block
+	 */
 	function srrl_pro_add_new_block() { ?>
 		<div class="bws_pro_version">
 			<form id="srrl_form" method="post" action="">

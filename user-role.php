@@ -29,6 +29,9 @@ License: GPLv3 or later
 */
 
 if ( ! function_exists( 'srrl_add_pages' ) ) {
+	/**
+	 * Add admin menu
+	 */
 	function srrl_add_pages() {
 		global $submenu, $srrl_plugin_info, $wp_version;
 
@@ -55,13 +58,18 @@ if ( ! function_exists( 'srrl_add_pages' ) ) {
 }
 
 if ( ! function_exists( 'srrl_plugins_loaded' ) ) {
+	/**
+	 * Load textdomain
+	 */
 	function srrl_plugins_loaded() {
 		load_plugin_textdomain( 'user-role', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 	}
 }
 
-/* Plugin init function */
 if ( ! function_exists( 'srrl_init' ) ) {
+	/**
+	 * Plugin init function
+	 */
 	function srrl_init() {
 		global $srrl_plugin_info;
 
@@ -80,8 +88,10 @@ if ( ! function_exists( 'srrl_init' ) ) {
 	}
 }
 
-/* Plugin admin init function */
 if ( ! function_exists( 'srrl_admin_init' ) ) {
+	/**
+	 * Plugin admin init function
+	 */
 	function srrl_admin_init() {
 		global $bws_plugin_info, $srrl_plugin_info, $pagenow, $srrl_options;
 
@@ -113,10 +123,13 @@ if ( ! function_exists( 'srrl_admin_init' ) ) {
 	}
 }
 
-/* Style & js on */
 if ( ! function_exists( 'srrl_admin_head' ) ) {
+	/**
+	 * Style & js on
+	 */
 	function srrl_admin_head() {
-		wp_enqueue_style( 'srrl_icon', plugins_url( 'css/icon.css', __FILE__ ) );
+		global $srrl_plugin_info;
+		wp_enqueue_style( 'srrl_icon', plugins_url( 'css/icon.css', __FILE__ ), array(), $srrl_plugin_info['Version'] );
 
 		$plugin_pages = array(
 			'user-role.php',
@@ -124,8 +137,8 @@ if ( ! function_exists( 'srrl_admin_head' ) ) {
 			'srrl_settings',
 		);
 		if ( isset( $_GET['page'] ) && in_array( sanitize_text_field( $_GET['page'] ), $plugin_pages ) ) {
-			wp_enqueue_style( 'srrl_stylesheet', plugins_url( 'css/style.css', __FILE__ ) );
-			wp_enqueue_script( 'srrl_script', plugins_url( '/js/script.js', __FILE__ ), array( 'jquery' ) );
+			wp_enqueue_style( 'srrl_stylesheet', plugins_url( 'css/style.css', __FILE__ ), array(), $srrl_plugin_info['Version'] );
+			wp_enqueue_script( 'srrl_script', plugins_url( '/js/script.js', __FILE__ ), array( 'jquery' ), $srrl_plugin_info['Version'], true );
 			$srrl_translation_array = array(
 				'confirm_recover' => __( 'Are you sure, you want to recover selected role(s)?', 'user-role' ),
 			);
@@ -136,8 +149,10 @@ if ( ! function_exists( 'srrl_admin_head' ) ) {
 	}
 }
 
-/*Plugin activate*/
 if ( ! function_exists( 'srrl_plugin_activate' ) ) {
+	/**
+	 * Plugin activate
+	 */
 	function srrl_plugin_activate() {
 		if ( is_multisite() ) {
 			switch_to_blog( 1 );
@@ -150,6 +165,11 @@ if ( ! function_exists( 'srrl_plugin_activate' ) ) {
 }
 
 if ( ! function_exists( 'srrl_get_options_default' ) ) {
+	/**
+	 * Fetch plugin default options
+	 *
+	 * @return array
+	 */
 	function srrl_get_options_default() {
 		global $srrl_plugin_info;
 
@@ -161,12 +181,12 @@ if ( ! function_exists( 'srrl_get_options_default' ) ) {
 	}
 }
 
-/**
- * Create plugin options
- *
- * @return void
- */
 if ( ! function_exists( 'srrl_register_settings' ) ) {
+	/**
+	 * Create plugin options
+	 *
+	 * @return void
+	 */
 	function srrl_register_settings() {
 		global $srrl_options, $srrl_plugin_info, $wpdb;
 
@@ -204,10 +224,10 @@ if ( ! function_exists( 'srrl_register_settings' ) ) {
 	}
 }
 
-/**
- * Settings page
- */
 if ( ! function_exists( 'srrl_settings_page' ) ) {
+	/**
+	 * Settings page
+	 */
 	function srrl_settings_page() {
 		if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 			require_once dirname( __FILE__ ) . '/bws_menu/class-bws-settings.php';
@@ -225,13 +245,13 @@ if ( ! function_exists( 'srrl_settings_page' ) ) {
 	}
 }
 
-/**
- * Create backup-options
- * when we go to the plugin settings page
- *
- * @return void
- */
 if ( ! function_exists( 'srrl_create_backup' ) ) {
+	/**
+	 * Create backup-options
+	 * when we go to the plugin settings page
+	 *
+	 * @return void
+	 */
 	function srrl_create_backup() {
 		global $wpdb;
 		$restore_option = get_option( 'srrl_backup_option_capabilities' );
@@ -253,12 +273,12 @@ if ( ! function_exists( 'srrl_create_backup' ) ) {
 	}
 }
 
-/**
- * Display plugin roles page
- *
- * @return void
- */
 if ( ! function_exists( 'srrl_main_page' ) ) {
+	/**
+	 * Display plugin roles page
+	 *
+	 * @return void
+	 */
 	function srrl_main_page() {
 		?>
 		<div class="wrap">
@@ -282,12 +302,12 @@ if ( ! function_exists( 'srrl_main_page' ) ) {
 	}
 }
 
-/**
- * Display plugin add new role page
- *
- * @return void
- */
 if ( ! function_exists( 'srrl_add_new_roles' ) ) {
+	/**
+	 * Display plugin add new role page
+	 *
+	 * @return void
+	 */
 	function srrl_add_new_roles() {
 		global $title;
 		?>
@@ -299,15 +319,15 @@ if ( ! function_exists( 'srrl_add_new_roles' ) ) {
 	}
 }
 
-/**
- * Add new or update an existing one role ( from "edit_role"-page )
- *
- * @param      string    $name       role display name
- * @param      string    $slug       role name
- * @param      array     $caps       allowed capabilities
- * @return     array     $result     result of action
- */
 if ( ! function_exists( 'srrl_single_handle_role' ) ) {
+	/**
+	 * Add new or update an existing one role ( from "edit_role"-page )
+	 *
+	 * @param string $name Role display name.
+	 * @param string $slug Role name.
+	 * @param array  $caps Allowed capabilities.
+	 * @return array $result Result of action.
+	 */
 	function srrl_single_handle_role( $name, $slug, $caps ) {
 		global $wp_roles;
 		$result = array(
@@ -353,12 +373,12 @@ if ( ! function_exists( 'srrl_single_handle_role' ) ) {
 	}
 }
 
-/**
- * Getting capabilities of the selected role
- *
- * @return     array    $result    result message and capabilities of the selected role
- */
 if ( ! function_exists( 'srrl_copy_role' ) ) {
+	/**
+	 * Getting capabilities of the selected role
+	 *
+	 * @return array $result Result message and capabilities of the selected role.
+	 */
 	function srrl_copy_role() {
 		$result = array(
 			'error'   => '',
@@ -384,12 +404,15 @@ if ( ! function_exists( 'srrl_copy_role' ) ) {
 	}
 }
 
-/**
- * Update of the role
- *
- * @return   mixed      an integer (1 or 0) or WP_Role object
- */
 if ( ! function_exists( 'srrl_update_role' ) ) {
+	/**
+	 * Update of the role
+	 *
+	 * @param string $slug Slug.
+	 * @param string $name Name.
+	 * @param array  $caps Capapibilities array.
+	 * @return mixed an integer (1 or 0) or WP_Role object
+	 */
 	function srrl_update_role( $slug, $name, $caps ) {
 		global $wpdb;
 		$blog_roles = get_option( "{$wpdb->prefix}user_roles" );
@@ -432,13 +455,12 @@ if ( ! function_exists( 'srrl_update_role' ) ) {
 	}
 }
 
-/**
- * Recovers or resets of capabilities
- *
- * @param      array/string  $slug_array   roles slugs
- * @return     void
- */
 if ( ! function_exists( 'srrl_recover_role' ) ) {
+	/**
+	 * Recovers or resets of capabilities
+	 *
+	 * @param array/string $slug_array Roles slugs.
+	 */
 	function srrl_recover_role( $slug_array ) {
 		global $wpdb;
 		$result      = array(
@@ -470,14 +492,13 @@ if ( ! function_exists( 'srrl_recover_role' ) ) {
 	}
 }
 
-/**
- * Forming html-structure of metabox on Add/ Edit role page
- *
- * @param    object      $post       WP_Post object
- * @param    array       $metabox    parameters, which was passed thru add_meta_box() action
- * @return   void
- */
 if ( ! function_exists( 'srrl_metabox_content' ) ) {
+	/**
+	 * Forming html-structure of metabox on Add/ Edit role page
+	 *
+	 * @param object $post     WP_Post object.
+	 * @param array  $metabox  Parameters, which was passed thru add_meta_box() action.
+	 */
 	function srrl_metabox_content( $post, $metabox ) {
 		$slug               = isset( $_REQUEST['srrl_slug'] ) ? trim( sanitize_text_field( wp_unslash( $_REQUEST['srrl_slug'] ) ) ) : '';
 		$slug               = empty( $slug ) && isset( $_REQUEST['srrl_role_slug'] ) ? trim( sanitize_text_field( wp_unslash( $_REQUEST['srrl_role_slug'] ) ) ) : $slug;
@@ -520,21 +541,26 @@ if ( ! function_exists( 'srrl_metabox_content' ) ) {
 	}
 }
 
-/**
- * Display list of Blogs
- *
- * @param    object      $post       WP_Post object
- * @param    array       $metabox    parameters, which was passed thru add_meta_box() action
- * @return   void
- */
 if ( ! function_exists( 'srrl_list_of_blogs' ) ) {
+	/**
+	 * Display list of Blogs
+	 *
+	 * @param object $post    WP_Post object.
+	 * @param array  $metabox Parameters, which was passed thru add_meta_box() action.
+	 */
 	function srrl_list_of_blogs( $post, $metabox ) {
 		echo esc_attr( $metabox['args'][0] );
 	}
 }
 
-/* Action_links */
 if ( ! function_exists( 'srrl_plugin_action_links' ) ) {
+	/**
+	 * Add Settings link
+	 *
+	 * @param array  $links Links array.
+	 * @param string $file  Plugin file.
+	 * @return array  $links.
+	 */
 	function srrl_plugin_action_links( $links, $file ) {
 		static $this_plugin;
 		if ( ! $this_plugin ) {
@@ -549,6 +575,9 @@ if ( ! function_exists( 'srrl_plugin_action_links' ) ) {
 }
 
 if ( ! function_exists( 'srrl_plugin_banner' ) ) {
+	/**
+	 * Display banner
+	 */
 	function srrl_plugin_banner() {
 		global $hook_suffix, $srrl_plugin_info;
 
@@ -563,6 +592,13 @@ if ( ! function_exists( 'srrl_plugin_banner' ) ) {
 }
 
 if ( ! function_exists( 'srrl_register_plugin_links' ) ) {
+	/**
+	 * Add Settings, FAQ and Support links
+	 *
+	 * @param array  $links Links array.
+	 * @param string $file  Plugin file.
+	 * @return array $links.
+	 */
 	function srrl_register_plugin_links( $links, $file ) {
 		$base = plugin_basename( __FILE__ );
 		if ( $file === $base ) {
@@ -574,12 +610,10 @@ if ( ! function_exists( 'srrl_register_plugin_links' ) ) {
 	}
 }
 
-/**
- * Add help tab on settings page
- *
- * @return void
- */
 if ( ! function_exists( 'srrl_add_tabs' ) ) {
+	/**
+	 * Add help tab on settings page
+	 */
 	function srrl_add_tabs() {
 		$args = array(
 			'id'      => 'srrl',
@@ -589,12 +623,15 @@ if ( ! function_exists( 'srrl_add_tabs' ) ) {
 	}
 }
 
-/**
- * Show ads for PRO
- *
- * @return void
- */
 if ( ! function_exists( 'srrl_pro_block' ) ) {
+	/**
+	 * Show ads for PRO
+	 *
+	 * @param string $func       Function name.
+	 * @param string $class      Classes for block.
+	 * @param bool   $show_cross Flag for show cross.
+	 * @param bool   $show_link  Flag for show link.
+	 */
 	function srrl_pro_block( $func, $class = '', $show_cross = true, $show_link = true ) {
 		global $srrl_plugin_info, $wp_version, $srrl_options;
 		if ( ! bws_hide_premium_options_check( $srrl_options ) ) {
@@ -620,6 +657,9 @@ if ( ! function_exists( 'srrl_pro_block' ) ) {
 }
 
 if ( ! function_exists( 'srrl_blog_switcher' ) ) {
+	/**
+	 * Switch to blog
+	 */
 	function srrl_blog_switcher() {
 		?>
 		<div class="srrl_blog_switcher bws_pro_version">
@@ -633,6 +673,9 @@ if ( ! function_exists( 'srrl_blog_switcher' ) ) {
 }
 
 if ( ! function_exists( 'srrl_blog_list' ) ) {
+	/**
+	 * List for blogs
+	 */
 	function srrl_blog_list() {
 		?>
 		<div class="metabox-holder srrl_metabox">
@@ -644,6 +687,9 @@ if ( ! function_exists( 'srrl_blog_list' ) ) {
 }
 
 if ( ! function_exists( 'srrl_menu_list' ) ) {
+	/**
+	 * Menu list
+	 */
 	function srrl_menu_list() {
 		global $menu;
 		?>
@@ -669,6 +715,9 @@ if ( ! function_exists( 'srrl_menu_list' ) ) {
 }
 
 if ( ! function_exists( 'srrl_select' ) ) {
+	/**
+	 * Select blog
+	 */
 	function srrl_select() {
 		?>
 		<div class="bws_pro_version">
@@ -681,6 +730,9 @@ if ( ! function_exists( 'srrl_select' ) ) {
 }
 
 if ( ! function_exists( 'srrl_add_new' ) ) {
+	/**
+	 * Add new role
+	 */
 	function srrl_add_new() {
 		?>
 		<div class="bws_pro_version">
@@ -690,8 +742,10 @@ if ( ! function_exists( 'srrl_add_new' ) ) {
 	}
 }
 
-/* Plugin delete options */
 if ( ! function_exists( 'srrl_delete_options' ) ) {
+	/**
+	 * Plugin delete options
+	 */
 	function srrl_delete_options() {
 		/* recover all options on every blog to the ones in the backup */
 		global $wpdb;

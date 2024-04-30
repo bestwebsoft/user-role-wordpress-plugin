@@ -3,7 +3,14 @@
  * Displays the content on the plugin settings page
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	die();
+}
+
 if ( ! class_exists( 'Srrl_Settings_Tabs' ) ) {
+	/**
+	 * Class for display Settings Tab
+	 */
 	class Srrl_Settings_Tabs extends Bws_Settings_Tabs {
 
 		/**
@@ -13,7 +20,7 @@ if ( ! class_exists( 'Srrl_Settings_Tabs' ) ) {
 		 *
 		 * @see Bws_Settings_Tabs::__construct() for more information on default arguments.
 		 *
-		 * @param string $plugin_basename
+		 * @param string $plugin_basename Plugin basename.
 		 */
 		public function __construct( $plugin_basename ) {
 			global $srrl_options, $srrl_plugin_info;
@@ -41,8 +48,14 @@ if ( ! class_exists( 'Srrl_Settings_Tabs' ) ) {
 
 		}
 
+		/**
+		 * Save options
+		 */
 		public function save_options() {}
 
+		/**
+		 * Display tab
+		 */
 		public function tab_settings() {}
 
 	}
