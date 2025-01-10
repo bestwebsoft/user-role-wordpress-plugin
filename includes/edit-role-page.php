@@ -232,7 +232,7 @@ if ( ! empty( $role_slug ) ) {
 	 */
 	if ( ! empty( $message ) ) {
 		?>
-		<div class="updated"><p><strong><?php echo esc_html( $message ); ?>.</strong></p></div>
+		<div class="updated"><p><strong><?php echo wp_kses_post( $message ); ?>.</strong></p></div>
 		<?php
 	}
 	if ( ! empty( $edit_role_error ) ) {

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: User Role\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-30 16:14+0300\n"
+"POT-Creation-Date: 2025-01-10 13:29+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: bestwebsoft.com <wp@bestwebsoft.com>\n"
@@ -12,9 +12,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;esc_html__;esc_html_e\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;esc_html__;esc_html_e;esc_attr__;"
+"esc_attr_e\n"
 "X-Poedit-Basepath: ..\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.5\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: bws_menu\n"
 
@@ -272,8 +273,8 @@ msgid "Capabilities were successfully loaded"
 msgstr "Funktionen wurden erfolgreich geladen"
 
 #: user-role.php:397
-msgid "Save Changes"
-msgstr "Änderungen Speichern"
+msgid "Update"
+msgstr "Aktualisieren"
 
 #: user-role.php:399
 msgid "Selected role is not exists. Capabilities not loaded"
@@ -318,6 +319,9 @@ msgstr "Zugriff auf Plugins (Menüpunkte)"
 #: user-role.php:725
 msgid "Select blog"
 msgstr "Wähle Blog"
+
+#~ msgid "Save Changes"
+#~ msgstr "Änderungen Speichern"
 
 #, fuzzy
 #~| msgid "Wrong license key!"

@@ -6,7 +6,7 @@ Description: Powerful user role management plugin for WordPress website. Create,
 Author: BestWebSoft
 Text Domain: user-role
 Domain Path: /languages
-Version: 1.6.9
+Version: 1.7.2
 Author URI: https://bestwebsoft.com/
 License: GPLv3 or later
  */
@@ -394,7 +394,7 @@ if ( ! function_exists( 'srrl_copy_role' ) ) {
 			} else {
 				if ( array_key_exists( sanitize_text_field( wp_unslash( $_REQUEST['srrl_select_role'] ) ), $blog_roles ) ) {
 					$result['caps']    = $blog_roles[ sanitize_text_field( wp_unslash( $_REQUEST['srrl_select_role'] ) ) ]['capabilities'];
-					$result['message'] = __( 'Capabilities were successfully loaded', 'user-role' ) . '.&nbsp;<a class="bws_save_anchor" href="#bws-submit-button">' . __( 'Save Changes', 'user-role' ) . '</a>';
+					$result['message'] = __( 'Capabilities were successfully loaded', 'user-role' ) . '.&nbsp;<a class="bws_save_anchor" href="#bws-submit-button">' . __( 'Update', 'user-role' ) . '</a>';
 				} else {
 					$result['error'] = __( 'Selected role is not exists. Capabilities not loaded', 'user-role' );
 				}

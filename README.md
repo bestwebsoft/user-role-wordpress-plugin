@@ -4,7 +4,7 @@
 <p>User Role plugin makes it easy to manage your WordPress website role capabilities. Add new and manage existing user roles. Quickly control what users can and cannot do on your website.</p>
 <p>Change role name, copy permissions from another role, and other great features. Extend the default user management features today!</p>
 <p><a href="https://bestwebsoft.com/demo-user-role-plugin/?ref=readme" rel="nofollow ugc">View Demo</a></p>
-<p><span class="embed-youtube" style="text-align:center; display: block;"></span></p>
+<p></p>
 <h4>Free Features</h4>
 <ul>
 <li>View information about each role</li>
